@@ -1,18 +1,18 @@
 // NAME: Perplexity
 // AUTHOR: linchao10058
-// REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Perplexity.list
+// REPO: https://raw.githubusercontent.com/linchao10058/shadowrocket/main/Rule/Perplexity.list
 // UPDATED: 2025-03-27 12:10
 // DOMAIN: 1
 // DOMAIN-SUFFIX: 5
 // TOTAL: 6
 
-// Perplexity AI Comprehensive Ruleset (Surge & Shadowrocket)
-// 文件路徑：https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Perplexity.list
+// Perplexity AI Comprehensive Ruleset (shadowrocket & Shadowrocket)
+// 文件路徑：https://raw.githubusercontent.com/linchao10058/shadowrocket/main/Rule/Perplexity.list
 // 目標：將 Perplexity AI 相關流量精準導向 Proxy，確保穩定訪問
-// 說明：適用 Surge 和 Shadowrocket，涵蓋核心域名及潛在子域，避免誤匹配 X、Facebook 等
+// 說明：適用 shadowrocket 和 Shadowrocket，涵蓋核心域名及潛在子域，避免誤匹配 X、Facebook 等
 
 // 核心域名規則（精確匹配優先）
-DOMAIN,www.perplexity.ai,Proxy,force-remote-dns  // Surge 支持 force-remote-dns，Shadowrocket 忽略此參數
+DOMAIN,www.perplexity.ai,Proxy,force-remote-dns  // shadowrocket 支持 force-remote-dns，Shadowrocket 忽略此參數
 DOMAIN-SUFFIX,perplexity.ai,Proxy,force-remote-dns
 DOMAIN-SUFFIX,api.perplexity.ai,Proxy,force-remote-dns
 DOMAIN-SUFFIX,cdn.perplexity.ai,Proxy,force-remote-dns
@@ -27,8 +27,8 @@ DOMAIN-SUFFIX,docs.perplexity.ai,Proxy,force-remote-dns
 // DOMAIN-SUFFIX,auth.perplexity.ai,Proxy,force-remote-dns  // 若涉及認證服務
 
 // 注意事項：
-// 1. 在 Surge/Shadowrocket 配置中將此規則置於 [Rule] 最上方，避免被 Facebook.list、Twitter.list 誤匹配。
-// 2. Surge: 配置 DNS（8.8.8.8, 1.1.1.1）並使用 force-remote-dns，防止解析錯誤。
+// 1. 在 shadowrocket/Shadowrocket 配置中將此規則置於 [Rule] 最上方，避免被 Facebook.list、Twitter.list 誤匹配。
+// 2. shadowrocket: 配置 DNS（8.8.8.8, 1.1.1.1）並使用 force-remote-dns，防止解析錯誤。
 // 3. Shadowrocket: 設置全局 DNS 或代理內 DNS，避免解析到錯誤 IP（如 Facebook 的 31.13.90.33）。
 // 4. 使用高質量代理節點（如美國、日本），防止被 Perplexity 屏蔽（例如 Access restricted）。
 // 5. 若發現異常（如流量走 X 或 Facebook），啟用日誌抓包，補充新域名。
