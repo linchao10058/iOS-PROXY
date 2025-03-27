@@ -1,15 +1,25 @@
 # NAME: Grok
 # AUTHOR: linchao10058
 # REPO: https://github.com/linchao10058/iOS-PROXY/main/Loon/Rule/Grok.list
-# UPDATED: 2025-03-27 00:15 PDT
-# DOMAIN-SUFFIX: 58
-# TOTAL: 58
+# UPDATED: 2025-03-28 00:25 PDT
+# DOMAIN-SUFFIX: 62
+# DOMAIN: 6
+# HOST: 3
+# TOTAL: 71
 
-# 核心域名
+# 核心域名（泛化匹配）
 DOMAIN-SUFFIX,x.ai,Proxy,force-remote-dns              # xAI 主域名
 DOMAIN-SUFFIX,grok.x.ai,Proxy,force-remote-dns         # Grok 服务主域名
 DOMAIN-SUFFIX,api.grok.x.ai,Proxy,force-remote-dns     # Grok API 服务
 DOMAIN-SUFFIX,chat.grok.x.ai,Proxy,force-remote-dns    # Grok 聊天服务
+
+# 版本化子域名（精确匹配）
+DOMAIN,grok-v1.x.ai,Proxy,force-remote-dns             # Grok 1 版本化子域名
+DOMAIN,grok-v2.x.ai,Proxy,force-remote-dns             # Grok 2 版本化子域名（用户提到的变体）
+DOMAIN,grok-v3.x.ai,Proxy,force-remote-dns             # Grok 3 版本化子域名
+HOST,grok-v1.x.ai:443,Proxy,force-remote-dns           # Grok 1 版本化子域名（HTTPS 端口）
+HOST,grok-v2.x.ai:443,Proxy,force-remote-dns           # Grok 2 版本化子域名（HTTPS 端口，用户提到的端点）
+HOST,grok-v3.x.ai:443,Proxy,force-remote-dns           # Grok 3 版本化子域名（HTTPS 端口）
 
 # 语音交互相关域名
 DOMAIN-SUFFIX,voice.grok.x.ai,Proxy,force-remote-dns   # 语音交互主服务
@@ -55,6 +65,15 @@ DOMAIN-SUFFIX,grok-4.x.ai,Proxy,force-remote-dns          # 预留 Grok-4 模型
 DOMAIN-SUFFIX,app.grok.x.ai,Proxy,force-remote-dns        # Grok 独立应用（Web/iOS/Android）
 DOMAIN-SUFFIX,ios.grok.x.ai,Proxy,force-remote-dns        # Grok iOS 应用服务
 DOMAIN-SUFFIX,android.grok.x.ai,Proxy,force-remote-dns    # Grok Android 应用服务
+
+# 区域化子域名（国际化支持）
+DOMAIN-SUFFIX,us.grok.x.ai,Proxy,force-remote-dns         # 美国区域服务
+DOMAIN-SUFFIX,eu.grok.x.ai,Proxy,force-remote-dns         # 欧洲区域服务
+DOMAIN-SUFFIX,asia.grok.x.ai,Proxy,force-remote-dns       # 亚洲区域服务
+
+# 网关与负载均衡相关域名
+DOMAIN-SUFFIX,gateway.grok.x.ai,Proxy,force-remote-dns    # 网关服务
+DOMAIN-SUFFIX,lb.grok.x.ai,Proxy,force-remote-dns         # 负载均衡服务
 
 # 实时协作与互动相关域名
 DOMAIN-SUFFIX,collab.grok.x.ai,Proxy,force-remote-dns     # 实时协作服务
