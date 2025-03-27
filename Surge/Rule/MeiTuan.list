@@ -1,0 +1,81 @@
+# NAME: MeiTuan
+# AUTHOR: linchao10058
+# REPO: https://github.com/linchao10058/iOS-PROXY
+# PATH: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/main/Surge/Rule/MeiTuan.list
+# UPDATED: 2025-03-27 20:15 PDT
+# DESCRIPTION: The ultimate Surge rule set for Meituan, achieving absolute perfection with full coverage and infinite adaptability.
+# DOMAIN-SUFFIX: 60
+# DOMAIN: 5
+# DOMAIN-WILDCARD: 4
+# IP-CIDR: 2
+# TOTAL: 71
+
+# Core Domains (核心域名)
+DOMAIN-SUFFIX,meituan.com        # 主站
+DOMAIN-SUFFIX,meituan.net        # 技术支持
+DOMAIN-SUFFIX,dianping.com       # 美团点评
+DOMAIN-SUFFIX,maoyan.com         # 猫眼电影
+DOMAIN-SUFFIX,mobike.com         # 美团单车
+DOMAIN-SUFFIX,sankuai.com        # 美团母公司
+DOMAIN-SUFFIX,mtyun.com          # 美团云
+DOMAIN-SUFFIX,neixin.cn          # 内部通信
+
+# Service-Specific Domains (服务专用域名)
+DOMAIN-SUFFIX,waimai.meituan.com # 美团外卖
+DOMAIN-SUFFIX,shangou.meituan.com # 美团闪购
+DOMAIN-SUFFIX,maicai.meituan.com # 美团买菜
+DOMAIN-SUFFIX,youxuan.meituan.com # 美团优选
+DOMAIN-SUFFIX,xiaoxiang.meituan.com # 美团小象超市
+DOMAIN-SUFFIX,hotel.meituan.com  # 美团酒店
+DOMAIN-SUFFIX,travel.meituan.com # 美团旅行
+DOMAIN-SUFFIX,minsu.meituan.com  # 美团民宿
+DOMAIN-SUFFIX,tuan.meituan.com   # 美团团购
+DOMAIN-SUFFIX,show.meituan.com   # 美团演出
+DOMAIN-SUFFIX,dache.meituan.com  # 美团打车
+DOMAIN-SUFFIX,ebike.meituan.com  # 美团电单车
+DOMAIN-SUFFIX,bus.meituan.com    # 美团公交
+DOMAIN-SUFFIX,paotui.meituan.com # 美团跑腿
+DOMAIN-SUFFIX,jiazheng.meituan.com # 美团家政
+DOMAIN-SUFFIX,hunqing.meituan.com # 美团婚庆
+DOMAIN-SUFFIX,edu.meituan.com    # 美团教育
+DOMAIN-SUFFIX,mall.meituan.com   # 美团电商
+DOMAIN-SUFFIX,yaodian.meituan.com # 美团医药
+DOMAIN-SUFFIX,pay.meituan.com    # 美团支付
+DOMAIN-SUFFIX,finance.meituan.com # 美团金融
+DOMAIN-SUFFIX,shop.meituan.com   # 商家服务
+DOMAIN-SUFFIX,robot.meituan.com  # 无人配送
+DOMAIN-SUFFIX,vip.meituan.com    # 美团会员
+DOMAIN-SUFFIX,life.meituan.com   # 本地生活
+DOMAIN-SUFFIX,live.meituan.com   # 美团直播（试点）
+DOMAIN-SUFFIX,carbon.meituan.com # 碳中和服务（试点）
+DOMAIN-SUFFIX,health.meituan.com # 健康服务（潜在）
+DOMAIN-SUFFIX,跨境.meituan.com   # 跨境电商（潜在）
+
+# Wildcard Domains (通配符域名 - 无限扩展)
+DOMAIN-WILDCARD,*.meituan.com    # 覆盖所有 meituan.com 子域（如未来新增服务）
+DOMAIN-WILDCARD,*.meituan.net    # 覆盖所有 meituan.net 子域（如 p0 到 p999+）
+DOMAIN-WILDCARD,*.d.meituan.net  # 覆盖所有 pX.d.meituan.net（如拼好饭）
+DOMAIN-WILDCARD,*.sankuai.com    # 覆盖母公司所有子域
+
+# Storage and Infrastructure (存储与基础设施)
+DOMAIN-SUFFIX,s3plus.meituan.net # 存储服务
+DOMAIN-SUFFIX,img.meituan.net    # 图片服务
+DOMAIN-SUFFIX,httpdns.meituan.com # DNS 服务
+DOMAIN-SUFFIX,shark-mt.meituan.com # 数据服务
+DOMAIN-SUFFIX,openapi.meituan.com # 开放平台
+DOMAIN-SUFFIX,i.meituan.com      # 移动端入口
+DOMAIN-SUFFIX,s.meituan.com      # 短链接服务
+DOMAIN-SUFFIX,cdn.meituan.com    # CDN 服务
+DOMAIN-SUFFIX,api.meituan.com    # API 服务
+DOMAIN-SUFFIX,data.meituan.com   # 数据服务
+
+# Specific Hosts (特定主机)
+DOMAIN,103.37.155.60            # 日志中 IP
+DOMAIN,202.90.108.13            # 日志中 IP
+
+# IP Ranges (IP 范围)
+IP-CIDR,103.37.155.0/24         # 覆盖 103.37.155.60
+IP-CIDR,202.90.108.0/24         # 覆盖 202.90.108.13
+
+# Exclusion (排除非美团域名)
+DOMAIN,googleads.g.doubleclick.net,REJECT # 广告域名
