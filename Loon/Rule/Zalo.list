@@ -1,25 +1,32 @@
-# NAME: Zalo
+# NAME: Zalo 
 # AUTHOR: linchao10058 
 # REPO: https://raw.githubusercontent.com/linchao10058/Loon/main/Rule/Zalo.list
-# UPDATED: 2025-03-27 14:30 PDT
-# DOMAIN-SUFFIX: 40
-# TOTAL: 40
-# DESCRIPTION: The ultimate Zalo ruleset, combining comprehensive coverage with optimized performance.
+# UPDATED: 2025-03-27 17:30 PDT
+# DOMAIN-SUFFIX: 42
+# DOMAIN: 1
+# TOTAL: 43
+# DESCRIPTION: The ultimate Zalo ruleset, fully integrating Zalo AI as a core service for absolute perfection.
 
 # 配置说明：
 # 1. 置于 [Rule] 顶部，避免被其他规则（如 Twitter.list）误匹配。
-# 2. Loon: 使用远程 DNS（如 8.8.8.8, 1.1.1.1），启用 force-remote-dns。
+# 2. Surge: 使用远程 DNS（如 8.8.8.8, 1.1.1.1），启用 force-remote-dns。
 # 3. Shadowrocket: 设置全局 DNS 或代理内 DNS，忽略 force-remote-dns。
 # 4. 测试 CDN 域名（如 cdn.zalo.me）是否需调整为 Proxy。
 # 5. 定期抓包更新，确保覆盖新服务和域名。
 
 # 核心服务（高优先级）
-DOMAIN-SUFFIX,zalo.me,Proxy,force-remote-dns           # 主域名
+DOMAIN-SUFFIX,zalo.me,Proxy,force-remote-dns           # 主域名（核心服务）
+DOMAIN-SUFFIX,zalo.ai,Proxy,force-remote-dns          # AI 主域名（涵盖全部AI功能）
 DOMAIN-SUFFIX,zaloapp.com,Proxy,force-remote-dns       # 应用域名
 DOMAIN-SUFFIX,api.zalo.me,Proxy,force-remote-dns       # API 服务
 DOMAIN-SUFFIX,chat.zalo.me,Proxy,force-remote-dns      # 聊天服务
 DOMAIN-SUFFIX,call.zalo.me,Proxy,force-remote-dns      # 通话服务
 DOMAIN-SUFFIX,files.zalo.me,Proxy,force-remote-dns     # 文件服务
+
+# AI 服务（细化与补充）
+DOMAIN,avatar-api.zalo.ai,Proxy,force-remote-dns      # AI 头像API服务（精确匹配）
+DOMAIN-SUFFIX,ai.zalo.me,Proxy,force-remote-dns       # AI 子服务（兼容现有功能）
+DOMAIN-SUFFIX,chatbot.zalo.me,Proxy,force-remote-dns  # AI 聊天机器人（Kiki）
 
 # 功能性服务
 DOMAIN-SUFFIX,pay.zalo.me,Proxy,force-remote-dns       # 支付服务（包含 wallet）
@@ -32,10 +39,6 @@ DOMAIN-SUFFIX,game.zalo.me,Proxy,force-remote-dns      # 游戏服务（包含 g
 DOMAIN-SUFFIX,video.zalo.me,Proxy,force-remote-dns     # 视频服务（包含 live/stream）
 DOMAIN-SUFFIX,feed.zalo.me,Proxy,force-remote-dns      # 动态服务（包含 story/news）
 DOMAIN-SUFFIX,group.zalo.me,Proxy,force-remote-dns     # 群组服务
-
-# AI 服务
-DOMAIN-SUFFIX,ai.zalo.me,Proxy,force-remote-dns        # AI 主服务（包含 voice/image/avatar）
-DOMAIN-SUFFIX,chatbot.zalo.me,Proxy,force-remote-dns   # AI 聊天机器人（Kiki）
 
 # 云存储与基础设施
 DOMAIN-SUFFIX,cloud.zalo.me,Proxy,force-remote-dns     # 云服务（包含 drive/storage）
@@ -75,5 +78,6 @@ DOMAIN-SUFFIX,gw.be.com.vn,Proxy,force-remote-dns           # 网关服务（越
 
 # 通配符兜底规则（低优先级）
 DOMAIN-SUFFIX,*.zalo.me,Proxy,force-remote-dns        # 所有未列出 zalo.me 子域名
+DOMAIN-SUFFIX,*.zalo.ai,Proxy,force-remote-dns        # 所有未列出 zalo.ai 子域名（AI全面覆盖）
 DOMAIN-SUFFIX,*.zaloapp.com,Proxy,force-remote-dns    # 所有未列出 zaloapp.com 子域名
 DOMAIN-SUFFIX,*.zadn.vn,DIRECT                       # 所有未列出 zadn.vn 子域名
