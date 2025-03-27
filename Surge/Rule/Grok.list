@@ -120,3 +120,5 @@ DOMAIN-SUFFIX,exp.grok.x.ai,Proxy,force-remote-dns        # 实验性功能服�
 # 第三方集成相关域名
 DOMAIN-SUFFIX,oauth.grok.x.ai,Proxy,force-remote-dns      # OAuth 登录服务
 DOMAIN-SUFFIX,connect.grok.x.ai,Proxy,force-remote-dns    # 第三方连接服务
+
+# 通配符兜底规则（低优先级） DOMAIN-SUFFIX,*.x.ai,Proxy,force-remote-dns            # xAI 所有子域名兜底 
