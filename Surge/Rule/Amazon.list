@@ -1,10 +1,10 @@
 // NAME: Amazon
 // AUTHOR: linchao10058
 // REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Amazon.list
-// UPDATED: 2025-03-27 02:47 PDT
-// DOMAIN-SUFFIX: 65
-// TOTAL: 65
-// DESCRIPTION: The ultimate Amazon ruleset, exhaustively covering all global and China services, perfected for flawless operation.
+// UPDATED: 2025-03-27 18:30 PDT
+// DOMAIN-SUFFIX: 68
+// TOTAL: 68
+// DESCRIPTION: The ultimate Amazon ruleset, exhaustively covering all global services, China, and potential regions like Taiwan, perfected for flawless operation.
 
 // 配置说明：
 // 1. 必须置于 [Rule] 最顶部，高于其他规则集（如 Facebook.list、Twitter.list）。
@@ -40,6 +40,9 @@ DOMAIN-SUFFIX,amazon.cn,Proxy,force-remote-dns        // 中国跨境电商，20
 DOMAIN-SUFFIX,global.amazon.cn,Proxy,force-remote-dns // 中国跨境子服务
 DOMAIN-SUFFIX,buy.amazon.cn,Proxy,force-remote-dns    // 中国购买入口
 
+// 电子商务 - 潜在地区（预留）
+DOMAIN-SUFFIX,amazon.com.tw,Proxy,force-remote-dns    // 台湾地区，未来潜在站点
+
 // Prime 会员服务
 DOMAIN-SUFFIX,prime.amazon.com,Proxy,force-remote-dns // Prime 主服务，2005 年推出
 DOMAIN-SUFFIX,primevideo.com,Proxy,force-remote-dns   // Prime Video，2016 年全球化
@@ -70,6 +73,9 @@ DOMAIN-SUFFIX,cloudfront.net,DIRECT                       // CloudFront CDN，20
 DOMAIN-SUFFIX,amazonaws.com.cn,Proxy,force-remote-dns     // AWS 中国区域，2016 年上线
 DOMAIN-SUFFIX,aws.sinnet.com.cn,Proxy,force-remote-dns    // 北京区域，2016 年上线
 DOMAIN-SUFFIX,aws.nwcdcloud.cn,Proxy,force-remote-dns     // 宁夏区域，2017 年上线
+
+// 云计算 - AWS 潜在地区（预留）
+DOMAIN-SUFFIX,amazonaws.com.tw,Proxy,force-remote-dns     // AWS 台北区域，2025 年计划上线
 
 // 数字内容与设备
 DOMAIN-SUFFIX,kindle.com,Proxy,force-remote-dns           // Kindle Store，2007 年推出
