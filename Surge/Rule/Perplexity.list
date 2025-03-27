@@ -1,1 +1,28 @@
+// NAME: Perplexity
+// AUTHOR: linchao10058
+// REPO: https://github.com/linchao10058/Surge/Rule/Perplexity.list
+// UPDATED: 2025-03-27 12:10
+// DOMAIN-SUFFIX: 5
+// TOTAL: 5
 
+// Perplexity AI Comprehensive Surge Ruleset
+// 文件路徑：GitHub/linchao10058/Surge/Rule/Perplexity.list
+// 目標：將 Perplexity AI 相關流量導向 Proxy
+// 說明：涵蓋 Perplexity AI 核心域名及潛在子域，確保穩定訪問
+
+// 核心域名規則
+DOMAIN-SUFFIX,perplexity.ai,Proxy
+DOMAIN-SUFFIX,api.perplexity.ai,Proxy
+DOMAIN-SUFFIX,cdn.perplexity.ai,Proxy
+DOMAIN-SUFFIX,app.perplexity.ai,Proxy
+DOMAIN-SUFFIX,docs.perplexity.ai,Proxy
+
+// 備用規則（可根據實際抓包結果啟用）
+// 若發現 Perplexity 使用第三方服務（如 AWS），可取消下方註釋並測試
+// DOMAIN-SUFFIX,amazonaws.com,Proxy
+// DOMAIN-SUFFIX,cloudflare.com,Proxy
+
+// 注意事項：
+// 1. 確保 Surge 配置中已定義 Proxy 策略組。
+// 2. 如需直連測試，可將 Proxy 替換為 DIRECT。
+// 3. 建議定期檢查 Perplexity 的域名更新，補充新子域。
