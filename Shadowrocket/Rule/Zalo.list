@@ -1,0 +1,53 @@
+// NAME: Zalo
+// AUTHOR: linchao10058
+// REPO: https://raw.githubusercontent.com/linchao10058/shadowrocket/main/Rule/Zalo.list
+// UPDATED: 2025-03-26 22:05 PDT
+// DOMAIN: 1
+// DOMAIN-SUFFIX: 18
+// TOTAL: 19
+
+// Zalo Comprehensive Ruleset (shadowrocket & Shadowrocket)
+// 文件路徑：https://raw.githubusercontent.com/linchao10058/shadowrocket/main/Rule/Zalo.list
+// 目標：將 Zalo 相關流量精準導向 Proxy，確保穩定訪問
+// 說明：適用 shadowrocket 和 Shadowrocket，涵蓋核心域名及潛在子域，避免誤匹配其他服務（如 WhatsApp、LINE 等）
+
+// 核心域名規則（精確匹配優先）
+DOMAIN,www.zalo.me,Proxy,force-remote-dns  // shadowrocket 支持 force-remote-dns，Shadowrocket 忽略此參數
+DOMAIN-SUFFIX,zalo.me,Proxy,force-remote-dns
+DOMAIN-SUFFIX,zaloapp.com,Proxy,force-remote-dns
+DOMAIN-SUFFIX,api.zalo.me,Proxy,force-remote-dns
+DOMAIN-SUFFIX,chat.zalo.me,Proxy,force-remote-dns
+DOMAIN-SUFFIX,call.zalo.me,Proxy,force-remote-dns
+DOMAIN-SUFFIX,files.zalo.me,Proxy,force-remote-dns
+
+// 功能相關域名
+DOMAIN-SUFFIX,pay.zalo.me,Proxy,force-remote-dns  // 支付相關服務
+DOMAIN-SUFFIX,shop.zalo.me,Proxy,force-remote-dns  // 商店功能
+DOMAIN-SUFFIX,platform.zalo.me,Proxy,force-remote-dns  // 平台服務
+DOMAIN-SUFFIX,oa.zalo.me,Proxy,force-remote-dns  // 官方賬號相關
+DOMAIN-SUFFIX,ads.zalo.me,Proxy,force-remote-dns  // 廣告服務
+
+// 第三方服務相關域名
+DOMAIN-SUFFIX,zalo.vn,Proxy,force-remote-dns  // 越南本地域名
+DOMAIN-SUFFIX,zalo.cloud,Proxy,force-remote-dns  // 雲服務相關
+DOMAIN-SUFFIX,zalopay.vn,Proxy,force-remote-dns  // ZaloPay 支付服務
+DOMAIN-SUFFIX,zaloapp.vn,Proxy,force-remote-dns  // 應用相關越南域名
+
+// 其他可能域名
+DOMAIN-SUFFIX,static.zaloapp.com,Proxy,force-remote-dns  // 靜態資源
+DOMAIN-SUFFIX,cdn.zalo.me,Proxy,force-remote-dns  // 內容分發網絡
+DOMAIN-SUFFIX,notify.zalo.me,Proxy,force-remote-dns  // 通知服務
+
+// 第三方服務處理（可選）
+// 注意：Zalo 可能使用 AWS、Cloudflare 或其他 CDN，若發現流量異常（例如走 LINE 或 WhatsApp），
+// 可通過抓包確認具體子域並取消下方註釋啟用。
+// DOMAIN-SUFFIX,zalo.s3.amazonaws.com,Proxy,force-remote-dns
+// DOMAIN-SUFFIX,zalo.cloudflare-dns.com,Proxy,force-remote-dns
+// DOMAIN-SUFFIX,auth.zalo.me,Proxy,force-remote-dns  // 若涉及認證服務
+
+// 注意事項：
+// 1. 在 shadowrocket/Shadowrocket 配置中將此規則置於 [Rule] 最上方，避免被其他規則（如 WhatsApp.list）誤匹配。
+// 2. shadowrocket: 配置 DNS（8.8.8.8, 1.1.1.1）並使用 force-remote-dns，防止解析錯誤。
+// 3. Shadowrocket: 設置全局 DNS 或代理內 DNS，避免解析到錯誤 IP。
+// 4. 使用高質量代理節點（如越南、新加坡），防止被 Zalo 屏蔽（例如 Access restricted）。
+// 5. 若發現異常（如流量走其他服務），啟用日誌抓包，補充新域名。
