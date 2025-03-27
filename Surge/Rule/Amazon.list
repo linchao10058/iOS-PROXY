@@ -1,0 +1,104 @@
+// NAME: Amazon
+// AUTHOR: linchao10058
+// REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Amazon.list
+// UPDATED: 2025-03-27 02:47 PDT
+// DOMAIN-SUFFIX: 67
+// TOTAL: 67
+// DESCRIPTION: The ultimate Amazon ruleset, covering all global services including China, ensuring flawless operation.
+
+// 配置说明：
+// 1. 置于 [Rule] 顶部，避免被其他规则（如 Facebook.list）误匹配。
+// 2. Surge: 使用远程 DNS（如 8.8.8.8, 1.1.1.1），启用 force-remote-dns。
+// 3. Shadowrocket: 设置全局 DNS 或代理内 DNS，忽略 force-remote-dns。
+// 4. 测试 CDN 域名（如 cdn.amazon.com）是否需调整为 Proxy。
+// 5. 定期抓包更新，确保覆盖新服务。
+
+// 电子商务 - 全球站点（高优先级）
+DOMAIN-SUFFIX,amazon.com,Proxy,force-remote-dns        // 美国
+DOMAIN-SUFFIX,amazon.co.uk,Proxy,force-remote-dns     // 英国
+DOMAIN-SUFFIX,amazon.de,Proxy,force-remote-dns        // 德国
+DOMAIN-SUFFIX,amazon.fr,Proxy,force-remote-dns        // 法国
+DOMAIN-SUFFIX,amazon.co.jp,Proxy,force-remote-dns     // 日本
+DOMAIN-SUFFIX,amazon.in,Proxy,force-remote-dns        // 印度
+DOMAIN-SUFFIX,amazon.com.au,Proxy,force-remote-dns    // 澳大利亚
+DOMAIN-SUFFIX,amazon.ca,Proxy,force-remote-dns        // 加拿大
+DOMAIN-SUFFIX,amazon.com.br,Proxy,force-remote-dns    // 巴西
+DOMAIN-SUFFIX,amazon.com.mx,Proxy,force-remote-dns    // 墨西哥
+DOMAIN-SUFFIX,amazon.it,Proxy,force-remote-dns        // 意大利
+DOMAIN-SUFFIX,amazon.es,Proxy,force-remote-dns        // 西班牙
+DOMAIN-SUFFIX,amazon.nl,Proxy,force-remote-dns        // 荷兰
+DOMAIN-SUFFIX,amazon.se,Proxy,force-remote-dns        // 瑞典
+DOMAIN-SUFFIX,amazon.pl,Proxy,force-remote-dns        // 波兰
+DOMAIN-SUFFIX,amazon.sg,Proxy,force-remote-dns        // 新加坡
+DOMAIN-SUFFIX,amazon.com.tr,Proxy,force-remote-dns    // 土耳其
+DOMAIN-SUFFIX,amazon.ae,Proxy,force-remote-dns        // 阿联酋
+DOMAIN-SUFFIX,amazon.sa,Proxy,force-remote-dns        // 沙特阿拉伯
+DOMAIN-SUFFIX,amazon.eg,Proxy,force-remote-dns        // 埃及
+
+// 电子商务 - 中国
+DOMAIN-SUFFIX,amazon.cn,Proxy,force-remote-dns        // 中国跨境电商
+
+// 电子商务 - 子服务
+DOMAIN-SUFFIX,sellercentral.amazon.com,Proxy,force-remote-dns // 卖家中心
+DOMAIN-SUFFIX,handmade.amazon.com,Proxy,force-remote-dns      // 手工制品
+DOMAIN-SUFFIX,renewed.amazon.com,Proxy,force-remote-dns       // 二手商品
+DOMAIN-SUFFIX,luxury.amazon.com,Proxy,force-remote-dns        // 奢侈品
+
+// Prime 会员服务
+DOMAIN-SUFFIX,prime.amazon.com,Proxy,force-remote-dns     // Prime 主服务
+DOMAIN-SUFFIX,primevideo.com,Proxy,force-remote-dns       // Prime Video
+DOMAIN-SUFFIX,amazonmusic.com,Proxy,force-remote-dns      // Prime Music
+DOMAIN-SUFFIX,primereading.amazon.com,Proxy,force-remote-dns // Prime Reading
+DOMAIN-SUFFIX,primegaming.com,Proxy,force-remote-dns      // Prime Gaming
+
+// 物流服务
+DOMAIN-SUFFIX,fba.amazon.com,Proxy,force-remote-dns       // FBA
+DOMAIN-SUFFIX,logistics.amazon.com,Proxy,force-remote-dns // 全球物流
+DOMAIN-SUFFIX,warehousing.amazon.com,Proxy,force-remote-dns // 仓储
+DOMAIN-SUFFIX,freight.amazon.com,Proxy,force-remote-dns   // 货运
+
+// 云计算 - AWS 全球
+DOMAIN-SUFFIX,aws.amazon.com,Proxy,force-remote-dns       // AWS 主站
+DOMAIN-SUFFIX,amazonaws.com,Proxy,force-remote-dns        // AWS 服务端点
+DOMAIN-SUFFIX,s3.amazonaws.com,Proxy,force-remote-dns     // S3 存储
+DOMAIN-SUFFIX,ec2.amazonaws.com,Proxy,force-remote-dns    // EC2
+DOMAIN-SUFFIX,cloudfront.net,Proxy,force-remote-dns       // CloudFront CDN
+
+// 云计算 - AWS 中国
+DOMAIN-SUFFIX,amazonaws.com.cn,Proxy,force-remote-dns     // AWS 中国区域
+DOMAIN-SUFFIX,aws.sinnet.com.cn,Proxy,force-remote-dns    // 北京区域
+DOMAIN-SUFFIX,aws.nwcdcloud.cn,Proxy,force-remote-dns     // 宁夏区域
+
+// 数字内容与设备
+DOMAIN-SUFFIX,kindle.com,Proxy,force-remote-dns           // Kindle Store
+DOMAIN-SUFFIX,audible.com,Proxy,force-remote-dns          // Audible
+DOMAIN-SUFFIX,music.amazon.com,Proxy,force-remote-dns     // Amazon Music
+DOMAIN-SUFFIX,alexa.amazon.com,Proxy,force-remote-dns     // Alexa
+DOMAIN-SUFFIX,ring.com,Proxy,force-remote-dns             // Ring 设备
+
+// 广告与营销
+DOMAIN-SUFFIX,advertising.amazon.com,Proxy,force-remote-dns     // 广告
+DOMAIN-SUFFIX,affiliate-program.amazon.com,Proxy,force-remote-dns // 联盟
+DOMAIN-SUFFIX,live.amazon.com,Proxy,force-remote-dns           // 直播
+
+// 其他服务
+DOMAIN-SUFFIX,business.amazon.com,Proxy,force-remote-dns  // Amazon Business
+DOMAIN-SUFFIX,fresh.amazon.com,Proxy,force-remote-dns     // Amazon Fresh
+DOMAIN-SUFFIX,wholefoodsmarket.com,Proxy,force-remote-dns // Whole Foods
+DOMAIN-SUFFIX,go.amazon.com,Proxy,force-remote-dns        // Amazon Go
+DOMAIN-SUFFIX,pharmacy.amazon.com,Proxy,force-remote-dns  // Amazon Pharmacy
+DOMAIN-SUFFIX,pay.amazon.com,Proxy,force-remote-dns       // Amazon Pay
+DOMAIN-SUFFIX,twitch.tv,Proxy,force-remote-dns            // Twitch
+DOMAIN-SUFFIX,imdb.com,Proxy,force-remote-dns             // IMDb
+DOMAIN-SUFFIX,goodreads.com,Proxy,force-remote-dns        // Goodreads
+
+// 基础设施与支持
+DOMAIN-SUFFIX,cdn.amazon.com,DIRECT                       // CDN（可选直连优化）
+DOMAIN-SUFFIX,static.amazon.com,DIRECT                    // 静态资源（可选直连优化）
+DOMAIN-SUFFIX,support.amazon.com,Proxy,force-remote-dns   // 支持
+DOMAIN-SUFFIX,developer.amazon.com,Proxy,force-remote-dns // 开发者
+
+// 通配符兜底规则（低优先级）
+DOMAIN-SUFFIX,*.amazon.com,Proxy,force-remote-dns         // 所有未列出 amazon.com 子域名
+DOMAIN-SUFFIX,*.amazonaws.com,Proxy,force-remote-dns      // 所有未列出 amazonaws.com 子域名
+DOMAIN-SUFFIX,*.amazonaws.com.cn,Proxy,force-remote-dns   // 所有未列出 amazonaws.com.cn 子域名
