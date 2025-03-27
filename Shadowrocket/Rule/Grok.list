@@ -1,0 +1,103 @@
+# NAME: Grok
+# AUTHOR: linchao10058
+# REPO: https://github.com/linchao10058/iOS-PROXY/main/shadowrocket/Rule/Grok.list
+# UPDATED: 2025-03-27 00:15 PDT
+# DOMAIN-SUFFIX: 58
+# TOTAL: 58
+
+# 核心域名
+DOMAIN-SUFFIX,x.ai,Proxy,force-remote-dns              # xAI 主域名
+DOMAIN-SUFFIX,grok.x.ai,Proxy,force-remote-dns         # Grok 服务主域名
+DOMAIN-SUFFIX,api.grok.x.ai,Proxy,force-remote-dns     # Grok API 服务
+DOMAIN-SUFFIX,chat.grok.x.ai,Proxy,force-remote-dns    # Grok 聊天服务
+
+# 语音交互相关域名
+DOMAIN-SUFFIX,voice.grok.x.ai,Proxy,force-remote-dns   # 语音交互主服务
+DOMAIN-SUFFIX,speech.grok.x.ai,Proxy,force-remote-dns  # 语音生成服务
+DOMAIN-SUFFIX,audio.grok.x.ai,Proxy,force-remote-dns   # 音频处理服务
+DOMAIN-SUFFIX,transcribe.grok.x.ai,Proxy,force-remote-dns # 语音转录服务
+DOMAIN-SUFFIX,tts.grok.x.ai,Proxy,force-remote-dns     # 文本转语音服务
+DOMAIN-SUFFIX,stt.grok.x.ai,Proxy,force-remote-dns     # 语音转文本服务
+
+# 深度搜索（DeepSearch）相关域名
+DOMAIN-SUFFIX,deepsearch.grok.x.ai,Proxy,force-remote-dns # DeepSearch 主服务
+DOMAIN-SUFFIX,search.grok.x.ai,Proxy,force-remote-dns     # 搜索服务（包括网页搜索）
+DOMAIN-SUFFIX,realtime.grok.x.ai,Proxy,force-remote-dns   # 实时数据服务
+DOMAIN-SUFFIX,xdata.grok.x.ai,Proxy,force-remote-dns      # X 平台数据集成服务
+DOMAIN-SUFFIX,web.grok.x.ai,Proxy,force-remote-dns        # 网页爬取服务
+
+# Think 功能相关域名（包括 Think 和 Big Brain 模式）
+DOMAIN-SUFFIX,think.grok.x.ai,Proxy,force-remote-dns      # Think 模式服务
+DOMAIN-SUFFIX,bigbrain.grok.x.ai,Proxy,force-remote-dns   # Big Brain 模式服务
+DOMAIN-SUFFIX,reasoning.grok.x.ai,Proxy,force-remote-dns  # 推理服务
+
+# 图像生成与处理相关域名
+DOMAIN-SUFFIX,image.grok.x.ai,Proxy,force-remote-dns      # 图像生成服务（Aurora 模型）
+DOMAIN-SUFFIX,aurora.grok.x.ai,Proxy,force-remote-dns     # Aurora 模型服务
+DOMAIN-SUFFIX,vision.grok.x.ai,Proxy,force-remote-dns     # 视觉服务（图像理解）
+
+# 视频处理相关域名（多模态扩展）
+DOMAIN-SUFFIX,video.grok.x.ai,Proxy,force-remote-dns      # 视频处理服务
+DOMAIN-SUFFIX,stream.grok.x.ai,Proxy,force-remote-dns     # 视频流服务
+DOMAIN-SUFFIX,cdn.video.grok.x.ai,Proxy,force-remote-dns  # 视频 CDN 服务
+
+# PDF 理解相关域名
+DOMAIN-SUFFIX,pdf.grok.x.ai,Proxy,force-remote-dns        # PDF 理解服务
+
+# 模型相关域名
+DOMAIN-SUFFIX,grok-1.x.ai,Proxy,force-remote-dns          # Grok-1 模型服务
+DOMAIN-SUFFIX,grok-2.x.ai,Proxy,force-remote-dns          # Grok-2 模型服务
+DOMAIN-SUFFIX,grok-3.x.ai,Proxy,force-remote-dns          # Grok-3 模型服务
+DOMAIN-SUFFIX,grok-mini.x.ai,Proxy,force-remote-dns       # Grok Mini 模型服务
+DOMAIN-SUFFIX,grok-4.x.ai,Proxy,force-remote-dns          # 预留 Grok-4 模型服务（未来扩展）
+
+# 应用相关域名
+DOMAIN-SUFFIX,app.grok.x.ai,Proxy,force-remote-dns        # Grok 独立应用（Web/iOS/Android）
+DOMAIN-SUFFIX,ios.grok.x.ai,Proxy,force-remote-dns        # Grok iOS 应用服务
+DOMAIN-SUFFIX,android.grok.x.ai,Proxy,force-remote-dns    # Grok Android 应用服务
+
+# 实时协作与互动相关域名
+DOMAIN-SUFFIX,collab.grok.x.ai,Proxy,force-remote-dns     # 实时协作服务
+DOMAIN-SUFFIX,live.grok.x.ai,Proxy,force-remote-dns       # 实时互动服务（实时问答）
+
+# 云服务与存储相关域名
+DOMAIN-SUFFIX,cloud.grok.x.ai,Proxy,force-remote-dns      # 云服务
+DOMAIN-SUFFIX,storage.grok.x.ai,Proxy,force-remote-dns    # 存储服务（对话历史、生成内容）
+
+# 推送通知相关域名
+DOMAIN-SUFFIX,push.grok.x.ai,Proxy,force-remote-dns       # 推送通知服务
+DOMAIN-SUFFIX,notify.grok.x.ai,Proxy,force-remote-dns     # 通知服务（DeepSearch 结果更新）
+
+# 资源与支持服务
+DOMAIN-SUFFIX,cdn.grok.x.ai,Proxy,force-remote-dns        # Grok CDN 服务
+DOMAIN-SUFFIX,static.grok.x.ai,Proxy,force-remote-dns     # Grok 静态资源服务
+DOMAIN-SUFFIX,docs.grok.x.ai,Proxy,force-remote-dns       # Grok 文档服务
+
+# 开发者与 API 相关
+DOMAIN-SUFFIX,dev.grok.x.ai,Proxy,force-remote-dns        # Grok 开发者服务
+DOMAIN-SUFFIX,console.grok.x.ai,Proxy,force-remote-dns    # Grok 控制台服务
+DOMAIN-SUFFIX,enterprise.grok.x.ai,Proxy,force-remote-dns # 企业 API 服务
+DOMAIN-SUFFIX,tools.grok.x.ai,Proxy,force-remote-dns      # 工具使用服务
+DOMAIN-SUFFIX,code.grok.x.ai,Proxy,force-remote-dns       # 代码执行服务
+
+# 数据与分析服务
+DOMAIN-SUFFIX,analytics.grok.x.ai,Proxy,force-remote-dns  # Grok 数据分析服务
+DOMAIN-SUFFIX,logs.grok.x.ai,Proxy,force-remote-dns       # Grok 日志服务
+DOMAIN-SUFFIX,monitor.grok.x.ai,Proxy,force-remote-dns    # Grok 监控服务
+
+# 安全与验证
+DOMAIN-SUFFIX,auth.grok.x.ai,Proxy,force-remote-dns       # Grok 认证服务
+DOMAIN-SUFFIX,security.grok.x.ai,Proxy,force-remote-dns   # Grok 安全服务
+DOMAIN-SUFFIX,verify.grok.x.ai,Proxy,force-remote-dns     # Grok 验证服务
+
+# 国际化支持相关域名
+DOMAIN-SUFFIX,global.grok.x.ai,Proxy,force-remote-dns     # 国际化服务
+DOMAIN-SUFFIX,local.grok.x.ai,Proxy,force-remote-dns      # 本地化服务
+
+# 测试与实验性功能
+DOMAIN-SUFFIX,beta.grok.x.ai,Proxy,force-remote-dns       # Beta 测试服务
+DOMAIN-SUFFIX,exp.grok.x.ai,Proxy,force-remote-dns        # 实验性功能服务
+
+# 第三方集成相关域名
+DOMAIN-SUFFIX,oauth.grok.x.ai,Proxy,force-remote-dns      # OAuth 登录服务
+DOMAIN-SUFFIX,connect.grok.x.ai,Proxy,force-remote-dns    # 第三方连接服务
