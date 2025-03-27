@@ -1,83 +1,70 @@
-# NAME: Zalo 
-# AUTHOR: linchao10058 
-# REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Zalo.list
-# UPDATED: 2025-03-27 17:30 PDT
-# DOMAIN-SUFFIX: 42
-# DOMAIN: 1
-# TOTAL: 43
-# DESCRIPTION: The ultimate Zalo ruleset, fully integrating Zalo AI as a core service for absolute perfection.
+# NAME: Grok
+# AUTHOR: linchao10058
+# REPO: https://github.com/linchao10058/iOS-PROXY/main/Surge/Rule/Grok.list
+# UPDATED: 2025-03-28 00:25 PDT
+# DOMAIN-SUFFIX: 31
+# DOMAIN: 3
+# TOTAL: 34
+# DESCRIPTION: The ultimate Grok ruleset, covering all xAI services with optimized performance.
 
 # 配置说明：
-# 1. 置于 [Rule] 顶部，避免被其他规则（如 Twitter.list）误匹配。
+# 1. 置于 [Rule] 顶部，避免被其他规则误匹配。
 # 2. Surge: 使用远程 DNS（如 8.8.8.8, 1.1.1.1），启用 force-remote-dns。
 # 3. Shadowrocket: 设置全局 DNS 或代理内 DNS，忽略 force-remote-dns。
-# 4. 测试 CDN 域名（如 cdn.zalo.me）是否需调整为 Proxy。
-# 5. 定期抓包更新，确保覆盖新服务和域名。
+# 4. 测试 CDN 域名（如 cdn.grok.x.ai）是否需调整为 Proxy。
+# 5. 定期抓包更新，确保覆盖新服务。
 
 # 核心服务（高优先级）
-DOMAIN-SUFFIX,zalo.me,Proxy,force-remote-dns           # 主域名（核心服务）
-DOMAIN-SUFFIX,zalo.ai,Proxy,force-remote-dns          # AI 主域名（涵盖全部AI功能）
-DOMAIN-SUFFIX,zaloapp.com,Proxy,force-remote-dns       # 应用域名
-DOMAIN-SUFFIX,api.zalo.me,Proxy,force-remote-dns       # API 服务
-DOMAIN-SUFFIX,chat.zalo.me,Proxy,force-remote-dns      # 聊天服务
-DOMAIN-SUFFIX,call.zalo.me,Proxy,force-remote-dns      # 通话服务
-DOMAIN-SUFFIX,files.zalo.me,Proxy,force-remote-dns     # 文件服务
+DOMAIN-SUFFIX,x.ai,Proxy,force-remote-dns              # xAI 主域名
+DOMAIN-SUFFIX,grok.x.ai,Proxy,force-remote-dns         # Grok 服务主域名
+DOMAIN-SUFFIX,api.grok.x.ai,Proxy,force-remote-dns     # API 服务
+DOMAIN-SUFFIX,chat.grok.x.ai,Proxy,force-remote-dns    # 聊天服务
 
-# AI 服务（细化与补充）
-DOMAIN,avatar-api.zalo.ai,Proxy,force-remote-dns      # AI 头像API服务（精确匹配）
-DOMAIN-SUFFIX,ai.zalo.me,Proxy,force-remote-dns       # AI 子服务（兼容现有功能）
-DOMAIN-SUFFIX,chatbot.zalo.me,Proxy,force-remote-dns  # AI 聊天机器人（Kiki）
+# 版本化服务（精确匹配）
+DOMAIN,grok-v1.x.ai,Proxy,force-remote-dns             # Grok 1
+DOMAIN,grok-v2.x.ai,Proxy,force-remote-dns             # Grok 2
+DOMAIN,grok-v3.x.ai,Proxy,force-remote-dns             # Grok 3
 
-# 功能性服务
-DOMAIN-SUFFIX,pay.zalo.me,Proxy,force-remote-dns       # 支付服务（包含 wallet）
-DOMAIN-SUFFIX,shop.zalo.me,Proxy,force-remote-dns      # 商店服务
-DOMAIN-SUFFIX,oa.zalo.me,Proxy,force-remote-dns        # 开放平台
-DOMAIN-SUFFIX,ads.zalo.me,Proxy,force-remote-dns       # 广告服务（包含 ad/ads.api）
-DOMAIN-SUFFIX,game.zalo.me,Proxy,force-remote-dns      # 游戏服务（包含 games/gamecenter/api.game）
+# 多模态功能
+DOMAIN-SUFFIX,voice.grok.x.ai,Proxy,force-remote-dns   # 语音服务（包含 speech/tts/stt）
+DOMAIN-SUFFIX,image.grok.x.ai,Proxy,force-remote-dns   # 图像服务（包含 aurora/vision）
+DOMAIN-SUFFIX,video.grok.x.ai,Proxy,force-remote-dns   # 视频服务（包含 stream）
+DOMAIN-SUFFIX,pdf.grok.x.ai,Proxy,force-remote-dns     # PDF 服务
 
-# 多媒体与内容
-DOMAIN-SUFFIX,video.zalo.me,Proxy,force-remote-dns     # 视频服务（包含 live/stream）
-DOMAIN-SUFFIX,feed.zalo.me,Proxy,force-remote-dns      # 动态服务（包含 story/news）
-DOMAIN-SUFFIX,group.zalo.me,Proxy,force-remote-dns     # 群组服务
+# 搜索与推理
+DOMAIN-SUFFIX,search.grok.x.ai,Proxy,force-remote-dns  # 搜索服务（包含 deepsearch/realtime/xdata/web）
+DOMAIN-SUFFIX,think.grok.x.ai,Proxy,force-remote-dns   # 推理服务（包含 bigbrain/reasoning）
+
+# 模型相关
+DOMAIN-SUFFIX,grok-1.x.ai,Proxy,force-remote-dns       # Grok-1 模型
+DOMAIN-SUFFIX,grok-2.x.ai,Proxy,force-remote-dns       # Grok-2 模型
+DOMAIN-SUFFIX,grok-3.x.ai,Proxy,force-remote-dns       # Grok-3 模型
+DOMAIN-SUFFIX,grok-mini.x.ai,Proxy,force-remote-dns    # Grok Mini 模型
+
+# 应用与开发者
+DOMAIN-SUFFIX,app.grok.x.ai,Proxy,force-remote-dns     # 应用服务（包含 ios/android）
+DOMAIN-SUFFIX,dev.grok.x.ai,Proxy,force-remote-dns     # 开发者服务（包含 console/enterprise/tools/code）
 
 # 云存储与基础设施
-DOMAIN-SUFFIX,cloud.zalo.me,Proxy,force-remote-dns     # 云服务（包含 drive/storage）
-DOMAIN-SUFFIX,cdn.zalo.me,DIRECT                      # CDN 服务（可选直连优化）
-DOMAIN-SUFFIX,zadn.vn,DIRECT                         # Zalo CDN（包含视频/图片/特效）
-DOMAIN-SUFFIX,zdn.vn,DIRECT                          # 扩展 CDN（包含社交/头像）
-DOMAIN-SUFFIX,static.zaloapp.com,DIRECT               # 静态资源（可选直连优化）
+DOMAIN-SUFFIX,cloud.grok.x.ai,Proxy,force-remote-dns   # 云服务（包含 storage/gateway/lb）
+DOMAIN-SUFFIX,cdn.grok.x.ai,DIRECT                    # CDN 服务（可选直连优化）
+DOMAIN-SUFFIX,static.grok.x.ai,DIRECT                 # 静态资源（可选直连优化）
 
-# 关联生态
-DOMAIN-SUFFIX,zalo.vn,Proxy,force-remote-dns          # 越南主域名
-DOMAIN-SUFFIX,zalopay.vn,Proxy,force-remote-dns       # 支付服务（包含 api/gateway）
-DOMAIN-SUFFIX,zingmp3.vn,Proxy,force-remote-dns       # Zing MP3（包含 mp3.zing.vn）
+# 通知与监控
+DOMAIN-SUFFIX,push.grok.x.ai,Proxy,force-remote-dns    # 通知服务（包含 notify）
+DOMAIN-SUFFIX,monitor.grok.x.ai,Proxy,force-remote-dns # 监控服务（包含 analytics/logs）
 
-# 认证与安全
-DOMAIN-SUFFIX,auth.zalo.me,Proxy,force-remote-dns     # 认证服务（包含 oauth/security/verify）
-DOMAIN-SUFFIX,push.zalo.me,Proxy,force-remote-dns     # 通知服务（包含 notify）
+# 安全与认证
+DOMAIN-SUFFIX,auth.grok.x.ai,Proxy,force-remote-dns    # 认证服务（包含 security/verify/oauth）
 
-# 开发者与监控
-DOMAIN-SUFFIX,dev.zalo.me,Proxy,force-remote-dns      # 开发者服务（包含 platform）
-DOMAIN-SUFFIX,monitor.zalo.me,Proxy,force-remote-dns  # 监控服务（包含 stats/analytics）
-
-# 新增功能
-DOMAIN-SUFFIX,mini.zalo.me,Proxy,force-remote-dns     # 小程序
-DOMAIN-SUFFIX,work.zalo.me,Proxy,force-remote-dns     # 工作办公
-DOMAIN-SUFFIX,connect.zalo.me,Proxy,force-remote-dns  # 生态连接服务
-
-# 细化CDN与媒体服务（根据抓包启用）
-DOMAIN-SUFFIX,cdn.video.zadn.vn,DIRECT                # 视频 CDN
-DOMAIN-SUFFIX,s160-ava-talk.zadn.vn,DIRECT            # 头像服务
-DOMAIN-SUFFIX,zalo-effect.zadn.vn,DIRECT              # 特效服务
-DOMAIN-SUFFIX,mcloud-hls-pl-15-zstory-video-cne.zdn.vn,DIRECT # 视频流服务
+# 国际化与实验性
+DOMAIN-SUFFIX,beta.grok.x.ai,Proxy,force-remote-dns    # Beta 测试服务（包含 exp）
+DOMAIN-SUFFIX,global.grok.x.ai,Proxy,force-remote-dns  # 国际化服务（包含 us/eu/asia/local）
 
 # 第三方服务（根据抓包启用）
-DOMAIN-SUFFIX,zalo.s3.amazonaws.com,Proxy,force-remote-dns  # AWS 服务
-DOMAIN-SUFFIX,zalo.cloudflare-dns.com,Proxy,force-remote-dns # Cloudflare 服务
-DOMAIN-SUFFIX,gw.be.com.vn,Proxy,force-remote-dns           # 网关服务（越南本地）
+DOMAIN-SUFFIX,xai.s3.amazonaws.com,Proxy,force-remote-dns  # AWS 服务
+DOMAIN-SUFFIX,xai.cloudflare-dns.com,Proxy,force-remote-dns # Cloudflare 服务
 
 # 通配符兜底规则（低优先级）
-DOMAIN-SUFFIX,*.zalo.me,Proxy,force-remote-dns        # 所有未列出 zalo.me 子域名
-DOMAIN-SUFFIX,*.zalo.ai,Proxy,force-remote-dns        # 所有未列出 zalo.ai 子域名（AI全面覆盖）
-DOMAIN-SUFFIX,*.zaloapp.com,Proxy,force-remote-dns    # 所有未列出 zaloapp.com 子域名
-DOMAIN-SUFFIX,*.zadn.vn,DIRECT                       # 所有未列出 zadn.vn 子域名
+DOMAIN-SUFFIX,*.grok.x.ai,Proxy,force-remote-dns       # 所有未列出 grok.x.ai 子域名
+DOMAIN-SUFFIX,*.x.ai,Proxy,force-remote-dns            # 所有未列出 x.ai 子域名
