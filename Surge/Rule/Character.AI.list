@@ -1,1 +1,34 @@
+// NAME: Character.AI
+// AUTHOR: linchao10058
+// REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Character.AI.list
+// VERSION: v2.4.0
+// UPDATED: 2025-03-28 18:30 PDT
+// DESCRIPTION: Character.AI 全服务分流规则，支持通配和动态更新，适用于代理或直连策略
 
+# 一、核心服务（全面覆盖 character.ai 及其子域）
+DOMAIN-SUFFIX,character.ai,PROXY  # 通配匹配主站及所有子域（如 app、plus、games、api 等）
+DOMAIN,beta.character.ai,PROXY    # 旧版测试域名（已停用，单独列出以兼容历史流量）
+
+# 二、第三方依赖（视实际使用启用，涵盖 CDN 和推送服务）
+DOMAIN-SUFFIX,cloudflare.com,PROXY       # 若使用 Cloudflare CDN（可选，需验证）
+DOMAIN-SUFFIX,amazonaws.com,PROXY        # 若使用 AWS 服务（可选，需验证）
+DOMAIN-SUFFIX,firebase.google.com,PROXY  # 若使用 Firebase 推送（可选，需验证）
+
+# 三、社区相关（精确匹配，视需求启用）
+DOMAIN,discord.com/invite/characterai,PROXY  # 官方 Discord 社区邀请链接
+DOMAIN,reddit.com/r/CharacterAI,PROXY       # 官方 Reddit 社区
+
+# 注释说明：
+# - DOMAIN-SUFFIX,character.ai 覆盖所有子域，包括但不限于：
+#   - character.ai（主站）
+#   - status.character.ai（状态监控）
+#   - support.character.ai（帮助中心）
+#   - app.character.ai（移动应用）
+#   - plus.character.ai（订阅服务）
+#   - games.character.ai（游戏功能）
+#   - api.character.ai（API 接口）
+#   - mobile.character.ai（移动端服务）
+#   - push.character.ai（推送服务）
+#   - cdn.character.ai（静态资源）
+# - 第三方依赖需通过抓包或官方文档确认具体使用情况
+# - 更新建议：每月检查 character.ai 官网及状态页面，确保规则与服务同步
