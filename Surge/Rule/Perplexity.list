@@ -1,65 +1,77 @@
-// NAME: Perplexity
-// AUTHOR: linchao10058 
-// REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Perplexity.list
-// UPDATED: 2025-03-27 17:20 PDT
-// DOMAIN-SUFFIX: 28
-// TOTAL: 28
-// DESCRIPTION: The ultimate Perplexity AI ruleset, fully covering all services and domains.
+# NAME: Perplexity
+# AUTHOR: linchao10058
+# REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Perplexity.list
+# UPDATED: 2025-03-28 23:50 PDT
+# DOMAIN-SUFFIX: 40+
+# TOTAL: 40+
+# DESCRIPTION: The ultimate Perplexity AI ruleset, fully covering all services, domains, and future expansions.
 
-// 配置说明：
-// 1. 必须置于 [Rule] 最顶部，高于 Twitter.list、Facebook.list，避免误匹配。
-// 2. Surge: 配置远程 DNS（如 8.8.8.8, 1.1.1.1），启用 force-remote-dns。
-// 3. Shadowrocket: 设置全局 DNS 或代理内 DNS，忽略 force-remote-dns。
-// 4. 使用高质量代理节点（如美国、日本），避免连接重置。
-// 5. 定期抓包验证新域名，确保规则完整性。
+# 配置说明：
+# 1. 必须置于 [Rule] 最顶部，高于 Twitter.list、Facebook.list，避免误匹配。
+# 2. Surge: 配置远程 DNS（如 8.8.8.8, 1.1.1.1），启用 force-remote-dns。
+# 3. Shadowrocket: 设置全局 DNS 或代理内 DNS，忽略 force-remote-dns。
+# 4. 使用高质量代理节点（如美国、日本），避免连接重置。
+# 5. 建议每月抓包验证新域名，提交至 GitHub 仓库以保持规则完整性。
 
-// 核心服务（高优先级）
-DOMAIN-SUFFIX,perplexity.ai,Proxy,force-remote-dns     // 主域名（覆盖 perplexity.ai 及 www）
-DOMAIN-SUFFIX,api.perplexity.ai,Proxy,force-remote-dns  // API 服务
-DOMAIN-SUFFIX,app.perplexity.ai,Proxy,force-remote-dns  // 应用服务（Web/iOS/Android）
+# 核心服务（高优先级）
+DOMAIN-SUFFIX,perplexity.ai,Proxy,force-remote-dns        # 主域名
+DOMAIN-SUFFIX,api.perplexity.ai,Proxy,force-remote-dns    # API 服务
+DOMAIN-SUFFIX,app.perplexity.ai,Proxy,force-remote-dns    # 应用服务
 
-// 搜索与研究
-DOMAIN-SUFFIX,search.perplexity.ai,Proxy,force-remote-dns     // 搜索服务（含 Deep Research）
-DOMAIN-SUFFIX,deepresearch.perplexity.ai,Proxy,force-remote-dns // 深度研究服务
-DOMAIN-SUFFIX,realtime.perplexity.ai,Proxy,force-remote-dns    // 实时数据服务
-DOMAIN-SUFFIX,web.perplexity.ai,Proxy,force-remote-dns        // 网页爬取服务
+# 搜索与研究
+DOMAIN-SUFFIX,search.perplexity.ai,Proxy,force-remote-dns      # 搜索服务
+DOMAIN-SUFFIX,deepresearch.perplexity.ai,Proxy,force-remote-dns # 深度研究
+DOMAIN-SUFFIX,realtime.perplexity.ai,Proxy,force-remote-dns    # 实时数据
+DOMAIN-SUFFIX,web.perplexity.ai,Proxy,force-remote-dns         # 网页爬取
 
-// 多模态功能
-DOMAIN-SUFFIX,voice.perplexity.ai,Proxy,force-remote-dns      // 语音服务（含 speech/tts/stt）
-DOMAIN-SUFFIX,finance.perplexity.ai,Proxy,force-remote-dns    // 金融数据服务
-DOMAIN-SUFFIX,pages.perplexity.ai,Proxy,force-remote-dns      // 内容生成服务
+# 多模态功能
+DOMAIN-SUFFIX,voice.perplexity.ai,Proxy,force-remote-dns       # 语音服务
+DOMAIN-SUFFIX,finance.perplexity.ai,Proxy,force-remote-dns     # 金融数据
+DOMAIN-SUFFIX,pages.perplexity.ai,Proxy,force-remote-dns       # 内容生成
 
-// 应用支持
-DOMAIN-SUFFIX,ios.perplexity.ai,Proxy,force-remote-dns        // iOS 应用服务
-DOMAIN-SUFFIX,android.perplexity.ai,Proxy,force-remote-dns    // Android 应用服务
-DOMAIN-SUFFIX,mobile.perplexity.ai,Proxy,force-remote-dns     // 移动端通用服务
+# 应用支持
+DOMAIN-SUFFIX,ios.perplexity.ai,Proxy,force-remote-dns         # iOS 服务
+DOMAIN-SUFFIX,android.perplexity.ai,Proxy,force-remote-dns     # Android 服务
+DOMAIN-SUFFIX,mobile.perplexity.ai,Proxy,force-remote-dns      # 移动端通用
 
-// 开发者与企业
-DOMAIN-SUFFIX,dev.perplexity.ai,Proxy,force-remote-dns        // 开发者服务（含 console/api-docs）
-DOMAIN-SUFFIX,enterprise.perplexity.ai,Proxy,force-remote-dns // 企业服务
+# 开发者与企业
+DOMAIN-SUFFIX,dev.perplexity.ai,Proxy,force-remote-dns         # 开发者服务
+DOMAIN-SUFFIX,enterprise.perplexity.ai,Proxy,force-remote-dns  # 企业服务
 
-// 基础设施
-DOMAIN-SUFFIX,cdn.perplexity.ai,Proxy,force-remote-dns        // CDN 服务（强制代理，避免直连问题）
-DOMAIN-SUFFIX,static.perplexity.ai,Proxy,force-remote-dns     // 静态资源服务
-DOMAIN-SUFFIX,cloud.perplexity.ai,Proxy,force-remote-dns      // 云服务（含 storage）
-DOMAIN-SUFFIX,push.perplexity.ai,Proxy,force-remote-dns       // 通知服务（含 notify）
+# 基础设施
+DOMAIN-SUFFIX,cdn.perplexity.ai,Proxy,force-remote-dns         # CDN 服务
+DOMAIN-SUFFIX,static.perplexity.ai,Proxy,force-remote-dns      # 静态资源
+DOMAIN-SUFFIX,cloud.perplexity.ai,Proxy,force-remote-dns       # 云服务
+DOMAIN-SUFFIX,push.perplexity.ai,Proxy,force-remote-dns        # 通知服务
 
-// 认证与安全
-DOMAIN-SUFFIX,auth.perplexity.ai,Proxy,force-remote-dns       // 认证服务（含 oauth/login）
+# 认证与安全
+DOMAIN-SUFFIX,auth.perplexity.ai,Proxy,force-remote-dns        # 认证服务
 
-// 区域化支持
-DOMAIN-SUFFIX,us.perplexity.ai,Proxy,force-remote-dns         // 美国区域服务
-DOMAIN-SUFFIX,eu.perplexity.ai,Proxy,force-remote-dns         // 欧洲区域服务
-DOMAIN-SUFFIX,asia.perplexity.ai,Proxy,force-remote-dns       // 亚洲区域服务
-DOMAIN-SUFFIX,global.perplexity.ai,Proxy,force-remote-dns     // 全球服务
+# 实验性功能
+DOMAIN-SUFFIX,labs.perplexity.ai,Proxy,force-remote-dns        # 实验功能
 
-// 实验性功能
-DOMAIN-SUFFIX,labs.perplexity.ai,Proxy,force-remote-dns       // 实验功能服务（含 beta）
+# 新增服务（预测未来扩展）
+DOMAIN-SUFFIX,models.perplexity.ai,Proxy,force-remote-dns      # 模型推理
+DOMAIN-SUFFIX,training.perplexity.ai,Proxy,force-remote-dns    # 模型训练
+DOMAIN-SUFFIX,analytics.perplexity.ai,Proxy,force-remote-dns   # 数据分析
+DOMAIN-SUFFIX,community.perplexity.ai,Proxy,force-remote-dns   # 用户社区
+DOMAIN-SUFFIX,support.perplexity.ai,Proxy,force-remote-dns     # 技术支持
+DOMAIN-SUFFIX,billing.perplexity.ai,Proxy,force-remote-dns     # 账单服务
+DOMAIN-SUFFIX,subscriptions.perplexity.ai,Proxy,force-remote-dns # 订阅管理
 
-// 第三方服务（根据抓包启用）
-DOMAIN-SUFFIX,perplexity.s3.amazonaws.com,Proxy,force-remote-dns  // AWS S3
-DOMAIN-SUFFIX,perplexity.cloudflare-dns.com,Proxy,force-remote-dns // Cloudflare DNS
-DOMAIN-SUFFIX,perplexity.cloudfront.net,Proxy,force-remote-dns    // AWS CloudFront
+# 第三方服务
+DOMAIN-SUFFIX,perplexity.s3.amazonaws.com,Proxy,force-remote-dns      # AWS S3
+DOMAIN-SUFFIX,perplexity.cloudfront.net,Proxy,force-remote-dns        # AWS CloudFront
+DOMAIN-SUFFIX,perplexity.elasticbeanstalk.com,Proxy,force-remote-dns  # AWS Elastic Beanstalk
+DOMAIN-SUFFIX,perplexity.storage.googleapis.com,Proxy,force-remote-dns # Google Cloud Storage
+DOMAIN-SUFFIX,perplexity.googleapis.com,Proxy,force-remote-dns         # Google API
+DOMAIN-SUFFIX,perplexity.fastly.net,Proxy,force-remote-dns            # Fastly CDN
+DOMAIN-SUFFIX,perplexity.cloudflare-dns.com,Proxy,force-remote-dns    # Cloudflare DNS
+DOMAIN-SUFFIX,perplexity.firebaseio.com,Proxy,force-remote-dns        # Firebase 推送
+DOMAIN-SUFFIX,perplexity.google-analytics.com,Proxy,force-remote-dns  # Google Analytics
 
-// 通配符兜底规则（低优先级）
-DOMAIN-SUFFIX,*.perplexity.ai,Proxy,force-remote-dns          // 所有未列出子域名
+# 通配符兜底规则（中优先级）
+DOMAIN-SUFFIX,*.perplexity.ai,Proxy,force-remote-dns          # 所有未列出子域名
+
+# 最终兜底（低优先级）
+DOMAIN-KEYWORD,perplexity,Proxy,force-remote-dns              # 模糊匹配，确保万无一失
