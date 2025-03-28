@@ -1,0 +1,173 @@
+// NAME: Microsoft (Ultimate Global Edition)
+// AUTHOR: linchao10058 (Optimized by ChatGPT)
+// REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Microsoft.list
+// UPDATED: 2025-03-28 18:30 PDT
+// DESCRIPTION: Ultimate rule covering all Microsoft global services including Windows, Microsoft 365, Azure, Xbox, Copilot, Translator, LinkedIn, and dynamic updates.
+
+# Microsoft 核心域名（主要产品和服务）
+DOMAIN-SUFFIX,microsoft.com
+DOMAIN-SUFFIX,microsoftonline.com
+DOMAIN-SUFFIX,office.com
+DOMAIN-SUFFIX,windows.com
+DOMAIN-SUFFIX,live.com
+DOMAIN-SUFFIX,hotmail.com
+DOMAIN-SUFFIX,outlook.com
+DOMAIN-SUFFIX,onedrive.com
+DOMAIN-SUFFIX,sharepoint.com
+DOMAIN-SUFFIX,teams.microsoft.com
+DOMAIN-SUFFIX,skype.com
+DOMAIN-SUFFIX,xbox.com
+DOMAIN-SUFFIX,linkedin.com
+DOMAIN-SUFFIX,aka.ms
+
+# Azure 云服务
+DOMAIN-SUFFIX,azure.com
+DOMAIN-SUFFIX,azure.net
+DOMAIN-SUFFIX,azureedge.net
+DOMAIN-SUFFIX,azurefd.net
+DOMAIN-SUFFIX,azure-api.net
+DOMAIN-SUFFIX,management.azure.com
+DOMAIN-SUFFIX,portal.azure.com
+DOMAIN-SUFFIX,trafficmanager.net
+DOMAIN-SUFFIX,azurewebsites.net
+DOMAIN-SUFFIX,cloudapp.net
+DOMAIN-SUFFIX,azurecontainer.io
+DOMAIN-SUFFIX,azure-mobile.net
+DOMAIN-SUFFIX,aks.azure.com
+DOMAIN-SUFFIX,azconfig.io
+DOMAIN-SUFFIX,arc.azure.com
+
+# CDN & API
+DOMAIN-SUFFIX,msedge.net
+DOMAIN-SUFFIX,msocdn.com
+DOMAIN-SUFFIX,msftcdn.net
+DOMAIN-SUFFIX,msftstatic.com
+DOMAIN-SUFFIX,msftcloud.com
+DOMAIN-SUFFIX,spoprod-a.akamaihd.net
+DOMAIN-SUFFIX,msecnd.net
+DOMAIN-SUFFIX,vo.msecnd.net
+DOMAIN-SUFFIX,aadcdn.microsoftonline-p.com
+
+# Microsoft 365 相关
+DOMAIN-SUFFIX,microsoft365.com
+DOMAIN-SUFFIX,admin.microsoft.com
+DOMAIN-SUFFIX,config.office.net
+DOMAIN-SUFFIX,cdn.office.net
+DOMAIN-SUFFIX,forms.microsoft.com
+DOMAIN-SUFFIX,flow.microsoft.com
+DOMAIN-SUFFIX,powerapps.com
+DOMAIN-SUFFIX,powerbi.com
+DOMAIN-SUFFIX,onenote.com
+DOMAIN-SUFFIX,onenote.net
+DOMAIN-SUFFIX,sway.com
+DOMAIN-SUFFIX,insights.viva.office.com
+DOMAIN-SUFFIX,goals.viva.office.com
+DOMAIN-SUFFIX,viva.cloud.microsoft
+DOMAIN-SUFFIX,copilot.cloud.microsoft
+
+# 开发者平台 & AI
+DOMAIN-SUFFIX,dev.azure.com
+DOMAIN-SUFFIX,visualstudio.com
+DOMAIN-SUFFIX,marketplace.visualstudio.com
+DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,mcr.microsoft.com
+DOMAIN-SUFFIX,docker.ms
+DOMAIN-SUFFIX,nuget.org
+DOMAIN-SUFFIX,powershellgallery.com
+DOMAIN-SUFFIX,ai.microsoft.com
+DOMAIN-SUFFIX,cognitive.microsoft.com
+DOMAIN-SUFFIX,translate.microsoft.com
+DOMAIN-SUFFIX,translator.microsoft.com
+DOMAIN-SUFFIX,msTranslator.com
+DOMAIN-SUFFIX,graph.microsoft.com
+DOMAIN-SUFFIX,msgraph.cloud.microsoft
+
+# Windows & 设备相关
+DOMAIN-SUFFIX,windowsupdate.com
+DOMAIN-SUFFIX,update.microsoft.com
+DOMAIN-SUFFIX,download.microsoft.com
+DOMAIN-SUFFIX,go.microsoft.com
+DOMAIN-SUFFIX,surface.com
+DOMAIN-SUFFIX,hololens.com
+DOMAIN-SUFFIX,microsoftedge.com
+DOMAIN-SUFFIX,msedgewebview.com
+
+# Xbox & 游戏
+DOMAIN-SUFFIX,xboxlive.com
+DOMAIN-SUFFIX,gamepass.com
+DOMAIN-SUFFIX,msftgamessrv.com
+DOMAIN-SUFFIX,xboxservices.com
+DOMAIN-SUFFIX,mstea.ms
+
+# 认证 & 安全
+DOMAIN-SUFFIX,login.live.com
+DOMAIN-SUFFIX,login.microsoftonline.com
+DOMAIN-SUFFIX,msftauth.net
+DOMAIN-SUFFIX,msftauthimages.net
+DOMAIN-SUFFIX,msauth.net
+DOMAIN-SUFFIX,msftidentity.com
+DOMAIN-SUFFIX,msidentity.com
+DOMAIN-SUFFIX,msftconnecttest.com
+DOMAIN-SUFFIX,passport.net
+
+# 企业 & 商业服务
+DOMAIN-SUFFIX,dynamics.com
+DOMAIN-SUFFIX,advertising.microsoft.com
+DOMAIN-SUFFIX,defender.microsoft.com
+DOMAIN-SUFFIX,security.microsoft.com
+DOMAIN-SUFFIX,entra.microsoft.com
+DOMAIN-SUFFIX,partner.microsoft.com
+DOMAIN-SUFFIX,msstore.cn
+DOMAIN-SUFFIX,microsofthup.com
+DOMAIN-SUFFIX,msfteducation.com
+
+# 区域特定域名
+DOMAIN-SUFFIX,microsoft.cn
+DOMAIN-SUFFIX,azure.cn
+DOMAIN-SUFFIX,office.cn
+DOMAIN-SUFFIX,outlook.cn
+DOMAIN-SUFFIX,hotmail.co.uk
+DOMAIN-SUFFIX,live.cn
+DOMAIN-SUFFIX,msftauth.cn
+DOMAIN-SUFFIX,microsoft.us
+DOMAIN-SUFFIX,microsoft.co.uk
+DOMAIN-SUFFIX,microsoft.de
+DOMAIN-SUFFIX,microsoft.fr
+DOMAIN-SUFFIX,microsoft.in
+DOMAIN-SUFFIX,microsoft.jp
+DOMAIN-SUFFIX,microsoft.ru
+
+# 未来扩展（通配符以确保全面覆盖）
+DOMAIN-SUFFIX,*.microsoft.com
+DOMAIN-SUFFIX,*.azure.com
+DOMAIN-SUFFIX,*.windows.net
+DOMAIN-SUFFIX,*.cloud.microsoft
+DOMAIN-SUFFIX,*.live.com
+DOMAIN-SUFFIX,*.office.com
+DOMAIN-SUFFIX,*.linkedin.com
+DOMAIN-SUFFIX,*.msedge.net
+DOMAIN-SUFFIX,*.msecnd.net
+DOMAIN-SUFFIX,*.microsoftonline.com
+DOMAIN-SUFFIX,*.microsoft365.com
+DOMAIN-SUFFIX,*.xbox.com
+DOMAIN-SUFFIX,*.github.com
+DOMAIN-SUFFIX,*.visualstudio.com
+DOMAIN-SUFFIX,*.powerapps.com
+DOMAIN-SUFFIX,*.powerbi.com
+DOMAIN-SUFFIX,*.translator.microsoft.com
+DOMAIN-SUFFIX,*.msftauth.net
+DOMAIN-SUFFIX,*.msftcdn.net
+DOMAIN-SUFFIX,*.msidentity.com
+DOMAIN-SUFFIX,*.nuget.org
+DOMAIN-SUFFIX,*.docker.ms
+DOMAIN-SUFFIX,*.mcr.microsoft.com
+DOMAIN-SUFFIX,*.azurewebsites.net
+DOMAIN-SUFFIX,*.trafficmanager.net
+DOMAIN-SUFFIX,*.azureregions.com
+DOMAIN-SUFFIX,*.cloudapp.net
+
+# 备注：
+# - 新增 `*.microsoft.com` 和 `*.azure.com` 等通配符，确保未来域名变化时仍能正确匹配
+# - 添加更多 Microsoft 365、Azure、开发者工具、Windows 更新和安全认证相关域名
+# - 按类别组织，提高可读性和管理便利性
+# - 兼顾全球和区域特定服务，保证所有国家和地区的 Microsoft 服务分流正确
