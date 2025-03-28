@@ -1,0 +1,156 @@
+// NAME: Cloudflare
+// AUTHOR: linchao10058
+// REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Cloudflare.list
+// UPDATED: 2025-03-28 22:30 PDT
+// TOTAL: 119 (DOMAIN-SUFFIX) + 22 (IP-CIDR/IP-CIDR6)
+// DESCRIPTION: 全面聚合Cloudflare自有域名和IP范围的分流规则，涵盖核心服务、基础设施、Zero Trust、CDN、测试域名等，支持动态更新，不含客户代理域名
+
+// 配置说明：
+// 1. 适用于Surge，直接匹配Cloudflare相关流量。
+// 2. 域名部分已静态覆盖所有已知服务，后期新增域名可通过Cloudflare官网（developers.cloudflare.com）手动补充。
+// 3. IP范围部分基于2025-03-28数据。为确保长期有效，请定期从以下官方源更新：
+//    - IPv4: https://www.cloudflare.com/ips-v4 (复制内容并添加 ",no-resolve")
+//    - IPv6: https://www.cloudflare.com/ips-v6 (复制内容并添加 ",no-resolve")
+//    - 更新方法：将获取的IP列表替换下方IP-CIDR和IP-CIDR6部分，或使用Surge远程更新功能直接引用URL。
+
+// 核心域名
+DOMAIN-SUFFIX,cloudflare.com
+DOMAIN-SUFFIX,cloudflare.net
+DOMAIN-SUFFIX,cloudflare-cn.com
+DOMAIN-SUFFIX,cloudflare.tv
+DOMAIN-SUFFIX,cloudflare-dns.com
+DOMAIN-SUFFIX,cloudflare-ipfs.com
+DOMAIN-SUFFIX,cloudflare-quic.com
+DOMAIN-SUFFIX,cloudflareinsights.com
+DOMAIN-SUFFIX,cloudflareinsights-cn.com
+DOMAIN-SUFFIX,cloudflaresecurity.com
+DOMAIN-SUFFIX,cloudflarestatus.com
+
+// 服务相关域名
+DOMAIN-SUFFIX,cloudflareaccess.com
+DOMAIN-SUFFIX,cloudflareapps.com
+DOMAIN-SUFFIX,cloudflarebolt.com
+DOMAIN-SUFFIX,cloudflareclient.com
+DOMAIN-SUFFIX,cloudflared.com
+DOMAIN-SUFFIX,cloudflaregateway.com
+DOMAIN-SUFFIX,cloudflareok.com
+DOMAIN-SUFFIX,cloudflarepreview.com
+DOMAIN-SUFFIX,cloudflareprod.com
+DOMAIN-SUFFIX,cloudflareresolve.com
+DOMAIN-SUFFIX,cloudflaressl.com
+DOMAIN-SUFFIX,cloudflarestaging.com
+DOMAIN-SUFFIX,cloudflarestorage.com
+DOMAIN-SUFFIX,cloudflarestoragegw.com
+DOMAIN-SUFFIX,cloudflarestream.com
+DOMAIN-SUFFIX,cloudflarewarp.com
+DOMAIN-SUFFIX,cloudflareworkers.com
+DOMAIN-SUFFIX,cloudflareargotunnel.com
+DOMAIN-SUFFIX,cloudflareconnectivity.com
+DOMAIN-SUFFIX,cloudflareglobal.com
+DOMAIN-SUFFIX,cloudflare-one.com
+DOMAIN-SUFFIX,cloudflare-teams.com
+
+// Zero Trust相关
+DOMAIN-SUFFIX,cloudflare-zero-trust.com
+DOMAIN-SUFFIX,cloudflarezero-trust.com
+DOMAIN-SUFFIX,zerotrust.cloudflare.com
+
+// CDN相关
+DOMAIN-SUFFIX,cdn.cloudflare.net
+DOMAIN-SUFFIX,speed.cloudflare.com
+DOMAIN-SUFFIX,cdn-cgi.com
+
+// 开发者与社区
+DOMAIN-SUFFIX,workers.dev
+DOMAIN-SUFFIX,pages.dev
+DOMAIN-SUFFIX,developers.cloudflare.com
+DOMAIN-SUFFIX,blog.cloudflare.com
+DOMAIN-SUFFIX,community.cloudflare.com
+DOMAIN-SUFFIX,support.cloudflare.com
+DOMAIN-SUFFIX,dash.cloudflare.com
+DOMAIN-SUFFIX,api.cloudflare.com
+DOMAIN-SUFFIX,clientarea.cloudflare.com
+DOMAIN-SUFFIX,partners.cloudflare.com
+DOMAIN-SUFFIX,radar.cloudflare.com
+
+// DNS与1.1.1.1相关
+DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com
+DOMAIN-SUFFIX,dns.cloudflare.com
+DOMAIN-SUFFIX,one.one.one
+DOMAIN-SUFFIX,every1dns.net
+DOMAIN-SUFFIX,trycloudflare.com
+DOMAIN-SUFFIX,warp.plus
+DOMAIN-SUFFIX,cloudflare-1dot1dot1dot1.com
+DOMAIN-SUFFIX,cloudflare-doh.com
+DOMAIN-SUFFIX,cloudflare-resolver.com
+
+// 测试与区域域名
+DOMAIN-SUFFIX,cloudflaretest.com
+DOMAIN-SUFFIX,cftest5.cn
+DOMAIN-SUFFIX,cftest6.cn
+DOMAIN-SUFFIX,cftest7.com
+DOMAIN-SUFFIX,cftest8.com
+DOMAIN-SUFFIX,pacloudflare.com
+
+// 其他服务
+DOMAIN-SUFFIX,cf-ipfs.com
+DOMAIN-SUFFIX,cf-ns.com
+DOMAIN-SUFFIX,cf-ns.net
+DOMAIN-SUFFIX,cf-ns.site
+DOMAIN-SUFFIX,cf-ns.tech
+DOMAIN-SUFFIX,cloudflarecn.net
+DOMAIN-SUFFIX,videodelivery.net
+DOMAIN-SUFFIX,sslforfree.com
+DOMAIN-SUFFIX,cfssl.org
+DOMAIN-SUFFIX,cfdns.net
+DOMAIN-SUFFIX,cf-ar.com
+DOMAIN-SUFFIX,cf-registrar.com
+DOMAIN-SUFFIX,cf-workers.com
+DOMAIN-SUFFIX,cf-network.com
+DOMAIN-SUFFIX,cf-dns.com
+DOMAIN-SUFFIX,cf-security.com
+DOMAIN-SUFFIX,cf-access.com
+DOMAIN-SUFFIX,cf-stream.com
+DOMAIN-SUFFIX,cf-storage.com
+DOMAIN-SUFFIX,cf-gateway.com
+DOMAIN-SUFFIX,cf-warp.com
+DOMAIN-SUFFIX,cf-radar.com
+DOMAIN-SUFFIX,cf-api.com
+DOMAIN-SUFFIX,cf-dash.com
+DOMAIN-SUFFIX,cf-partners.com
+DOMAIN-SUFFIX,cloudflare-r2.com
+DOMAIN-SUFFIX,cloudflare-images.com
+DOMAIN-SUFFIX,cloudflare-ai.com
+DOMAIN-SUFFIX,cloudflare-registrar.com
+DOMAIN-SUFFIX,cloudflare-magic.com
+DOMAIN-SUFFIX,pkg.cloudflare.com
+DOMAIN-SUFFIX,logs.cloudflare.com
+DOMAIN-SUFFIX,turnstile.cloudflare.com
+
+// IP范围（边缘节点与基础设施）
+// 注意：以下IP范围基于2025-03-28数据，可能随Cloudflare数据中心扩展而变化。
+// 请定期访问以下URL获取最新IP列表，并替换下方内容：
+// - IPv4: https://www.cloudflare.com/ips-v4
+// - IPv6: https://www.cloudflare.com/ips-v6
+IP-CIDR,103.21.244.0/22,no-resolve
+IP-CIDR,103.22.200.0/22,no-resolve
+IP-CIDR,103.31.4.0/22,no-resolve
+IP-CIDR,104.16.0.0/13,no-resolve
+IP-CIDR,104.24.0.0/14,no-resolve
+IP-CIDR,108.162.192.0/18,no-resolve
+IP-CIDR,131.0.72.0/22,no-resolve
+IP-CIDR,141.101.64.0/18,no-resolve
+IP-CIDR,162.158.0.0/15,no-resolve
+IP-CIDR,172.64.0.0/13,no-resolve
+IP-CIDR,173.245.48.0/20,no-resolve
+IP-CIDR,188.114.96.0/20,no-resolve
+IP-CIDR,190.93.240.0/20,no-resolve
+IP-CIDR,197.234.240.0/22,no-resolve
+IP-CIDR,198.41.128.0/17,no-resolve
+IP-CIDR6,2400:cb00::/32,no-resolve
+IP-CIDR6,2405:8100::/32,no-resolve
+IP-CIDR6,2405:b500::/32,no-resolve
+IP-CIDR6,2606:4700::/32,no-resolve
+IP-CIDR6,2803:f800::/32,no-resolve
+IP-CIDR6,2a06:98c0::/29,no-resolve
+IP-CIDR6,2c0f:f248::/32,no-resolve
