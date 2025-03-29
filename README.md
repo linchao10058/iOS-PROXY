@@ -15,4 +15,4 @@
 ## 使用方法
 1. 下载项目：
    ```bash
-   git clone https://github.com/linchao10058/iOS-PROXY.git
+ https://github.com/linchao10058/iOS-PROXY.git
