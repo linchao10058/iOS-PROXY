@@ -1,91 +1,97 @@
 # NAME: Zalo
 # AUTHOR: linchao10058
-# VERSION: 1.0
+# VERSION: 1.2
 # REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Zalo.list
 # UPDATED: 2025-03-29 12:30 PDT
-# DOMAIN-SUFFIX: 60+
+# DOMAIN: 4
+# DOMAIN-SUFFIX: 55+
+# DOMAIN-KEYWORD: 1
 # TOTAL: 60+
-# DESCRIPTION: The ultimate Zalo ruleset, fully covering all services, domains, and future expansions.
+# DESCRIPTION: Comprehensive Zalo ruleset covering all services, optimized for accuracy and future adaptability.
 
 # 配置说明：
 # 1. 必须置于 [Rule] 最顶部，高于 Twitter.list、Facebook.list，避免误匹配。
 # 2. Surge: 配置远程 DNS（如 8.8.8.8, 1.1.1.1），启用 force-remote-dns。
 # 3. Shadowrocket: 设置全局 DNS 或代理内 DNS，忽略 force-remote-dns。
-# 4. 使用高质量代理节点（如美国、日本），避免连接重置。
-# 5. 建议每月抓包验证新域名，可配合 mitmproxy 脚本自动化提取，提交至 GitHub。
+# 4. 使用高质量代理节点（如美国、日本、越南），避免连接重置。
+# 5. 建议每月抓包验证新域名，可用 mitmproxy 脚本自动化提取，提交至 GitHub。
 
-# 核心服务（最高优先级）
-DOMAIN-SUFFIX,zalo.me,Proxy,force-remote-dns           # 主域名
-DOMAIN-SUFFIX,zaloapp.com,Proxy,force-remote-dns       # 应用域名
-DOMAIN-SUFFIX,api.zalo.me,Proxy,force-remote-dns       # API 服务
-DOMAIN-SUFFIX,chat.zalo.me,Proxy,force-remote-dns      # 聊天服务
-DOMAIN-SUFFIX,call.zalo.me,Proxy,force-remote-dns      # 通话服务
-DOMAIN-SUFFIX,files.zalo.me,Proxy,force-remote-dns     # 文件服务
+# 核心服务（精确匹配，最高优先级）
+DOMAIN,api.zalo.me,Proxy,force-remote-dns         # API 服务
+DOMAIN,chat.zalo.me,Proxy,force-remote-dns        # 聊天服务
+DOMAIN,call.zalo.me,Proxy,force-remote-dns        # 通话服务
+DOMAIN,files.zalo.me,Proxy,force-remote-dns       # 文件服务
+
+# 核心服务（高优先级）
+DOMAIN-SUFFIX,zalo.me,Proxy,force-remote-dns      # 主域名
+DOMAIN-SUFFIX,zaloapp.com,Proxy,force-remote-dns  # 应用域名
 
 # 通配符（次高优先级）
-DOMAIN-SUFFIX,*.zalo.me,Proxy,force-remote-dns         # 覆盖所有 zalo.me 子域名
-DOMAIN-SUFFIX,*.zaloapp.com,Proxy,force-remote-dns     # 覆盖所有 zaloapp.com 子域名
+DOMAIN-SUFFIX,*.zalo.me,Proxy,force-remote-dns    # 覆盖所有未列出 zalo.me 子域名
+DOMAIN-SUFFIX,*.zaloapp.com,Proxy,force-remote-dns # 覆盖所有未列出 zaloapp.com 子域名
 
-# 社交与动态
-DOMAIN-SUFFIX,feed.zalo.me,Proxy,force-remote-dns      # 动态服务
-
-# 支付与金融
+# 功能服务
 DOMAIN-SUFFIX,pay.zalo.me,Proxy,force-remote-dns       # 支付服务
 DOMAIN-SUFFIX,shop.zalo.me,Proxy,force-remote-dns      # 商店服务
-DOMAIN-SUFFIX,zalopay.vn,Proxy,force-remote-dns        # ZaloPay 主域名
-DOMAIN-SUFFIX,zalopay.com,Proxy,force-remote-dns       # ZaloPay 扩展域名
-
-# AI 功能
+DOMAIN-SUFFIX,platform.zalo.me,Proxy,force-remote-dns  # 平台服务
+DOMAIN-SUFFIX,oa.zalo.me,Proxy,force-remote-dns        # 公众号服务
+DOMAIN-SUFFIX,ads.zalo.me,Proxy,force-remote-dns       # 广告服务
+DOMAIN-SUFFIX,mini.zalo.me,Proxy,force-remote-dns      # 小程序
 DOMAIN-SUFFIX,ai.zalo.me,Proxy,force-remote-dns        # AI 服务
 DOMAIN-SUFFIX,avatar.zalo.me,Proxy,force-remote-dns    # AI 头像
-DOMAIN-SUFFIX,zalo.ai,Proxy,force-remote-dns           # 最新 AI 功能
-
-# 多媒体与娱乐
-DOMAIN-SUFFIX,video.zalo.me,Proxy,force-remote-dns     # 视频流服务
-DOMAIN-SUFFIX,zingmp3.vn,Proxy,force-remote-dns        # Zing MP3 音乐
-DOMAIN-SUFFIX,mp3.zing.vn,Proxy,force-remote-dns       # Zing MP3 旧域名
-DOMAIN-SUFFIX,game.zalo.me,Proxy,force-remote-dns      # 游戏服务
-DOMAIN-SUFFIX,games.zalo.me,Proxy,force-remote-dns     # 游戏扩展服务
-
-# 办公与工作
+DOMAIN-SUFFIX,feed.zalo.me,Proxy,force-remote-dns      # 动态
 DOMAIN-SUFFIX,work.zalo.me,Proxy,force-remote-dns      # 工作服务
 DOMAIN-SUFFIX,office.zalo.me,Proxy,force-remote-dns    # 办公服务
 DOMAIN-SUFFIX,workspace.zalo.me,Proxy,force-remote-dns # 工作空间
+DOMAIN-SUFFIX,game.zalo.me,Proxy,force-remote-dns      # 游戏服务
+DOMAIN-SUFFIX,games.zalo.me,Proxy,force-remote-dns     # 游戏服务扩展
+DOMAIN-SUFFIX,video.zalo.me,Proxy,force-remote-dns     # 视频服务
+DOMAIN-SUFFIX,calendar.zalo.me,Proxy,force-remote-dns  # 日历服务
+DOMAIN-SUFFIX,poll.zalo.me,Proxy,force-remote-dns      # 投票服务
+DOMAIN-SUFFIX,redpacket.zalo.me,Proxy,force-remote-dns # 红包服务
 
 # 云服务与备份
-DOMAIN-SUFFIX,zalo.cloud,Proxy,force-remote-dns        # My Cloud 云服务
+DOMAIN-SUFFIX,zalo.cloud,Proxy,force-remote-dns        # 云服务
+DOMAIN-SUFFIX,mycloud.zalo.me,Proxy,force-remote-dns   # My Cloud 云备份
 DOMAIN-SUFFIX,drive.zalo.me,Proxy,force-remote-dns     # Google Drive 备份
 
-# 开发者与开放平台
-DOMAIN-SUFFIX,auth.zalo.me,Proxy,force-remote-dns      # 开放接口登录
-DOMAIN-SUFFIX,mini.zalo.me,Proxy,force-remote-dns      # MiniApps
-DOMAIN-SUFFIX,platform.zalo.me,Proxy,force-remote-dns  # 平台服务
-DOMAIN-SUFFIX,oa.zalo.me,Proxy,force-remote-dns        # 官方账号
-DOMAIN-SUFFIX,ads.zalo.me,Proxy,force-remote-dns       # 广告服务
+# 第三方服务
+DOMAIN-SUFFIX,zalo.vn,Proxy,force-remote-dns           # 越南本地服务
+DOMAIN-SUFFIX,zalopay.vn,Proxy,force-remote-dns        # ZaloPay 越南域名
+DOMAIN-SUFFIX,zalopay.com,Proxy,force-remote-dns       # ZaloPay 国际域名
+DOMAIN-SUFFIX,zingmp3.vn,Proxy,force-remote-dns        # ZingMP3 音乐
+DOMAIN-SUFFIX,mp3.zing.vn,Proxy,force-remote-dns       # ZingMP3 旧域名
+DOMAIN-SUFFIX,zalo.ai,Proxy,force-remote-dns           # 最新 AI 功能域名
 
-# 基础设施与 CDN
-DOMAIN-SUFFIX,static.zaloapp.com,Proxy,force-remote-dns # 静态资源
+# 资源与扩展服务
 DOMAIN-SUFFIX,cdn.zalo.me,Proxy,force-remote-dns       # CDN 服务
+DOMAIN-SUFFIX,static.zaloapp.com,Proxy,force-remote-dns # 静态资源
 DOMAIN-SUFFIX,notify.zalo.me,Proxy,force-remote-dns    # 通知服务
-DOMAIN-SUFFIX,zadn.vn,Proxy,force-remote-dns           # Zalo CDN
-DOMAIN-SUFFIX,zdn.vn,Proxy,force-remote-dns            # Zalo 扩展服务
-DOMAIN-SUFFIX,*.zadn.vn,Proxy,force-remote-dns         # Zalo CDN 通配符
-DOMAIN-SUFFIX,*.zdn.vn,Proxy,force-remote-dns          # Zalo 扩展通配符
+DOMAIN-SUFFIX,auth.zalo.me,Proxy,force-remote-dns      # 认证登录
+DOMAIN-SUFFIX,zadn.vn,Proxy,force-remote-dns          # Zalo CDN 服务
+DOMAIN-SUFFIX,zdn.vn,Proxy,force-remote-dns           # Zalo 扩展服务
+DOMAIN-SUFFIX,broadcast.api.zaloapp.com,Proxy,force-remote-dns  # 广播服务
+DOMAIN-SUFFIX,log.api.zaloapp.com,Proxy,force-remote-dns       # 日志服务
+DOMAIN-SUFFIX,s160-ava-talk.zadn.vn,Proxy,force-remote-dns     # 头像服务
+DOMAIN-SUFFIX,zalo-effect.zadn.vn,Proxy,force-remote-dns       # 特效服务
+DOMAIN-SUFFIX,avatar.talk.zdn.vn,Proxy,force-remote-dns        # 头像服务
+DOMAIN-SUFFIX,mcloud-hls-pl-15-zstory-video-cne.zdn.vn,Proxy,force-remote-dns  # 视频流服务
+DOMAIN-SUFFIX,zs3-whls-ch-15-zstory-video-cne.zdn.vn,Proxy,force-remote-dns    # 视频流服务
+DOMAIN-SUFFIX,cover-talk.zadn.vn,Proxy,force-remote-dns        # 封面服务
+DOMAIN-SUFFIX,s240-ava-grp-talk.zadn.vn,Proxy,force-remote-dns # 群组头像服务
+DOMAIN-SUFFIX,stc-zoa-extension.zdn.vn,Proxy,force-remote-dns  # 扩展服务
+DOMAIN-SUFFIX,zpsocial2-f1-org.zadn.vn,Proxy,force-remote-dns  # 社交服务
+DOMAIN-SUFFIX,photo-logo-mapps.zadn.vn,Proxy,force-remote-dns  # 图片服务
+DOMAIN-SUFFIX,analytics.zapps.me,Proxy,force-remote-dns        # 分析服务
 
-# 扩展服务（基于流量与预测）
-DOMAIN-SUFFIX,broadcast.api.zaloapp.com,Proxy,force-remote-dns # 广播服务
-DOMAIN-SUFFIX,log.api.zaloapp.com,Proxy,force-remote-dns      # 日志服务
-DOMAIN-SUFFIX,analytics.zapps.me,Proxy,force-remote-dns       # 分析服务
-DOMAIN-SUFFIX,gw.be.com.vn,Proxy,force-remote-dns            # 网关服务
-
-# 区域化服务（预测）
-DOMAIN-SUFFIX,us.zalo.me,Proxy,force-remote-dns         # 美国区域
-DOMAIN-SUFFIX,jp.zalo.me,Proxy,force-remote-dns         # 日本区域
-
-# 第三方云服务（可能集成）
-DOMAIN-SUFFIX,zalo.s3.amazonaws.com,Proxy,force-remote-dns    # AWS S3
-DOMAIN-SUFFIX,zalo.cloudfront.net,Proxy,force-remote-dns      # AWS CloudFront
-DOMAIN-SUFFIX,zalo.storage.googleapis.com,Proxy,force-remote-dns # Google Cloud
+# 通配符兜底（中优先级）
+DOMAIN-SUFFIX,*.zadn.vn,Proxy,force-remote-dns         # 覆盖所有 zadn.vn 子域名
+DOMAIN-SUFFIX,*.zdn.vn,Proxy,force-remote-dns          # 覆盖所有 zdn.vn 子域名
 
 # 最终兜底（低优先级）
 DOMAIN-KEYWORD,zalo,Proxy,force-remote-dns             # 模糊匹配，确保万无一失
+
+# 验证方法：
+# 1. 使用 Surge 调试功能，查看请求日志中 Zalo 相关请求是否正确匹配规则。
+# 2. 打开 Zalo 应用，检查是否能正常登录并使用所有功能（如聊天、通话、支付、AI）。
+# 3. 建议使用 mitmproxy 等工具定期抓包，检查是否有新域名需要添加。
