@@ -1,20 +1,20 @@
 # NAME: Zalo
 # AUTHOR: linchao10058
-# VERSION: 1.2
+# VERSION: 1.3
 # REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Zalo.list
-# UPDATED: 2025-03-29 12:30 PDT
+# UPDATED: 2025-03-29 13:30 PDT
 # DOMAIN: 4
-# DOMAIN-SUFFIX: 55+
+# DOMAIN-SUFFIX: 60+
 # DOMAIN-KEYWORD: 1
-# TOTAL: 60+
-# DESCRIPTION: Comprehensive Zalo ruleset covering all services, optimized for accuracy and future adaptability.
+# TOTAL: 65+
+# DESCRIPTION: Comprehensive Zalo ruleset covering all services, including newly identified domains, optimized for full coverage and adaptability.
 
 # 配置说明：
 # 1. 必须置于 [Rule] 最顶部，高于 Twitter.list、Facebook.list，避免误匹配。
 # 2. Surge: 配置远程 DNS（如 8.8.8.8, 1.1.1.1），启用 force-remote-dns。
 # 3. Shadowrocket: 设置全局 DNS 或代理内 DNS，忽略 force-remote-dns。
-# 4. 使用高质量代理节点（如美国、日本、越南），避免连接重置。
-# 5. 建议每月抓包验证新域名，可用 mitmproxy 脚本自动化提取，提交至 GitHub。
+# 4. 使用高质量代理节点（如美国、日本、越南），确保低延迟和稳定性。
+# 5. 建议每月抓包验证新域名，使用 mitmproxy 或 Charles 自动化提取，提交至 GitHub。
 
 # 核心服务（精确匹配，最高优先级）
 DOMAIN,api.zalo.me,Proxy,force-remote-dns         # API 服务
@@ -25,10 +25,14 @@ DOMAIN,files.zalo.me,Proxy,force-remote-dns       # 文件服务
 # 核心服务（高优先级）
 DOMAIN-SUFFIX,zalo.me,Proxy,force-remote-dns      # 主域名
 DOMAIN-SUFFIX,zaloapp.com,Proxy,force-remote-dns  # 应用域名
+DOMAIN-SUFFIX,zalo.ai,Proxy,force-remote-dns      # AI 功能主域名
+DOMAIN-SUFFIX,zalo.cloud,Proxy,force-remote-dns   # 云服务主域名
 
 # 通配符（次高优先级）
-DOMAIN-SUFFIX,*.zalo.me,Proxy,force-remote-dns    # 覆盖所有未列出 zalo.me 子域名
-DOMAIN-SUFFIX,*.zaloapp.com,Proxy,force-remote-dns # 覆盖所有未列出 zaloapp.com 子域名
+DOMAIN-SUFFIX,*.zalo.me,Proxy,force-remote-dns    # 覆盖所有 zalo.me 子域名
+DOMAIN-SUFFIX,*.zaloapp.com,Proxy,force-remote-dns # 覆盖所有 zaloapp.com 子域名
+DOMAIN-SUFFIX,*.zalo.cloud,Proxy,force-remote-dns # 覆盖所有 zalo.cloud 子域名（如 ai.zalo.cloud）
+DOMAIN-SUFFIX,*.zbox.vn,Proxy,force-remote-dns    # 覆盖所有 zbox.vn 子域名（如 cloud.zbox.vn）
 
 # 功能服务
 DOMAIN-SUFFIX,pay.zalo.me,Proxy,force-remote-dns       # 支付服务
@@ -49,11 +53,12 @@ DOMAIN-SUFFIX,video.zalo.me,Proxy,force-remote-dns     # 视频服务
 DOMAIN-SUFFIX,calendar.zalo.me,Proxy,force-remote-dns  # 日历服务
 DOMAIN-SUFFIX,poll.zalo.me,Proxy,force-remote-dns      # 投票服务
 DOMAIN-SUFFIX,redpacket.zalo.me,Proxy,force-remote-dns # 红包服务
+DOMAIN-SUFFIX,ai.zalo.cloud,Proxy,force-remote-dns     # AI 云服务（明确列出）
 
 # 云服务与备份
-DOMAIN-SUFFIX,zalo.cloud,Proxy,force-remote-dns        # 云服务
 DOMAIN-SUFFIX,mycloud.zalo.me,Proxy,force-remote-dns   # My Cloud 云备份
 DOMAIN-SUFFIX,drive.zalo.me,Proxy,force-remote-dns     # Google Drive 备份
+DOMAIN-SUFFIX,cloud.zbox.vn,Proxy,force-remote-dns     # Zbox 云服务
 
 # 第三方服务
 DOMAIN-SUFFIX,zalo.vn,Proxy,force-remote-dns           # 越南本地服务
@@ -61,7 +66,7 @@ DOMAIN-SUFFIX,zalopay.vn,Proxy,force-remote-dns        # ZaloPay 越南域名
 DOMAIN-SUFFIX,zalopay.com,Proxy,force-remote-dns       # ZaloPay 国际域名
 DOMAIN-SUFFIX,zingmp3.vn,Proxy,force-remote-dns        # ZingMP3 音乐
 DOMAIN-SUFFIX,mp3.zing.vn,Proxy,force-remote-dns       # ZingMP3 旧域名
-DOMAIN-SUFFIX,zalo.ai,Proxy,force-remote-dns           # 最新 AI 功能域名
+DOMAIN-SUFFIX,xbox.vn,Proxy,force-remote-dns           # Xbox 服务（可能为 Zalo 相关）
 
 # 资源与扩展服务
 DOMAIN-SUFFIX,cdn.zalo.me,Proxy,force-remote-dns       # CDN 服务
@@ -70,6 +75,7 @@ DOMAIN-SUFFIX,notify.zalo.me,Proxy,force-remote-dns    # 通知服务
 DOMAIN-SUFFIX,auth.zalo.me,Proxy,force-remote-dns      # 认证登录
 DOMAIN-SUFFIX,zadn.vn,Proxy,force-remote-dns          # Zalo CDN 服务
 DOMAIN-SUFFIX,zdn.vn,Proxy,force-remote-dns           # Zalo 扩展服务
+DOMAIN-SUFFIX,za.zdn.vn,Proxy,force-remote-dns         # Zalo 扩展子服务
 DOMAIN-SUFFIX,broadcast.api.zaloapp.com,Proxy,force-remote-dns  # 广播服务
 DOMAIN-SUFFIX,log.api.zaloapp.com,Proxy,force-remote-dns       # 日志服务
 DOMAIN-SUFFIX,s160-ava-talk.zadn.vn,Proxy,force-remote-dns     # 头像服务
@@ -92,6 +98,7 @@ DOMAIN-SUFFIX,*.zdn.vn,Proxy,force-remote-dns          # 覆盖所有 zdn.vn 子
 DOMAIN-KEYWORD,zalo,Proxy,force-remote-dns             # 模糊匹配，确保万无一失
 
 # 验证方法：
-# 1. 使用 Surge 调试功能，查看请求日志中 Zalo 相关请求是否正确匹配规则。
-# 2. 打开 Zalo 应用，检查是否能正常登录并使用所有功能（如聊天、通话、支付、AI）。
-# 3. 建议使用 mitmproxy 等工具定期抓包，检查是否有新域名需要添加。
+# 1. 使用 Surge 调试功能，查看请求日志中 Zalo 相关请求（包括 zalo.ai、zalo.cloud 等）是否正确匹配规则。
+# 2. 打开 Zalo 应用，测试所有功能（如聊天、通话、支付、AI、云服务）是否正常运行。
+# 3. 使用 mitmproxy 或 Charles 抓包，检查是否有未匹配的 Zalo 相关域名，若有，立即补充。
+# 4. 确保规则文件置于 [Rule] 顶部，避免被其他规则覆盖。
