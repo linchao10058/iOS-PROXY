@@ -1,0 +1,65 @@
+# NAME: Mistral.AI
+# AUTHOR: linchao10058
+# VERSION: 1.0
+# REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Mistral.AI.list
+# UPDATED: 2025-03-29 21:00 PDT
+# DOMAIN: 4
+# DOMAIN-SUFFIX: 20+
+# DOMAIN-KEYWORD: 1
+# TOTAL: 25+
+# DESCRIPTION: Comprehensive Mistral AI and Le Chat ruleset covering all services, subdomains, and future expansions.
+
+# 配置说明：
+# 1. 必须置于 [Rule] 最顶部，高于 Twitter.list、Facebook.list，避免误匹配。
+# 2. Surge: 配置远程 DNS（如 8.8.8.8, 1.1.1.1），启用 force-remote-dns。
+# 3. Shadowrocket: 设置全局 DNS 或代理内 DNS，忽略 force-remote-dns。
+# 4. 使用高质量代理节点（如美国、日本、欧洲），确保低延迟。
+# 5. 建议每月抓包验证新域名，使用 mitmproxy 或 Charles 提取，提交至 GitHub。
+
+# 核心服务（精确匹配，最高优先级）
+DOMAIN,mistral.ai,Proxy,force-remote-dns        # 主域名
+DOMAIN,api.mistral.ai,Proxy,force-remote-dns    # API 服务
+DOMAIN,chat.mistral.ai,Proxy,force-remote-dns   # Le Chat 入口
+DOMAIN,console.mistral.ai,Proxy,force-remote-dns # La Plateforme 控制台
+
+# 核心服务（高优先级）
+DOMAIN-SUFFIX,lechat.mistral.ai,Proxy,force-remote-dns  # Le Chat 独立入口
+
+# 通配符（次高优先级）
+DOMAIN-SUFFIX,*.mistral.ai,Proxy,force-remote-dns       # 覆盖所有 mistral.ai 子域名
+
+# Le Chat 相关服务
+DOMAIN-SUFFIX,app.mistral.ai,Proxy,force-remote-dns     # 移动应用支持
+DOMAIN-SUFFIX,auth.mistral.ai,Proxy,force-remote-dns    # 用户认证
+
+# 模型与开发服务
+DOMAIN-SUFFIX,models.mistral.ai,Proxy,force-remote-dns  # 模型访问
+DOMAIN-SUFFIX,docs.mistral.ai,Proxy,force-remote-dns    # 官方文档
+DOMAIN-SUFFIX,platform.mistral.ai,Proxy,force-remote-dns # 平台服务
+
+# 云服务与第三方集成
+DOMAIN-SUFFIX,mistral.azure.com,Proxy,force-remote-dns  # Azure 托管
+DOMAIN-SUFFIX,mistral.gcp.com,Proxy,force-remote-dns    # Google Cloud 集成
+DOMAIN-SUFFIX,mistral.aws.com,Proxy,force-remote-dns    # AWS 集成
+DOMAIN-SUFFIX,cdn.mistral.ai,Proxy,force-remote-dns     # CDN 服务
+DOMAIN-SUFFIX,static.mistral.ai,Proxy,force-remote-dns  # 静态资源
+
+# 扩展功能
+DOMAIN-SUFFIX,search.mistral.ai,Proxy,force-remote-dns  # 网页搜索
+DOMAIN-SUFFIX,vision.mistral.ai,Proxy,force-remote-dns  # 图像处理
+DOMAIN-SUFFIX,code.mistral.ai,Proxy,force-remote-dns    # 代码生成
+DOMAIN-SUFFIX,flux.mistral.ai,Proxy,force-remote-dns    # 图像生成（Flux）
+
+# 企业与支持服务
+DOMAIN-SUFFIX,enterprise.mistral.ai,Proxy,force-remote-dns # 企业服务
+DOMAIN-SUFFIX,support.mistral.ai,Proxy,force-remote-dns    # 技术支持
+DOMAIN-SUFFIX,billing.mistral.ai,Proxy,force-remote-dns    # 账单管理
+
+# 最终兜底（低优先级）
+DOMAIN-KEYWORD,mistral,Proxy,force-remote-dns           # 模糊匹配，确保万无一失
+
+# 验证方法：
+# 1. 使用 Surge 调试功能，检查 mistral.ai、chat.mistral.ai 等请求是否匹配。
+# 2. 打开 Le Chat（chat.mistral.ai）或应用，测试功能（如搜索、图像生成）是否正常。
+# 3. 使用 mitmproxy 抓包，验证是否有未匹配的 Mistral 相关域名，若有立即补充。
+# 4. 确保规则置于 [Rule] 顶部，避免被其他规则覆盖。
