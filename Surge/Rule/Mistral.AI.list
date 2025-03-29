@@ -1,16 +1,16 @@
 # NAME: Mistral.AI
 # AUTHOR: linchao10058
-# VERSION: 1.0
+# VERSION: 1.1
 # REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Mistral.AI.list
-# UPDATED: 2025-03-29 21:00 PDT
+# UPDATED: 2025-03-29 23:00 PDT
 # DOMAIN: 4
 # DOMAIN-SUFFIX: 20+
 # DOMAIN-KEYWORD: 1
 # TOTAL: 25+
-# DESCRIPTION: Comprehensive Mistral AI and Le Chat ruleset covering all services, subdomains, and future expansions.
+# DESCRIPTION: Comprehensive Mistral AI and Le Chat ruleset, optimized to prioritize domain matching over IP-CIDR conflicts.
 
 # 配置说明：
-# 1. 必须置于 [Rule] 最顶部，高于 Twitter.list、Facebook.list，避免误匹配。
+# 1. 必须置于 [Rule] 最顶部，高于 Cloudflare.list、Twitter.list 等，避免误匹配。
 # 2. Surge: 配置远程 DNS（如 8.8.8.8, 1.1.1.1），启用 force-remote-dns。
 # 3. Shadowrocket: 设置全局 DNS 或代理内 DNS，忽略 force-remote-dns。
 # 4. 使用高质量代理节点（如美国、日本、欧洲），确保低延迟。
@@ -19,16 +19,14 @@
 # 核心服务（精确匹配，最高优先级）
 DOMAIN,mistral.ai,Proxy,force-remote-dns        # 主域名
 DOMAIN,api.mistral.ai,Proxy,force-remote-dns    # API 服务
-DOMAIN,chat.mistral.ai,Proxy,force-remote-dns   # Le Chat 入口
+DOMAIN,chat.mistral.ai,Proxy,force-remote-dns   # Le Chat 入口（确保优先于 Cloudflare）
 DOMAIN,console.mistral.ai,Proxy,force-remote-dns # La Plateforme 控制台
-
-# 核心服务（高优先级）
-DOMAIN-SUFFIX,lechat.mistral.ai,Proxy,force-remote-dns  # Le Chat 独立入口
 
 # 通配符（次高优先级）
 DOMAIN-SUFFIX,*.mistral.ai,Proxy,force-remote-dns       # 覆盖所有 mistral.ai 子域名
 
 # Le Chat 相关服务
+DOMAIN-SUFFIX,lechat.mistral.ai,Proxy,force-remote-dns  # Le Chat 独立入口
 DOMAIN-SUFFIX,app.mistral.ai,Proxy,force-remote-dns     # 移动应用支持
 DOMAIN-SUFFIX,auth.mistral.ai,Proxy,force-remote-dns    # 用户认证
 
@@ -59,7 +57,7 @@ DOMAIN-SUFFIX,billing.mistral.ai,Proxy,force-remote-dns    # 账单管理
 DOMAIN-KEYWORD,mistral,Proxy,force-remote-dns           # 模糊匹配，确保万无一失
 
 # 验证方法：
-# 1. 使用 Surge 调试功能，检查 mistral.ai、chat.mistral.ai 等请求是否匹配。
-# 2. 打开 Le Chat（chat.mistral.ai）或应用，测试功能（如搜索、图像生成）是否正常。
-# 3. 使用 mitmproxy 抓包，验证是否有未匹配的 Mistral 相关域名，若有立即补充。
-# 4. 确保规则置于 [Rule] 顶部，避免被其他规则覆盖。
+# 1. 使用 Surge 调试功能，检查 chat.mistral.ai 等请求是否匹配 Mistral.AI 规则，而非 Cloudflare。
+# 2. 打开 Le Chat（chat.mistral.ai）或应用，测试功能（如搜索、图像生成）是否走预期代理。
+# 3. 使用 mitmproxy 抓包，验证是否有未匹配的 Mistral 域名，若有立即补充。
+# 4. 确保此规则置于 [Rule] 最顶部，且位于 Cloudflare.list 之前。
