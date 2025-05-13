@@ -1,0 +1,79 @@
+# NAME: HuggingFace
+# AUTHOR: linchao10058
+# VERSION: 1.0
+# REPO: [TBD - Insert GitHub or hosting URL]
+# UPDATED: 2025-05-13 03:47 PDT
+# DOMAIN-SUFFIX: 33
+# TOTAL: 38
+# DESCRIPTION: Comprehensive Hugging Face ruleset covering all services, including models, datasets, Spaces, APIs, and future expansions.
+
+# 配置说明：
+# 1. 必须置于 [Rule] 最顶部，高于 Twitter.list、Facebook.list，避免误匹配。
+# 2. Surge: 配置远程 DNS（如 8.8.8.8, 1.1.1.1），启用 force-remote-dns。
+# 3. Shadowrocket: 设置全局 DNS 或代理内 DNS，忽略 force-remote-dns。
+# 4. 使用高质量代理节点（如美国、欧洲），确保低延迟和稳定性。
+# 5. 建议每月抓包验证新域名，使用 mitmproxy 或 Charles，提交至 GitHub 仓库。
+
+# 主域名（高优先级）
+DOMAIN-SUFFIX,huggingface.co,Proxy,force-remote-dns     # 核心域名，模型库、数据集、Spaces
+DOMAIN-SUFFIX,hf.co,Proxy,force-remote-dns             # 短域名，品牌推广
+DOMAIN-SUFFIX,huggingface.com,Proxy,force-remote-dns   # 备用域名，低频使用
+
+# Spaces 服务
+DOMAIN-SUFFIX,hf.space,Proxy,force-remote-dns          # Spaces 短域名，用户应用
+DOMAIN-SUFFIX,huggingface.space,Proxy,force-remote-dns # Spaces 备用域名
+DOMAIN-SUFFIX,spaces.huggingface.co,Proxy,force-remote-dns # Spaces 主子域名
+
+# CDN 和存储服务
+DOMAIN-SUFFIX,cdn.huggingface.co,Proxy,force-remote-dns        # 通用 CDN，静态资源
+DOMAIN-SUFFIX,cdn-lfs.huggingface.co,Proxy,force-remote-dns    # 大文件存储（LFS）
+DOMAIN-SUFFIX,cdn-media.huggingface.co,Proxy,force-remote-dns  # 媒体文件（图片、视频）
+DOMAIN-SUFFIX,cdn-models.huggingface.co,Proxy,force-remote-dns # 模型文件 CDN
+DOMAIN-SUFFIX,cdn-datasets.huggingface.co,Proxy,force-remote-dns # 数据集 CDN
+DOMAIN-SUFFIX,storage.huggingface.co,Proxy,force-remote-dns    # 云存储服务
+DOMAIN-SUFFIX,s3.amazonaws.com/huggingface.co,Proxy,force-remote-dns # AWS S3 存储
+
+# 技术服务
+DOMAIN-SUFFIX,api.huggingface.co,Proxy,force-remote-dns        # 核心 API，模型/数据集交互
+DOMAIN-SUFFIX,api-inference.huggingface.co,Proxy,force-remote-dns # 推理 API
+DOMAIN-SUFFIX,auth.huggingface.co,Proxy,force-remote-dns       # 用户认证
+DOMAIN-SUFFIX,accounts.huggingface.co,Proxy,force-remote-dns   # 账户管理
+DOMAIN-SUFFIX,billing.huggingface.co,Proxy,force-remote-dns    # 账单和订阅
+DOMAIN-SUFFIX,webhooks.huggingface.co,Proxy,force-remote-dns   # Webhook 通知
+
+# 文档和学习资源
+DOMAIN-SUFFIX,docs.huggingface.co,Proxy,force-remote-dns       # 技术文档
+DOMAIN-SUFFIX,course.huggingface.co,Proxy,force-remote-dns     # 在线课程
+DOMAIN-SUFFIX,blog.huggingface.co,Proxy,force-remote-dns       # 官方博客（补充）
+
+# 社区和交互
+DOMAIN-SUFFIX,discuss.huggingface.co,Proxy,force-remote-dns    # 社区论坛
+DOMAIN-SUFFIX,organizations.huggingface.co,Proxy,force-remote-dns # 组织管理（待验证）
+
+# 数据集服务
+DOMAIN-SUFFIX,datasets.huggingface.co,Proxy,force-remote-dns   # 数据集管理
+DOMAIN-SUFFIX,datasets-server.huggingface.co,Proxy,force-remote-dns # 数据集服务器
+
+# 区域化和测试
+DOMAIN-SUFFIX,eu.huggingface.co,Proxy,force-remote-dns         # 欧洲地区服务
+DOMAIN-SUFFIX,staging.huggingface.co,Proxy,force-remote-dns    # 测试环境
+
+# 特定功能（补充）
+DOMAIN-SUFFIX,autotrain.huggingface.co,Proxy,force-remote-dns  # 自动训练服务
+DOMAIN-SUFFIX,enterprise.huggingface.co,Proxy,force-remote-dns # 企业服务
+DOMAIN-SUFFIX,api-endpoints.huggingface.co,Proxy,force-remote-dns # 企业推理端点
+DOMAIN-SUFFIX,cdn-fastly.huggingface.co,Proxy,force-remote-dns # 潜在 Fastly CDN（补充）
+
+# 镜像站点
+DOMAIN-SUFFIX,hf-mirror.com,Proxy,force-remote-dns             # 镜像站点，快速访问
+DOMAIN-SUFFIX,hf-mirror.co,Proxy,force-remote-dns              # 备用镜像（待验证）
+
+# 通配符兜底（中优先级）
+DOMAIN-SUFFIX,*.huggingface.co,Proxy,force-remote-dns          # 覆盖未列子域名
+DOMAIN-SUFFIX,*.hf.space,Proxy,force-remote-dns                # 覆盖用户 Spaces
+
+# 验证方法：
+# 1. 使用 Surge/Shadowrocket 调试功能，检查 Hugging Face 请求日志是否匹配规则。
+# 2. 测试核心功能（模型下载、数据集访问、Spaces、API 推理）是否正常。
+# 3. 使用 mitmproxy 或 Charles 抓包，识别未匹配的域名并补充。
+# 4. 确保规则置于 [Rule] 顶部，避免被其他规则覆盖。
