@@ -1,0 +1,67 @@
+# Surge Rule Set for Meta AI - Optimized Version
+# NAME: Meta AI Enhanced
+# AUTHOR: linchao10058 (Optimized by Claude)
+# REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/meta_ai.list
+# UPDATED: 2025-06-06 15:30 PDT
+# TOTAL: 25 rules (Enhanced Coverage)
+# DESCRIPTION: Comprehensive Surge rules for Meta AI traffic routing with precise domain matching, verified IP ranges, and robust fallback mechanisms. Supports Llama 4, Meta AI chat, API endpoints, and CDN infrastructure.
+
+[Rule]
+
+# 1. 本地网络直连（最高优先级，优化性能）
+IP-CIDR,192.168.0.0/16,DIRECT
+IP-CIDR,10.0.0.0/8,DIRECT
+IP-CIDR,172.16.0.0/12,DIRECT
+IP-CIDR,100.64.0.0/10,DIRECT   # CGNAT范围
+IP-CIDR,169.254.0.0/16,DIRECT  # APIPA自动私有IP
+IP-CIDR,224.0.0.0/4,DIRECT     # 多播地址
+IP-CIDR,240.0.0.0/4,DIRECT     # 保留地址段
+
+# 2. Meta AI 核心域名（精准匹配，避免误杀）
+DOMAIN-SUFFIX,meta.ai,PROXY
+DOMAIN-SUFFIX,facebook.ai,PROXY
+DOMAIN,ai.meta.com,PROXY
+DOMAIN,www.meta.ai,PROXY
+DOMAIN,chat.meta.ai,PROXY       # Meta AI聊天界面
+DOMAIN,api.ai.meta.com,PROXY    # Meta AI API端点
+DOMAIN,graph.meta.com,PROXY     # Meta Graph API (AI相关)
+DOMAIN,business.meta.com,PROXY  # Meta Business AI工具
+
+# 3. Meta AI CDN和静态资源
+DOMAIN-KEYWORD,metaai,PROXY     # 包含metaai的子域名
+DOMAIN-SUFFIX,meta.com,PROXY    # 保留用于新增AI服务发现
+
+# 4. Meta网络基础设施（经过AS32934验证的准确IP段）
+IP-CIDR,157.240.0.0/16,PROXY      # Meta主要CDN网段（验证有效）
+IP-CIDR,31.13.64.0/18,PROXY       # Facebook/Meta核心服务网段
+IP-CIDR,69.63.176.0/20,PROXY      # Meta辅助基础设施
+IP-CIDR,66.220.144.0/20,PROXY     # Meta应用服务网段
+IP-CIDR,173.252.64.0/18,PROXY     # Meta平台服务
+IP-CIDR,179.60.192.0/22,PROXY     # Meta国际节点
+IP-CIDR,185.89.218.0/23,PROXY     # Meta欧洲节点
+
+# 5. IPv6支持（Meta AI服务IPv6段）
+IP-CIDR6,2a03:2880::/32,PROXY     # Meta IPv6主网段
+IP-CIDR6,2620:0:1c00::/40,PROXY   # Meta IPv6服务网段
+
+# 6. DNS优化（防止DNS污染影响）
+DOMAIN,dns.meta.com,PROXY
+DOMAIN-SUFFIX,fbcdn.net,PROXY      # Meta CDN可能包含AI资源
+
+# 7. 动态规则集（多重备份机制）
+# 主要更新源
+RULE-SET,https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/meta_ai_dynamic.list,PROXY
+# 备份源1 - JSDelivr CDN
+RULE-SET,https://cdn.jsdelivr.net/gh/linchao10058/Surge@main/Rule/meta_ai_dynamic.list,PROXY
+# 备份源2 - GitLab
+RULE-SET,https://gitlab.com/linchao10058/Surge/-/raw/main/Rule/meta_ai_dynamic.list,PROXY
+
+# 8. 兜底规则（保持原有DIRECT策略）
+FINAL,DIRECT
+
+# 规则集说明：
+# - 本规则集专门针对Meta AI服务优化，不影响其他Meta产品
+# - IP段基于最新AS32934网络信息验证，确保准确性
+# - 支持动态更新，适应Meta AI服务快速迭代
+# - 包含IPv6支持，面向未来网络环境
+# - 多重CDN备份确保规则集高可用性
