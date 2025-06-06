@@ -2,15 +2,13 @@
 # NAME: Meta AI
 # AUTHOR: linchao10058
 # REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/meta_ai.list
-# UPDATED: 2025-06-06 18:00 PDT
-# TOTAL: 30 rules
-# DESCRIPTION: Surge rules for routing Meta AI traffic (meta.ai, ai.meta.com, and related AI research domains) through PROXY. Explicitly excludes other Meta services (e.g., Facebook, Instagram, WhatsApp). Compatible with Surge 5+ and supports dynamic updates via GitHub/GitLab/CDN.
+# UPDATED: 2025-06-06 12:18 PDT
+# TOTAL: 20 rules
+# DESCRIPTION: Surge rules for routing Meta AI traffic (meta.ai, ai.meta.com, and related AI research domains) through a proxy. Excludes non-AI Meta services (e.g., Facebook, Instagram, WhatsApp). Supports dynamic updates via GitHub/GitLab. Compatible with Surge 5 and above.
 
 [Rule]
 
-#############################################
-# 1. Meta AI Core Domains (High Priority)
-#############################################
+# 1. Meta AI Core Domains
 DOMAIN-SUFFIX,meta.ai,PROXY
 DOMAIN-SUFFIX,ai.meta.com,PROXY
 DOMAIN,imagine.meta.com,PROXY
@@ -22,27 +20,10 @@ DOMAIN-SUFFIX,fbinfer.com,PROXY
 DOMAIN-SUFFIX,flow.dev,PROXY
 DOMAIN-SUFFIX,pyrobot.org,PROXY
 DOMAIN-SUFFIX,rocksdb.org,PROXY
-DOMAIN-SUFFIX,faiss.ai,PROXY
-DOMAIN-SUFFIX,habitat.fair,PROXY
-DOMAIN-SUFFIX,parlai.org,PROXY
-DOMAIN-SUFFIX,fairscale.org,PROXY
-DOMAIN-SUFFIX,llama.meta.com,PROXY
-DOMAIN,llama3.ai.meta.com,PROXY
 # Add CDN domains after verification
 # Example: DOMAIN-SUFFIX,akamaihd.net,PROXY
 
-#############################################
 # 2. Other Meta Services (Non-AI, routed to DIRECT)
-#############################################
-# This ensures Facebook/Instagram/WhatsApp & Meta infra bypass PROXY
-DOMAIN-SUFFIX,facebook.com,DIRECT
-DOMAIN-SUFFIX,fb.com,DIRECT
-DOMAIN-SUFFIX,instagram.com,DIRECT
-DOMAIN-SUFFIX,whatsapp.com,DIRECT
-DOMAIN-SUFFIX,oculus.com,DIRECT
-DOMAIN-SUFFIX,messenger.com,DIRECT
-DOMAIN-SUFFIX,fb.me,DIRECT
-# Specific non-AI Meta domains
 DOMAIN-SUFFIX,careersatfb.com,DIRECT
 DOMAIN-SUFFIX,crowdtangle.com,DIRECT
 DOMAIN-SUFFIX,facebook.net,DIRECT
@@ -52,75 +33,50 @@ DOMAIN-SUFFIX,fna.fbcdn.net,DIRECT
 DOMAIN-SUFFIX,igcdn.com,DIRECT
 DOMAIN-SUFFIX,igtv.com,DIRECT
 DOMAIN-SUFFIX,instagram-brand.com,DIRECT
+DOMAIN-SUFFIX,messenger.com,DIRECT
 DOMAIN-SUFFIX,oculuscdn.com,DIRECT
 DOMAIN-SUFFIX,reactjs.org,DIRECT
-DOMAIN-SUFFIX,whatsapp.biz,DIRECT
-DOMAIN-SUFFIX,whatsapp.org,DIRECT
+DOMAIN-SUFFIX,whatsapp.com,DIRECT
 DOMAIN-SUFFIX,yogalayout.com,DIRECT
-# Dynamic non-AI rule set
 RULE-SET,https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/meta_non_ai_dynamic.list,DIRECT
 
-#############################################
-# 3. Meta AI IP Ranges (Verified AI/CDN subnets)
-#############################################
+# 3. Meta AI IP Ranges
 IP-CIDR,157.240.241.0/24,PROXY
 IP-CIDR,31.13.85.0/24,PROXY
 IP-CIDR,185.89.216.0/22,PROXY
-IP-CIDR,129.134.0.0/16,PROXY
 # Add CDN IP ranges after verification
-# Example: IP-CIDR,104.64.0.0/10,PROXY  # Akamai (placeholder)
+# Example: IP-CIDR,104.64.0.0/10,PROXY
 
-#############################################
-# 4. Meta Non-AI IP Ranges (Routed to DIRECT)
-#############################################
+# 4. Other Meta IP Ranges (Non-AI, routed to DIRECT)
 IP-CIDR,69.171.224.0/19,DIRECT
 IP-CIDR,108.168.176.192/26,DIRECT
-IP-CIDR,108.168.177.0/27,DIRECT
-IP-CIDR,108.168.180.96/27,DIRECT
-# Dynamic non-AI IP rule set
+IP-CIDR,108.177.8.0/21,DIRECT
 RULE-SET,https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/meta_non_ai_dynamic.list,DIRECT
 
-#############################################
-# 5. Local Network Exclusion (Performance)
-#############################################
-IP-CIDR,192.168.0.0/16,DIRECT          # Private network
-IP-CIDR,10.0.0.0/8,DIRECT              # Private network
-IP-CIDR,172.16.0.0/12,DIRECT           # Private network
-IP-CIDR,100.64.0.0/10,DIRECT           # CGNAT range
-IP-CIDR,169.254.0.0/16,DIRECT          # APIPA range
+# 5. Local Network Exclusion
+IP-CIDR,192.168.0.0/16,DIRECT
+IP-CIDR,10.0.0.0/8,DIRECT
+IP-CIDR,172.16.0.0/12,DIRECT
+IP-CIDR,100.64.0.0/10,DIRECT
 
-#############################################
-# 6. Dynamic Update Sources (Recommended)
-#############################################
+# 6. Dynamic Update Mechanism
 RULE-SET,https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/meta_ai_dynamic.list,PROXY
 RULE-SET,https://gitlab.com/linchao10058/Surge/raw/main/Rule/meta_ai_dynamic.list,PROXY
 # Replace with actual Cloudflare Pages URL
 RULE-SET,https://<actual-cloudflare-url>/linchao10058/Surge/meta_ai_dynamic.list,PROXY
 
-#############################################
-# 7. Final Catch-All
-#############################################
+# 7. Catch-all for non-Meta AI traffic
 FINAL,DIRECT
 
-#############################################
-# 8. Script for Wind Control Mitigation
-#############################################
 [Script]
 http-request ^https://.*\.meta\.(ai|com) script-path=https://raw.githubusercontent.com/linchao10058/Surge/main/Script/meta_ai_headers.js
 
-#############################################
-# 9. General Settings
-#############################################
 [General]
 loglevel=info
 enhanced-mode=true
 external-rule-update-interval=86400
 force-timezone=America/New_York
 
-#############################################
-# 10. Host Resolution
-#############################################
 [Host]
 ai.meta.com = server:real-ip
 meta.ai = server:real-ip
-llama.meta.com = server:real-ip
