@@ -1,4 +1,4 @@
-[Rule]
+# Meta AI Traffic - Use PROXY
 DOMAIN-SUFFIX,meta.ai,PROXY
 DOMAIN-SUFFIX,ai.meta.com,PROXY
 DOMAIN,llama3.ai.meta.com,PROXY
@@ -17,6 +17,7 @@ DOMAIN-SUFFIX,habitat.fair,PROXY
 DOMAIN-SUFFIX,parlai.org,PROXY
 DOMAIN-SUFFIX,fairscale.org,PROXY
 
+# Meta Other Services - Use DIRECT
 DOMAIN-SUFFIX,facebook.com,DIRECT
 DOMAIN-SUFFIX,fb.com,DIRECT
 DOMAIN-SUFFIX,instagram.com,DIRECT
@@ -38,28 +39,24 @@ DOMAIN-SUFFIX,whatsapp.biz,DIRECT
 DOMAIN-SUFFIX,whatsapp.org,DIRECT
 DOMAIN-SUFFIX,yogalayout.com,DIRECT
 
+# Meta AI IPs - Use PROXY
 IP-CIDR,157.240.241.0/24,PROXY
 IP-CIDR,31.13.85.0/24,PROXY
 IP-CIDR,185.89.216.0/22,PROXY
 IP-CIDR,129.134.0.0/16,PROXY
 
+# Meta Infra IPs - Use DIRECT
 IP-CIDR,69.171.224.0/19,DIRECT
 IP-CIDR,108.168.176.192/26,DIRECT
 IP-CIDR,108.168.177.0/27,DIRECT
 IP-CIDR,108.168.180.96/27,DIRECT
 
+# Local Network - Use DIRECT
 IP-CIDR,192.168.0.0/16,DIRECT
 IP-CIDR,10.0.0.0/8,DIRECT
 IP-CIDR,172.16.0.0/12,DIRECT
 IP-CIDR,100.64.0.0/10,DIRECT
 IP-CIDR,169.254.0.0/16,DIRECT
 
+# Final fallback
 FINAL,DIRECT
-
-[Script]
-meta_ai_header_inject = type=http-request, pattern=^https:\/\/([a-zA-Z0-9-]+\.)*(meta\.ai|ai\.meta\.com), script-path=https://raw.githubusercontent.com/linchao10058/Surge/main/Script/meta_ai_headers.js, requires-body=false, timeout=10
-
-[General]
-loglevel = notify
-dns-server = system, 8.8.8.8
-resource-update-interval = 86400
