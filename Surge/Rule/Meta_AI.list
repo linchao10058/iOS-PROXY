@@ -1,10 +1,18 @@
-# Meta AI Traffic - Use PROXY
+# Surge Rule Set for Meta AI
+# NAME: Meta AI
+# AUTHOR: linchao10058
+# REPO: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/main/Surge/Rule/Meta_AI.list
+# UPDATED: 2025-06-06 18:00 PDT
+# TOTAL: 26 rules
+# DESCRIPTION: Surge rules for routing Meta AI traffic (meta.ai, ai.meta.com, and related AI domains) through PROXY. Excludes non-AI Meta services (e.g., Facebook, Instagram, WhatsApp). Compatible with Surge 5+.
+
+[Rule]
+# ---------------------------------------------
+# 1. Meta AI Core Domains (High Priority)
+# ---------------------------------------------
 DOMAIN-SUFFIX,meta.ai,PROXY
 DOMAIN-SUFFIX,ai.meta.com,PROXY
-DOMAIN,llama3.ai.meta.com,PROXY
-DOMAIN,llama.meta.com,PROXY
 DOMAIN,imagine.meta.com,PROXY
-DOMAIN-KEYWORD,meta-ai-,PROXY
 DOMAIN-SUFFIX,botorch.org,PROXY
 DOMAIN-SUFFIX,buck.build,PROXY
 DOMAIN-SUFFIX,fasttext.cc,PROXY
@@ -16,8 +24,12 @@ DOMAIN-SUFFIX,faiss.ai,PROXY
 DOMAIN-SUFFIX,habitat.fair,PROXY
 DOMAIN-SUFFIX,parlai.org,PROXY
 DOMAIN-SUFFIX,fairscale.org,PROXY
+DOMAIN-SUFFIX,llama.meta.com,PROXY
+DOMAIN,llama3.ai.meta.com,PROXY
 
-# Meta Other Services - Use DIRECT
+# ---------------------------------------------
+# 2. Other Meta Services (Non-AI, routed to DIRECT)
+# ---------------------------------------------
 DOMAIN-SUFFIX,facebook.com,DIRECT
 DOMAIN-SUFFIX,fb.com,DIRECT
 DOMAIN-SUFFIX,instagram.com,DIRECT
@@ -39,24 +51,48 @@ DOMAIN-SUFFIX,whatsapp.biz,DIRECT
 DOMAIN-SUFFIX,whatsapp.org,DIRECT
 DOMAIN-SUFFIX,yogalayout.com,DIRECT
 
-# Meta AI IPs - Use PROXY
+# ---------------------------------------------
+# 3. Meta AI IP Ranges (Verified AI/CDN subnets)
+# ---------------------------------------------
 IP-CIDR,157.240.241.0/24,PROXY
 IP-CIDR,31.13.85.0/24,PROXY
 IP-CIDR,185.89.216.0/22,PROXY
 IP-CIDR,129.134.0.0/16,PROXY
 
-# Meta Infra IPs - Use DIRECT
+# ---------------------------------------------
+# 4. Meta Non-AI IP Ranges (Routed to DIRECT)
+# ---------------------------------------------
 IP-CIDR,69.171.224.0/19,DIRECT
 IP-CIDR,108.168.176.192/26,DIRECT
 IP-CIDR,108.168.177.0/27,DIRECT
 IP-CIDR,108.168.180.96/27,DIRECT
 
-# Local Network - Use DIRECT
+# ---------------------------------------------
+# 5. Local Network Exclusion (Performance)
+# ---------------------------------------------
 IP-CIDR,192.168.0.0/16,DIRECT
 IP-CIDR,10.0.0.0/8,DIRECT
 IP-CIDR,172.16.0.0/12,DIRECT
 IP-CIDR,100.64.0.0/10,DIRECT
 IP-CIDR,169.254.0.0/16,DIRECT
 
-# Final fallback
+# ---------------------------------------------
+# 6. Dynamic Update Sources
+# ---------------------------------------------
+RULE-SET,https://raw.githubusercontent.com/linchao10058/iOS-PROXY/main/Surge/Rule/meta_ai_dynamic.list,PROXY
+RULE-SET,https://raw.githubusercontent.com/linchao10058/iOS-PROXY/main/Surge/Rule/meta_non_ai_dynamic.list,DIRECT
+
+# ---------------------------------------------
+# 7. Final Catch-All
+# ---------------------------------------------
 FINAL,DIRECT
+
+[Script]
+# HTTP request script for Meta AI traffic
+http-request ^https://([a-zA-Z0-9-]+\.)*(meta\.ai|ai\.meta\.com|llama\.meta\.com) script-path=https://raw.githubusercontent.com/linchao10058/iOS-PROXY/main/Surge/Script/meta_ai_headers.js,requires-header=true,timeout=10
+
+[Host]
+# DNS resolution for Meta AI domains
+meta.ai = server:8.8.8.8
+ai.meta.com = server:8.8.8.8
+llama.meta.com = server:8.8.8.8
