@@ -1,39 +1,43 @@
 # NAME: Meta_AI
 # AUTHOR: linchao10058
-# VERSION: 1.0
+# VERSION: 1.2
 # REPO: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/main/Surge/Rule/Meta_AI.list
-# UPDATED: 2025-06-06 18:00 PDT
-# DOMAIN: 2
-# DOMAIN-SUFFIX: 27
+# UPDATED: 2025-06-06 18:42 PDT
+# DOMAIN: 4
+# DOMAIN-SUFFIX: 29
 # DOMAIN-KEYWORD: 1
-# TOTAL: 30
-# DESCRIPTION: Comprehensive Meta AI ruleset, optimized to route Meta AI traffic (meta.ai, ai.meta.com, etc.) through Proxy, while directing non-AI Meta services (Facebook, Instagram, WhatsApp) to DIRECT.
+# TOTAL: 34
+# DESCRIPTION: Comprehensive Meta AI ruleset, optimized to route Meta AI traffic (meta.ai, *.meta.com, etc.) through Proxy, while directing non-AI Meta services (Facebook, Instagram, WhatsApp) to DIRECT.
 
 # 配置说明：
 # 1. 必须置于 [Rule] 最顶部，高于 Cloudflare.list、Facebook.list 等，避免误匹配。
 # 2. Surge: 配置远程 DNS（如 8.8.8.8, 1.1.1.1），启用 force-remote-dns。
 # 3. Shadowrocket: 设置全局 DNS 或代理内 DNS，忽略 force-remote-dns。
-# 4. 使用高质量代理节点（如美国、欧洲），确保低延迟。
+# 4. 使用高质量代理节点（如美国、欧洲），确保低延迟和 TLS 1.3 支持。
 # 5. 建议每月抓包验证新域名，使用 mitmproxy 或 Charles 提取，提交至 GitHub。
 
 # 核心服务（精确匹配，最高优先级）
 DOMAIN,meta.ai,Proxy,force-remote-dns           # 主域名
 DOMAIN,imagine.meta.com,Proxy,force-remote-dns  # 图像生成服务
+DOMAIN,meta.graph.meta.com,Proxy,force-remote-dns # 图谱服务
+DOMAIN,ar.graph.meta.com,Proxy,force-remote-dns # AR 图谱服务
 
 # Meta AI 通配符（次高优先级）
-DOMAIN-SUFFIX,ai.meta.com,Proxy,force-remote-dns       # AI 子域名
-DOMAIN-SUFFIX,llama.meta.com,Proxy,force-remote-dns    # LLaMA 模型服务
-DOMAIN-SUFFIX,botorch.org,Proxy,force-remote-dns       # AI 研究
-DOMAIN-SUFFIX,buck.build,Proxy,force-remote-dns        # 构建工具
-DOMAIN-SUFFIX,fasttext.cc,Proxy,force-remote-dns       # 文本处理
-DOMAIN-SUFFIX,fbinfer.com,Proxy,force-remote-dns       # 推理工具
-DOMAIN-SUFFIX,flow.dev,Proxy,force-remote-dns          # 类型检查
-DOMAIN-SUFFIX,pyrobot.org,Proxy,force-remote-dns       # 机器人研究
-DOMAIN-SUFFIX,rocksdb.org,Proxy,force-remote-dns       # 数据库
-DOMAIN-SUFFIX,faiss.ai,Proxy,force-remote-dns          # 向量搜索
-DOMAIN-SUFFIX,habitat.fair,Proxy,force-remote-dns      # AI 模拟
-DOMAIN-SUFFIX,parlai.org,Proxy,force-remote-dns        # 对话研究
-DOMAIN-SUFFIX,fairscale.org,Proxy,force-remote-dns     # 分布式训练
+DOMAIN-SUFFIX,meta.com,Proxy,force-remote-dns         # 覆盖所有 *.meta.com 子域名
+DOMAIN-SUFFIX,ai.meta.com,Proxy,force-remote-dns      # AI 子域名
+DOMAIN-SUFFIX,llama.meta.com,Proxy,force-remote-dns   # LLaMA 模型服务
+DOMAIN-SUFFIX,graph.meta.com,Proxy,force-remote-dns   # 图谱相关服务
+DOMAIN-SUFFIX,botorch.org,Proxy,force-remote-dns      # AI 研究
+DOMAIN-SUFFIX,buck.build,Proxy,force-remote-dns       # 构建工具
+DOMAIN-SUFFIX,fasttext.cc,Proxy,force-remote-dns      # 文本处理
+DOMAIN-SUFFIX,fbinfer.com,Proxy,force-remote-dns      # 推理工具
+DOMAIN-SUFFIX,flow.dev,Proxy,force-remote-dns         # 类型检查
+DOMAIN-SUFFIX,pyrobot.org,Proxy,force-remote-dns      # 机器人研究
+DOMAIN-SUFFIX,rocksdb.org,Proxy,force-remote-dns      # 数据库
+DOMAIN-SUFFIX,faiss.ai,Proxy,force-remote-dns         # 向量搜索
+DOMAIN-SUFFIX,habitat.fair,Proxy,force-remote-dns     # AI 模拟
+DOMAIN-SUFFIX,parlai.org,Proxy,force-remote-dns       # 对话研究
+DOMAIN-SUFFIX,fairscale.org,Proxy,force-remote-dns    # 分布式训练
 
 # 非 AI Meta 服务（直连）
 DOMAIN-SUFFIX,facebook.com,DIRECT       # Facebook 主域名
@@ -54,14 +58,4 @@ DOMAIN-SUFFIX,instagram-brand.com,DIRECT # Instagram 品牌
 DOMAIN-SUFFIX,oculuscdn.com,DIRECT      # Oculus CDN
 DOMAIN-SUFFIX,reactjs.org,DIRECT        # React 文档
 DOMAIN-SUFFIX,whatsapp.biz,DIRECT       # WhatsApp 商业
-DOMAIN-SUFFIX,whatsapp.org,DIRECT       # WhatsApp 组织
-DOMAIN-SUFFIX,yogalayout.com,DIRECT     # 布局引擎
-
-# 最终兜底（低优先级）
-DOMAIN-KEYWORD,meta-ai,Proxy,force-remote-dns  # 模糊匹配 Meta AI 相关服务
-
-# 验证方法：
-# 1. 使用 Surge 调试功能，检查 meta.ai、ai.meta.com 等请求是否匹配 Meta_AI 规则，而非 Facebook 或 Cloudflare。
-# 2. 打开 Meta AI 服务（如 meta.ai）或相关研究页面，测试功能是否走预期代理。
-# 3. 使用 mitmproxy 抓包，验证是否有未匹配的 Meta AI 域名，若有立即补充。
-# 4. 确保此规则置于 [Rule] 最顶部，且位于 Cloudflare.list、Facebook.list 之前。
+DOMAIN-SUFFIX,
