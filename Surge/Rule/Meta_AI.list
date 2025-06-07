@@ -85,7 +85,7 @@ RULE-SET,https://raw.githubusercontent.com/linchao10058/iOS-PROXY/main/Surge/Rul
 # ---------------------------------------------
 # 7. Final Catch-All
 # ---------------------------------------------
-FINAL,DIRECT
+FINAL, PROXY
 
 [Script]
 # HTTP request script for Meta AI traffic
