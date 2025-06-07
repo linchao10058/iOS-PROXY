@@ -1,21 +1,4 @@
-# Surge Rule Set for Meta AI
-# NAME: Meta AI
-# AUTHOR: linchao10058
-# REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/meta_ai.list
-# UPDATED: 2025-06-06 18:00 PDT
-# TOTAL: 28 rules
-# DESCRIPTION: Surge rules for routing Meta AI traffic (meta.ai, ai.meta.com, and related AI research domains) through PROXY. Explicitly excludes other Meta services (e.g., Facebook, Instagram, WhatsApp). Compatible with Surge 5+.
-
 [Rule]
-# ---------------------------------------------
-# 0. Dynamic Update Sources (must be first!)
-# ---------------------------------------------
-RULE-SET,https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/meta_ai_dynamic.list,PROXY
-RULE-SET,https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/meta_non_ai_dynamic.list,DIRECT
-
-# ---------------------------------------------
-# 1. Meta AI Core Domains (High Priority)
-# ---------------------------------------------
 DOMAIN-SUFFIX,meta.ai,PROXY
 DOMAIN-SUFFIX,ai.meta.com,PROXY
 DOMAIN,llama3.ai.meta.com,PROXY
@@ -34,9 +17,6 @@ DOMAIN-SUFFIX,habitat.fair,PROXY
 DOMAIN-SUFFIX,parlai.org,PROXY
 DOMAIN-SUFFIX,fairscale.org,PROXY
 
-# ---------------------------------------------
-# 2. Other Meta Services (Non-AI, routed to DIRECT)
-# ---------------------------------------------
 DOMAIN-SUFFIX,facebook.com,DIRECT
 DOMAIN-SUFFIX,fb.com,DIRECT
 DOMAIN-SUFFIX,instagram.com,DIRECT
@@ -58,34 +38,22 @@ DOMAIN-SUFFIX,whatsapp.biz,DIRECT
 DOMAIN-SUFFIX,whatsapp.org,DIRECT
 DOMAIN-SUFFIX,yogalayout.com,DIRECT
 
-# ---------------------------------------------
-# 3. Meta AI IP Ranges (Verified AI/CDN subnets)
-# ---------------------------------------------
 IP-CIDR,157.240.241.0/24,PROXY
 IP-CIDR,31.13.85.0/24,PROXY
 IP-CIDR,185.89.216.0/22,PROXY
 IP-CIDR,129.134.0.0/16,PROXY
 
-# ---------------------------------------------
-# 4. Meta Non-AI IP Ranges (Routed to DIRECT)
-# ---------------------------------------------
 IP-CIDR,69.171.224.0/19,DIRECT
 IP-CIDR,108.168.176.192/26,DIRECT
 IP-CIDR,108.168.177.0/27,DIRECT
 IP-CIDR,108.168.180.96/27,DIRECT
 
-# ---------------------------------------------
-# 5. Local Network Exclusion (Performance)
-# ---------------------------------------------
 IP-CIDR,192.168.0.0/16,DIRECT
 IP-CIDR,10.0.0.0/8,DIRECT
 IP-CIDR,172.16.0.0/12,DIRECT
 IP-CIDR,100.64.0.0/10,DIRECT
 IP-CIDR,169.254.0.0/16,DIRECT
 
-# ---------------------------------------------
-# 6. Final Catch-All Rule
-# ---------------------------------------------
 FINAL,DIRECT
 
 [Script]
