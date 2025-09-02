@@ -1,34 +1,76 @@
 // NAME: Character.AI
 // AUTHOR: linchao10058
 // REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Character.AI.list
-// VERSION: v2.4.0
+// VERSION: v3.1.1
 // UPDATED: 2025-03-28 18:30 PDT
 // DESCRIPTION: Character.AI 全服务分流规则，支持通配和动态更新，适用于代理或直连策略
 
-# 一、核心服务（全面覆盖 character.ai 及其子域）
-DOMAIN-SUFFIX,character.ai,PROXY  # 通配匹配主站及所有子域（如 app、plus、games、api 等）
-DOMAIN,beta.character.ai,PROXY    # 旧版测试域名（已停用，单独列出以兼容历史流量）
+# ───────────────────────────────────────────────────────────────────────────────
+# 一、核心域（最小冗余 & 全覆盖）
+# 说明：优先用 DOMAIN-SUFFIX 覆盖所有子域；避免逐个子域罗列的维护成本。
+# 注意：Character.AI 同时使用 c.ai 短域名，故一并纳入。
+# ───────────────────────────────────────────────────────────────────────────────
+DOMAIN-SUFFIX,character.ai,PROXY
+DOMAIN-SUFFIX,characterai.io,PROXY
+DOMAIN-SUFFIX,c.ai,PROXY
 
-# 二、第三方依赖（视实际使用启用，涵盖 CDN 和推送服务）
-DOMAIN-SUFFIX,cloudflare.com,PROXY       # 若使用 Cloudflare CDN（可选，需验证）
-DOMAIN-SUFFIX,amazonaws.com,PROXY        # 若使用 AWS 服务（可选，需验证）
-DOMAIN-SUFFIX,firebase.google.com,PROXY  # 若使用 Firebase 推送（可选，需验证）
+# （可选）显式关键入口（一般由上面的 SUFFIX 已覆盖，仅在你需要更高权重时启用）
+# DOMAIN,events.character.ai,PROXY
+# DOMAIN,status.character.ai,PROXY
+# DOMAIN,beta.character.ai,PROXY
 
-# 三、社区相关（精确匹配，视需求启用）
-DOMAIN,discord.com/invite/characterai,PROXY  # 官方 Discord 社区邀请链接
-DOMAIN,reddit.com/r/CharacterAI,PROXY       # 官方 Reddit 社区
+# ───────────────────────────────────────────────────────────────────────────────
+# 二、图标与 PWA 静态资源（路径级精确匹配）
+# 说明：Surge 的 DOMAIN 规则不匹配路径，图标需用 URL-REGEX。
+# 覆盖 apple-touch-icon / favicon 等常见路径，降低误代理概率。
+# ───────────────────────────────────────────────────────────────────────────────
+URL-REGEX,^https?:\/\/(?:beta\.|events\.)?character(?:\.ai|ai\.io)\/apple-touch-icon(?:-precomposed)?\.png$,PROXY
+URL-REGEX,^https?:\/\/(?:www\.)?c\.ai\/apple-touch-icon(?:-precomposed)?\.png$,PROXY
+URL-REGEX,^https?:\/\/(?:beta\.|events\.)?character(?:\.ai|ai\.io)\/favicon\.ico$,PROXY
+URL-REGEX,^https?:\/\/(?:www\.)?c\.ai\/favicon\.ico$,PROXY
 
-# 注释说明：
-# - DOMAIN-SUFFIX,character.ai 覆盖所有子域，包括但不限于：
-#   - character.ai（主站）
-#   - status.character.ai（状态监控）
-#   - support.character.ai（帮助中心）
-#   - app.character.ai（移动应用）
-#   - plus.character.ai（订阅服务）
-#   - games.character.ai（游戏功能）
-#   - api.character.ai（API 接口）
-#   - mobile.character.ai（移动端服务）
-#   - push.character.ai（推送服务）
-#   - cdn.character.ai（静态资源）
-# - 第三方依赖需通过抓包或官方文档确认具体使用情况
-# - 更新建议：每月检查 character.ai 官网及状态页面，确保规则与服务同步
+# ───────────────────────────────────────────────────────────────────────────────
+# 三、第三方依赖（最小化，按需启用）
+# 说明：不要全量代理 cloudflare.com / amazonaws.com，避免拖入无关流量。
+# 建议仅在抓包确认后精确添加。以下为常见且相对安全的最小集，默认注释。
+# ───────────────────────────────────────────────────────────────────────────────
+# DOMAIN,static.cloudflareinsights.com,PROXY      # CF RUM/Analytics（如有）
+# DOMAIN-SUFFIX,cloudfront.net,PROXY              # 如静态资源托管在 CloudFront（按需启用）
+# DOMAIN,firebaseinstallations.googleapis.com,PROXY # 移动端安装上报（若 App 使用 Firebase）
+# DOMAIN,firebase-settings.crashlytics.com,PROXY  # Crashlytics 配置（按需）
+
+# ───────────────────────────────────────────────────────────────────────────────
+# 四、社区与周边（可选启用，不影响主服务）
+# ───────────────────────────────────────────────────────────────────────────────
+# DOMAIN,discord.com,PROXY
+# DOMAIN-SUFFIX,discord.gg,PROXY
+# DOMAIN-SUFFIX,reddit.com,PROXY
+# DOMAIN-SUFFIX,redd.it,PROXY
+
+# ───────────────────────────────────────────────────────────────────────────────
+# 五、IP-CIDR 精准补充（仅为防被宽泛规则抢走；谨慎启用）
+# 说明：若你的规则集中存在“Cloudflare 大段匹配”，可能导致 Character.AI 走其他策略。
+# 建议仅添加确认为 Character.AI 常用的段，并标注 no-resolve；避免使用过宽的 104.16.0.0/13。
+# ───────────────────────────────────────────────────────────────────────────────
+# IP-CIDR,104.19.251.0/24,PROXY,no-resolve   # 示例：如经抓包与反查确认
+# （如需 IPv6，请基于抓包添加 IP-CIDR6，务必避免 2606:4700::/32 这类全段）
+
+# ───────────────────────────────────────────────────────────────────────────────
+# 六、Surge 专属 HOST 强制匹配（默认不启用，作为应急项）
+# 说明：当你的环境中存在“IP 优先”或特殊规则导致域名未命中时再启用。
+# ───────────────────────────────────────────────────────────────────────────────
+# HOST,character.ai,PROXY
+# HOST,characterai.io,PROXY
+# HOST,c.ai,PROXY
+# HOST,events.character.ai,PROXY
+# HOST,status.character.ai,PROXY
+# HOST,beta.character.ai,PROXY
+
+# ───────────────────────────────────────────────────────────────────────────────
+# 七、放置顺序与运维建议
+# 1) 将本段置于通用 CDN/Cloudflare 规则之前，以保证命中优先级。
+# 2) 第三方依赖务必基于抓包最小化添加，避免经济性受损。
+# 3) IP-CIDR 与 HOST 模块默认保持注释；仅在冲突或抢占时启用。
+# 4) 验证方式：在 Surge 中开启调试日志，访问 https://c.ai/ 与 https://character.ai/
+#    观察请求命中策略是否为 PROXY，关注 API、WebSocket、静态资源三类。
+# ───────────────────────────────────────────────────────────────────────────────
