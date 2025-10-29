@@ -1,0 +1,826 @@
+#Egern_linchao10058
+#Update Date: 2025.10.30.00.40:09
+#author: linchao10058
+
+ipv6: false
+allow_external_connections: false
+vif_only: false
+hijack_dns:
+- '*:53'
+geoip_db_url: https://raw.githubusercontent.com/Masaiki/GeoIP2-CN/release/Country.mmdb
+asn_db_url: https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/raw/main/GeoLite2-ASN.mmdb
+proxy_latency_test_url: https://www.google.com/generate_204
+direct_latency_test_url: http://www.cloudflare.com/cdn-cgi/trace
+vif_excluded_routes:
+- boc.com
+- cmbchina.com
+- icbc.com
+- ccb.com
+- abc.com
+dns:
+  bootstrap:
+  - 1.1.1.1
+  - 8.8.8.8
+  - 9.9.9.9
+  upstreams:
+    Cloudflare:
+    - https://cloudflare-dns.com/dns-query
+    - https://1.1.1.1/dns-query
+    - https://1.0.0.1/dns-query
+    GoogleDNS:
+    - tls://8.8.8.8
+    - tls://8.8.4.4
+    Quad9:
+    - https://dns.quad9.net/dns-query
+    - https://9.9.9.9/dns-query
+    Domestic-Secure:
+    - tls://223.5.5.5:853
+    - tls://119.29.29.29:853
+    Domestic-Fast:
+    - 223.5.5.5
+    - 119.29.29.29
+  forward:
+  - wildcard:
+      match: local
+      value: system
+  - wildcard:
+      match: lan
+      value: system
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMax/ChinaMax.list
+      value: Domestic-Secure
+  - wildcard:
+      match: '*.cn'
+      value: Domestic-Fast
+  - wildcard:
+      match: google
+      value: GoogleDNS
+  - wildcard:
+      match: youtube
+      value: GoogleDNS
+  - wildcard:
+      match: microsoft
+      value: Cloudflare
+  - wildcard:
+      match: apple
+      value: Cloudflare
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy.list
+      value: Quad9
+  - wildcard:
+      match: '*'
+      value: Cloudflare
+  hosts:
+    cloudflare-dns.com:
+    - 1.1.1.1
+    - 1.0.0.1
+    one.one.one.one:
+    - 1.1.1.1
+    - 1.0.0.1
+    dns.google:
+    - 8.8.8.8
+    - 8.8.4.4
+    dns.google.com:
+    - 8.8.8.8
+    - 8.8.4.4
+    dns.quad9.net:
+    - 9.9.9.9
+    - 149.112.112.112
+    iosapps.itunes.apple.com:
+    - iosapps.itunes.apple.com.download.ks-cdn.com
+policy_groups:
+- select:
+    name: SELECT
+    policies:
+    - REJECT
+    - REJECT-DROP
+    - DIRECT
+    - PROXY
+    - Other
+    - Advertising
+    - Hong Kong
+    - TaiWan
+    - Korea
+    - Japan
+    - Singapore
+    - Vietnam
+    - United States
+    - China
+    - Global
+    flatten: false
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Bypass.png
+    hidden: false
+- external:
+    name: PROXY
+    type: select
+    urls:
+    - https://sub.dmit.dpdns.org/share/sub/dingyue_Center_flyintpro?token=hPFPD1CJ4LnHR_SUhPsG3
+    - https://sub.store/download/collection/Loon_linchao10058
+    - https://sub.dmit.dpdns.org/share/sub/dingyue_Center_another?token=73tuVG5vbabLFI-Ga5Feh
+    - https://www.flyintpro05.com/api/v1/client/subscribe?token=62be89e4bc828cdfd0c62bfb44746312
+    - https://sub.store/download/collection/Surge_linchao10058
+    - https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
+    urls_disabled:
+    - https://sub.store/download/collection/Loon_linchao10058
+    - https://sub.store/download/collection/Surge_linchao10058
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
+    hidden: false
+- select:
+    name: China
+    policies:
+    - REJECT
+    - DIRECT
+    - SELECT
+    - PROXY
+    - Other
+    flatten: false
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/China.png
+    hidden: false
+- select:
+    name: Global
+    policies:
+    - REJECT
+    - DIRECT
+    - SELECT
+    - PROXY
+    - Other
+    flatten: false
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/global.png
+    hidden: false
+- select:
+    name: Advertising
+    policies:
+    - REJECT
+    - REJECT-DROP
+    - DIRECT
+    - SELECT
+    - PROXY
+    - Other
+    flatten: false
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/AdWhite.png
+    hidden: false
+- select:
+    name: Other
+    policies:
+    - REJECT
+    - REJECT-DROP
+    - DIRECT
+    - PROXY
+    - SELECT
+    - Hong Kong
+    - TaiWan
+    - Korea
+    - Japan
+    - Singapore
+    - Vietnam
+    - United States
+    - China
+    - Global
+    - Advertising
+    flatten: false
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Area.png
+    hidden: false
+- auto_test:
+    name: Hong Kong
+    policies:
+    - PROXY
+    flatten: true
+    filter: ^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b)))(?!.*((?i)回国|校园|BGP|游戏|(\b(GAME)\b))).*$
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Hong_Kong.png
+    hidden: false
+- auto_test:
+    name: TaiWan
+    policies:
+    - PROXY
+    flatten: true
+    filter: ^(?=.*((?i)🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Taiwan.png
+    hidden: false
+- auto_test:
+    name: Korea
+    policies:
+    - PROXY
+    flatten: true
+    filter: ^(?=.*((?i)🇰🇷|韩国|韩|(\b(KR|Korea)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Korea.png
+    hidden: false
+- auto_test:
+    name: Japan
+    policies:
+    - PROXY
+    flatten: true
+    filter: ^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|Japan)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Japan.png
+    hidden: false
+- auto_test:
+    name: Singapore
+    policies:
+    - PROXY
+    flatten: true
+    filter: ^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Singapore.png
+    hidden: false
+- auto_test:
+    name: Vietnam
+    policies:
+    - PROXY
+    flatten: true
+    filter: ^(?=.*(🇻🇳|越南|胡志明|河内|VN|Vn|vn|Vietnam|VIETNAM))(?!.*(回国|校园|游戏|GAME)).*$
+    tolerance: 50
+    icon: https://gitlab.com/lodepuly/iconlibrary/-/raw/main/Flag_icon/120px/VN.png
+    hidden: false
+- auto_test:
+    name: United States
+    policies:
+    - PROXY
+    flatten: true
+    filter: ^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/United_States.png
+    hidden: false
+rules:
+- rule_set:
+    match: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/rule/substore.list
+    policy: PROXY
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All.list
+    policy: China
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Microsoft.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Cloudflare.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Amazon.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Anthropic/Anthropic.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Facebook/Facebook.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Instagram/Instagram.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Threads/Threads.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Whatsapp/Whatsapp.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/YouTube.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/TikTok/TikTok.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/WeChat/WeChat.list
+    policy: China
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Discord/Discord.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Reddit/Reddit.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Snap/Snap.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Zalo.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Line/Line.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/KakaoTalk/KakaoTalk.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/LinkedIn/LinkedIn.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleVoice/GoogleVoice.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/HuggingFace.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Grok.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Copilot/Copilot.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Meta_AI.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Perplexity.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Mistral.AI.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Character.AI.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Adobe/Adobe.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Pinterest/Pinterest.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://adrules.top/adrules.list
+    policy: Advertising
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All.list
+    policy: Advertising
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Game/Game.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_All.list
+    policy: Global
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Tencent/Tencent.list
+    policy: China
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ByteDance/ByteDance.list
+    policy: China
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Alibaba/Alibaba_All.list
+    policy: China
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMaxNoIP/ChinaMaxNoIP_All.list
+    policy: China
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Privacy/Privacy_All.list
+    policy: Advertising
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/HTTPDNS.Block.list
+    policy: Advertising
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DNS/DNS.list
+    policy: PROXY
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list
+    policy: China
+    disabled: false
+- geoip:
+    match: CN
+    policy: China
+    no_resolve: false
+    disabled: false
+- default:
+    policy: PROXY
+mitm:
+  enabled: true
+  ca_p12: egern.p12
+  ca_passphrase: YOUR_SECURE_PASSWORD_HERE
+  hostnames:
+    includes:
+    - '*.vercel.app'
+http_captures:
+  includes:
+  - szextshort.weixin.qq.com
+modules:
+- name: BoxJs
+  url: https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.surge.sgmodule
+  enabled: true
+- name: Sub-Store
+  url: https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/config/Surge.sgmodule
+  enabled: true
+- name: Script Hub
+  url: https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/refs/heads/main/modules/script-hub.surge.sgmodule
+  enabled: true
+- name: 网络流量统计
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E6%B5%81%E9%87%8F%E7%BB%9F%E8%AE%A1.official.sgmodule
+  enabled: true
+- name: 网络信息 Network Info Panel
+  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Network-Info/Moore/Network-Info.sgmodule
+  enabled: true
+- name: 网络信息 𝕏
+  url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Net-lsp-x/Moore/net-lsp-x.sgmodule
+  enabled: true
+- name: 网络接口信息
+  url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Interface-Info/Moore/interface-info-normal.sgmodule
+  enabled: true
+- name: 流媒体解锁检测
+  url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Stream-All/Moore/Stream-All.sgmodule
+  enabled: true
+- name: 节假日信息
+  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Timecard/Moore/Timecard.sgmodule
+  enabled: true
+- name: Server Info
+  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/serverinfo.sgmodule
+  enabled: true
+- name: Flush DNS
+  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Flush-DNS/Moore/Flush-DNS.sgmodule
+  enabled: true
+- name: Advertising
+  url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/Advertising/Advertising.sgmodule
+  enabled: true
+- name: Advertising_Mock
+  url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/Advertising/Advertising_Mock.sgmodule
+  enabled: true
+- name: AllInOne
+  url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/blob/master/rewrite/Surge/AllInOne/AllInOne.sgmodule
+  enabled: true
+- name: AllInOne_Mock
+  url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne_Mock.sgmodule
+  enabled: true
+- name: 广告联盟
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F.official.sgmodule
+  enabled: true
+- name: 可莉广告过滤器
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.sgmodule
+  enabled: true
+- name: 广告平台拦截器
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%B9%BF%E5%91%8A%E5%B9%B3%E5%8F%B0%E6%8B%A6%E6%88%AA%E5%99%A8.sgmodule
+  enabled: true
+- name: General
+  url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/General/General.sgmodule
+  enabled: true
+- name: Profile Module
+  url: https://raw.githubusercontent.com/HotKids/Rules/master/Surge/Module/Profile.sgmodule
+  enabled: true
+- name: Https抓包
+  url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/https.module
+  enabled: true
+- name: Mieqq 绕过代理
+  url: https://raw.githubusercontent.com/mieqq/mieqq/master/skip-proxy-lists.sgmodule
+  enabled: true
+- name: Sukka 本地DNS映射
+  url: https://ruleset.skk.moe/Modules/sukka_local_dns_mapping.sgmodule
+  enabled: true
+- name: BlockHTTPDNS
+  url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/BlockHTTPDNS/BlockHTTPDNS.sgmodule
+  enabled: true
+- name: Redirect
+  url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/Redirect/Redirect.sgmodule
+- name: SafeRedirect
+  url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/SafeRedirect/SafeRedirect.sgmodule
+  enabled: true
+- name: Google重定向
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Google%E9%87%8D%E5%AE%9A%E5%90%91.sgmodule
+  enabled: true
+- name: Ali-DoH
+  url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Spec/DoH/Moore/Ali-DoH.sgmodule
+  enabled: true
+- name: Ali-DNS over QUIC
+  url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Spec/DNS-QUIC/Moore/Ali-DoQ.sgmodule
+  enabled: true
+- name: DNSPod-DoH
+  url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Spec/DoH/Moore/DNSPod-DoH.sgmodule
+  enabled: true
+- name: '☁️ Cloudflare: 🇩 DNS'
+  url: https://github.com/Auraflare/DNS/releases/latest/download/Cloudflare.DNS.sgmodule
+  enabled: true
+- name: '🍟 Fries: 🌐 DNS enhanced'
+  url: https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/sgmodule/DNS.sgmodule
+  enabled: true
+- name: '🍟 Fries: 🌐 General Enhanced'
+  url: https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/sgmodule/General.sgmodule
+  enabled: true
+- name: '🍟 Fries: 🚫 Block HTTPDNS'
+  url: https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/sgmodule/HTTPDNS.Block.sgmodule
+  enabled: true
+- name: '🍿️ DualSubs: ▶️ YouTube'
+  url: https://github.com/DualSubs/YouTube/releases/latest/download/DualSubs.YouTube.sgmodule
+  enabled: true
+- name: '🍿️ DualSubs: 🎵 Spotify'
+  url: https://github.com/DualSubs/Spotify/releases/latest/download/DualSubs.Spotify.sgmodule
+  enabled: true
+- name: ' iRingo: 📰 News'
+  url: https://github.com/NSRingo/News/releases/latest/download/iRingo.News.sgmodule
+  enabled: true
+- name: ' iRingo: 📺 TV app'
+  url: https://github.com/NSRingo/TV/releases/latest/download/iRingo.TV.sgmodule
+  enabled: true
+- name: ' iRingo: 🗺️ Maps'
+  url: https://github.com/NSRingo/GeoServices/releases/latest/download/iRingo.Maps.sgmodule
+  enabled: true
+- name: ' iRingo: ⭕ Siri'
+  url: https://github.com/NSRingo/Siri/releases/latest/download/iRingo.Siri.sgmodule
+  enabled: true
+- name: ' iRingo: 🔍 Search'
+  url: https://github.com/NSRingo/Siri/releases/latest/download/iRingo.Search.sgmodule
+  enabled: true
+- name: ' iRingo: 🌤 WeatherKit'
+  url: https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.sgmodule
+  enabled: true
+- name: ' iRingo: 📍 Location'
+  url: https://github.com/NSRingo/GeoServices/releases/latest/download/iRingo.Location.sgmodule
+  enabled: true
+- name: ' iRingo: ✈ TestFlight'
+  url: https://github.com/NSRingo/TestFlight/releases/latest/download/iRingo.TestFlight.sgmodule
+  enabled: true
+- name: '📺 BiliBili: 🛡️ ADBlock'
+  url: https://github.com/BiliUniverse/ADBlock/releases/latest/download/BiliBili.ADBlock.sgmodule
+  enabled: true
+- name: '📺 BiliBili: ⚙️ Enhanced'
+  url: https://github.com/BiliUniverse/Enhanced/releases/latest/download/BiliBili.Enhanced.sgmodule
+  enabled: true
+- name: '📺 BiliBili: 🌐 Global'
+  url: https://github.com/BiliUniverse/Global/releases/latest/download/BiliBili.Global.sgmodule
+  enabled: true
+- name: '📺 BiliBili: 🔀 Redirect'
+  url: https://github.com/BiliUniverse/Redirect/releases/latest/download/BiliBili.Redirect.sgmodule
+  enabled: true
+- name: '🍿️ DualSubs: 🇳 Netflix'
+  url: https://github.com/DualSubs/Netflix/releases/latest/download/DualSubs.Netflix.sgmodule
+  enabled: true
+- name: '🍿️ DualSubs: 🔣 Universal'
+  url: https://github.com/DualSubs/Universal/releases/latest/download/DualSubs.Universal.sgmodule
+  enabled: true
+- name: 通用解锁Premiere
+  url: https://raw.githubusercontent.com/githubdulong/Script/refs/heads/master/Surge/Revenuecat.sgmodule
+  enabled: true
+- name: Youtube (Music) Enhance (egerndaddy)
+  url: https://raw.githubusercontent.com/egerndaddy/Tool/refs/heads/X/Egern/Module/YouTube.yaml
+  enabled: true
+- name: YouTube去广告(>=iOS15)
+  url: https://raw.githubusercontent.com/app2smile/rules/master/module/youtube.sgmodule
+  enabled: true
+- name: Youtube (Music) Enhance
+  url: https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule
+  enabled: true
+- name: YoutubeLite
+  url: https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Lite.sgmodule
+  enabled: true
+- name: YouTube Tweaks
+  url: https://raw.githubusercontent.com/TPCTPCTPC/Adblock-gist/refs/heads/master/Module/YouTube_Tweaks.sgmodule
+  enabled: true
+- name: Spotify(iOS15)
+  url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/spotifyVIP.module
+  enabled: true
+- name: Spotify(>=iOS15)
+  url: https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.module
+  enabled: true
+- name: Spotify (app2smile)
+  url: https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.module
+  enabled: true
+- name: TikTok解锁区域限制,下载去水印,自定义参数
+  url: https://raw.githubusercontent.com/githubdulong/Script/refs/heads/master/Surge/TikTok_Surge.sgmodule
+  enabled: true
+- name: Reddit去广告
+  url: https://raw.githubusercontent.com/githubdulong/Script/refs/heads/master/Surge/Reddit.sgmodule
+  enabled: true
+- name: Documents解锁会员
+  url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/main/modules/documents.module
+  enabled: true
+- name: AccuWeather解锁会员
+  url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/accu.module
+  enabled: true
+- name: Picsart解锁会员
+  url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/picsart.module
+  enabled: true
+- name: Polarr解锁会员
+  url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/polarr.module
+  enabled: true
+- name: 美图秀秀解锁会员
+  url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/meituxx.module
+  enabled: true
+- name: WPS每日签到
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/WPS%E6%AF%8F%E6%97%A5%E7%AD%BE%E5%88%B0.sgmodule
+  enabled: true
+- name: WPS解锁会员
+  url: https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/WPSOffice/Surge.sgmodule
+  enabled: true
+- name: WPS解锁本地会员
+  url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/wps.sgmodule
+  enabled: true
+- name: 彩云天气VIP
+  url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/caiyun_cron.module
+  enabled: true
+- name: 彩云天气去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BD%A9%E4%BA%91%E5%A4%A9%E6%B0%94%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 微信公众号去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 微信外部链接解锁
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BE%AE%E4%BF%A1%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5%E8%A7%A3%E9%94%81.sgmodule
+  enabled: true
+- name: 微信小程序去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 夸克去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%A4%B8%E5%85%8B%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 阿里云盘去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 高德地图去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 淘宝去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E6%B7%98%E5%AE%9D%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: YY去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/YY%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 迅雷去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E8%BF%85%E9%9B%B7%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 爱奇艺视频去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E7%88%B1%E5%A5%87%E8%89%BA%E8%A7%86%E9%A2%91%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 爱奇艺会员签到
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E7%88%B1%E5%A5%87%E8%89%BA%E4%BC%9A%E5%91%98%E7%AD%BE%E5%88%B0.official.sgmodule
+  enabled: true
+- name: 腾讯视频去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 优酷视频去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E4%BC%98%E9%85%B7%E8%A7%86%E9%A2%91%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 芒果TV去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E8%8A%92%E6%9E%9CTV%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: Bilibili (app2smile)
+  url: https://raw.githubusercontent.com/app2smile/rules/master/module/bilibili.sgmodule
+  enabled: true
+- name: 哔哩哔哩去广告 (Official)
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8E%BB%E5%B9%BF%E5%91%8A.official.sgmodule
+  enabled: true
+- name: 哔哩漫画抢券
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E5%93%94%E5%93%A9%E6%BC%AB%E7%94%BB%E6%8A%A2%E5%88%B8.official.sgmodule
+  enabled: true
+- name: 哔哩漫画签到
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E5%93%94%E5%93%A9%E6%BC%AB%E7%94%BB%E7%AD%BE%E5%88%B0.official.sgmodule
+  enabled: true
+- name: QQ音乐去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/QQ%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 网易云音乐去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 汽水音乐去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E6%B1%BD%E6%B0%B4%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 酷我音乐去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E9%85%B7%E6%88%91%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 酷狗音乐去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E9%85%B7%E7%8B%97%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 喜马拉雅去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 小红书去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%B0%8F%E7%BA%A2%E4%B9%A6%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 知乎去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E7%9F%A5%E4%B9%8E%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 豆瓣去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E8%B1%86%E7%93%A3%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 微博去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BE%AE%E5%8D%9A%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 微博国际版去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BE%AE%E5%8D%9A%E5%9B%BD%E9%99%85%E7%89%88%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 云闪付去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E4%BA%91%E9%97%AA%E4%BB%98%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 中国移动云盘去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8%E4%BA%91%E7%9B%98%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 网易新闻去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E7%BD%91%E6%98%93%E6%96%B0%E9%97%BB%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 有道翻译官去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E6%9C%89%E9%81%93%E7%BF%BB%E8%AF%91%E5%AE%98%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 网易有道词典去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E7%BD%91%E6%98%93%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 网易邮箱大师去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E7%BD%91%E6%98%93%E9%82%AE%E7%AE%B1%E5%A4%A7%E5%B8%88%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 百度地图去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 百度搜索网页去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E7%99%BE%E5%BA%A6%E6%90%9C%E7%B4%A2%E7%BD%91%E9%A1%B5%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 百度网盘去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 百度输入法去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E7%99%BE%E5%BA%A6%E8%BE%93%E5%85%A5%E6%B3%95%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 百度贴吧签到
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E7%99%BE%E5%BA%A6%E8%B4%B4%E5%90%A7%E7%AD%BE%E5%88%B0.official.sgmodule
+  enabled: true
+- name: 贴吧去广告 (Official)
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E8%B4%B4%E5%90%A7%E5%8E%BB%E5%B9%BF%E5%91%8A.official.sgmodule
+  enabled: true
+- name: 京东比价
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E4%BA%AC%E4%B8%9C%E6%AF%94%E4%BB%B7.sgmodule
+  enabled: true
+- name: 京东去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E4%BA%AC%E4%B8%9C%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 拼多多去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E6%8B%BC%E5%A4%9A%E5%A4%9A%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: Soul去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Soul%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 菜鸟去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E8%8F%9C%E9%B8%9F%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 闲鱼去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E9%97%B2%E9%B1%BC%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 脉脉去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E8%84%89%E8%84%89%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 滴滴出行去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E6%BB%B4%E6%BB%B4%E5%87%BA%E8%A1%8C%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 携程旅行签到
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E6%90%BA%E7%A8%8B%E6%97%85%E8%A1%8C%E7%AD%BE%E5%88%B0.official.sgmodule
+  enabled: true
