@@ -1,0 +1,389 @@
+#Loon_linchao10058
+#Update Date: 2025.10.30.00.40:09
+#author: linchao10058
+
+[General]
+disable-stun = true
+ipv6-vif = auto
+ip-mode = dual
+ipv6 = false
+skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
+bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
+# [DNS] => DNS 服务器
+dns-server = system,119.29.29.29,223.5.5.5,8.8.8.8
+allow-udp-proxy = false
+# Wi-Fi 访问
+# > 允许 Wi-Fi 网络下其它设备访问
+allow-wifi-access = true
+wifi-access-http-port = 7222
+wifi-access-socks5-port = 7221
+# > 代理测速 URL
+proxy-test-url = http://www.google.com/generate_204
+internet-test-url = http://www.cloudflare.com/cdn-cgi/trace
+# > 测速超时 (s)
+test-timeout = 2
+interface-mode = auto
+# > 解决一些ip请求无法匹配域名类规则的问题。real-ip指定的域名将不返回fake ip响应，直接将dns请求发往目标dns服务器
+# 解析器
+resource-parser = https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/scripts/sub-store-parser.js
+# ssid-trigger参数，用于指定SSID下流量模式切换，（default表示默认，cellular表示蜂窝，目前支持三种值：rule，direct，proxy） 
+# ssid-trigger="default":rule,"cellular":rule,"ASUS":direct,"TPLINK":proxy 
+
+
+[Proxy]
+U989124992380.edge.onetcdn.com = HTTP,U989124992380.edge.onetcdn.com,37810
+☁️ CFWarp-D = WireGuard,interface-ip=172.16.0.2,private-key="SHVqHEGI7k2+OQ/oWMmWY2EQObbRQjRBdDPimh0h1WY=",mtu=1420,dns=1.1.1.1,keepalive=30,peers=[{public-key="bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",allowed-ips="0.0.0.0/0,::0/0",endpoint=162.159.192.217:3476}]
+WARP+GSCats = WireGuard,interface-ip=172.16.0.2,interface-ipv6=2606:4700:110:81bc:1fc5:5bf3:78d:754f,private-key="eKycj9KyGKX4Gyj9ntOXIwc3stSSN8LmQ8U7Tvq7sW8=",mtu=1400,dns=162.159.36.1,dnsv6=2606:4700:4700::1111,keepalive=45,peers=[{public-key="bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",allowed-ips="0.0.0.0/0,::0/0",endpoint=162.159.193.6:2408}]
+WARP+GSCats = WireGuard,interface-ip=172.16.0.2,interface-ipv6=2606:4700:110:81bc:1fc5:5bf3:78d:754f,private-key="eKycj9KyGKX4Gyj9ntOXIwc3stSSN8LmQ8U7Tvq7sW8=",mtu=1400,dns=162.159.36.1,dnsv6=2606:4700:4700::1111,keepalive=45,peers=[{public-key="bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",allowed-ips="0.0.0.0/0,::0/0",endpoint=162.159.193.6:2408}]
+WARP+GSCats = WireGuard,interface-ip=172.16.0.2,interface-ipv6=2606:4700:110:81bc:1fc5:5bf3:78d:754f,private-key="eKycj9KyGKX4Gyj9ntOXIwc3stSSN8LmQ8U7Tvq7sW8=",mtu=1400,dns=162.159.36.1,dnsv6=2606:4700:4700::1111,keepalive=45,peers=[{public-key="bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",allowed-ips="0.0.0.0/0,::0/0",endpoint=162.159.193.6:2408}]
+Warp+GSC3 = WireGuard,interface-ip=172.16.0.2,interface-ipv6=2606:4700:110:8f71:49f:13f4:55d6:a577,private-key="oFl4IF42oioy2rU9Dc2af5vi6X6+zbFDnY/CUckU23g=",mtu=1400,dns=162.159.36.1,dnsv6=2606:4700:4700::1111,keepalive=45,peers=[{public-key="bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",allowed-ips="0.0.0.0/0,::0/0",endpoint=162.159.195.8:2408}]
+WARP+GSCats = WireGuard,interface-ip=172.16.0.2,interface-ipv6=2606:4700:110:81bc:1fc5:5bf3:78d:754f,private-key="eKycj9KyGKX4Gyj9ntOXIwc3stSSN8LmQ8U7Tvq7sW8=",mtu=1400,dns=162.159.36.1,dnsv6=2606:4700:4700::1111,keepalive=45,peers=[{public-key="bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",allowed-ips="0.0.0.0/0,::0/0",endpoint=162.159.193.6:2408}]
+Warp+GSC2 = WireGuard,interface-ip=172.16.0.2,interface-ipv6=2606:4700:110:81bc:1fc5:5bf3:78d:754f,private-key="eKycj9KyGKX4Gyj9ntOXIwc3stSSN8LmQ8U7Tvq7sW8=",mtu=1400,dns=162.159.36.1,dnsv6=2606:4700:4700::1111,keepalive=45,peers=[{public-key="bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",allowed-ips="0.0.0.0/0,::0/0",endpoint=162.159.193.6:2408}]
+Warp+GSC1 = WireGuard,interface-ip=162.159.36.1,interface-ipv6=2606:4700:4700::1111,private-key="oFl4IF42oioy2rU9Dc2af5vi6X6+zbFDnY/CUckU23g=",mtu=1380,dns=162.159.36.1,dnsv6=2606:4700:4700::1111,keepalive=45,peers=[{public-key="bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",allowed-ips="0.0.0.0/0,::0/0",endpoint=162.159.195.9:2408}]
+
+# 内置 DIRECT、REJECT 策略
+# 内置 PROXY 指向本地节点或者订阅节点中的任何一个（有本地节点默认指向第一个本地节点，当没有本地节点但有订阅节点时，指向第一个订阅的第一个节点，本地节点和订阅节点都不存在时指向DIRECT）
+
+#ss
+#ss1 = Shadowsocks,example.com,443,aes-128-gcm,"password",fast-open=false,udp=true
+#ss2 = Shadowsocks,example2.com,443,chacha20,"password",fast-open=true,udp=true
+#ss+simple obfs
+#ssObfs1 = Shadowsocks,example.com,80,aes-128-gcm,"password",obfs-name=http,obfs-host=www.micsoft.com,fast-open=true,udp=true
+#ssObfs2 = Shadowsocks,example.com,443,aes-128-gcm,"password",obfs-name=tls,obfs-host=www.micsoft.com,fast-open=true,udp=true
+
+#ssr
+# 节点名称 = 协议，服务器地址，端口，加密方式，密码，obfs-name，{obfs-params}，protocol-name，{protocols-param}
+#ssr1 = ShadowsocksR,example.com,443,aes-256-cfb,"password",orig,{},http_simple,{download.windows.com},fast-open=false,udp=true
+#ssr2 = ShadowsocksR,example.com,10076,aes-128-cfb,"password",auth_chain_a,{9555:loon},http_post,{download.windows.com},fast-open=false,udp=true
+#ssr3 = ShadowsocksR,example.com,10076,chacha20,"password",auth_aes128_md5,{9555:loon},tls1.2_ticket_auth,{download.windows.com},fast-open=false,udp=true
+#ssr4 = ShadowsocksR,example.com,10076,chacha20-ietf,"password",auth_aes128_sha1,{9555:loon},plain,{},fast-open=false,udp=true
+
+#http
+#http1 = http,example.com,80
+#http2 = http,example.com,80,username,"password"
+
+#https
+#https1 = https,example.com,443
+#https2 = https,example.com,443,username,"password"
+#https3 = https,example.com,443,username,"password",skip-cert-verify:true,tls-name:example.com
+
+#vmess+tcp
+# 节点名称 = 协议，服务器地址，端口，加密方式，UUID，传输方式:(tcp/ws),path：websocket握手header中的path，host：websocket握手header中的path，over-tls:是否tls，tls-name：tls名字，skip-cert-verify：是否跳过证书校验（默认否）
+#vmess1 = vmess,example.com,10086,aes-128-gcm,"52396e06-041a-4cc2-be5c-8525eb457809",transport:tcp,path:/,host:v3-dy-y.ixigua.com,over-tls:false
+#vmess+tcp+tls
+#vmess2 = vmess,example.com,10086,aes-128-gcm,"52396e06-041a-4cc2-be5c-8525eb457809",transport:tcp,path:/,host:v3-dy-y.ixigua.com,over-tls:true,tls-name:example.com,skip-cert-verify:true
+#vmess+ws
+#vmess3 = vmess,example.com,10086,aes-128-gcm,"52396e06-041a-4cc2-be5c-8525eb457809",transport:ws,path:/,host:v3-dy-y.ixigua.com,over-tls:false
+#vmess+wss
+#vmess4 = vmess,example.com,10086,aes-128-gcm,"52396e06-041a-4cc2-be5c-8525eb457809",transport:ws,path:/,host:v3-dy-y.ixigua.com,over-tls:true,tls-name:example.com,skip-cert-verify:true
+#trojan
+#trojan1 = trojan,example.com,443,"password",skip-cert-verify:false,tls-name:example.com
+#trojan2 = trojan,example.com,443,"password",skip-cert-verify:true,tls-name:example.com
+
+[Remote Proxy]
+https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub = https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub,udp=true,block-quic=true,fast-open=false,vmess-aead=true,skip-cert-verify=default,enabled=true,flexible-sni=true
+Loon_linchao10058 = https://sub.store/download/collection/Loon_linchao10058,udp=false,block-quic=true,fast-open=false,vmess-aead=true,skip-cert-verify=default,enabled=true,flexible-sni=true,img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/task/loon.png
+Surge_linchao10058 = https://sub.store/download/collection/Surge_linchao10058,udp=true,block-quic=true,fast-open=false,vmess-aead=true,skip-cert-verify=default,enabled=false,flexible-sni=true,img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/task/surge.png
+Shadowrocket_linchao10058 = https://sub.store/download/collection/Shadowrocket_linchao10058,udp=true,block-quic=false,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
+http://sub.avotc.eu.org/?token=auto = http://sub.avotc.eu.org/?token=auto,udp=true,fast-open=false,vmess-aead=true,enabled=true
+https://sub.789.st/sub?target=clash&url=https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml&sort=true&_=1702371386942 = https://sub.789.st/sub?target=clash&url=https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml&sort=true&_=1702371386942,udp=false,fast-open=false,vmess-aead=true,enabled=true,img-url=https://raw.githubusercontent.com/cjgcxjuh/fjtds/main/E89301C5-982E-4219-84B4-386AC36B06B5.png
+https://api.xjichang.buzz/api/v1/client/subscribe?token=3b3e2c230fb4aaf03161458f521eab14 = https://api.xjichang.buzz/api/v1/client/subscribe?token=3b3e2c230fb4aaf03161458f521eab14,udp=true,fast-open=false,vmess-aead=true,enabled=true
+https://api.subcloud.xyz/sub?target=loon&url=ssr%3A%2F%2FOTEuMjA2LjkzLjE1NzoxNzE1NjpvcmlnaW46cmM0OnBsYWluOmJHNWpiaTV2Y21jZ2JEWnMvP29iZnNwYXJhbT0mcmVtYXJrcz01TC1FNTcyWDVwYXZRUSZncm91cD1URzVqYmk1dmNtYw%7Cssr%3A%2F%2FMTk1LjEzMy4xMS44OjE3MTU2Om9yaWdpbjpyYzQ6cGxhaW46Ykc1amJpNXZjbWNnYkRacy8_b2Jmc3BhcmFtPSZyZW1hcmtzPTVMLUU1NzJYNXBhdlFnJmdyb3VwPVRHNWpiaTV2Y21j%7Cssr%3A%2F%2FNDUuOC4xNTkuNzc6MTcxNTY6b3JpZ2luOnJjNDpwbGFpbjpiRzVqYmk1dmNtY2diRFpzLz9vYmZzcGFyYW09JnJlbWFya3M9NUwtRTU3Mlg1cGF2UXcmZ3JvdXA9VEc1amJpNXZjbWM%7Cssr%3A%2F%2FNDUuOC4xNTguMTE6MTcxNTY6b3JpZ2luOnJjNDpwbGFpbjpiRzVqYmk1dmNtY2diRFpzLz9vYmZzcGFyYW09JnJlbWFya3M9NUwtRTU3Mlg1cGF2UkEmZ3JvdXA9VEc1amJpNXZjbWM%7Cssr%3A%2F%2FMTg4LjExOS42NS42NzoxNzE1NjpvcmlnaW46cmM0OnBsYWluOmJHNWpiaTV2Y21jZ2JEWnMvP29iZnNwYXJhbT0mcmVtYXJrcz01TC1FNTcyWDVwYXZSUSZncm91cD1URzVqYmk1dmNtYw%7Cssr%3A%2F%2FNDUuODkuMjI5LjE1ODoxNzE1NjpvcmlnaW46cmM0OnBsYWluOmJHNWpiaTV2Y21jZ2JEWnMvP29iZnNwYXJhbT0mcmVtYXJrcz01TC1FNTcyWDVwYXZSZyZncm91cD1URzVqYmk1dmNtYw%7Cssr%3A%2F%2FNDUuOC4xNTguMTgyOjE3MTU2Om9yaWdpbjpyYzQ6cGxhaW46Ykc1amJpNXZjbWNnYkRacy8_b2Jmc3BhcmFtPSZyZW1hcmtzPTVMLUU1NzJYNXBhdlJ3Jmdyb3VwPVRHNWpiaTV2Y21j%7Cssr%3A%2F%2FNDUuMTMwLjE0Ni4zMzoxNzE1NjpvcmlnaW46cmM0OnBsYWluOmJHNWpiaTV2Y21jZ2JEWnMvP29iZnNwYXJhbT0mcmVtYXJrcz01TC1FNTcyWDVwYXZTQSZncm91cD1URzVqYmk1dmNtYw%7Cssr%3A%2F%2FNDUuOC4xNTkuNjY6MTcxNTY6b3JpZ2luOnJjNDpwbGFpbjpiRzVqYmk1dmNtY2diRFpzLz9vYmZzcGFyYW09JnJlbWFya3M9NUwtRTU3Mlg1cGF2U1EmZ3JvdXA9VEc1amJpNXZjbWM%7Cssr%3A%2F%2FNDUuODkuMjI4LjIwMDoxNzE1NjpvcmlnaW46cmM0OnBsYWluOmJHNWpiaTV2Y21jZ2JEWnMvP29iZnNwYXJhbT0mcmVtYXJrcz01TC1FNTcyWDVwYXZTZyZncm91cD1URzVqYmk1dmNtYw%7Cssr%3A%2F%2FMTg4LjExOS42NS4xNTA6MTcxNTY6b3JpZ2luOnJjNDpwbGFpbjpiRzVqYmk1dmNtY2diRFpzLz9vYmZzcGFyYW09JnJlbWFya3M9NUwtRTU3Mlg1cGF2U3cmZ3JvdXA9VEc1amJpNXZjbWM%7Cssr%3A%2F%2FOTEuMjA2LjkzLjE1MjoxNzE1NjpvcmlnaW46cmM0OnBsYWluOmJHNWpiaTV2Y21jZ2JEWnMvP29iZnNwYXJhbT0mcmVtYXJrcz01TC1FNTcyWDVwYXZUQSZncm91cD1URzVqYmk1dmNtYw&insert=false = https://api.subcloud.xyz/sub?target=loon&url=ssr%3A%2F%2FOTEuMjA2LjkzLjE1NzoxNzE1NjpvcmlnaW46cmM0OnBsYWluOmJHNWpiaTV2Y21jZ2JEWnMvP29iZnNwYXJhbT0mcmVtYXJrcz01TC1FNTcyWDVwYXZRUSZncm91cD1URzVqYmk1dmNtYw%7Cssr%3A%2F%2FMTk1LjEzMy4xMS44OjE3MTU2Om9yaWdpbjpyYzQ6cGxhaW46Ykc1amJpNXZjbWNnYkRacy8_b2Jmc3BhcmFtPSZyZW1hcmtzPTVMLUU1NzJYNXBhdlFnJmdyb3VwPVRHNWpiaTV2Y21j%7Cssr%3A%2F%2FNDUuOC4xNTkuNzc6MTcxNTY6b3JpZ2luOnJjNDpwbGFpbjpiRzVqYmk1dmNtY2diRFpzLz9vYmZzcGFyYW09JnJlbWFya3M9NUwtRTU3Mlg1cGF2UXcmZ3JvdXA9VEc1amJpNXZjbWM%7Cssr%3A%2F%2FNDUuOC4xNTguMTE6MTcxNTY6b3JpZ2luOnJjNDpwbGFpbjpiRzVqYmk1dmNtY2diRFpzLz9vYmZzcGFyYW09JnJlbWFya3M9NUwtRTU3Mlg1cGF2UkEmZ3JvdXA9VEc1amJpNXZjbWM%7Cssr%3A%2F%2FMTg4LjExOS42NS42NzoxNzE1NjpvcmlnaW46cmM0OnBsYWluOmJHNWpiaTV2Y21jZ2JEWnMvP29iZnNwYXJhbT0mcmVtYXJrcz01TC1FNTcyWDVwYXZSUSZncm91cD1URzVqYmk1dmNtYw%7Cssr%3A%2F%2FNDUuODkuMjI5LjE1ODoxNzE1NjpvcmlnaW46cmM0OnBsYWluOmJHNWpiaTV2Y21jZ2JEWnMvP29iZnNwYXJhbT0mcmVtYXJrcz01TC1FNTcyWDVwYXZSZyZncm91cD1URzVqYmk1dmNtYw%7Cssr%3A%2F%2FNDUuOC4xNTguMTgyOjE3MTU2Om9yaWdpbjpyYzQ6cGxhaW46Ykc1amJpNXZjbWNnYkRacy8_b2Jmc3BhcmFtPSZyZW1hcmtzPTVMLUU1NzJYNXBhdlJ3Jmdyb3VwPVRHNWpiaTV2Y21j%7Cssr%3A%2F%2FNDUuMTMwLjE0Ni4zMzoxNzE1NjpvcmlnaW46cmM0OnBsYWluOmJHNWpiaTV2Y21jZ2JEWnMvP29iZnNwYXJhbT0mcmVtYXJrcz01TC1FNTcyWDVwYXZTQSZncm91cD1URzVqYmk1dmNtYw%7Cssr%3A%2F%2FNDUuOC4xNTkuNjY6MTcxNTY6b3JpZ2luOnJjNDpwbGFpbjpiRzVqYmk1dmNtY2diRFpzLz9vYmZzcGFyYW09JnJlbWFya3M9NUwtRTU3Mlg1cGF2U1EmZ3JvdXA9VEc1amJpNXZjbWM%7Cssr%3A%2F%2FNDUuODkuMjI4LjIwMDoxNzE1NjpvcmlnaW46cmM0OnBsYWluOmJHNWpiaTV2Y21jZ2JEWnMvP29iZnNwYXJhbT0mcmVtYXJrcz01TC1FNTcyWDVwYXZTZyZncm91cD1URzVqYmk1dmNtYw%7Cssr%3A%2F%2FMTg4LjExOS42NS4xNTA6MTcxNTY6b3JpZ2luOnJjNDpwbGFpbjpiRzVqYmk1dmNtY2diRFpzLz9vYmZzcGFyYW09JnJlbWFya3M9NUwtRTU3Mlg1cGF2U3cmZ3JvdXA9VEc1amJpNXZjbWM%7Cssr%3A%2F%2FOTEuMjA2LjkzLjE1MjoxNzE1NjpvcmlnaW46cmM0OnBsYWluOmJHNWpiaTV2Y21jZ2JEWnMvP29iZnNwYXJhbT0mcmVtYXJrcz01TC1FNTcyWDVwYXZUQSZncm91cD1URzVqYmk1dmNtYw&insert=false,udp=true,fast-open=false,vmess-aead=true,enabled=true
+# 订阅节点
+# 别名 = 订阅URL
+#Subs = https://example/server-complete.txt
+#Subs2 = https://example2/server-complete.txt
+
+[Remote Filter]
+🇨🇳台湾 = NameRegex, FilterKey = "(?i)(🇨🇳)|(台湾)|(Tai)|(TW)"
+🇭🇰香港 = NameRegex, FilterKey = "(?i)(🇭🇰)|(香港)|(Hong)|(HK)"
+🇺🇸美国 = NameRegex, FilterKey = "(?i)(🇺🇸)|(美国)|(States)|(US)"
+🇯🇵日本 = NameRegex, FilterKey = "(?i)(🇯🇵)|(日本)|(Japan)|(JP)"
+🇰🇷韩国 = NameRegex, FilterKey = "(?i)(🇰🇷|KR|Korea|KOR|首尔|韩|韓)"
+🇻🇳越南 = NameRegex, FilterKey = "🇻🇳|越南| Vietnam|意lVN"
+🇸🇬新加坡 = NameRegex, FilterKey = "(?i)(🇸🇬|新加坡|坡|狮城|SG|Singapore)"
+🇩🇪德国 = NameRegex, FilterKey = "🇩🇪|德国|Germany|GM|柏林|Berlin "
+🇬🇧英国 = NameRegex, FilterKey = "🇬🇧|英国|UK| England|伦敦"
+🇨🇦加拿大 = NameRegex, FilterKey = "🇨🇦|加拿大| Canada |基奇纳|CA|渥太华"
+🇮🇳印度 = NameRegex, FilterKey = "🇮🇳|印度|India|IN"
+🇦🇺澳大利亚 = NameRegex, FilterKey = "🇦🇺|澳大利亚|AU|Australia|悉尼|Sydney "
+🇲🇦马来西亚 = NameRegex, FilterKey = "🇲🇾|马来西亚|Malaysia |MY|吉隆坡|Kuala Lumpur "
+🇨🇭瑞士 = NameRegex, FilterKey = "🇨🇭|瑞士|Switzerland "
+# 筛选订阅节点，筛选后的结果可加入到策略组中，目前支持三种筛选方式
+# NodeSelect: 使用在UI上选择的节点。
+# NameKeyword: 根据提供的关键词对订阅中所有节点的名称进行筛选，使用筛选后的节点。
+# NameRegex: 根据提供的正则表达式对订阅中所有节点的名称进行筛选，使用筛选后的节点。
+#Netflix = NodeSelect,Subs
+#Hulu = NameKeyword,Subs,Subs2,FilterKey = Hulu
+#HK = NameRegex,Subs,FilterKey = *HK
+
+[Proxy Group]
+# 节点选项
+#PROXY = select,Auto,1,2,3,4,Subs
+# url-test模式，给提供的url发出http header请求，根据返回结果，选择测速最快的节点，默认间隔600s，测速超时时间5s，为了避免资源浪费，建议节点数不要过多，只支持单个节点和远端节点，其他会被忽略
+#Auto = url-test,1,2,3,4,Subs,url = http://bing.com/,interval = 600
+# fallback模式，和url-test类似，不同的是会根据顺序返回第一个可用的节点，为了避免资源浪费，建议节点数不要过多，只支持单个节点和远端节点，其他会被忽略
+#Auto1 = fallback,1,2,3,4,Subs,url = http://bing.com/,interval = 600
+# 别名 = ssid，默认 = 策略， 蜂窝 = 策略， ssid名称 = 策略
+#SSID = ssid, default = PROXY, cellular = DIRECT, "DivineEngine" = PROXY
+#负载均衡，可选三种算法：random：随机选择策略组可用节点，round-robin：轮询策略组可用节点，pcc：在random基础上，针对相同host使用同一节点，此处url用来测试节点可用性，每隔interval进行一次测速，max-timeout参数用于筛选测试时间超过max-timeout的节点为不可用节点
+#LoadBalance = load-balance,node1,node2,remoteNodes, url = http://bing.com, interval = 600,algorithm = pcc, max-timeout=3000
+# 广告模式
+#Advertising = select,REJECT,DIRECT
+# 白名单模式 PROXY，黑名单模式 DIRECT
+#Final = select,PROXY,DIRECT
+
+#自定义
+SELECT = select,DIRECT,REJECT,PROXY,Warp+GSC1,Warp+GSC2,Warp+GSC3,WARP+GSCats,U989124992380.edge.onetcdn.com,All Nodes,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/loon.png
+PROXY = select,DIRECT,Taiwan,Hong Kong,Japan,Singapore,United States,All Nodes,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+China = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/China.png
+Global = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
+Advertising = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Advertising.png
+Others = select,DIRECT,REJECT,SELECT,PROXY,Advertising,China,Global,Hong Kong,Taiwan,Japan,Singapore,United States,All Nodes,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Viu.png
+
+Taiwan = select,🇨🇳台湾,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+Hong Kong = select,🇭🇰香港,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png
+Japan = select,🇯🇵日本,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png
+Singapore = select,🇸🇬新加坡,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png
+United States = select,🇺🇸美国,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png
+# 白名单模式 PROXY，黑名单模式 DIRECT
+All Nodes = select,☁️ CFWarp-D,WARP+GSCats,Warp+GSC1,Warp+GSC2,Warp+GSC3,U989124992380.edge.onetcdn.com,Loon_linchao10058,https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub,Surge_linchao10058,Shadowrocket_linchao10058,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Area.png
+[Rule]
+DOMAIN,soulapp.cn,PROXY
+DOMAIN-SUFFIX,soulapp.me,PROXY
+DOMAIN-SUFFIX,zingmp3.vn,PROXY
+DOMAIN-SUFFIX,zaloapp.com,PROXY
+DOMAIN-SUFFIX,zalo.me,PROXY
+DOMAIN-SUFFIX,vercel.app,PROXY
+DOMAIN-SUFFIX,zadn.vn,PROXY
+#本地规则
+# Local RULE
+# Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR
+# Strategy:DIRECT,Proxy,REJECT
+# Options:force-remote-dns(Default:false),no-resolve
+#DOMAIN,google.com,PROXY
+DOMAIN,rsshub.app,节点选择
+DOMAIN-KEYWORD,announce,DIRECT
+DOMAIN-KEYWORD,torrent,DIRECT
+DOMAIN-KEYWORD,tracker,DIRECT
+DOMAIN-SUFFIX,smtp,DIRECT
+URL-REGEX,"(Subject|HELO|SMTP)",DIRECT
+IP-CIDR,1.1.1.1/24,DIRECT,no-resolve
+# GeoIP China
+GEOIP,CN,DIRECT
+FINAL,PROXY
+
+[Remote Rule]
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All.list, policy=China, tag=Apple_All.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Microsoft/Microsoft.list, policy=Global, tag=Microsoft, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list, policy=Global, tag=Google, enabled=true
+# Remote Rule
+# 订阅规则URL,策略
+# PROXY
+#https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Rule/ExampleRule.list,policy=PROXY,enabled=false
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/OpenAI/OpenAI.list, policy=Others, tag=OpenAI, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/Anthropic/Anthropic.list, policy=Global, tag=Anthropic, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Cloudflare/Cloudflare.list, policy=Global, tag=Cloudflare, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Game/Game.list, policy=Global, tag=Game.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list, policy=China, tag=Lan.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DNS/DNS.list, policy=PROXY, tag=DNS.list, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/HTTPDNS.Block.list, policy=Advertising, tag=HTTPDNS.Block.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Privacy/Privacy_All.list, policy=Advertising, tag=Privacy_All.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All.list, policy=Advertising, tag=Advertising_All.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_All.list, policy=Global, tag=Global_All.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMaxNoIP/ChinaMaxNoIP_All.list, policy=China, tag=ChinaMaxNoIP_All.list, enabled=true
+
+[Host]
+*.taobao.com = server:223.5.5.5
+*.tmall.com = server:223.5.5.5
+*.alipay.com = server:223.5.5.5
+*.alicdn.com = server:223.5.5.5
+*.aliyun.com = server:223.5.5.5
+*.jd.com = server:119.28.28.28
+*.qq.com = server:119.28.28.28
+*.tencent.com = server:119.28.28.28
+*.weixin.com = server:119.28.28.28
+*.bilibili.com = server:119.29.29.29
+hdslb.com = server:119.29.29.29
+*.163.com = server:119.29.29.29
+*.126.com = server:119.29.29.29
+*.126.net = server:119.29.29.29
+*.127.net = server:119.29.29.29
+*.netease.com = server:119.29.29.29
+*.mi.com = server:119.29.29.29
+*.xiaomi.com = server:119.29.29.29
+
+[URL Rewrite]
+enable = true
+# Redirect Google Search Service
+#^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
+
+[Remote Rewrite]
+https://raw.githubusercontents.com/zqzess/rule_for_quantumultX/master/Loon/Rewrite/zqzess_Rewrite.conf, tag=Google搜索中国香港日本重新定向, enabled=false
+https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Rewrite/AutoRewrite_Example.list, tag=auto(Loon自带), enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, tag=复写去广告Advertising实时版, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/AdvertisingLite/AdvertisingLite.plugin, tag=复写去广告AdvertisingLite（严格版）实时版, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/AllInOne/AllInOne.plugin, tag=复写去广告AllInOne（汇总Advertising复写去广告、AdvertisingScript通过脚本去除广告、Redirect重定向复写。  ）, enabled=true
+# 订阅 URL Rewrite
+# 订阅url,别名(可选)
+
+
+[Script]
+http-response https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/PicsArt.js, requires-body=true, timeout=10, tag=解锁PicsArt美易, img-url=https://raw.githubusercontent.com/fw-carl/For-Own-Use/master/PIC/smartisan/com_picsart_studio.png
+http-response ^https:\/\/api\.polaxiong\.com\/v1\/payments\/appleiap\/receipts\/confirmation script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Polarr.js, requires-body=true, timeout=10, tag=Polarr泼辣修图解锁特权 (需恢复购买)
+http-response ^https?:\/\/account\.wps\.cn\/api\/users script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js, requires-body=true, timeout=10, tag=WPS Office解锁部分功能, img-url=https://raw.githubusercontents.com/Orz-3/mini/master/Color/wps.png
+http-response https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js, requires-body=true, timeout=10, tag=百度网盘解锁在线视频倍率/清晰度, img-url=https://raw.githubusercontents.com/Orz-3/mini/master/Color/baidu.png
+http-request ^https:\/\/music\.163\.com\/weapi\/user\/level script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/neteasemusic.cookie.js, requires-body=true, timeout=10, tag=网易云音乐解锁, img-url=https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/Color/Netease_Music_Unlock.png
+http-response ^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice) script-path=https://raw.githubusercontents.com/NobyDa/Script/master/Surge/JS/Kuwo.js, requires-body=true, timeout=10, tag=酷我音乐解锁会员试听及部分功能, img-url=https://raw.githubusercontents.com/NobyDa/mini/master/Color/qqmusic.png
+http-response ^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list|photo/info) script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js, requires-body=true, timeout=10, tag=微博去广告, img-url=https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/Color/Weibo.png
+http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js, requires-body=true, timeout=10, tag=微信去除公众号文章底部广告, img-url=https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/Color/WeChat.png
+http-response ^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi script-path=https://raw.githubusercontent.com/HotKids/Rules/master/Script/weixin110.js, requires-body=true, timeout=10, tag=微信App内被屏蔽链接快捷跳转, img-url=https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/Color/WeChat.png
+http-request ^https:\/\/promotion\.waimai\.meituan\.com\/playcenter\/signIn\/doaction script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/wmmeituan/wmmeituan.cookie.js, requires-body=true, timeout=10, tag=美团外卖签到, img-url=https://raw.githubusercontents.com/Orz-3/mini/master/Color/meituan.png
+http-request ^https:\/\/nebula\.kuaishou\.com\/rest\/n\/nebula\/sign\/sign script-path=https://raw.githubusercontent.com/iepngs/Script/master/ks/index.js, timeout=10, tag=快手极速版签到, img-url=https://raw.githubusercontents.com/Orz-3/mini/master/Color/kuaishou.png
+http-request ^https?:\/\/tieba.baidu\.com\/mg\/o\/userpost script-path=https://raw.githubusercontent.com/iepngs/Script/master/tieba/index.js, requires-body=true, timeout=30, tag=百度贴吧签到, img-url=https://raw.githubusercontents.com/Orz-3/mini/master/Color/baidu.png
+enable = false
+# http-request 处理请求的脚本
+# http-response 处理请求响应的脚本
+# cron 定时脚本
+# network-changed   网络发生变化触发脚本
+
+# http-request ^https?:\/\/(www.)?(example)\.com script-path=localscript.js,tag = requestScript,enable=true
+# http-response ^https?:\/\/(www.)?(example)\.com script-path=https://example.com/loon.js,timeout=10,requires-body = true,tag = responseScript,enable=true
+# cron "0 8 * * *" script-path=cron.js,tag = responseScript,enable=true
+
+network-changed script-path=https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Script/netChanged.js, timeout=300, tag=changeModel(Loon自带)
+
+[Remote Script]
+# https://example.com/loon.js, tag=scripts, enable=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Cookie.conf, tag=Tartarus2014获取Cookie订阅合集, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Task.conf, tag=Tartarus2014定时任务合集, enabled=false
+https://raw.githubusercontents.com/nzw9314/Loon/master/Script.conf, tag=Loon脚本合集, enabled=true
+
+[Plugin]
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Loon/SafeRedirect/SafeRedirect.plugin, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Loon/Redirect/Redirect.plugin, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Loon/BlockHTTPDNS/BlockHTTPDNS.plugin, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Google.lpx, enabled=true
+https://raw.githubusercontent.com/Mikephie/Script/refs/heads/main/loon/reddit.plugin, enabled=true
+https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/refs/heads/main/modules/script-hub.loon.plugin, enabled=true
+https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule, enabled=true
+https://raw.githubusercontent.com/githubdulong/Script/refs/heads/master/Surge/TikTok_Surge.sgmodule, tag=TikTok解锁区域限制, enabled=true
+https://github.com/NSRingo/TestFlight/releases/latest/download/iRingo.TestFlight.plugin, enabled=true
+https://github.com/NSRingo/News/releases/latest/download/iRingo.News.plugin, policy=PROXY, enabled=true
+https://github.com/NSRingo/TV/releases/latest/download/iRingo.TV.plugin, enabled=true
+https://github.com/NSRingo/Siri/releases/latest/download/iRingo.Siri.plugin, enabled=true
+https://github.com/NSRingo/GeoServices/releases/latest/download/iRingo.Maps.plugin, enabled=true
+https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.plugin, enabled=true
+https://github.com/NSRingo/GeoServices/releases/latest/download/iRingo.Location.plugin, enabled=true
+https://github.com/Auraflare/DNS/releases/latest/download/Cloudflare.DNS.plugin, enabled=true
+https://github.com/BiliUniverse/ADBlock/releases/latest/download/BiliBili.ADBlock.plugin, enabled=true
+https://github.com/BiliUniverse/Redirect/releases/latest/download/BiliBili.Redirect.plugin, enabled=true
+https://github.com/BiliUniverse/Global/releases/latest/download/BiliBili.Global.plugin, enabled=true
+https://github.com/BiliUniverse/Enhanced/releases/latest/download/BiliBili.Enhanced.plugin, enabled=true
+https://github.com/BiliUniverse/Enhanced/releases/latest/download/BiliBili.Enhanced.plugin, enabled=true
+https://kelee.one/Tool/Loon/Lpx/WexinMiniPrograms_Remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Weixin_Official_Accounts_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Weixin_external_links_unlock.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Taobao_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/TXDocs_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/ColorfulClouds_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/QQ_Redirect.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/1.1.1.1.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, enabled=true
+https://github.com/DualSubs/Universal/releases/latest/download/DualSubs.Universal.plugin, enabled=true
+https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.loon.plugin, enabled=true
+https://raw.githubusercontent.com/DualSubs/Spotify/main/modules/DualSubs.Spotify.Transcripts.plugin, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Advertising/Advertising_MITM.plugin, enabled=true
+https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/NodeLinkCheck/Loon.plugin, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/Cloudflare/main/modules/Cloudflare.DNS.plugin, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/Cloudflare/main/modules/Cloudflare.1.1.1.1.plugin, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/plugin/HTTPDNS.Block.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/multisearch.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/thunder.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/kuwo-unlock.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/BaiduCloud.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/aliyun.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/MediaChecker.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/GeoLocation.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/documents.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/bdwk.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/https.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/lightroom.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/notability.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/photoshop.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/biliad.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/startingad.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/weiboad.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/wechatad.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/b612.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/meituxx.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/picsart.plugin, enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/Loon/Loon_GetCookie.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/NodeLinkCheck.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/WPS.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/KuwoVip.plugin, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GlobalMedia/GlobalMedia_MITM.plugin, enabled=true
+https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/config/Loon.plugin, policy=PROXY, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/skip-proxy.plugin, policy=China, tag=跳过代理检测, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/gddt.plugin, policy=China, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/bili.plugin, policy=China, enabled=true
+https://raw.githubusercontent.com/app2smile/rules/master/plugin/bilibili.plugin, policy=Advertising, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/accu.plugin, policy=Global, tag=AccuWeather, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/plugin/DNS.plugin, policy=PROXY, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/plugin/General.plugin, policy=PROXY, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/smwd.plugin, policy=China, tag=石墨文档, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/kuwo-unlock.plugin, policy=China, tag=酷我音乐会员, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/KuwoVip.plugin, policy=酷狗酷我KuGou KuWo, enabled=true
+https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/Loon/Plugin/QMusicAd.plugin, policy=Advertising, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/thunder.plugin, policy=China, tag=迅雷, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/bdwk.plugin, policy=China, tag=百度文库, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/b612.plugin, policy=China, tag=B612咔叽, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/meituxx.plugin, policy=China, tag=美图秀秀VIP, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/doc.plugin, policy=China, tag=WPS稻壳会员, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/WPS.plugin, policy=China, tag=WPS会员, enabled=true
+https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/WPSOffice/Loon.plugin, policy=China, tag=WPS会员, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/task/wps.png, enabled=true
+https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/Nicegram/Loon.plugin, policy=Global, tag=Nicegram会员, img-url=https://raw.githubusercontent.com/fw-carl/For-Own-Use/master/PIC/smartisan/com_brixd_niceapp.png, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/picsart.plugin, policy=Global, tag=Picsart, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/fabulous.plugin, policy=Global, tag=Fabulous, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/documents.plugin, policy=Global, tag=Documents, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/lightroom.plugin, policy=Global, tag=LightRoom, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/photoshop.plugin, policy=Global, tag=PhotoshopExpress, enabled=true
+https://raw.githubusercontent.com/app2smile/rules/refs/heads/master/plugin/youtube.plugin, enabled=true
+https://raw.githubusercontent.com/Moli-X/Tool/X/Loon/Plugin/Kelee/YouTube_remove_ads.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/main/youtube.plugin, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/SpotifyPremium.plugin, policy=Global, tag=Spotify Premium, enabled=true
+https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GithubPrivate/github-private-repo.plugin, policy=Global, tag=GitHub Private Access, enabled=true
+https://raw.githubusercontent.com/Peng-YM/Loon-Gallery/master/loon-gallery.plugin, policy=PROXY, tag=插件仓库Loon Gallery, enabled=true
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.plugin, policy=PROXY, tag=BoxJs, enabled=true
+https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin, policy=PROXY, tag=Sub-Store, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/NodeLinkCheck.plugin, policy=PROXY, tag=NodeLinkCheck, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/MediaCheck.plugin, policy=PROXY, tag=Node Detection Tool, enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/Loon/Loon_TF_Download.plugin, policy=Apple, tag=TestFlight区域限制解除, enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/Loon/Loon_TF_Account.plugin, policy=Apple, tag=TestFlight账户管理, enabled=true
+https://raw.githubusercontent.com/chengkongyiban/Loon/main/Loon-Gallery/UnblockURLinWeChat.plugin, policy=China, tag=解除微信链接限制, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/xmlyad.plugin, policy=Advertising, tag=喜马拉雅去广告, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/biliad.plugin, policy=Advertising, tag=哔哩哔哩去广告, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/weiboad.plugin, policy=Advertising, tag=微博去广告, enabled=true
+https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/Loon/Plugin/BaiduAdBlock.plugin, policy=Advertising, tag=百度系广告屏蔽, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/baidu.png, enabled=true
+https://raw.githubusercontent.com/GeQ1an/Rules/master/Loon/Rewrite/Rewrite.plugin, policy=Advertising, tag=Stick Rules for Rewrite, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/startingad.plugin, policy=Advertising, tag=APP启动页去广告, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/AdvertisingScript/AdvertisingScript.plugin, policy=Advertising, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, policy=Advertising, tag=Advertising, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/AllInOne/AllInOne.plugin, policy=Advertising, enabled=true
+# plugin-url tag=tag,proxy=插件中PROXY所指向的策略,enable=true
+# plugin策略可设置为DIRECT,REJECT,PROXY，其中PROXY为用户在app中手动映射的策略，rule后不跟随策略默认使用PROXY
+# example: https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Rewrite/AutoRewrite_Example.list,tag=boxjs,enable=true
+
+
+[MITM]
+ca-p12 = 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
+ca-passphrase = 7JL63F55
+hostname = -*.tiktokcdn.com,-*.tiktok.com,-*.tik-tokapi.com,-*.tiktokv.com,-*.y.qq.com,-*.sgpstatp.com,-*.musical.ly,-*.muscdn.com,-*.ipstatp.com,-*.ibyteimg.com,-*.ibytedtos.com,-*.byteoversea.com,-*.snssdk.com,-*.amemv.com
+enable = true
+skip-server-cert-verify = true
+#ca-p12 =
+#ca-passphrase =
