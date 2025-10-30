@@ -1,6 +1,6 @@
 # iOS-PROXY
 
-**iOS-PROXY** 是一个专为 iOS 平台代理工具（如 Surge、Loon、Shadowrocket、Quantumult X,Stash 等）设计的配置库，主要供个人使用，涵盖配置文件、分流规则、脚本、重写规则及图标资源等。
+**iOS-PROXY** 是一个专为 iOS 平台代理工具（如 Surge、Loon、Egern、Quantumult X,Stash,Shadowrocket等）设计的配置库，主要供个人使用，涵盖配置文件、分流规则、脚本、重写规则及图标资源等。
 
 ---
 
