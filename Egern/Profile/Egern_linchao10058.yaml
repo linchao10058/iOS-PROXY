@@ -115,14 +115,14 @@ policy_groups:
     type: select
     urls:
     - https://sub.dmit.dpdns.org/share/sub/dingyue_Center_flyintpro?token=hPFPD1CJ4LnHR_SUhPsG3
-    - https://sub.store/download/collection/Loon_linchao10058
+    - https://sub.store/download/collection/Loon_linchao_10058
     - https://sub.dmit.dpdns.org/share/sub/dingyue_Center_another?token=73tuVG5vbabLFI-Ga5Feh
     - https://www.flyintpro05.com/api/v1/client/subscribe?token=62be89e4bc828cdfd0c62bfb44746312
-    - https://sub.store/download/collection/Surge_linchao10058
+    - https://sub.store/download/collection/Surge_linchao_10058
     - https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
     urls_disabled:
-    - https://sub.store/download/collection/Loon_linchao10058
-    - https://sub.store/download/collection/Surge_linchao10058
+    - https://sub.store/download/collection/Loon_linchao_10058
+    - https://sub.store/download/collection/Surge_linchao_10058
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
     hidden: false
 - select:
