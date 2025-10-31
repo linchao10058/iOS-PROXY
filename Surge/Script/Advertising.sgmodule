@@ -1,110 +1,50 @@
-#!name=Remove Startup Ads
-#!desc=Comprehensive Surge module to remove splash screen ads for popular apps
-#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/startingad.png
-#!homepage=https://yfamily.ml
-#!author=linchao10058
-#!repo=https://github.com/linchao10058/iOS-PROXY/main/Surge/Script/Advertising.sgmodule
-#!updated=2025-03-27 23:00 PDT
+// Surge Script: Remove Startup Ads from multiple apps
+// Author: linchao10058
+// Updated: 2025-03-27
+
+let body = $response.body;
+
+if (!body) {
+  $done({});
+  return;
+}
+
+try {
+  let obj = JSON.parse(body);
+
+  // 12306
+  if (obj.datas) obj.datas = [];
+
+  // 京东
+  if (obj.data) obj.data = [];
+  if (obj.ads) obj.ads = [];
+
+  // B站
+  if (obj.data) obj.data = [];
+
+  // 微信
+  if (obj.advertisement_info) obj.advertisement_info = [];
+  if (obj.advertisement_num) obj.advertisement_num = 0;
+
+  // 微博
+  if (obj.data) obj.data = [];
+
+  // 小红书
+  if (obj.data && obj.data.ads) obj.data.ads = [];
+
+  // 顺丰
+  if (obj.data) obj.data = [];
+
+  // 通用字段
+  if (obj.ad) obj.ad = null;
+  if (obj.advert) obj.advert = null;
+  if (obj.startup) obj.startup = null;
+
+  $done({ body: JSON.stringify(obj) });
+} catch (e) {
+  $done({ body: "{}" });
 
 [Script]
-# 12306
-12306_Startup = type=http-response,pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList,requires-body=1,max-size=524288,script-code=let body = $response.body; if (body) { try { let obj = JSON.parse(body); if (obj.datas) obj.datas = []; $done({body: JSON.stringify(obj)}); } catch (e) { $done({body: "{}"}); } } else { $done({}); }
+Startup_Ads_Blocker = type=http-response, pattern=^https?:\/\/.*(splash|ad|advert|startup), requires-body=1, max-size=524288, script-path=local-path-to/Advertising.js
 
-# 京东
-JD_Startup = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts),requires-body=1,max-size=524288,script-code=let body = $response.body; if (body) { try { let obj = JSON.parse(body); if (obj.data) obj.data = []; if (obj.ads) obj.ads = []; $done({body: JSON.stringify(obj)}); } catch (e) { $done({body: "{}"}); } } else { $done({}); }
-
-# B站
-BiliBili_Startup = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/list,requires-body=1,max-size=524288,script-code=let body = $response.body; if (body) { try { let obj = JSON.parse(body); if (obj.data) obj.data = []; $done({body: JSON.stringify(obj)}); } catch (e) { $done({body: "{}"}); } } else { $done({}); }
-
-# 微信
-WeChat_Startup = type=http-response,pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad,requires-body=1,max-size=524288,script-code=let body = $response.body; if (body) { try { let obj = JSON.parse(body); if (obj.advertisement_info) obj.advertisement_info = []; if (obj.advertisement_num) obj.advertisement_num = 0; $done({body: JSON.stringify(obj)}); } catch (e) { $done({body: "{}"}); } } else { $done({}); }
-
-# 微博
-Weibo_Startup = type=http-response,pattern=^https?:\/\/(sdk|wb)app\.uve\.weibo\.com\/interface\/sdk\/splash\.php,requires-body=1,max-size=524288,script-code=let body = $response.body; if (body) { try { let obj = JSON.parse(body); if (obj.data) obj.data = []; $done({body: JSON.stringify(obj)}); } catch (e) { $done({body: "{}"}); } } else { $done({}); }
-
-# 小红书
-XiaoHongShu_Startup = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config,requires-body=1,max-size=524288,script-code=let body = $response.body; if (body) { try { let obj = JSON.parse(body); if (obj.data && obj.data.ads) obj.data.ads = []; $done({body: JSON.stringify(obj)}); } catch (e) { $done({body: "{}"}); } } else { $done({}); }
-
-# 顺丰
-ShunFeng_Startup = type=http-response,pattern=^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/queryInfoFlow,requires-body=1,max-size=524288,script-code=let body = $response.body; if (body) { try { let obj = JSON.parse(body); if (obj.data) obj.data = []; $done({body: JSON.stringify(obj)}); } catch (e) { $done({body: "{}"}); } } else { $done({}); }
-
-# 通用启动页广告拦截
-Generic_Startup = type=http-response,pattern=^https?:\/\/.*(splash|ad|advert|startup),requires-body=1,max-size=524288,script-code=let body = $response.body; if (body) { try { let obj = JSON.parse(body); if (obj.data || obj.ads || obj.ad) { obj.data = []; obj.ads = []; obj.ad = null; } $done({body: JSON.stringify(obj)}); } catch (e) { $done({body: "{}"}); } } else { $done({}); }
-
-[URL Rewrite]
-# 58同城
-^https?:\/\/.+\.58cdn\.com\.cn\/brandads\/ reject
-^https?:\/\/app\.58\.com\/api\/home\/(advertising|appadv) reject
-
-# AcFun
-^https?:\/\/api-new\.app\.acfun\.cn\/rest\/app\/flash\/screen\/ reject
-
-# 爱奇艺
-^https?:\/\/.+\/cdn\/qiyiapp\/\d{8}\/.+&dis_dz= reject-img
-^https?:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/fusion_switch reject-img
-
-# 百度系列
-^https?:\/\/mime\.baidu\.com\/v\d\/(IosStart\/getStartInfo|activity\/advertisement) reject
-^https?:\/\/pan\.baidu\.com\/(act\/v\d\/(bchannel|welfare)\/list|rest\/2\.0\/pcs\/ad) reject
-
-# 车来了
-^https?:\/\/(cdn\.\w{3}\.chelaileapp\.cn|api\.chelaile\.net\.cn)\/adpub\/ reject
-
-# 豆瓣
-^https?:\/\/api\.douban\.com\/v2\/app_ads\/splash reject
-
-# 滴滴出行
-^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/(mget|getRuled|Preload|PasMultiNotices) reject
-
-# 饿了么
-^https?:\/\/elemecdn\.com\/.+\/sitemap reject
-^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/(640|750)\/h\/\d{3,4} reject
-
-# 虎扑
-^https?:\/\/games\.mobileapi\.hupu\.com\/.+\/(search|interfaceAdMonitor|status|hupuBbsPm)\/ reject
-
-# 酷安
-^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch reject-dict
-
-# 美团
-^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage reject
-^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$ reject
-
-# 拼多多
-^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash reject
-
-# 汽车之家
-^https?:\/\/adproxy\.autohome\.com\.cn\/AdvertiseService\/ reject
-
-# 腾讯新闻
-^https?:\/\/r\.inews\.qq\.com\/(getSplash|getFullScreenPic) reject
-
-# 唯品会
-^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/activity\/advertisement\/get reject
-
-# 网易云音乐（部分）
-^https?:\/\/interface\d?\.music\.163\.com\/eapi\/ad\/ reject
-
-# 闲鱼
-^https?:\/\/gw\.alicdn\.com\/(mt|tfs|tps)\/.+\d{3,4}-\d{4} reject
-
-# 知乎
-^https?:\/\/static\.zhihu\.com\/[^\/]+\/(main|column)\.signflow\.[^.]+.js reject
-
-# 作业帮
-^https?:\/\/syh\.zybang\.com\/com\/adx\/ reject
-
-# 其他（从deezertidal等补充）
-^https?:\/\/api\.kuaikanmanhua\.com\/v\d\/(ad|advertisement)\/ reject  # 快看漫画
-^https?:\/\/api\.toutiao\.com\/union\/sdk\/ reject  # 头条系广告
-^https?:\/\/ad\.youku\.com\/ reject  # 优酷
-
-[Rule]
-# 通用广告域名拒绝
-DOMAIN-SUFFIX,ads.*,REJECT
-DOMAIN-SUFFIX,ad.*,REJECT
-# 常见启动页广告URL正则
-URL-REGEX,^https?:\/\/.*(splash|startup|advertising|adunion)\/.*,REJECT
-
-[MITM]
-hostname = %APPEND% ad.12306.cn, api.m.jd.com, app.bilibili.com, mp.weixin.qq.com, sdkapp.uve.weibo.com, wbapp.uve.weibo.com, edith.xiaohongshu.com, ccsp-egmas.sf-express.com, *.58cdn.com.cn, app.58.com, api-new.app.acfun.cn, *.iqiyi.com, mime.baidu.com, pan.baidu.com, *.chelaileapp.cn, api.chelaile.net.cn, api.douban.com, res.xiaojukeji.com, elemecdn.com, fuss10.elemecdn.com, games.mobileapi.hupu.com, api.coolapk.com, peisongapi.meituan.com, img.meituan.net, api.pinduoduo.com, api.yangkeduo.com, adproxy.autohome.com.cn, r.inews.qq.com, mapi.appvipshop.com, interface*.music.163.com, gw.alicdn.com, static.zhihu.com, syh.zybang.com, api.kuaikanmanhua.com, api.toutiao.com, ad.youku.com
+}
