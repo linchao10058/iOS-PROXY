@@ -39,7 +39,7 @@ dns:
     - tls://8.8.4.4
     - https://dns.google/dns-query
     - https://8.8.8.8/dns-query
-    - https:1/8.8.4.4/dns-query
+    - https://8.8.4.4/dns-query
     Quad9:
     - https://dns.quad9.net/dns-query
     - https://9.9.9.9/dns-query
