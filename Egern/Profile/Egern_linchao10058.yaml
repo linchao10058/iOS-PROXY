@@ -19,11 +19,11 @@ asn_db_url: https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/raw/main/GeoLi
 proxy_latency_test_url: https://www.google.com/generate_204
 direct_latency_test_url: http://www.cloudflare.com/cdn-cgi/trace
 vif_excluded_routes:
-- boc.com
-- cmbchina.com
-- icbc.com
-- ccb.com
-- abc.com
+- ’*.boc.com'
+- ’*.cmbchina.com'
+- ’*.icbc.com'
+- ’*.ccb.com'
+- ’*.abc.com'
 dns:
   bootstrap:
   - 1.1.1.1
@@ -37,6 +37,9 @@ dns:
     GoogleDNS:
     - tls://8.8.8.8
     - tls://8.8.4.4
+    - https://dns.google/dns-query
+    - https://8.8.8.8/dns-query
+    - https:1/8.8.4.4/dns-query
     Quad9:
     - https://dns.quad9.net/dns-query
     - https://9.9.9.9/dns-query
