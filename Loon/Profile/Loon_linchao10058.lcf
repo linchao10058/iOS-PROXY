@@ -1,6 +1,6 @@
-#Loon_linchao10058
-#Update Date: 2025.10.30.00.40:09
-#author: linchao10058
+#Name: Loon_linchao10058
+#Update Date: 2025.10.31.00:40:09
+#Author: linchao10058
 
 [General]
 disable-stun = true
@@ -184,12 +184,14 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/OpenAI/OpenAI.list, policy=Others, tag=OpenAI, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/Anthropic/Anthropic.list, policy=Global, tag=Anthropic, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Cloudflare/Cloudflare.list, policy=Global, tag=Cloudflare, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Game/Roblox/Roblox.list, policy=Global, tag=Roblox.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Game/Game.list, policy=Global, tag=Game.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list, policy=China, tag=Lan.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DNS/DNS.list, policy=PROXY, tag=DNS.list, enabled=true
 https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/HTTPDNS.Block.list, policy=Advertising, tag=HTTPDNS.Block.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Privacy/Privacy_All.list, policy=Advertising, tag=Privacy_All.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All.list, policy=Advertising, tag=Advertising_All.list, enabled=true
+https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/rule/substore.list, policy=PROXY, tag=Sub-Store 「vercel.app」: 1. 确认安装Sub Store模块。  2. 将模块生效顺序放到最底部。  3. 开启MITM脚本, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_All.list, policy=Global, tag=Global_All.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMaxNoIP/ChinaMaxNoIP_All.list, policy=China, tag=ChinaMaxNoIP_All.list, enabled=true
 
@@ -382,7 +384,7 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Lo
 [MITM]
 ca-p12 = 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
 ca-passphrase = 7JL63F55
-hostname = -*.tiktokcdn.com,-*.tiktok.com,-*.tik-tokapi.com,-*.tiktokv.com,-*.y.qq.com,-*.sgpstatp.com,-*.musical.ly,-*.muscdn.com,-*.ipstatp.com,-*.ibyteimg.com,-*.ibytedtos.com,-*.byteoversea.com,-*.snssdk.com,-*.amemv.com
+hostname = -*.vercel.app,-*.tiktokcdn.com,-*.tiktok.com,-*.tik-tokapi.com,-*.tiktokv.com,-*.y.qq.com,-*.sgpstatp.com,-*.musical.ly,-*.muscdn.com,-*.ipstatp.com,-*.ibyteimg.com,-*.ibytedtos.com,-*.byteoversea.com,-*.snssdk.com,-*.amemv.com
 enable = true
 skip-server-cert-verify = true
 #ca-p12 =
