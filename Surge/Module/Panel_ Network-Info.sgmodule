@@ -1,0 +1,34 @@
+#!name=Server / ISP / Network Speed / Subscription Info / Latency Test
+#!desc=Network-Info
+
+[Panel]
+
+Subscription_Name = script-name=Subscription_Name, update-interval=1800
+
+Local_Info = script-name=Local_Info, update-interval=-1
+
+Server_Info = script-name=Server_Info, update-interval=-1
+
+Network_Speed = script-name=Network_Speed, update-interval=-1
+
+Connectivity_Test = script-name=Connectivity_Test, update-interval=-1
+
+[Script]
+
+Sub_info = type=http-request, pattern=http://sub\.info, timeout=10, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/sub_info.js
+
+Server_Info = type=generic, script-path=https://raw.githubusercontent.com/cnmeeia/profile/main/panel/js/ip.js
+
+Local_Info = type=generic, script-path=https://raw.githubusercontent.com/cnmeeia/profile/main/panel/js/local.js
+
+Subscription_Name = type=generic, timeout=10, script-path=https://raw.githubusercontent.com/cnmeeia/profile/main/panel/js/liul.js, script-update-interval=0, argument=url=Your_Subscription_Link
+
+Network_Speed = type=generic, timeout=60, script-path=https://raw.githubusercontent.com/cnmeeia/profile/main/panel/js/Speedtest.js
+
+Connectivity_Test = type=generic, timeout=3, script-path=https://raw.githubusercontent.com/cnmeeia/profile/main/panel/js/ConnectivityTest.js, argument=title=Connectivity Test&server=false
+
+[Rule]
+
+DOMAIN-SUFFIX,ipinfo.io,DIRECT
+
+DOMAIN-SUFFIX,ip-api.com,PROXY
