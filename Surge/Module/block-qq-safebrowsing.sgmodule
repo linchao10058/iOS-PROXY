@@ -1,0 +1,22 @@
+[Module]
+name = Block QQ SafeBrowsing
+type = custom
+version = 1.0
+description = 拦截 safebrowsing.urlsec.qq.com 域名，防止腾讯安全浏览服务上传隐私数据
+
+[Rule]
+# 拒绝所有连接请求（TCP 层拦截）
+DOMAIN,safebrowsing.urlsec.qq.com,REJECT
+
+[Host]
+# 将域名解析为本地地址，防止真实连接
+safebrowsing.urlsec.qq.com = 127.0.0.1
+
+[MITM]
+# 启用 HTTPS 解密，支持精准拦截
+enabled = true
+hostname = safebrowsing.urlsec.qq.com
+
+[Rewrite]
+# 拦截所有路径请求（需配合 MITM）
+^https?:\/\/safebrowsing\.urlsec\.qq\.com\/ url reject
