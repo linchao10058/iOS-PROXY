@@ -195,7 +195,7 @@ policy_groups:
     policies:
     - PROXY
     flatten: true
-    filter: ^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b)))(?!.*((?i)回国|校园|BGP|游戏|(\b(GAME)\b))).*$
+    filter: (?i)(?:🇭🇰|HK|Hong Kong|香港)
     tolerance: 50
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Hong_Kong.png
     hidden: false
@@ -204,7 +204,7 @@ policy_groups:
     policies:
     - PROXY
     flatten: true
-    filter: ^(?=.*((?i)🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$
+    filter: (?i)(?:🇹🇼|TW|Taiwan|台湾|台灣)
     tolerance: 50
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Taiwan.png
     hidden: false
@@ -213,7 +213,7 @@ policy_groups:
     policies:
     - PROXY
     flatten: true
-    filter: ^(?=.*((?i)🇰🇷|韩国|韩|(\b(KR|Korea)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$
+    filter: (?i)(?:🇰🇷|KR|Korea|韓國|韩国)
     tolerance: 50
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Korea.png
     hidden: false
@@ -222,7 +222,7 @@ policy_groups:
     policies:
     - PROXY
     flatten: true
-    filter: ^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|Japan)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$
+    filter: (?i)(?:🇯🇵|JP|Japan|日本)
     tolerance: 50
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Japan.png
     hidden: false
@@ -231,7 +231,7 @@ policy_groups:
     policies:
     - PROXY
     flatten: true
-    filter: ^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$
+    filter: (?i)(?:🇸🇬|SG|Singapore|新加坡)
     tolerance: 50
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Singapore.png
     hidden: false
@@ -240,7 +240,7 @@ policy_groups:
     policies:
     - PROXY
     flatten: true
-    filter: ^(?=.*(🇻🇳|越南|胡志明|河内|VN|Vn|vn|Vietnam|VIETNAM))(?!.*(回国|校园|游戏|GAME)).*$
+    filter: (?i)(?:🇻🇳|VN|Vietnam|越南)
     tolerance: 50
     icon: https://gitlab.com/lodepuly/iconlibrary/-/raw/main/Flag_icon/120px/VN.png
     hidden: false
@@ -249,7 +249,7 @@ policy_groups:
     policies:
     - PROXY
     flatten: true
-    filter: ^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$
+    filter: (?i)(?:🇺🇸|US|USA|United States|America|美国|美國)
     tolerance: 50
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/United_States.png
     hidden: false
