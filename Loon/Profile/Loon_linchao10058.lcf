@@ -96,20 +96,20 @@ https://api.subcloud.xyz/sub?target=loon&url=ssr%3A%2F%2FOTEuMjA2LjkzLjE1NzoxNzE
 #Subs2 = https://example2/server-complete.txt
 
 [Remote Filter]
-🇨🇳台湾 = NameRegex, FilterKey = "(?i)(🇨🇳)|(台湾)|(Tai)|(TW)"
-🇭🇰香港 = NameRegex, FilterKey = "(?i)(🇭🇰)|(香港)|(Hong)|(HK)"
-🇺🇸美国 = NameRegex, FilterKey = "(?i)(🇺🇸)|(美国)|(States)|(US)"
-🇯🇵日本 = NameRegex, FilterKey = "(?i)(🇯🇵)|(日本)|(Japan)|(JP)"
-🇰🇷韩国 = NameRegex, FilterKey = "(?i)(🇰🇷|KR|Korea|KOR|首尔|韩|韓)"
-🇻🇳越南 = NameRegex, FilterKey = "🇻🇳|越南| Vietnam|意lVN"
-🇸🇬新加坡 = NameRegex, FilterKey = "(?i)(🇸🇬|新加坡|坡|狮城|SG|Singapore)"
-🇩🇪德国 = NameRegex, FilterKey = "🇩🇪|德国|Germany|GM|柏林|Berlin "
-🇬🇧英国 = NameRegex, FilterKey = "🇬🇧|英国|UK| England|伦敦"
-🇨🇦加拿大 = NameRegex, FilterKey = "🇨🇦|加拿大| Canada |基奇纳|CA|渥太华"
-🇮🇳印度 = NameRegex, FilterKey = "🇮🇳|印度|India|IN"
-🇦🇺澳大利亚 = NameRegex, FilterKey = "🇦🇺|澳大利亚|AU|Australia|悉尼|Sydney "
-🇲🇦马来西亚 = NameRegex, FilterKey = "🇲🇾|马来西亚|Malaysia |MY|吉隆坡|Kuala Lumpur "
-🇨🇭瑞士 = NameRegex, FilterKey = "🇨🇭|瑞士|Switzerland "
+🇭🇰香港 = NameRegex, FilterKey = "(?i)(?:🇭🇰|HK|Hong Kong|香港)"
+🇹🇼台湾 = NameRegex, FilterKey = "(?i)(?:🇹🇼|TW|Taiwan|台湾|台灣)"
+🇯🇵日本 = NameRegex, FilterKey = "(?i)(?:🇯🇵|JP|Japan|日本)"
+🇰🇷韩国 = NameRegex, FilterKey = "(?i)(?:🇰🇷|KR|Korea|韓國|韩国)"
+🇻🇳越南 = NameRegex, FilterKey = "(?i)(?:🇻🇳|VN|Vietnam|越南)"
+🇸🇬新加坡 = NameRegex, FilterKey = "(?i)(?:🇸🇬|SG|Singapore|新加坡)"
+🇺🇸美国 = NameRegex, FilterKey = "(?i)(?:🇺🇸|US|USA|United States|America|美国|美國)"
+🇩🇪德国 = NameRegex, FilterKey = "(?i)(?:🇩🇪|GM|Germany|德国|德國)"
+🇬🇧英国 = NameRegex, FilterKey = "(?i)(?:🇬🇧|UK|GB|United Kingdom|Britain|England|英国|英國|英格兰)"
+🇮🇳印度 = NameRegex, FilterKey = "(?i)(?:🇮🇳|IN|India|印度)"
+🇨🇭瑞士 = NameRegex, FilterKey = "(?i)(?:🇨🇭|CH|Switzerland|瑞士)"
+🇲🇦马来西亚 = NameRegex, FilterKey = "(?i)(?:🇲🇾|MY|Malaysia|马来西亚|馬來西亞)"
+🇨🇦加拿大 = NameRegex, FilterKey = "(?i)(?:🇨🇦|CA|Canada|加拿大)"
+🇦🇺澳大利亚 = NameRegex, FilterKey = "(?i)(?:🇦🇺|AU|Australia|澳大利亚|澳洲)"
 # 筛选订阅节点，筛选后的结果可加入到策略组中，目前支持三种筛选方式
 # NodeSelect: 使用在UI上选择的节点。
 # NameKeyword: 根据提供的关键词对订阅中所有节点的名称进行筛选，使用筛选后的节点。
