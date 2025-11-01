@@ -98,6 +98,14 @@ dns:
     - 149.112.112.112
     iosapps.itunes.apple.com:
     - iosapps.itunes.apple.com.download.ks-cdn.com
+proxies:
+- http:
+    name: U989124992380.edge.onetcdn.com
+    server: U989124992380.edge.onetcdn.com
+    port: 37810
+    username: ''
+    password: ''
+    tfo: false
 policy_groups:
 - select:
     name: SELECT
@@ -107,16 +115,14 @@ policy_groups:
     - DIRECT
     - PROXY
     - Other
-    - Advertising
+    - U989124992380.edge.onetcdn.com
     - Hong Kong
     - TaiWan
     - Korea
     - Japan
-    - Singapore
     - Vietnam
+    - Singapore
     - United States
-    - China
-    - Global
     flatten: false
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Bypass.png
     hidden: false
@@ -124,21 +130,25 @@ policy_groups:
     name: PROXY
     type: select
     urls:
+    - https://paste.c-net.org/LatexHurrying
     - https://sub.dmit.dpdns.org/share/sub/dingyue_Center_flyintpro?token=hPFPD1CJ4LnHR_SUhPsG3
-    - https://sub.store/download/collection/Loon_linchao_10058
+    - https://sub.store/download/collection/Loon_linchao10058
     - https://sub.dmit.dpdns.org/share/sub/dingyue_Center_another?token=73tuVG5vbabLFI-Ga5Feh
     - https://www.flyintpro05.com/api/v1/client/subscribe?token=62be89e4bc828cdfd0c62bfb44746312
-    - https://sub.store/download/collection/Surge_linchao_10058
+    - https://sub.store/download/collection/Surge_linchao10058
     - https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
     urls_disabled:
-    - https://sub.store/download/collection/Loon_linchao_10058
-    - https://sub.store/download/collection/Surge_linchao_10058
+    - https://sub.dmit.dpdns.org/share/sub/dingyue_Center_flyintpro?token=hPFPD1CJ4LnHR_SUhPsG3
+    - https://sub.store/download/collection/Loon_linchao10058
+    - https://sub.dmit.dpdns.org/share/sub/dingyue_Center_another?token=73tuVG5vbabLFI-Ga5Feh
+    - https://sub.store/download/collection/Surge_linchao10058
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
     hidden: false
 - select:
     name: China
     policies:
     - REJECT
+    - REJECT-DROP
     - DIRECT
     - SELECT
     - PROXY
@@ -150,6 +160,7 @@ policy_groups:
     name: Global
     policies:
     - REJECT
+    - REJECT-DROP
     - DIRECT
     - SELECT
     - PROXY
@@ -177,16 +188,14 @@ policy_groups:
     - DIRECT
     - PROXY
     - SELECT
+    - U989124992380.edge.onetcdn.com
     - Hong Kong
     - TaiWan
     - Korea
     - Japan
-    - Singapore
     - Vietnam
+    - Singapore
     - United States
-    - China
-    - Global
-    - Advertising
     flatten: false
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Area.png
     hidden: false
