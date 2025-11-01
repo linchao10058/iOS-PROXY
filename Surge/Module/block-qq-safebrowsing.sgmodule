@@ -2,10 +2,9 @@
 #Update Date: 2025.10.31.00:40:09
 #Author: linchao10058
 
+[Module]
 #!name=Block QQ SafeBrowsing
 #!desc=拦截 safebrowsing.urlsec.qq.com 域名，防止腾讯安全浏览服务上传隐私数据
-[Module]
-name = Block QQ SafeBrowsing
 type = custom
 version = 1.0.5
 description = 拦截 safebrowsing.urlsec.qq.com 域名，防止腾讯安全浏览服务上传隐私数据
