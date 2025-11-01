@@ -266,6 +266,7 @@ https://raw.githubusercontents.com/nzw9314/Loon/master/Script.conf, tag=Loonè„šæ
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Loon/SafeRedirect/SafeRedirect.plugin, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Loon/Redirect/Redirect.plugin, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Loon/BlockHTTPDNS/BlockHTTPDNS.plugin, enabled=true
+https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/block-qq-safebrowsing.sgmodule, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Google.lpx, enabled=true
 https://raw.githubusercontent.com/Mikephie/Script/refs/heads/main/loon/reddit.plugin, enabled=true
 https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/refs/heads/main/modules/script-hub.loon.plugin, enabled=true
