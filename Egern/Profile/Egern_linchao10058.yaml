@@ -14,7 +14,7 @@ hijack_dns:
 - 9.9.9.9:53
 - 223.5.5.5:53
 - 119.29.29.29:53
-geoip_db_url: https://raw.githubusercontent.com/Masaiki/GeoIP2-CN/release/Country.mmdb
+geoip_db_url: https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
 asn_db_url: https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/raw/main/GeoLite2-ASN.mmdb
 proxy_latency_test_url: https://www.google.com/generate_204
 direct_latency_test_url: http://www.cloudflare.com/cdn-cgi/trace
