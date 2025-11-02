@@ -654,12 +654,6 @@ modules:
 - name: Youtube (Music) Enhance
   url: https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule
   enabled: true
-- name: YoutubeLite
-  url: https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Lite.sgmodule
-  enabled: true
-- name: YouTube Tweaks
-  url: https://raw.githubusercontent.com/TPCTPCTPC/Adblock-gist/refs/heads/master/Module/YouTube_Tweaks.sgmodule
-  enabled: true
 - name: Spotify(iOS15)
   url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/spotifyVIP.module
   enabled: true
