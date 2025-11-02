@@ -75,7 +75,7 @@ dns:
       match: apple
       value: Cloudflare
   - proxy_rule_set:
-      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy.list
+      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_All.list
       value: Quad9
   - wildcard:
       match: '*'
