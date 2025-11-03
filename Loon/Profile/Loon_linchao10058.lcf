@@ -3,7 +3,7 @@
 #Author: linchao10058
 
 [General]
-doh-server = https://cloudflare-dns.com/dns-query,https://1.1.1.1/dns-query,https://1.0.0.1/dns-query,https://dns.google/dns-query,https://8.8.8.8/dns-query,,https://8.8.4.4/dns-query,https://dns.quad9.net/dns-query,https://9.9.9.9/dns-query,https://doh.opendns.com/dns-query
+doh-server = https://cloudflare-dns.com/dns-query,https://1.1.1.1/dns-query,https://1.0.0.1/dns-query,https://dns.google/dns-query,https://8.8.8.8/dns-query,https://8.8.4.4/dns-query,https://dns.quad9.net/dns-query,https://9.9.9.9/dns-query,https://doh.opendns.com/dns-query
 hijack-dns = 1.1.1.1:53,1.0.0.1:53,8.8.8.8:53,8.8.4.4:53,9.9.9.9:53,223.5.5.5:53,119.29.29.29:53,*:53
 udp-fallback-mode = REJECT
 disable-stun = true
