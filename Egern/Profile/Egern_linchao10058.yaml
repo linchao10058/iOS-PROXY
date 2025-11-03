@@ -484,11 +484,55 @@ mitm:
   ca_p12: egern.p12
   ca_passphrase: YOUR_SECURE_PASSWORD_HERE
   hostnames:
-    includes:
     - '*.vercel.app'
+    - '*.byteoversea.com'
+    - '*.ibytedtos.com'
+    - '*.ibyteimg.com'
+    - '*.ipstatp.com'
+    - '*.amemv.com'
+    - '*.muscdn.com'
+    - '*.musical.ly'
+    - '*.snssdk.com'
+    - '*.sgpstatp.com'
+    - '*.tiktokcdn.com'
+    - '*.tik-tokapi.com'
+    - '*.tiktokv.com'
+    - '*.tiktok.com'
+    excludes:
+    - '*.smtp.gmail.com'
+    - '*.imap.gmail.com'
+    - '*.pop.gmail.com'
+    - '*.snssdk.com'
+    - '*.gateway.icloud.com'
+  hostnames_disabled:
+    includes:
+    - '*.byteoversea.com'
+    - '*.ibytedtos.com'
+    - '*.ibyteimg.com'
+    - '*.ipstatp.com'
+    - '*.amemv.com'
+    - '*.muscdn.com'
+    - '*.musical.ly'
+    - '*.snssdk.com'
+    - '*.sgpstatp.com'
+    - '*.tiktokcdn.com'
+    - '*.tik-tokapi.com'
+    - '*.tiktokv.com'
+    - '*.tiktok.com'
 http_captures:
   includes:
-  - szextshort.weixin.qq.com
+  - '*.vercel.app'
+  - '*.weixin.qq.com'
+  - '*.wechat.com'
+  - '*.alipay.com'
+  - '*.taobao.com'
+  - '*.apple.com'
+  - '*.icloud.com'
+  - '*.google.com'
+  - '*.microsoft.com'
+  - '*.tiktok.com'
+  - '*.Instagram.com'
+  - '*.facebook.com'
 modules:
 - name: BoxJs
   url: https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.surge.sgmodule
