@@ -2,20 +2,27 @@
 #Update Date: 2025.10.31.00:40:09
 #Author: linchao10058
 
-ipv6: false
+ipv6: true
 allow_external_connections: false
 vif_only: false
 hijack_dns:
+- 1.1.1.1:53,
+- 1.0.0.1:53,
+- 8.8.8.8:53,
+- 8.8.4.4:53,
+- 9.9.9.9:53,
+- 149.112.112.112:53,
+- 223.5.5.5:53,
+- 119.29.29.29:53,
+- 208.67.222.222:53,
+- 208.67.220.220:53,
+- 223.5.5.5:53,
+- 223.6.6.6:53,
+- 119.29.29.29:53,
+- 182.254.116.116:53,
 - '*:53'
-- 1.1.1.1:53
-- 1.0.0.1:53
-- 8.8.8.8:53
-- 8.8.4.4:53
-- 9.9.9.9:53
-- 223.5.5.5:53
-- 119.29.29.29:53
 geoip_db_url: https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
-asn_db_url: https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/raw/main/GeoLite2-ASN.mmdb
+asn_db_url: https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/download/GeoLite2-ASN.mmdb
 proxy_latency_test_url: https://www.google.com/generate_204
 direct_latency_test_url: http://www.cloudflare.com/cdn-cgi/trace
 vif_excluded_routes:
@@ -30,25 +37,30 @@ dns:
   - 8.8.8.8
   - 9.9.9.9
   upstreams:
-    Cloudflare:
+    GlobalDNS:
     - https://cloudflare-dns.com/dns-query
     - https://1.1.1.1/dns-query
     - https://1.0.0.1/dns-query
-    GoogleDNS:
-    - tls://8.8.8.8
-    - tls://8.8.4.4
     - https://dns.google/dns-query
     - https://8.8.8.8/dns-query
     - https://8.8.4.4/dns-query
-    Quad9:
     - https://dns.quad9.net/dns-query
     - https://9.9.9.9/dns-query
-    Domestic-Secure:
-    - tls://223.5.5.5:853
-    - tls://119.29.29.29:853
-    Domestic-Fast:
-    - 223.5.5.5
-    - 119.29.29.29
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
+    - tls://9.9.9.9:853
+    ChinaDNS:
+    - https://dns.alidns.com/dns-query
+    - https://223.5.5.5/dns-quer
+    - https://223.6.6.6/dns-query
+    - https://1.12.12.12/dns-query
+    - https://120.53.53.53/dns-query
+    - https://sm2.doh.pub/dns-query
+    - tls://223.5.5.5:853,
+    - tls://223.6.6.6:853,
+    - tls://dns.alidns.com:853
+    - tls://119.29.29.29:853,
+    - tls://dot.pub:853
   forward:
   - wildcard:
       match: local
@@ -56,30 +68,18 @@ dns:
   - wildcard:
       match: lan
       value: system
-  - proxy_rule_set:
-      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMaxNoIP/ChinaMaxNoIP_All.list
-      value: Domestic-Secure
   - wildcard:
       match: '*.cn'
-      value: Domestic-Fast
-  - wildcard:
-      match: google
-      value: GoogleDNS
-  - wildcard:
-      match: youtube
-      value: GoogleDNS
-  - wildcard:
-      match: microsoft
-      value: Cloudflare
-  - wildcard:
-      match: apple
-      value: Cloudflare
-  - proxy_rule_set:
-      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_All.list
-      value: Quad9
+      value: ChinaDNS
   - wildcard:
       match: '*'
-      value: Cloudflare
+      value: GlobalDNS
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMaxNoIP/ChinaMaxNoIP_All.list
+      value: ChinaDNS
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_All.list
+      value: GlobalDNS
   hosts:
     cloudflare-dns.com:
     - 1.1.1.1
@@ -90,15 +90,16 @@ dns:
     dns.google:
     - 8.8.8.8
     - 8.8.4.4
-    dns.google.com:
-    - 8.8.8.8
-    - 8.8.4.4
     dns.quad9.net:
     - 9.9.9.9
     - 149.112.112.112
-    iosapps.itunes.apple.com:
-    - iosapps.itunes.apple.com.download.ks-cdn.com
-block_ips:
+    dns.alidns.com:
+    - 223.5.5.5
+    - 223.6.6.6
+    sm2.doh.pub:
+    - 1.12.12.12
+    - 120.53.53.53
+  block_ips:
   - '*:53'
   - 1.1.1.1:53
   - 1.0.0.1:53
@@ -107,6 +108,8 @@ block_ips:
   - 9.9.9.9:53
   - 223.5.5.5:53
   - 119.29.29.29:53
+  - 127.0.0.1:53
+  - 0.0.0.0:53
 proxies:
 - http:
     name: U989124992380.edge.onetcdn.com
