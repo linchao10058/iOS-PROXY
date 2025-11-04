@@ -277,6 +277,8 @@ network-changed script-path=https://raw.githubusercontent.com/Loon0x00/LoonExamp
 https://raw.githubusercontents.com/nzw9314/Loon/master/Script.conf, tag=Loon脚本合集, enabled=true
 
 [Plugin]
+https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/Spotify.sgmodule, enabled=true
+https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/YouTube.sgmodule, enabled=true
 https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/Block-Tencent-SafeBrowsing.sgmodule, tag=Block QQ SafeBrowsing, enabled=true
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Release/Modules/%E4%BA%91%E9%97%AA%E4%BB%98.sgmodule, enabled=true
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Release/Modules/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90.sgmodule, enabled=true
