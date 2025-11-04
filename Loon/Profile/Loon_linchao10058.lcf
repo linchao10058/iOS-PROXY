@@ -3,8 +3,8 @@
 #Author: linchao10058
 
 [General]
-doh-server = https://cloudflare-dns.com/dns-query,https://1.1.1.1/dns-query,https://1.0.0.1/dns-query,https://dns.google/dns-query,https://8.8.8.8/dns-query,https://8.8.4.4/dns-query,https://dns.quad9.net/dns-query,https://9.9.9.9/dns-query,https://doh.opendns.com/dns-query
-hijack-dns = 1.1.1.1:53,1.0.0.1:53,8.8.8.8:53,8.8.4.4:53,9.9.9.9:53,223.5.5.5:53,119.29.29.29:53,*:53
+doh-server = https://cloudflare-dns.com/dns-query,https://1.1.1.1/dns-query,https://1.0.0.1/dns-query,https://dns.google/dns-query,https://8.8.8.8/dns-query,https://8.8.4.4/dns-query,https://dns.quad9.net/dns-query,https://9.9.9.9/dns-query,https://doh.opendns.com/dns-query,https://dns.alidns.com/dns-query,https://1.12.12.12/dns-query
+hijack-dns = 1.1.1.1:53,1.0.0.1:53,8.8.8.8:53,8.8.4.4:53,9.9.9.9:53,149.112.112.112:53,223.5.5.5:53,119.29.29.29:53,208.67.222.222:53,208.67.220.220:53,223.6.6.6:53,182.254.116.116:53,*:53
 udp-fallback-mode = REJECT
 disable-stun = true
 ipv6-vif = auto
@@ -12,7 +12,7 @@ ip-mode = dual
 skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
 bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
 # [DNS] => DNS 服务器
-dns-server = system,1.1.1.1,8.8.8.8,8.8.4.4,9.9.9.9,208.67.222.222,208.67.220.220,223.5.5.5,119.29.29.29
+dns-server = system,1.1.1.1,1.0.0.1,8.8.8.8,8.8.4.4,9.9.9.9,149.112.112.10,208.67.222.222,208.67.220.220,223.5.5.5,223.6.6.6,119.29.29.29,182.254.116.116
 allow-udp-proxy = false
 # Wi-Fi 访问
 # > 允许 Wi-Fi 网络下其它设备访问
@@ -84,9 +84,9 @@ Warp+GSC1 = WireGuard,interface-ip=162.159.36.1,interface-ipv6=2606:4700:4700::1
 
 [Remote Proxy]
 https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub = https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub,udp=true,block-quic=true,fast-open=false,vmess-aead=true,skip-cert-verify=default,enabled=true,flexible-sni=true
-Loon_linchao10058 = https://sub.store/download/collection/Loon_linchao_10058,udp=false,block-quic=true,fast-open=false,vmess-aead=true,skip-cert-verify=default,enabled=true,flexible-sni=true,img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/task/loon.png
-Surge_linchao10058 = https://sub.store/download/collection/Surge_linchao_10058,udp=true,block-quic=true,fast-open=false,vmess-aead=true,skip-cert-verify=default,enabled=false,flexible-sni=true,img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/task/surge.png
-Shadowrocket_linchao10058 = https://sub.store/download/collection/Shadowrocket_linchao_10058,udp=true,block-quic=false,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
+Loon_linchao10058 = https://sub.store/download/collection/Loon_linchao10058,udp=false,block-quic=true,fast-open=false,vmess-aead=true,skip-cert-verify=default,enabled=true,flexible-sni=true,img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/task/loon.png
+Surge_linchao10058 = https://sub.store/download/collection/Surge_linchao10058,udp=true,block-quic=true,fast-open=false,vmess-aead=true,skip-cert-verify=default,enabled=false,flexible-sni=true,img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/task/surge.png
+Shadowrocket_linchao10058 = https://sub.store/download/collection/Shadowrocket_linchao10058,udp=true,block-quic=false,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
 http://sub.avotc.eu.org/?token=auto = http://sub.avotc.eu.org/?token=auto,udp=true,fast-open=false,vmess-aead=true,enabled=true
 https://sub.789.st/sub?target=clash&url=https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml&sort=true&_=1702371386942 = https://sub.789.st/sub?target=clash&url=https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml&sort=true&_=1702371386942,udp=false,fast-open=false,vmess-aead=true,enabled=true,img-url=https://raw.githubusercontent.com/cjgcxjuh/fjtds/main/E89301C5-982E-4219-84B4-386AC36B06B5.png
 https://api.xjichang.buzz/api/v1/client/subscribe?token=3b3e2c230fb4aaf03161458f521eab14 = https://api.xjichang.buzz/api/v1/client/subscribe?token=3b3e2c230fb4aaf03161458f521eab14,udp=true,fast-open=false,vmess-aead=true,enabled=true
@@ -152,6 +152,7 @@ United States = select,🇺🇸美国,url = http://cp.cloudflare.com/generate_20
 # 白名单模式 PROXY，黑名单模式 DIRECT
 All Nodes = select,☁️ CFWarp-D,WARP+GSCats,Warp+GSC1,Warp+GSC2,Warp+GSC3,U989124992380.edge.onetcdn.com,Loon_linchao10058,https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub,Surge_linchao10058,Shadowrocket_linchao10058,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Area.png
 [Rule]
+DOMAIN-SUFFIX,vercel.app,PROXY
 DOMAIN,soulapp.cn,PROXY
 DOMAIN-SUFFIX,soulapp.me,PROXY
 DOMAIN-SUFFIX,zingmp3.vn,PROXY
@@ -184,7 +185,7 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/
 # 订阅规则URL,策略
 # PROXY
 #https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Rule/ExampleRule.list,policy=PROXY,enabled=false
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/OpenAI/OpenAI.list, policy=Others, tag=OpenAI, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/OpenAI/OpenAI.list, policy=Other, tag=OpenAI, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/Anthropic/Anthropic.list, policy=Global, tag=Anthropic, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Cloudflare/Cloudflare.list, policy=Global, tag=Cloudflare, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Game/Roblox/Roblox.list, policy=Global, tag=Roblox.list, enabled=true
@@ -199,6 +200,19 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMaxNoIP/ChinaMaxNoIP_All.list, policy=China, tag=ChinaMaxNoIP_All.list, enabled=true
 
 [Host]
+cloudflare-dns.com = server:1.1.1.1
+cloudflare-dns.com = server:1.0.0.1
+one.one.one.one = server:1.1.1.1
+one.one.one.one = server:1.0.0.1
+dns.google = server:8.8.8.8
+dns.google = server:8.8.4.4
+dns.google.com = server:8.8.8.8
+dns.google.com = server:8.8.4.4
+dns.quad9.net = server:9.9.9.9
+dns.quad9.net = server:149.112.112.112
+dns9.quad9.net = server:149.112.112.112
+doh.opendns.com = server:208.67.220.222
+doh.opendns.com = server:208.67.220.220
 *.taobao.com = server:223.5.5.5
 *.tmall.com = server:223.5.5.5
 *.alipay.com = server:223.5.5.5
@@ -260,19 +274,23 @@ network-changed script-path=https://raw.githubusercontent.com/Loon0x00/LoonExamp
 
 [Remote Script]
 # https://example.com/loon.js, tag=scripts, enable=true
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Cookie.conf, tag=Tartarus2014获取Cookie订阅合集, enabled=false
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Task.conf, tag=Tartarus2014定时任务合集, enabled=false
 https://raw.githubusercontents.com/nzw9314/Loon/master/Script.conf, tag=Loon脚本合集, enabled=true
 
 [Plugin]
+https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/Block-Tencent-SafeBrowsing.sgmodule, tag=Block QQ SafeBrowsing, enabled=true
+https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Release/Modules/%E4%BA%91%E9%97%AA%E4%BB%98.sgmodule, enabled=true
+https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Release/Modules/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90.sgmodule, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule, enabled=true
+https://raw.githubusercontent.com/sooyaaabo/Egern/refs/heads/main/Module/BlockAdvertisers.module, enabled=true
+https://github.com/NSRingo/Siri/releases/latest/download/iRingo.Siri.sgmodule, enabled=true
+https://raw.githubusercontent.com/sooyaaabo/Loon/refs/heads/main/Plugin/BlockAds.lpx, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Loon/SafeRedirect/SafeRedirect.plugin, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Loon/Redirect/Redirect.plugin, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Loon/BlockHTTPDNS/BlockHTTPDNS.plugin, enabled=true
-https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/Block-Tencent-SafeBrowsing.sgmodule, tag=Block QQ SafeBrowsing, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Google.lpx, enabled=true
 https://raw.githubusercontent.com/Mikephie/Script/refs/heads/main/loon/reddit.plugin, enabled=true
 https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/refs/heads/main/modules/script-hub.loon.plugin, enabled=true
-https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule, enabled=true
+https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule, enabled=false
 https://raw.githubusercontent.com/githubdulong/Script/refs/heads/master/Surge/TikTok_Surge.sgmodule, tag=TikTok解锁区域限制, enabled=true
 https://github.com/NSRingo/TestFlight/releases/latest/download/iRingo.TestFlight.plugin, enabled=true
 https://github.com/NSRingo/News/releases/latest/download/iRingo.News.plugin, policy=PROXY, enabled=true
@@ -294,8 +312,6 @@ https://kelee.one/Tool/Loon/Lpx/Taobao_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/TXDocs_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/ColorfulClouds_remove_ads.lpx, enabled=true
-https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx, enabled=true
-https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/QQ_Redirect.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/1.1.1.1.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, enabled=true
@@ -358,28 +374,28 @@ https://raw.githubusercontent.com/deezertidal/private/master/plugallery/fabulous
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/documents.plugin, policy=Global, tag=Documents, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/lightroom.plugin, policy=Global, tag=LightRoom, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/photoshop.plugin, policy=Global, tag=PhotoshopExpress, enabled=true
-https://raw.githubusercontent.com/app2smile/rules/refs/heads/master/plugin/youtube.plugin, enabled=true
+https://raw.githubusercontent.com/app2smile/rules/master/module/youtube.sgmodule, tag=YouTube去广告(>=iOS15), enabled=true
+https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx, enabled=true
 https://raw.githubusercontent.com/Moli-X/Tool/X/Loon/Plugin/Kelee/YouTube_remove_ads.plugin, enabled=true
-https://raw.githubusercontent.com/deezertidal/private/main/youtube.plugin, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/SpotifyPremium.plugin, policy=Global, tag=Spotify Premium, enabled=true
 https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GithubPrivate/github-private-repo.plugin, policy=Global, tag=GitHub Private Access, enabled=true
 https://raw.githubusercontent.com/Peng-YM/Loon-Gallery/master/loon-gallery.plugin, policy=PROXY, tag=插件仓库Loon Gallery, enabled=true
 https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.plugin, policy=PROXY, tag=BoxJs, enabled=true
 https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin, policy=PROXY, tag=Sub-Store, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/NodeLinkCheck.plugin, policy=PROXY, tag=NodeLinkCheck, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/MediaCheck.plugin, policy=PROXY, tag=Node Detection Tool, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/Loon/Loon_TF_Download.plugin, policy=Apple, tag=TestFlight区域限制解除, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/Loon/Loon_TF_Account.plugin, policy=Apple, tag=TestFlight账户管理, enabled=true
-https://raw.githubusercontent.com/chengkongyiban/Loon/main/Loon-Gallery/UnblockURLinWeChat.plugin, policy=China, tag=解除微信链接限制, enabled=true
+https://raw.githubusercontent.com/sooyaaabo/Egern/refs/heads/main/Sgmodule/Weixin_external_links_unlock.sgmodule, policy=China, tag=解除微信链接限制, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/xmlyad.plugin, policy=Advertising, tag=喜马拉雅去广告, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/biliad.plugin, policy=Advertising, tag=哔哩哔哩去广告, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/weiboad.plugin, policy=Advertising, tag=微博去广告, enabled=true
 https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/Loon/Plugin/BaiduAdBlock.plugin, policy=Advertising, tag=百度系广告屏蔽, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/baidu.png, enabled=true
-https://raw.githubusercontent.com/GeQ1an/Rules/master/Loon/Rewrite/Rewrite.plugin, policy=Advertising, tag=Stick Rules for Rewrite, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/startingad.plugin, policy=Advertising, tag=APP启动页去广告, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/AdvertisingScript/AdvertisingScript.plugin, policy=Advertising, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, policy=Advertising, tag=Advertising, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/AllInOne/AllInOne.plugin, policy=Advertising, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/Advertising/Advertising.sgmodule, policy=Advertising, tag=AdvertisingScript, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/Advertising/Advertising_Mock.sgmodule, policy=Advertising, tag=Advertising, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/AllInOne/AllInOne.sgmodule, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/AllInOne/AllInOne_Mock.sgmodule, policy=Advertising, tag=AllInOne, enabled=true
 # plugin-url tag=tag,proxy=插件中PROXY所指向的策略,enable=true
 # plugin策略可设置为DIRECT,REJECT,PROXY，其中PROXY为用户在app中手动映射的策略，rule后不跟随策略默认使用PROXY
 # example: https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Rewrite/AutoRewrite_Example.list,tag=boxjs,enable=true
