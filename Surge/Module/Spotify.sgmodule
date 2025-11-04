@@ -1,0 +1,50 @@
+#Name: Spotify_Integrated
+#Update Date: 2025.11.05
+#Author: linchao10058
+#Description: 集成 Spotify Premium 解锁、去广告、歌词翻译（需百度翻译 appid & key）、QUIC/UDP 回退保护。仅保留必要注释。
+
+[General]
+module-name = Spotify_Integrated
+module-version = 1.0
+
+[Argument]
+# 填入百度翻译 appid 与 securityKey 以启用歌词翻译；不需翻译可留空或设置为空字符串
+baidu_appid = text, "", tag=百度翻译 appid
+baidu_key = text, "", tag=百度翻译 securityKey
+debug = switch, false, true, tag=启用调试
+
+[Rule]
+# 阻断 QUIC/UDP 强制 HTTP/2 以便脚本拦截生效
+AND,((DOMAIN,spclient.wg.spotify.com,extended-matching),(PROTOCOL,QUIC)),REJECT
+AND,((DOMAIN,gae2-spclient.spotify.com,extended-matching),(PROTOCOL,QUIC)),REJECT
+AND,((DOMAIN,guc3-spclient.spotify.com,extended-matching),(PROTOCOL,QUIC)),REJECT
+AND,((DOMAIN,spclient.wg.spotify.com,extended-matching),(PROTOCOL,UDP)),REJECT
+AND,((DOMAIN,gae2-spclient.spotify.com,extended-matching),(PROTOCOL,UDP)),REJECT
+AND,((DOMAIN,guc3-spclient.spotify.com,extended-matching),(PROTOCOL,UDP)),REJECT
+
+[URL Rewrite]
+# 修正 artistview iPhone->iPad header（保持专辑/艺人正常展示）
+^https?:\/\/(gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/artistview\/v1\/artist\/(.*)&platform=iphone https://$1.spotify.com/artistview/v1/artist/$2&platform=ipad header
+
+[Map Local]
+# 返回空 pendragon 内容以屏蔽某些请求
+^https?:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/pendragon\/ data-type=text data="{}" status-code=200
+# 可选：本地替换脚本（若 raw.githubusercontent.com 无法访问，可把脚本下载到设备并改为 file:// 路径）
+
+[Script]
+# Premium 解锁 / UI 修复（bootstrap / customize -> protobuf 处理）
+Protobuf处理 = type=http-response,pattern=^https?:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:bootstrap|user-customization-service)(?:\/v1\/bootstrap|\/v1\/customize)?$,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js,requires-body=true,binary-body-mode=true,timeout=10,argument="[{tab},{useractivity}]",tag=SpotifyPremium
+
+# 歌词翻译（color-lyrics 接口）——请在 Argument 中填入 baidu_appid 和 baidu_key
+Spotify.lyric = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-lyric.js,requires-body=true,binary-body-mode=true,timeout=10,tag=Spotify歌词翻译,argument="appid={{baidu_appid}}&securityKey={{baidu_key}}&debug={{debug}}"
+
+# 兼容性备用：KeLee 的去广告脚本（如需替换路径可改为下面注释的路径）
+# Protobuf处理_kelee = type=http-response, pattern=^https?:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:bootstrap|user-customization-service), script-path=https://kelee.one/Resource/JavaScript/Spotify/Spotify_remove_ads.js, requires-body=true, binary-body-mode=true, timeout=5, argument="[{tab},{useractivity}]", tag=SpotifyRemoveAds_KeLee
+
+[MitM]
+# 将以下域名加入 HTTPS 解密（MitM）白名单
+hostname = %APPEND% spclient.wg.spotify.com, gae2-spclient.spotify.com, guc3-spclient.spotify.com
+
+[MITM]
+# 某些客户端使用大写 MITM 节，重复一遍以兼容
+hostname = %APPEND% spclient.wg.spotify.com, gae2-spclient.spotify.com, guc3-spclient.spotify.com
