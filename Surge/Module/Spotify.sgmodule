@@ -1,11 +1,11 @@
-#Name: Spotify_Integrated
-#Update Date: 2025.11.05
+##Name: Spotify Enhance & AdBlock
+#Update Date: 2025.11.05.00:50:52
 #Author: linchao10058
-#Description: 集成 Spotify Premium 解锁、去广告、歌词翻译（需百度翻译 appid & key）、QUIC/UDP 回退保护。仅保留必要注释。
+#Description: 集成 Spotify Premium 解锁、去广告、歌词翻译（需百度翻译 appid & key）、QUIC/UDP 回退保护。
 
 [General]
-module-name = Spotify_Integrated
-module-version = 1.0
+module-name = Spotify Enhance & AdBlock
+module-version = 2.0.8
 
 [Argument]
 # 填入百度翻译 appid 与 securityKey 以启用歌词翻译；不需翻译可留空或设置为空字符串
