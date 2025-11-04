@@ -1,10 +1,6 @@
-#Name: Egern_linchao10058
-#Update Date: 2025.10.31.00:40:09
-#Author: linchao10058
-
 ipv6: true
 allow_external_connections: false
-vif_only: false
+vif_only: true
 hijack_dns:
 - 1.1.1.1:53,
 - 1.0.0.1:53,
@@ -16,6 +12,8 @@ hijack_dns:
 - 119.29.29.29:53,
 - 208.67.222.222:53,
 - 208.67.220.220:53,
+- 94.140.14.14:53,
+- 94.140.15.15:53
 - 223.5.5.5:53,
 - 223.6.6.6:53,
 - 119.29.29.29:53,
@@ -25,6 +23,7 @@ geoip_db_url: https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
 asn_db_url: https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/download/GeoLite2-ASN.mmdb
 proxy_latency_test_url: https://www.google.com/generate_204
 direct_latency_test_url: http://www.cloudflare.com/cdn-cgi/trace
+compat_route: true
 vif_excluded_routes:
 - ’*.boc.com'
 - ’*.cmbchina.com'
@@ -46,9 +45,14 @@ dns:
     - https://8.8.4.4/dns-query
     - https://dns.quad9.net/dns-query
     - https://9.9.9.9/dns-query
+    - https://dns.adguard-dns.com/dns-query
     - tls://1.1.1.1:853
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
     - tls://8.8.8.8:853
+    - tls://dns.quad9.net:853
     - tls://9.9.9.9:853
+    - tls://dns.adguard-dns.com:853
     ChinaDNS:
     - https://dns.alidns.com/dns-query
     - https://223.5.5.5/dns-quer
@@ -99,17 +103,22 @@ dns:
     sm2.doh.pub:
     - 1.12.12.12
     - 120.53.53.53
+    dns.adguard-dns.com:
+    - 94.140.14.14
+    - 94.140.15.15
   block_ips:
-  - '*:53'
   - 1.1.1.1:53
   - 1.0.0.1:53
   - 8.8.8.8:53
   - 8.8.4.4:53
   - 9.9.9.9:53
+  - 94.140.14.14:53,
+  - 94.140.15.15:53
   - 223.5.5.5:53
   - 119.29.29.29:53
   - 127.0.0.1:53
   - 0.0.0.0:53
+  - '*:53'
 proxies:
 - http:
     name: U989124992380.edge.onetcdn.com
@@ -142,17 +151,12 @@ policy_groups:
     name: PROXY
     type: select
     urls:
-    - https://paste.c-net.org/LatexHurrying
-    - https://sub.dmit.dpdns.org/share/sub/dingyue_Center_flyintpro?token=hPFPD1CJ4LnHR_SUhPsG3
     - https://sub.store/download/collection/Loon_linchao10058
-    - https://sub.dmit.dpdns.org/share/sub/dingyue_Center_another?token=73tuVG5vbabLFI-Ga5Feh
-    - https://www.flyintpro05.com/api/v1/client/subscribe?token=62be89e4bc828cdfd0c62bfb44746312
     - https://sub.store/download/collection/Surge_linchao10058
+    - https://sub.store/download/collection/Egern_linchao10058
     - https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
     urls_disabled:
-    - https://sub.dmit.dpdns.org/share/sub/dingyue_Center_flyintpro?token=hPFPD1CJ4LnHR_SUhPsG3
     - https://sub.store/download/collection/Loon_linchao10058
-    - https://sub.dmit.dpdns.org/share/sub/dingyue_Center_another?token=73tuVG5vbabLFI-Ga5Feh
     - https://sub.store/download/collection/Surge_linchao10058
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
     hidden: false
@@ -198,8 +202,8 @@ policy_groups:
     - REJECT
     - REJECT-DROP
     - DIRECT
-    - PROXY
     - SELECT
+    - PROXY
     - U989124992380.edge.onetcdn.com
     - Hong Kong
     - TaiWan
@@ -428,6 +432,7 @@ rules:
     policy: Global
     disabled: false
 - rule_set:
+    name: Adrules.top
     match: https://adrules.top/adrules.list
     policy: Advertising
     disabled: false
@@ -440,6 +445,10 @@ rules:
     policy: Global
     disabled: false
 - rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Game/Roblox/Roblox.list
+    policy: Global
+    disabled: false
+- rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_All.list
     policy: Global
     disabled: false
@@ -448,16 +457,21 @@ rules:
     policy: China
     disabled: false
 - rule_set:
-    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ByteDance/ByteDance.list
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Alibaba/Alibaba_All.list
     policy: China
     disabled: false
 - rule_set:
-    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Alibaba/Alibaba_All.list
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ByteDance/ByteDance.list
     policy: China
     disabled: false
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMaxNoIP/ChinaMaxNoIP_All.list
     policy: China
+    disabled: false
+- rule_set:
+    name: 'Sub-Store 「vercel.app」: 1. 确认安装Sub Store模块。  2. 将模块生效顺序放到最底部。  3. 开启MITM脚本,重写这三个开关。  4. 代理规则添加「DOMAIN-SUFFIX」→「vercel.app」走代理节点。'
+    match: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/rule/substore.list
+    policy: PROXY
     disabled: false
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Privacy/Privacy_All.list
@@ -482,11 +496,27 @@ rules:
     disabled: false
 - default:
     policy: PROXY
+scriptings:
+- http_request:
+    name: sub-info
+    match: ''
+    script_url: https://raw.githubusercontent.com/xream/scripts/main/surge/modules/sub-store-scripts/sub-info/node.js
+    body_required: false
+    binary_body: false
+    disabled: true
+- http_request:
+    name: NodeLinkCheck
+    match: ''
+    script_url: https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/NodeLinkCheck/Sub-Store/Operator.js
+    body_required: false
+    binary_body: false
+    disabled: true
 mitm:
   enabled: true
   ca_p12: egern.p12
   ca_passphrase: YOUR_SECURE_PASSWORD_HERE
   hostnames:
+    includes:
     - '*.vercel.app'
     - '*.byteoversea.com'
     - '*.ibytedtos.com'
@@ -524,6 +554,47 @@ mitm:
     - '*.tiktok.com'
 http_captures:
   includes:
+  - '*.bilibili.com'
+  - '*.youtube.com'
+  - '*.etflix.com'
+  - '*.spotify.com'
+  - '*.interest.com'
+  - '*.mistral.ai'
+  - '*.meta.com'
+  - '*.cloudflare.com'
+  - roblox.com
+  - zoho.com
+  - '*.pinduoduo.com'
+  - '*.qq.com'
+  - '*.chinamobile.com'
+  - '*.10086.cn'
+  - '*.zhihu.com'
+  - '*.xiaohongshu.com'
+  - iesdouyin.com
+  - '*.douyin.com'
+  - '*.meituan.com'
+  - '*.jd.com'
+  - '*.tmall.com'
+  - '*.zaloapp.com'
+  - '*.zalo.me'
+  - '*.daum.net'
+  - '*.kakao.com'
+  - '*.line.me'
+  - '*.adobe.com'
+  - '*.linkedin.com'
+  - '*.whatsapp.com'
+  - '*.telegram.org'
+  - '*.snapchat.com'
+  - '*.reddit.com'
+  - '*.discordapp.com'
+  - '*.discord.com'
+  - '*.github.com'
+  - '*.gemini.google.com'
+  - '*.openai.com'
+  - '*.x.ai'
+  - '*.character.ai'
+  - '*.perplexity.ai'
+  - '*.anthropic.com'
   - '*.vercel.app'
   - '*.weixin.qq.com'
   - '*.wechat.com'
@@ -540,17 +611,21 @@ modules:
 - name: BoxJs
   url: https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.surge.sgmodule
   enabled: true
-- name: Sub-Store
-  url: https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/config/Surge.sgmodule
-  enabled: true
 - name: Script Hub
   url: https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/refs/heads/main/modules/script-hub.surge.sgmodule
   enabled: true
-- name: 网络流量统计
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E6%B5%81%E9%87%8F%E7%BB%9F%E8%AE%A1.official.sgmodule
+- name: Sub-Store
+  url: https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/config/Surge.sgmodule
   enabled: true
-- name: 网络信息 Network Info Panel
-  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Network-Info/Moore/Network-Info.sgmodule
+- name: IP-Check
+  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/Panel/IP-Check/Moore/IP-Check.sgmodule
+  enabled: true
+- name: Network Info Panel
+  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/Panel/Network-Info/Moore/Network-Info.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/Panel/Sub-info/Moore/Sub-info.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/Squarelan/Proxy-Configuration/main/Surge/Flowsub.sgmodule
   enabled: true
 - name: 网络信息 𝕏
   url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Net-lsp-x/Moore/net-lsp-x.sgmodule
@@ -558,8 +633,11 @@ modules:
 - name: 网络接口信息
   url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Interface-Info/Moore/interface-info-normal.sgmodule
   enabled: true
+- name: NetSpeed
+  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/Panel/Net_Speed/Net_Speed.sgmodule
+  enabled: true
 - name: 流媒体解锁检测
-  url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Stream-All/Moore/Stream-All.sgmodule
+  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/Panel/Stream-All/Moore/Stream-All.sgmodule
   enabled: true
 - name: 节假日信息
   url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Timecard/Moore/Timecard.sgmodule
@@ -569,6 +647,11 @@ modules:
   enabled: true
 - name: Flush DNS
   url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Flush-DNS/Moore/Flush-DNS.sgmodule
+  enabled: true
+- name: '☁️ Cloudflare: 1️⃣ 1.1.1.1 with WARP'
+  url: https://raw.githubusercontent.com/VirgilClyne/Cloudflare/main/modules/Cloudflare.1.1.1.1.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/Keywos/rule/main/script/st/surgetool.sgmodule
   enabled: true
 - name: Advertising
   url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/Advertising/Advertising.sgmodule
@@ -583,13 +666,15 @@ modules:
   url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne_Mock.sgmodule
   enabled: true
 - name: 广告联盟
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F.official.sgmodule
+  url: https://raw.githubusercontent.com/app2smile/rules/master/module/adsense.sgmodule
   enabled: true
 - name: 可莉广告过滤器
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.sgmodule
   enabled: true
 - name: 广告平台拦截器
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%B9%BF%E5%91%8A%E5%B9%B3%E5%8F%B0%E6%8B%A6%E6%88%AA%E5%99%A8.sgmodule
+  url: https://raw.githubusercontent.com/sooyaaabo/Egern/refs/heads/main/Module/BlockAdvertisers.module
+  enabled: true
+- url: https://raw.githubusercontent.com/ddgksf2013/Modules/main/Adblock.sgmodule
   enabled: true
 - name: General
   url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/General/General.sgmodule
@@ -611,6 +696,7 @@ modules:
   enabled: true
 - name: Redirect
   url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/Redirect/Redirect.sgmodule
+  enabled: true
 - name: SafeRedirect
   url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/SafeRedirect/SafeRedirect.sgmodule
   enabled: true
@@ -623,11 +709,11 @@ modules:
 - name: Ali-DoH
   url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Spec/DoH/Moore/Ali-DoH.sgmodule
   enabled: true
-- name: Ali-DNS over QUIC
-  url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Spec/DNS-QUIC/Moore/Ali-DoQ.sgmodule
-  enabled: true
 - name: DNSPod-DoH
   url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Spec/DoH/Moore/DNSPod-DoH.sgmodule
+  enabled: true
+- name: Ali-DNS over QUIC
+  url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Spec/DNS-QUIC/Moore/Ali-DoQ.sgmodule
   enabled: true
 - name: '☁️ Cloudflare: 🇩 DNS'
   url: https://github.com/Auraflare/DNS/releases/latest/download/Cloudflare.DNS.sgmodule
@@ -647,14 +733,23 @@ modules:
 - name: '🍿️ DualSubs: 🎵 Spotify'
   url: https://github.com/DualSubs/Spotify/releases/latest/download/DualSubs.Spotify.sgmodule
   enabled: true
-- name: ' iRingo: 📰 News'
-  url: https://github.com/NSRingo/News/releases/latest/download/iRingo.News.sgmodule
+- name: '🍿️ DualSubs: 🇳 Netflix'
+  url: https://github.com/DualSubs/Netflix/releases/latest/download/DualSubs.Netflix.sgmodule
+  enabled: true
+- name: '🍿️ DualSubs: 🔣 Universal'
+  url: https://github.com/DualSubs/Universal/releases/latest/download/DualSubs.Universal.sgmodule
+  enabled: true
+- name: ' iRingo: 🗺️ Maps'
+  url: https://github.com/NSRingo/GeoServices/releases/latest/download/iRingo.Maps.sgmodule
+  enabled: true
+- name: ' iRingo: 🌤 WeatherKit'
+  url: https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.sgmodule
   enabled: true
 - name: ' iRingo: 📺 TV app'
   url: https://github.com/NSRingo/TV/releases/latest/download/iRingo.TV.sgmodule
   enabled: true
-- name: ' iRingo: 🗺️ Maps'
-  url: https://github.com/NSRingo/GeoServices/releases/latest/download/iRingo.Maps.sgmodule
+- name: ' iRingo: 📰 News'
+  url: https://github.com/NSRingo/News/releases/latest/download/iRingo.News.sgmodule
   enabled: true
 - name: ' iRingo: ⭕ Siri'
   url: https://github.com/NSRingo/Siri/releases/latest/download/iRingo.Siri.sgmodule
@@ -662,50 +757,40 @@ modules:
 - name: ' iRingo: 🔍 Search'
   url: https://github.com/NSRingo/Siri/releases/latest/download/iRingo.Search.sgmodule
   enabled: true
-- name: ' iRingo: 🌤 WeatherKit'
-  url: https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.sgmodule
-  enabled: true
 - name: ' iRingo: 📍 Location'
   url: https://github.com/NSRingo/GeoServices/releases/latest/download/iRingo.Location.sgmodule
   enabled: true
 - name: ' iRingo: ✈ TestFlight'
   url: https://github.com/NSRingo/TestFlight/releases/latest/download/iRingo.TestFlight.sgmodule
   enabled: true
-- name: '📺 BiliBili: 🛡️ ADBlock'
-  url: https://github.com/BiliUniverse/ADBlock/releases/latest/download/BiliBili.ADBlock.sgmodule
+- name: '📺 BiliBili: 🔀 Redirect'
+  url: https://github.com/BiliUniverse/Redirect/releases/latest/download/BiliBili.Redirect.sgmodule
   enabled: true
 - name: '📺 BiliBili: ⚙️ Enhanced'
   url: https://github.com/BiliUniverse/Enhanced/releases/latest/download/BiliBili.Enhanced.sgmodule
   enabled: true
+- name: '📺 BiliBili: 🛡️ ADBlock'
+  url: https://github.com/BiliUniverse/ADBlock/releases/latest/download/BiliBili.ADBlock.sgmodule
+  enabled: true
 - name: '📺 BiliBili: 🌐 Global'
   url: https://github.com/BiliUniverse/Global/releases/latest/download/BiliBili.Global.sgmodule
-  enabled: true
-- name: '📺 BiliBili: 🔀 Redirect'
-  url: https://github.com/BiliUniverse/Redirect/releases/latest/download/BiliBili.Redirect.sgmodule
-  enabled: true
-- name: '🍿️ DualSubs: 🇳 Netflix'
-  url: https://github.com/DualSubs/Netflix/releases/latest/download/DualSubs.Netflix.sgmodule
-  enabled: true
-- name: '🍿️ DualSubs: 🔣 Universal'
-  url: https://github.com/DualSubs/Universal/releases/latest/download/DualSubs.Universal.sgmodule
   enabled: true
 - name: 通用解锁Premiere
   url: https://raw.githubusercontent.com/githubdulong/Script/refs/heads/master/Surge/Revenuecat.sgmodule
   enabled: true
-- name: Youtube (Music) Enhance (egerndaddy)
-  url: https://raw.githubusercontent.com/egerndaddy/Tool/refs/heads/X/Egern/Module/YouTube.yaml
-  enabled: true
 - name: YouTube去广告(>=iOS15)
   url: https://raw.githubusercontent.com/app2smile/rules/master/module/youtube.sgmodule
   enabled: true
-- name: Youtube (Music) Enhance
-  url: https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule
+- name: Youtube (Music) Enhance (egerndaddy)
+  url: https://raw.githubusercontent.com/egerndaddy/Tool/refs/heads/X/Egern/Module/YouTube.yaml
   enabled: true
-- name: Spotify(iOS15)
-  url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/spotifyVIP.module
+- url: https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule
   enabled: true
 - name: Spotify(>=iOS15)
   url: https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.module
+  enabled: true
+- name: Spotify(iOS15)
+  url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/spotifyVIP.module
   enabled: true
 - name: Spotify (app2smile)
   url: https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.module
@@ -737,9 +822,6 @@ modules:
 - name: 美图秀秀解锁会员
   url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/meituxx.module
   enabled: true
-- name: WPS每日签到
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/WPS%E6%AF%8F%E6%97%A5%E7%AD%BE%E5%88%B0.sgmodule
-  enabled: true
 - name: WPS解锁会员
   url: https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/WPSOffice/Surge.sgmodule
   enabled: true
@@ -749,17 +831,17 @@ modules:
 - name: 彩云天气VIP
   url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/caiyun_cron.module
   enabled: true
-- name: 彩云天气去广告
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BD%A9%E4%BA%91%E5%A4%A9%E6%B0%94%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+- name: 微信公众号去广告
+  url: https://raw.githubusercontent.com/scomper/Surge/refs/heads/master/Modules/WeChat.sgmodule
   enabled: true
 - name: 微信公众号去广告
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  url: https://raw.githubusercontent.com/sooyaaabo/Egern/refs/heads/main/Sgmodule/Weixin_Official_Accounts_remove_ads.sgmodule
   enabled: true
 - name: 微信外部链接解锁
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BE%AE%E4%BF%A1%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5%E8%A7%A3%E9%94%81.sgmodule
+  url: https://raw.githubusercontent.com/sooyaaabo/Egern/refs/heads/main/Sgmodule/Weixin_external_links_unlock.sgmodule
   enabled: true
 - name: 微信小程序去广告
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  url: https://raw.githubusercontent.com/sooyaaabo/Egern/refs/heads/main/Sgmodule/WexinMiniPrograms_Remove_ads.sgmodule
   enabled: true
 - name: 夸克去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%A4%B8%E5%85%8B%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
@@ -815,11 +897,11 @@ modules:
 - name: 汽水音乐去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E6%B1%BD%E6%B0%B4%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
-- name: 酷我音乐去广告
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E9%85%B7%E6%88%91%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
-  enabled: true
 - name: 酷狗音乐去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E9%85%B7%E7%8B%97%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- name: 酷我音乐去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E9%85%B7%E6%88%91%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
 - name: 喜马拉雅去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
@@ -840,7 +922,7 @@ modules:
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BE%AE%E5%8D%9A%E5%9B%BD%E9%99%85%E7%89%88%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
 - name: 云闪付去广告
-  url: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Release/Modules/%E4%BA%91%E9%97%AA%E4%BB%98.sgmodule
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E4%BA%91%E9%97%AA%E4%BB%98%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
 - name: 中国移动云盘去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8%E4%BA%91%E7%9B%98%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
@@ -876,7 +958,7 @@ modules:
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E8%B4%B4%E5%90%A7%E5%8E%BB%E5%B9%BF%E5%91%8A.official.sgmodule
   enabled: true
 - name: 京东比价
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E4%BA%AC%E4%B8%9C%E6%AF%94%E4%BB%B7.sgmodule
+  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/JD_Price/Moore/JD_Price.sgmodule
   enabled: true
 - name: 京东去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E4%BA%AC%E4%B8%9C%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
@@ -887,18 +969,11 @@ modules:
 - name: Soul去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Soul%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
-- name: 菜鸟去广告
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E8%8F%9C%E9%B8%9F%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
-  enabled: true
 - name: 闲鱼去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E9%97%B2%E9%B1%BC%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
-  enabled: true
-- name: 脉脉去广告
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E8%84%89%E8%84%89%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
 - name: 滴滴出行去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E6%BB%B4%E6%BB%B4%E5%87%BA%E8%A1%8C%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
 - name: 携程旅行签到
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E6%90%BA%E7%A8%8B%E6%97%85%E8%A1%8C%E7%AD%BE%E5%88%B0.official.sgmodule
-  enabled: true
