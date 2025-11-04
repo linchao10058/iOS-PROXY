@@ -710,6 +710,12 @@ modules:
 - name: Spotify (app2smile)
   url: https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.module
   enabled: true
+- name: YouTube Enhance and AdBlock
+  url: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/YouTube.sgmodule
+  enabled: true
+- name: Spotify Enhance and AdBlock
+  url: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/Spotify.sgmodule
+  enabled: true
 - name: TikTok解锁区域限制,下载去水印,自定义参数
   url: https://raw.githubusercontent.com/githubdulong/Script/refs/heads/master/Surge/TikTok_Surge.sgmodule
   enabled: true
