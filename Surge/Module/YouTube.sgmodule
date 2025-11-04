@@ -1,0 +1,33 @@
+#Name: YouTube Enhance & AdBlock
+#Update Date: 2025.11.05.00:50:52
+#Author: linchao10058
+
+[General]
+module-name = YouTube Enhance & AdBlock（Surge_linchao10058）
+module-version = 2.0.8
+
+[Argument]
+blockUpload = switch, false, true, tag=隐藏上传按钮, desc=隐藏 YouTube / YouTube Music 底栏上传按钮
+blockShorts = switch, false, true, tag=隐藏Shorts按钮, desc=隐藏 YouTube 底栏 Shorts 按钮
+blockImmersive = switch, false, true, tag=隐藏选段按钮, desc=隐藏 YouTube Music 底栏“选段”按钮
+captionLang = select, "zh-Hans", "zh-Hans", "zh-Hant", "ja", "ko", "en", "off", tag=字幕翻译语言
+lyricLang = select, "zh-Hans", "zh-Hans", "zh-Hant", "ja", "ko", "en", "off", tag=歌词翻译语言
+debug = switch, true, true, tag=启用调试模式
+
+[Rule]
+AND, ((DOMAIN-SUFFIX, googlevideo.com), (PROTOCOL, QUIC)), REJECT
+AND, ((DOMAIN-SUFFIX, googlevideo.com), (PROTOCOL, UDP)), REJECT
+AND, ((DOMAIN-SUFFIX, youtubei.googleapis.com), (PROTOCOL, QUIC)), REJECT
+AND, ((DOMAIN-SUFFIX, youtubei.googleapis.com), (PROTOCOL, UDP)), REJECT
+
+[Rewrite]
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
+
+[Map Local]
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data="" status-code=200
+
+[Script]
+youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|reel\/reel_watch|guide|account\/get_setting|get_watch)(\?(.*))?$,requires-body=1,binary-body-mode=1,max-size=-1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js,argument="{\"blockUpload\":{{blockUpload}},\"blockShorts\":{{blockShorts}},\"blockImmersive\":{{blockImmersive}},\"captionLang\":\"{{captionLang}}\",\"lyricLang\":\"{{lyricLang}}\",\"debug\":{{debug}}}",tag=YouTube去广告
+
+[MitM]
+hostname = *.googlevideo.com, youtubei.googleapis.com
