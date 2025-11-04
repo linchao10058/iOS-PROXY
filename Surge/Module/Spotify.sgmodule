@@ -1,7 +1,6 @@
-##Name: Spotify Enhance & AdBlock
+#!Name: Spotify Enhance & AdBlock
+#!desc=Spotify Enhance & AdBlock
 #Update Date: 2025.11.05.00:50:52
-#Author: linchao10058
-#Description: 集成 Spotify Premium 解锁、去广告、歌词翻译（需百度翻译 appid & key）、QUIC/UDP 回退保护。
 
 [General]
 module-name = Spotify Enhance & AdBlock
