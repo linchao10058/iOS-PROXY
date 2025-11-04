@@ -3,8 +3,8 @@
 #Author: linchao10058
 
 [General]
-doh-server = https://cloudflare-dns.com/dns-query,https://1.1.1.1/dns-query,https://1.0.0.1/dns-query,https://dns.google/dns-query,https://8.8.8.8/dns-query,https://8.8.4.4/dns-query,https://dns.quad9.net/dns-query,https://9.9.9.9/dns-query,https://doh.opendns.com/dns-query,https://dns.alidns.com/dns-query,https://1.12.12.12/dns-query
-hijack-dns = 1.1.1.1:53,1.0.0.1:53,8.8.8.8:53,8.8.4.4:53,9.9.9.9:53,149.112.112.112:53,223.5.5.5:53,119.29.29.29:53,208.67.222.222:53,208.67.220.220:53,223.6.6.6:53,182.254.116.116:53,*:53
+doh-server = https://cloudflare-dns.com/dns-query,https://1.1.1.1/dns-query,https://1.0.0.1/dns-query,https://dns.google/dns-query,https://8.8.8.8/dns-query,https://8.8.4.4/dns-query,https://dns.quad9.net/dns-query,https://9.9.9.9/dns-query,https://doh.opendns.com/dns-query,https://dns.adguard-dns.com/dns-query,https://dns.alidns.com/dns-query,https://1.12.12.12/dns-query
+hijack-dns = 1.1.1.1:53,1.0.0.1:53,8.8.8.8:53,8.8.4.4:53,9.9.9.9:53,149.112.112.112:53,94.140.14.14:53,94.140.15.15:53,223.5.5.5:53,119.29.29.29:53,208.67.222.222:53,208.67.220.220:53,223.6.6.6:53,182.254.116.116:53,*:53
 udp-fallback-mode = REJECT
 disable-stun = true
 ipv6-vif = auto
@@ -12,7 +12,7 @@ ip-mode = dual
 skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
 bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
 # [DNS] => DNS 服务器
-dns-server = system,1.1.1.1,1.0.0.1,8.8.8.8,8.8.4.4,9.9.9.9,149.112.112.10,208.67.222.222,208.67.220.220,223.5.5.5,223.6.6.6,119.29.29.29,182.254.116.116
+dns-server = system,1.1.1.1,1.0.0.1,8.8.8.8,8.8.4.4,9.9.9.9,149.112.112.10,208.67.222.222,208.67.220.220,223.5.5.5,223.6.6.6,94.140.14.14,94.140.15.15,119.29.29.29,182.254.116.116
 allow-udp-proxy = false
 # Wi-Fi 访问
 # > 允许 Wi-Fi 网络下其它设备访问
@@ -213,6 +213,8 @@ dns.quad9.net = server:149.112.112.112
 dns9.quad9.net = server:149.112.112.112
 doh.opendns.com = server:208.67.220.222
 doh.opendns.com = server:208.67.220.220
+dns.adguard-dns.com = server:94.140.15.15
+dns.adguard-dns.com = server:94.140.14.14
 *.taobao.com = server:223.5.5.5
 *.tmall.com = server:223.5.5.5
 *.alipay.com = server:223.5.5.5
@@ -292,7 +294,6 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master
 https://kelee.one/Tool/Loon/Lpx/Google.lpx, enabled=true
 https://raw.githubusercontent.com/Mikephie/Script/refs/heads/main/loon/reddit.plugin, enabled=true
 https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/refs/heads/main/modules/script-hub.loon.plugin, enabled=true
-https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule, enabled=false
 https://raw.githubusercontent.com/githubdulong/Script/refs/heads/master/Surge/TikTok_Surge.sgmodule, tag=TikTok解锁区域限制, enabled=true
 https://github.com/NSRingo/TestFlight/releases/latest/download/iRingo.TestFlight.plugin, enabled=true
 https://github.com/NSRingo/News/releases/latest/download/iRingo.News.plugin, policy=PROXY, enabled=true
@@ -352,7 +353,6 @@ https://raw.githubusercontent.com/deezertidal/private/main/WPS.plugin, enabled=t
 https://raw.githubusercontent.com/deezertidal/private/main/KuwoVip.plugin, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GlobalMedia/GlobalMedia_MITM.plugin, enabled=true
 https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/config/Loon.plugin, policy=PROXY, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/skip-proxy.plugin, policy=China, tag=跳过代理检测, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/main/gddt.plugin, policy=China, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/main/bili.plugin, policy=China, enabled=true
 https://raw.githubusercontent.com/app2smile/rules/master/plugin/bilibili.plugin, policy=Advertising, enabled=true
@@ -376,10 +376,11 @@ https://raw.githubusercontent.com/deezertidal/private/master/plugallery/fabulous
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/documents.plugin, policy=Global, tag=Documents, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/lightroom.plugin, policy=Global, tag=LightRoom, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/photoshop.plugin, policy=Global, tag=PhotoshopExpress, enabled=true
-https://raw.githubusercontent.com/app2smile/rules/master/module/youtube.sgmodule, tag=YouTube去广告(>=iOS15), enabled=true
-https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx, enabled=true
-https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx, enabled=true
+https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule, enabled=true
+https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx, enabled=false
+https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx, enabled=false
 https://raw.githubusercontent.com/Moli-X/Tool/X/Loon/Plugin/Kelee/YouTube_remove_ads.plugin, enabled=true
+https://raw.githubusercontent.com/app2smile/rules/master/module/youtube.sgmodule, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/SpotifyPremium.plugin, policy=Global, tag=Spotify Premium, enabled=true
 https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GithubPrivate/github-private-repo.plugin, policy=Global, tag=GitHub Private Access, enabled=true
 https://raw.githubusercontent.com/Peng-YM/Loon-Gallery/master/loon-gallery.plugin, policy=PROXY, tag=插件仓库Loon Gallery, enabled=true
