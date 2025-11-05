@@ -1,6 +1,50 @@
 ipv6: true
 allow_external_connections: false
 vif_only: true
+bypass_tunnel_proxy:
+- localhost
+- '*.local'
+- '*.lan'
+- '*.home.arpa'
+- '*.crashlytics.com'
+- '*.10086.cn'
+- '*.chinamobile.com'
+- '*.chinamobileltd.com'
+- '*.cnmobile.net'
+- '*.monternet.com'
+- '*.cmcc.com'
+- '*.cnmobile.com'
+- '*.189.cn'
+- '*.chinatelecom.com'
+- '*.chinatelecom.com.cn'
+- '*.chinatelecom.cn'
+- '*.chinatelecomglobal.com'
+- '*.e-surfing.com'
+- '*.10010.cn'
+- '*.10010.com'
+- '*.chinaunicom.com'
+- '*.chinaunicom.cn'
+- '*.wo.com.cn'
+- '*.wo.cn'
+- '*.unicom.com'
+- '*.chinaunicomglobal.com'
+- '*.icbc.com'
+- '*.icbc.com.cn'
+- '*.icbc.cn'
+- '*.abchina.com'
+- '*.abchina.com.cn'
+- '*.abchina.cn'
+- '*.ccb.com'
+- '*.ccb.com.cn'
+- '*.ccb.cn'
+- '*.boc.cn'
+- '*.boc.com'
+- '*.bankofchina.com'
+- '*.bankcomm.com'
+- '*.bocom.com'
+- '*.bankcomm.cn'
+- '*.psbc.com'
+- '*.psbc.com.cn'
 hijack_dns:
 - 1.1.1.1:53
 - 1.0.0.1:53
@@ -29,13 +73,52 @@ proxy_latency_test_url: https://www.google.com/generate_204
 direct_latency_test_url: http://www.cloudflare.com/cdn-cgi/trace
 compat_route: true
 vif_excluded_routes:
-- ’*.boc.com'
-- ’*.cmbchina.com'
-- ’*.icbc.com'
-- ’*.ccb.com'
-- ’*.abc.com'
+- localhost
+- '*.local'
+- '*.lan'
+- '*.home.arpa'
+- '*.crashlytics.com'
+- '*.10086.cn'
+- '*.chinamobile.com'
+- '*.chinamobileltd.com'
+- '*.cnmobile.net'
+- '*.monternet.com'
+- '*.cmcc.com'
+- '*.cnmobile.com'
+- '*.189.cn'
+- '*.chinatelecom.com'
+- '*.chinatelecom.com.cn'
+- '*.chinatelecom.cn'
+- '*.chinatelecomglobal.com'
+- '*.e-surfing.com'
+- '*.10010.cn'
+- '*.10010.com'
+- '*.chinaunicom.com'
+- '*.chinaunicom.cn'
+- '*.wo.com.cn'
+- '*.wo.cn'
+- '*.unicom.com'
+- '*.chinaunicomglobal.com'
+- '*.icbc.com'
+- '*.icbc.com.cn'
+- '*.icbc.cn'
+- '*.abchina.com'
+- '*.abchina.com.cn'
+- '*.abchina.cn'
+- '*.ccb.com'
+- '*.ccb.com.cn'
+- '*.ccb.cn'
+- '*.boc.cn'
+- '*.boc.com'
+- '*.bankofchina.com'
+- '*.bankcomm.com'
+- '*.bocom.com'
+- '*.bankcomm.cn'
+- '*.psbc.com'
+- '*.psbc.com.cn'
 dns:
   bootstrap:
+  - system
   - 1.1.1.1
   - 1.0.0.1
   - 8.8.8.8
@@ -52,21 +135,23 @@ dns:
   - 223.6.6.6
   - 119.29.29.29
   - 182.254.116.116
-  - '2606:4700:4700::1111' 
-  - '2606:4700:4700::1001'
-  - '2001:4860:4860::8888'
-  - '2001:4860:4860::8844'
-  - '2620:fe::fe'
-  - '2620:fe::9'
-  - '2620:119:35::35'
-  - '2620:119:53::53'
+  - 2606:4700:4700::1111
+  - 2606:4700:4700::1001
+  - 2001:4860:4860::8888
+  - 2001:4860:4860::8844
+  - 2620:fe::fe
+  - 2620:fe::9
+  - 2620:119:35::35
+  - 2620:119:53::53
   - '2a0d:2a00:1::'
   - '2a0d:2a00:2::'
-  - '2a10:50c0::ad1:ff'
-  - '2a10:50c0::ad2:ff'
-  - '2400:3200::1'
+  - 2a10:50c0::ad1:ff
+  - 2a10:50c0::ad2:ff
+  - 2400:3200::1
   - '2402:4e00::'
   upstreams:
+    System:
+    - system
     GlobalDNS:
     - https://cloudflare-dns.com/dns-query
     - https://1.1.1.1/dns-query
@@ -95,9 +180,13 @@ dns:
     - tls://security-filter-dns.cleanbrowsing.org:853
     - tls://dns.adguard-dns.com:853
     - tls://dns-family.adguard-dns.com:853
+    - quic://1.1.1.1:784
+    - quic://1.0.0.1:784
+    - quic://cloudflare-dns.com:784
+    - quic://dns.adguard-dns.com:784
     ChinaDNS:
     - https://dns.alidns.com/dns-query
-    - https://223.5.5.5/dns-quer
+    - https://223.5.5.5/dns-query
     - https://223.6.6.6/dns-query
     - https://1.12.12.12/dns-query
     - https://120.53.53.53/dns-query
@@ -109,11 +198,20 @@ dns:
     - tls://dot.pub:853
   forward:
   - wildcard:
-      match: local
-      value: system
+      match: '*.localhost'
+      value: System
   - wildcard:
-      match: lan
-      value: system
+      match: '*.local'
+      value: System
+  - wildcard:
+      match: '*.lan'
+      value: System
+  - wildcard:
+      match: '*.home.arpa'
+      value: System
+  - wildcard:
+      match: '*.crashlytics'
+      value: System, GlobalDNS, ChinaDNS
   - wildcard:
       match: '*.cn'
       value: ChinaDNS
@@ -628,11 +726,49 @@ mitm:
     - '*.tiktokv.com'
     - '*.tiktok.com'
     excludes:
-    - '*.smtp.gmail.com'
-    - '*.imap.gmail.com'
-    - '*.pop.gmail.com'
-    - '*.snssdk.com'
-    - '*.gateway.icloud.com'
+    - localhost
+    - '*.local'
+    - '*.lan'
+    - '*.home.arpa'
+    - '*.crashlytics.com'
+    - '*.10086.cn'
+    - '*.chinamobile.com'
+    - '*.chinamobileltd.com'
+    - '*.cnmobile.net'
+    - '*.monternet.com'
+    - '*.cmcc.com'
+    - '*.cnmobile.com'
+    - '*.189.cn'
+    - '*.chinatelecom.com'
+    - '*.chinatelecom.com.cn'
+    - '*.chinatelecom.cn'
+    - '*.chinatelecomglobal.com'
+    - '*.e-surfing.com'
+    - '*.10010.cn'
+    - '*.10010.com'
+    - '*.chinaunicom.com'
+    - '*.chinaunicom.cn'
+    - '*.wo.com.cn'
+    - '*.wo.cn'
+    - '*.unicom.com'
+    - '*.chinaunicomglobal.com'
+    - '*.icbc.com'
+    - '*.icbc.com.cn'
+    - '*.icbc.cn'
+    - '*.abchina.com'
+    - '*.abchina.com.cn'
+    - '*.abchina.cn'
+    - '*.ccb.com'
+    - '*.ccb.com.cn'
+    - '*.ccb.cn'
+    - '*.boc.cn'
+    - '*.boc.com'
+    - '*.bankofchina.com'
+    - '*.bankcomm.com'
+    - '*.bocom.com'
+    - '*.bankcomm.cn'
+    - '*.psbc.com'
+    - '*.psbc.com.cn'
   hostnames_disabled:
     includes:
     - '*.byteoversea.com'
