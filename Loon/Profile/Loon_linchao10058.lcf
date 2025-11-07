@@ -3,7 +3,12 @@
 #Author: linchao10058
 
 [General]
-doh-server = https://cloudflare-dns.com/dns-query,https://1.1.1.1/dns-query,https://1.0.0.1/dns-query,https://dns.google/dns-query,https://8.8.8.8/dns-query,https://8.8.4.4/dns-query,https://dns.quad9.net/dns-query,https://9.9.9.9/dns-query,https://doh.opendns.com/dns-query,https://doh.cleanbrowsing.org/doh/family-filter/,https://doh.cleanbrowsing.org/doh/security-filter/,https://dns.adguard-dns.com/dns-query,https://dns-family.adguard-dns.com/dns-query,https://dns.alidns.com/dns-query,https://223.5.5.5/dns-query,https://223.6.6.6/dns-query,https://1.12.12.12/dns-query,https://120.53.53.53/dns-query,https://sm2.doh.pub/dns-query
+# DoH (DNS over HTTPS)
+doh-server = https://cloudflare-dns.com/dns-query,https://1.1.1.1/dns-query,https://1.0.0.1/dns-query,https://dns.google/dns-query,https://8.8.8.8/dns-query,https://8.8.4.4/dns-query,https://dns.quad9.net/dns-query,https://9.9.9.9/dns-query,https://doh.opendns.com/dns-query,https://doh.familyshield.opendns.com/dns-query,https://doh.cleanbrowsing.org/doh/family-filter/,https://doh.cleanbrowsing.org/doh/security-filter/,https://dns.adguard-dns.com/dns-query,https://dns-family.adguard-dns.com/dns-query,https://dns.alidns.com/dns-query,https://223.5.5.5/dns-query,https://223.6.6.6/dns-query,https://1.12.12.12/dns-query,https://120.53.53.53/dns-query,https://sm2.doh.pub/dns-query
+# DoQ (DNS over QUIC)
+doq-server = quic://1.1.1.1:784,quic://1.0.0.1:784,quic://cloudflare-dns.com:784,quic://dns.adguard-dns.com:784,quic://dns-family.adguard-dns.com:784
+# DoH3 (HTTP/3 over QUIC)
+doh3-server = h3://security.cloudflare-dns.com/dns-query
 hijack-dns = 1.1.1.1:53,1.0.0.1:53,8.8.8.8:53,8.8.4.4:53,9.9.9.9:53,149.112.112.112:53,208.67.222.222:53,208.67.220.220:53,185.228.168.9:53,185.228.169.9:53,94.140.14.14:53,94.140.15.15:53,223.5.5.5:53,223.6.6.6:53,119.29.29.29:53,182.254.116.116:53,127.0.0.1:53,0.0.0.0:53,*:53
 udp-fallback-mode = REJECT
 disable-stun = true
