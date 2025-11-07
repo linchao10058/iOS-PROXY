@@ -218,19 +218,19 @@ dns:
   forward:
   - wildcard:
       match: '*.localhost'
-      value: System
+      value: SYSTEM
   - wildcard:
       match: '*.local'
       value: System
   - wildcard:
       match: '*.lan'
-      value: System
+      value: SYSTEM
   - wildcard:
       match: '*.home.arpa'
-      value: System
+      value: SYSTEM
   - wildcard:
       match: '*.crashlytics'
-      value: System, GlobalDNS, ChinaDNS
+      value: SYSTEM, GlobalDNS, ChinaDNS
   - wildcard:
       match: '*.cn'
       value: ChinaDNS
