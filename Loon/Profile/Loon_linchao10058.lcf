@@ -140,21 +140,20 @@ https://api.subcloud.xyz/sub?target=loon&url=ssr%3A%2F%2FOTEuMjA2LjkzLjE1NzoxNzE
 #Final = select,PROXY,DIRECT
 
 #自定义
-SELECT = select,DIRECT,REJECT,PROXY,☁️ CFWarp-D,WARP+GSCats,Warp+GSC1,Warp+GSC2,Warp+GSC3,U989124992380.edge.onetcdn.com,Taiwan,Hong Kong,Japan,Korea,Vietnam,Singapore,United States,All Nodes,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/loon.png
-PROXY = select,DIRECT,REJECT,Taiwan,Hong Kong,Japan,Korea,Vietnam,Singapore,United States,All Nodes,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
-China = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/China.png
-Global = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
-Advertising = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Advertising.png
-Other = select,DIRECT,REJECT,SELECT,PROXY,Advertising,China,Global,Hong Kong,Taiwan,Japan,Korea,Vietnam,Singapore,United States,All Nodes,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Viu.png
-Taiwan = select,🇹🇼台湾,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
-Hong Kong = select,🇭🇰香港,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png
-Japan = select,🇯🇵日本,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png
-Korea = select,🇰🇷韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
-Vietnam = select,🇻🇳越南,img-url = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/Flag_icon/120px/VN.png
-Singapore = select,🇸🇬新加坡,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png
-United States = select,🇺🇸美国,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png
+SELECT = select,DIRECT,REJECT,PROXY,☁️ CFWarp-D,WARP+GSCats,Warp+GSC1,Warp+GSC2,Warp+GSC3,U989124992380.edge.onetcdn.com,Taiwan,Hong Kong,Japan,Korea,Vietnam,Singapore,United States,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/loon.png
+PROXY = select,DIRECT,REJECT,Loon_linchao10058,Egern_linchao10058,Surge_linchao10058,https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
+China = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/cn.png
+Global = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Global.png
+Advertising = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/AdWhite.png
+Other = select,DIRECT,REJECT,SELECT,PROXY,Advertising,China,Global,Hong Kong,Taiwan,Japan,Korea,Vietnam,Singapore,United States,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Area.png
+Taiwan = fallback,🇹🇼台湾,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/tw.png
+Hong Kong = fallback,🇭🇰香港,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/hk.png
+Japan = fallback,🇯🇵日本,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/jp.png
+Korea = fallback,🇰🇷韩国,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/kr.png
+Vietnam = fallback,🇻🇳越南,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/vn.png
+Singapore = fallback,🇸🇬新加坡,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/sg.png
+United States = fallback,🇺🇸美国,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/us.png
 # 白名单模式 PROXY，黑名单模式 DIRECT
-All Nodes = select,☁️ CFWarp-D,WARP+GSCats,Warp+GSC1,Warp+GSC2,Warp+GSC3,U989124992380.edge.onetcdn.com,Loon_linchao10058,https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub,Surge_linchao10058,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Area.png
 [Rule]
 DOMAIN-SUFFIX,vercel.app,PROXY
 DOMAIN,soulapp.cn,PROXY
