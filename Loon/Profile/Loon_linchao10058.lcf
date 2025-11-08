@@ -3,13 +3,13 @@
 #Author: linchao10058
 
 [General]
-# DoH (DNS over HTTPS)
-doh-server = https://cloudflare-dns.com/dns-query,https://1.1.1.1/dns-query,https://1.0.0.1/dns-query,https://1.1.1.2/dns-query,https://1.0.0.2/dns-query,https://[2606:4700:4700::1111]/dns-query,https://[2606:4700:4700::1001]/dns-query,https://[2606:4700:4700::1112]/dns-query,https://[2606:4700:4700::1002]/dns-query,https://dns.google/dns-query,https://8.8.8.8/dns-query,https://8.8.4.4/dns-query,https://[2001:4860:4860::8888]/dns-query,https://[2001:4860:4860::8844]/dns-query,https://dns.quad9.net/dns-query,https://9.9.9.9/dns-query,https://149.112.112.112/dns-query,https://[2620:fe::fe]/dns-query,https://[2620:fe::9]/dns-query,https://doh.opendns.com/dns-query,https://doh.familyshield.opendns.com/dns-query,https://doh.cleanbrowsing.org/doh/family-filter/,https://doh.cleanbrowsing.org/doh/security-filter/,https://dns.adguard-dns.com/dns-query,https://dns-family.adguard-dns.com/dns-query,https://[2a10:50c0::ad1:ff]/dns-query,https://[2a10:50c0::ad2:ff]/dns-query,https://dns.alidns.com/dns-query,https://223.5.5.5/dns-query,https://223.6.6.6/dns-query,https://[2400:3200::1]/dns-query,https://[2400:3200:baba::1]/dns-query,https://1.12.12.12/dns-query,https://120.53.53.53/dns-query,https://sm2.doh.pub/dns-query,https://[2402:4e00::]/dns-query,https://dns.nextdns.io/<CONFIG_ID>,https://dns.yandex.com/dns-query,https://77.88.8.8/dns-query,https://77.88.8.1/dns-query,https://[2a02:6b8::feed:0ff]/dns-query,https://8.26.56.26/dns-query,https://8.20.247.20/dns-query,https://195.46.39.39/dns-query,https://2a03:5f80::1/dns-query,https://193.138.218.74/dns-query,https://2a0f:fc80::1/dns-query,https://76.76.2.0/dns-query,https://45.90.28.0/dns-query
+sni-sniffing = false
+doh-server = https://cloudflare-dns.com/dns-query,https://1.1.1.1/dns-query,https://1.1.1.2/dns-query,https://1.1.1.3/dns-query,https://[2606:4700:4700::1111]/dns-query,https://[2606:4700:4700::1001]/dns-query,https://[2606:4700:4700::1112]/dns-query,https://[2606:4700:4700::1113]/dns-query,https://dns.google/dns-query,https://8.8.8.8/dns-query,https://8.8.4.4/dns-query,https://dns.quad9.net/dns-query,https://doh.opendns.com/dns-query,https://doh.familyshield.opendns.com/dns-query,https://dns.adguard-dns.com/dns-query,https://dns-family.adguard-dns.com/dns-query,https://doh.cleanbrowsing.org/doh/family-filter/,https://doh.cleanbrowsing.org/doh/security-filter/,https://dns.nextdns.io/<CONFIG_ID>,https://77.88.8.8/dns-query,https://77.88.8.1/dns-query,https://77.88.8.88/dns-query,https://77.88.8.7/dns-query,https://dns.alidns.com/dns-query,https://sm2.doh.pub/dns-query,https://1.12.12.12/dns-query,https://120.53.53.53/dns-query,https://[2a02:6b8::feed:ff]/dns-query,https://[2a02:6b8::feed:bad]/dns-query,https://[2400:3200::1]/dns-query,https://[2402:4e00::]/dns-query
 # DoQ (DNS over QUIC)
-doq-server = quic://1.1.1.1:784,quic://1.0.0.1:784,quic://1.1.1.2:784,quic://1.0.0.2:784,quic://[2606:4700:4700::1111]:784,quic://[2606:4700:4700::1001]:784,quic://[2606:4700:4700::1112]:784,quic://[2606:4700:4700::1002]:784,quic://cloudflare-dns.com:784,quic://dns.adguard-dns.com:784,quic://dns-family.adguard-dns.com:784
+doq-server = quic://1.1.1.1:784,quic://[2606:4700:4700::1111]:784,quic://9.9.9.9:784,quic://[2620:fe::fe]:784,quic://dns.adguard-dns.com:784,quic://dns-family.adguard-dns.com:784,quic://45.90.28.0:784,quic://77.88.8.8:784,quic://[2a02:6b8::feed:ff]:784,quic://[2a02:6b8::feed:bad]:784,quic://[2402:4e00::]:784
 # DoH3 (HTTP/3 over QUIC)
 doh3-server = h3://security.cloudflare-dns.com/dns-query
-hijack-dns = 1.1.1.1:53,1.0.0.1:53,8.8.8.8:53,8.8.4.4:53,9.9.9.9:53,149.112.112.112:53,208.67.222.222:53,208.67.220.220:53,185.228.168.9:53,185.228.169.9:53,94.140.14.14:53,94.140.15.15:53,223.5.5.5:53,223.6.6.6:53,119.29.29.29:53,182.254.116.116:53,127.0.0.1:53,0.0.0.0:53,*:53
+hijack-dns = 1.1.1.1:53,1.0.0.1:53,1.1.1.2:53,1.0.0.2:53,1.1.1.3:53,1.0.0.3:53,2606:4700:4700::1111:53,2606:4700:4700::1001:53,2606:4700:4700::1112:53,2606:4700:4700::1002:53,2606:4700:4700::1113:53,2606:4700:4700::1003:53,8.8.8.8:53,8.8.4.4:53,2001:4860:4860::8888:53,2001:4860:4860::8844:53,9.9.9.9:53,149.112.112.112:53,2620:fe::fe:53,2620:fe::9:53,208.67.222.222:53,208.67.220.220:53,208.67.222.123:53,208.67.220.123:53,2620:119:35::123:53,185.228.168.9:53,185.228.169.9:53,2a0d:2a00:1::53,2a0d:2a00:2::53,94.140.14.14:53,94.140.15.15:53,94.140.14.15:53,94.140.15.16:53,2a10:50c0::ad1:ff:53,2a10:50c0::ad2:ff:53,2a10:50c0::bad1:ff:53,2a10:50c0::bad2:ff:53,45.90.28.0:53,45.90.30.0:53,45.90.28.1:53,45.90.30.1:53,77.88.8.8:53,77.88.8.1:53,77.88.8.88:53,77.88.8.7:53,2a02:6b8::feed:ff:53,2a02:6b8::feed:bad:53,2a02:6b8:0:1::feed:ff:53,223.5.5.5:53,223.6.6.6:53,2400:3200::1:53,2400:3200:baba::1:53,119.29.29.29:53,182.254.116.116:53,1.12.12.12:53,120.53.53.53:53,2402:4e00::53,127.0.0.1:53,0.0.0.0:53,*:53
 udp-fallback-mode = REJECT
 disable-stun = true
 ipv6-vif = auto
@@ -17,7 +17,7 @@ ip-mode = dual
 skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,17.0.0.0/8,localhost,*.local,*.lan,*.home.arpa,*.crashlytics.com,*.10086.cn,*.chinamobile.com,*.chinamobileltd.com,*.cnmobile.net,*.monternet.com,*.cmcc.com,*.cnmobile.com,*.189.cn,*.chinatelecom.com,*.chinatelecom.com.cn,*.chinatelecom.cn,*.chinatelecomglobal.com,*.e-surfing.com,*.10010.cn,*.10010.com,*.chinaunicom.com,*.chinaunicom.cn,*.wo.com.cn,*.wo.cn,*.unicom.com,*.chinaunicomglobal.com,*.icbc.com,*.icbc.com.cn,*.icbc.cn,*.abchina.com,*.abchina.com.cn,*.abchina.cn,*.ccb.com,*.ccb.com.cn,*.ccb.cn,*.boc.cn,*.boc.com,*.bankofchina.com,*.bankcomm.com,*.bocom.com,*.bankcomm.cn,*.psbc.com,*.psbc.com.cn
 bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
 # [DNS] => DNS 服务器
-dns-server = system,1.1.1.1,1.0.0.1,1.1.1.2,1.1.1.3,8.8.8.8,8.8.4.4,9.9.9.9,149.112.112.112,208.67.222.222,208.67.220.220,208.67.222.123,208.67.220.123,185.228.168.9,185.228.169.9,94.140.14.14,94.140.15.15,223.5.5.5,223.6.6.6,119.29.29.29,182.254.116.116,114.114.114.114,114.114.115.115,180.76.76.76,77.88.8.8,77.88.8.1,95.85.95.85,185.222.222.222,8.26.56.26,8.20.247.20,195.46.39.39,193.138.218.74,76.76.2.0,76.76.10.0,45.90.28.0,45.90.30.0,1.12.12.12,120.53.53.53,2620:fe::fe,2620:fe::9,2606:4700:4700::1111,2606:4700:4700::1001,2606:4700:4700::1112,2606:4700:4700::1113,2001:4860:4860::8888,2001:4860:4860::8844,2620:119:35::35,2620:119:53::53,2a0d:2a00:1::,2a0d:2a00:2::,2a10:50c0::ad1:ff,2a10:50c0::ad2:ff,2400:3200::1,2400:3200:baba::1,2402:4e00::,2a02:6b8::feed:0ff,2a03:90c0:999d::1,2a03:5f80::1,2a0f:fc80::1
+dns-server = system,1.1.1.1,1.0.0.1,1.1.1.2,1.0.0.2,1.1.1.3,1.0.0.3,2606:4700:4700::1111,2606:4700:4700::1001,2606:4700:4700::1112,2606:4700:4700::1002,2606:4700:4700::1113,2606:4700:4700::1003,8.8.8.8,8.8.4.4,2001:4860:4860::8888,2001:4860:4860::8844,9.9.9.9,149.112.112.112,2620:fe::fe,2620:fe::9,208.67.222.222,208.67.220.220,208.67.222.123,208.67.220.123,2620:119:35::123,2620:119:53::123,185.228.168.9,185.228.169.9,2a0d:2a00:1::,2a0d:2a00:2::,94.140.14.14,94.140.15.15,2a10:50c0::ad1:ff,2a10:50c0::ad2:ff,94.140.14.15,94.140.15.16,2a10:50c0::bad1:ff,2a10:50c0::bad2:ff,45.90.28.0,45.90.30.0,77.88.8.8,77.88.8.1,2a02:6b8::feed:0ff,223.5.5.5,223.6.6.6,2400:3200::1,2400:3200:baba::1,1.12.12.12,120.53.53.53,119.29.29.29,182.254.116.116,2402:4e00::
 allow-udp-proxy = false
 # Wi-Fi 访问
 # > 允许 Wi-Fi 网络下其它设备访问
@@ -146,13 +146,13 @@ China = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generat
 Global = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Global.png
 Advertising = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/AdWhite.png
 Other = select,DIRECT,REJECT,SELECT,PROXY,Advertising,China,Global,Hong Kong,Taiwan,Japan,Korea,Vietnam,Singapore,United States,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Area.png
-Taiwan = fallback,🇹🇼台湾,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/tw.png
-Hong Kong = fallback,🇭🇰香港,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/hk.png
-Japan = fallback,🇯🇵日本,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/jp.png
-Korea = fallback,🇰🇷韩国,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/kr.png
-Vietnam = fallback,🇻🇳越南,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/vn.png
-Singapore = fallback,🇸🇬新加坡,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/sg.png
-United States = fallback,🇺🇸美国,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/us.png
+Taiwan = fallback,🇹🇼台湾,url = http://cp.cloudflare.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/tw.png
+Hong Kong = fallback,🇭🇰香港,url = http://cp.cloudflare.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/hk.png
+Japan = fallback,🇯🇵日本,url = http://cp.cloudflare.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/jp.png
+Korea = fallback,🇰🇷韩国,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/kr.png
+Vietnam = fallback,🇻🇳越南,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/vn.png
+Singapore = fallback,🇸🇬新加坡,url = http://cp.cloudflare.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/sg.png
+United States = fallback,🇺🇸美国,url = http://cp.cloudflare.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/us.png
 # 白名单模式 PROXY，黑名单模式 DIRECT
 [Rule]
 DOMAIN-SUFFIX,vercel.app,PROXY
@@ -276,6 +276,13 @@ dns-family.adguard-dns.com = server:94.140.14.15
 dns-family.adguard-dns.com = server:94.140.15.16
 dns-family.adguard-dns.com = server:2a10:50c0::bad1:ff
 dns-family.adguard-dns.com = server:2a10:50c0::bad2:ff
+# NextDNS
+dns.nextdns.io = server:45.90.28.0
+dns.nextdns.io = server:45.90.30.0
+# Yandex DNS
+dns.yandex.com = server:77.88.8.8
+dns.yandex.com = server:77.88.8.1
+dns.yandex.com = server:2a02:6b8::feed:0ff
 # AliDNS
 dns.alidns.com = server:223.5.5.5
 dns.alidns.com = server:223.6.6.6
@@ -290,33 +297,6 @@ sm2.doh.pub = server:2402:4e00::
 dot.pub = server:119.29.29.29
 dot.pub = server:182.254.116.116
 dnspod.tencent.com = server:119.28.28.28
-# Yandex DNS
-dns.yandex.com = server:77.88.8.8
-dns.yandex.com = server:77.88.8.1
-dns.yandex.com = server:2a02:6b8::feed:0ff
-# DNS.SB
-doh.dns.sb = server:185.222.222.222
-doh.dns.sb = server:2a03:90c0:999d::1
-# Comodo Secure DNS
-comodo.secure.dns = server:8.26.56.26
-comodo.secure.dns = server:8.20.247.20
-# SafeDNS
-safedns.com = server:195.46.39.39
-safedns.com = server:2a03:5f80::1
-# Mullvad DNS
-dns.mullvad.net = server:193.138.218.74
-dns.mullvad.net = server:2a0f:fc80::1
-# ControlD DNS
-controld.com = server:76.76.2.0
-controld.com = server:76.76.10.0
-# NextDNS
-dns.nextdns.io = server:45.90.28.0
-dns.nextdns.io = server:45.90.30.0
-# 114DNS
-114dns = server:114.114.114.114
-114dns = server:114.114.115.115
-# Baidu DNS
-baidu.com = server:180.76.76.76
 
 [URL Rewrite]
 enable = true
