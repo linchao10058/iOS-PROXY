@@ -122,18 +122,6 @@ proxy_latency_test_url: https://www.google.com/generate_204
 direct_latency_test_url: http://www.cloudflare.com/cdn-cgi/trace
 compat_route: true
 vif_included_routes:
-#在Egern中vif_included_routes和vif_excluded_routes同时仅启用其一。
-#- 1.1.1.0/24
-#- 8.8.8.0/24       
-#- 9.9.9.0/24
-#- 208.67.222.0/24
-#- 208.67.223.0/24
-#- 185.228.168.0/24
-#- 94.140.14.0/24
-#- 94.140.15.0/24
-#- 45.90.28.0/24
-#- 45.90.30.0/24
-#- 77.88.8.0/24
 - '*.vercel.app'
 - '*.safebrowsing.urlsec.qq.com'
 vif_excluded_routes:
@@ -344,7 +332,7 @@ dns:
     - tls://[2a02:6b8::feed:bad]:853
   forward:
   - wildcard:
-      match: '.localhost'
+      match: .localhost
       value: SYSTEM
   - wildcard:
       match: '*.local'
@@ -1035,21 +1023,6 @@ mitm:
     - '*.bankcomm.cn'
     - '*.psbc.com'
     - '*.psbc.com.cn'
-  hostnames_disabled:
-    includes:
-    - '*.byteoversea.com'
-    - '*.ibytedtos.com'
-    - '*.ibyteimg.com'
-    - '*.ipstatp.com'
-    - '*.amemv.com'
-    - '*.muscdn.com'
-    - '*.musical.ly'
-    - '*.snssdk.com'
-    - '*.sgpstatp.com'
-    - '*.tiktokcdn.com'
-    - '*.tik-tokapi.com'
-    - '*.tiktokv.com'
-    - '*.tiktok.com'
 http_captures:
   includes:
   - '*.quad9.net'
