@@ -344,7 +344,7 @@ dns:
     - tls://[2a02:6b8::feed:bad]:853
   forward:
   - wildcard:
-      match: '*.localhost'
+      match: '.localhost'
       value: SYSTEM
   - wildcard:
       match: '*.local'
