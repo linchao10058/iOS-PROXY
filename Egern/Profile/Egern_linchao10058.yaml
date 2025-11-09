@@ -1,3 +1,7 @@
+#Name: Egern_linchao10058
+#Update Date: 2025.10.31.00:40:09
+#Author: linchao10058
+
 ipv6: true
 allow_external_connections: false
 vif_only: true
@@ -105,7 +109,7 @@ hijack_dns:
 - 2402:4e00::53
 - 127.0.0.1:53
 - 0.0.0.0:53
-- "*:53"
+- '*:53'
 geoip_db_url: https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
 asn_db_url: https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/download/GeoLite2-ASN.mmdb
 proxy_latency_test_url: https://www.google.com/generate_204
@@ -210,6 +214,10 @@ dns:
   - 119.29.29.29
   - 182.254.116.116
   - '2402:4e00::'
+  - 45.90.30.137
+  - 45.90.28.137
+  - 2a07:a8c1::93:ad73
+  - 2a07:a8c0::93:ad73
   upstreams:
     SYSTEM:
     - system
@@ -232,7 +240,7 @@ dns:
     - https://1.1.1.3/dns-query
     - tls://1.1.1.1:853
     - tls://1.1.1.2:853
-    - tls://1.1.1.3:863
+    - tls://1.1.1.3:853
     - quic://1.1.1.1:784
     - h3://security.cloudflare-dns.com/dns-query
     - https://[2606:4700:4700::1111]/dns-query
@@ -288,6 +296,9 @@ dns:
     - tls://[2a0d:2a00:1::]:853
     - tls://[2a0d:2a00:2::]:853
     - https://dns.nextdns.io/<CONFIG_ID>
+    - https://dns.nextdns.io/93ad73
+    - quic://93ad73.dns.nextdns.io
+    - tls://93ad73.dns.nextdns.io
     - tls://45.90.28.0:853
     - quic://45.90.28.0:784
     - tls://45.90.28.0:853
@@ -316,7 +327,8 @@ dns:
       value: SYSTEM
   - wildcard:
       match: '*.home.arpa'
-      value: System
+      value: SYSTEM
+      disabled: false
   - wildcard:
       match: '*.crashlytics'
       value: SYSTEM, GlobalDNS, ChinaDNS
@@ -424,6 +436,11 @@ dns:
     dns.nextdns.io:
     - 45.90.28.0
     - 45.90.30.0
+    93ad73.dns.nextdns.io:
+    - 45.90.30.137
+    - 45.90.28.137
+    - 2a07:a8c1::93:ad73
+    - 2a07:a8c0::93:ad73
     dns.yandex.com:
     - 77.88.8.8
     - 77.88.8.1
@@ -505,7 +522,7 @@ dns:
   - 2402:4e00::53
   - 127.0.0.1:53
   - 0.0.0.0:53
-  - "*:53"
+  - '*:53'
 proxies:
 - http:
     name: U989124992380.edge.onetcdn.com
@@ -665,6 +682,34 @@ policy_groups:
     tolerance: 50
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/us.png
     hidden: false
+real_ip_domains:
+- '*.srv.nintendo.net'
+- '*.nintendo.net'
+- '*.n.nintendo.net'
+- '*.eshop.nintendo.net'
+- '*.accounts.nintendo.com'
+- '*.playstation.net'
+- '*.playstation.com'
+- '*.psnprofiles.com'
+- '*.pscdn.io'
+- '*.xboxlive.com'
+- '*.xbox.com'
+- '*.microsoft.com'
+- '*.msftconnecttest.com'
+- '*.msftncsi.com'
+- '*.battlenet.com.cn'
+- '*.battlenet.com'
+- '*.battle.net'
+- '*.blzstatic.cn'
+- '*.blzstatic.com'
+- '*.blizzard.com'
+- '*.blz-contentstack.com'
+- '*.bnet.cn'
+- '*.bnetshop.com.cn'
+- '*.stun.playstation.net'
+- '*.stun.l.google.com'
+- '*.stun.services.mozilla.com'
+- '*.turn.cloudflare.com'
 rules:
 - rule_set:
     match: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/rule/substore.list
@@ -905,6 +950,7 @@ mitm:
   hostnames:
     includes:
     - '*.vercel.app'
+    - '*.safebrowsing.urlsec.qq.com'
     - '*.byteoversea.com'
     - '*.ibytedtos.com'
     - '*.ibyteimg.com'
@@ -979,62 +1025,106 @@ mitm:
     - '*.tiktok.com'
 http_captures:
   includes:
-  - '*.monternet.com'
-  - '*.chinamobile.com'
-  - '*.10086.cn'
+  - '*.quad9.net'
+  - '*.opendns.com'
+  - '*.cleanbrowsing.org'
+  - '*.yandex.net'
+  - '*.comodo.com'
+  - '*.norton.com'
+  - '*.google.com'
+  - '*.cloudflare.com'
+  - '*.nextdns.io'
   - '*.adguard.com'
   - '*.adguard-dns.com'
-  - '*.bilibili.com'
+  - '*.chinamobile.com'
+  - '*.10086.cn'
+  - '*.monternet.com'
+  - '*.chinaunicom.cn'
+  - '*.wo.com.cn'
+  - '*.chinatelecom.cn'
+  - '*.189.cn'
+  - '*.cbn.cn'
   - '*.youtube.com'
-  - '*.etflix.com'
-  - '*.spotify.com'
-  - '*.interest.com'
-  - '*.mistral.ai'
-  - '*.meta.com'
-  - '*.cloudflare.com'
-  - roblox.com
-  - zoho.com
-  - '*.pinduoduo.com'
-  - '*.qq.com'
-  - '*.zhihu.com'
-  - '*.xiaohongshu.com'
-  - iesdouyin.com
+  - '*.netflix.com'
+  - '*.bilibili.com'
+  - '*.tiktok.com'
   - '*.douyin.com'
-  - '*.meituan.com'
-  - '*.jd.com'
-  - '*.tmall.com'
-  - '*.zaloapp.com'
-  - '*.zalo.me'
-  - '*.daum.net'
-  - '*.kakao.com'
-  - '*.line.me'
-  - '*.adobe.com'
-  - '*.linkedin.com'
-  - '*.whatsapp.com'
-  - '*.telegram.org'
+  - iesdouyin.com
+  - '*.iqiyi.com'
+  - '*.youku.com'
+  - '*.v.qq.com'
+  - '*.disneyplus.com'
+  - '*.primevideo.com'
+  - '*.hbomax.com'
+  - '*.spotify.com'
+  - '*.music.youtube.com'
+  - '*.music.apple.com'
+  - '*.amazonmusic.com'
+  - '*.tidal.com'
+  - '*.deezer.com'
+  - '*.qobuz.com'
+  - '*.pandora.com'
+  - '*.napster.com'
+  - '*.facebook.com'
+  - '*.instagram.com'
+  - '*.twitter.com'
+  - '*.x.com'
   - '*.snapchat.com'
   - '*.reddit.com'
-  - '*.discordapp.com'
   - '*.discord.com'
-  - '*.github.com'
-  - '*.gemini.google.com'
-  - '*.openai.com'
-  - '*.x.ai'
-  - '*.character.ai'
-  - '*.perplexity.ai'
-  - '*.anthropic.com'
-  - '*.vercel.app'
+  - '*.discordapp.com'
+  - '*.telegram.org'
+  - '*.whatsapp.com'
+  - '*.line.me'
+  - '*.kakao.com'
+  - '*.zalo.me'
+  - '*.zaloapp.com'
+  - '*.tumblr.com'
+  - '*.pinterest.com'
+  - '*.threads.net'
+  - '*.blueskyweb.xyz'
+  - '*.linkedin.com'
   - '*.weixin.qq.com'
   - '*.wechat.com'
-  - '*.alipay.com'
+  - '*.amazon.com'
+  - '*.jd.com'
+  - '*.tmall.com'
   - '*.taobao.com'
+  - '*.pinduoduo.com'
+  - '*.shopee.com'
+  - '*.meituan.com'
+  - '*.alipay.com'
+  - '*.paypal.com'
+  - '*.stripe.com'
+  - '*.roblox.com'
+  - '*.steampowered.com'
+  - '*.steamcommunity.com'
+  - '*.epicgames.com'
+  - '*.playstation.com'
+  - '*.xbox.com'
+  - '*.riotgames.com'
+  - '*.blizzard.com'
+  - '*.adobe.com'
+  - '*.zoho.com'
+  - '*.slack.com'
+  - '*.zoom.us'
+  - '*.notion.so'
+  - '*.dropbox.com'
+  - '*.evernote.com'
+  - '*.onenote.com'
+  - '*.microsoft.com'
   - '*.apple.com'
   - '*.icloud.com'
-  - '*.google.com'
-  - '*.microsoft.com'
-  - '*.tiktok.com'
-  - '*.Instagram.com'
-  - '*.facebook.com'
+  - '*.github.com'
+  - '*.openai.com'
+  - '*.anthropic.com'
+  - '*.perplexity.ai'
+  - '*.character.ai'
+  - '*.mistral.ai'
+  - '*.x.ai'
+  - '*.gemini.google.com'
+  - '*.meta.com'
+  - '*.vercel.app'
 modules:
 - name: BoxJs
   url: https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.surge.sgmodule
