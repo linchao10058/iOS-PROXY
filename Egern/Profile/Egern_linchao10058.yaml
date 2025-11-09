@@ -12,7 +12,7 @@ bypass_tunnel_proxy:
 - 172.16.0.0/12
 - 100.64.0.0/10
 - 17.0.0.0/8
-- localhost
+- .localhost
 - '*.local'
 - '*.lan'
 - '*.home.arpa'
@@ -143,7 +143,7 @@ vif_excluded_routes:
 - 172.16.0.0/12
 - 169.254.0.0/16
 - 100.64.0.0/10
-- localhost
+- .localhost
 - '*.local'
 - '*.lan'
 - '*.home.arpa'
@@ -992,7 +992,7 @@ mitm:
     - '*.tiktokv.com'
     - '*.tiktok.com'
     excludes:
-    - localhost
+    - .localhost
     - '*.local'
     - '*.lan'
     - '*.home.arpa'
