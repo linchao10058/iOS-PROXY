@@ -3,11 +3,11 @@
 #Author: linchao10058
 
 [General]
-real-ip = *.srv.nintendo.net, *.nintendo.net, *.n.nintendo.net, *.eshop.nintendo.net, *.accounts.nintendo.com, *.playstation.net, *.playstation.com, *.psnprofiles.com, *.pscdn.io, *.xboxlive.com, *.xbox.com, *.microsoft.com, *.msftconnecttest.com, *.msftncsi.com, *.battlenet.com.cn, *.battlenet.com, *.battle.net, *.blzstatic.cn, *.blzstatic.com, *.blizzard.com, *.blz-contentstack.com, *.bnet.cn, *.bnetshop.com.cn, *.stun.playstation.net, *.stun.l.google.com, *.stun.services.mozilla.com, *.turn.cloudflare.com
+real-ip = *.srv.nintendo.net,*.nintendo.net,*.n.nintendo.net,*.eshop.nintendo.net,*.accounts.nintendo.com,*.playstation.net,*.playstation.com,*.psnprofiles.com,*.pscdn.io,*.xboxlive.com,*.xbox.com,*.microsoft.com,*.msftconnecttest.com,*.msftncsi.com,*.battlenet.com.cn,*.battlenet.com,*.battle.net,*.blzstatic.cn,*.blzstatic.com,*.blizzard.com,*.blz-contentstack.com,*.bnet.cn,*.bnetshop.com.cn,*.stun.playstation.net,*.stun.l.google.com,*.stun.services.mozilla.com,*.turn.cloudflare.com
 sni-sniffing = false
-doh-server = https://cloudflare-dns.com/dns-query,https://1.1.1.1/dns-query,https://1.1.1.2/dns-query,https://1.1.1.3/dns-query,https://[2606:4700:4700::1111]/dns-query,https://[2606:4700:4700::1001]/dns-query,https://[2606:4700:4700::1112]/dns-query,https://[2606:4700:4700::1113]/dns-query,https://dns.google/dns-query,https://8.8.8.8/dns-query,https://8.8.4.4/dns-query,https://dns.quad9.net/dns-query,https://doh.opendns.com/dns-query,https://doh.familyshield.opendns.com/dns-query,https://dns.adguard-dns.com/dns-query,https://dns-family.adguard-dns.com/dns-query,https://doh.cleanbrowsing.org/doh/family-filter/,https://doh.cleanbrowsing.org/doh/security-filter/,https://dns.nextdns.io/<CONFIG_ID>,https://77.88.8.8/dns-query,https://77.88.8.1/dns-query,https://77.88.8.88/dns-query,https://77.88.8.7/dns-query,https://dns.alidns.com/dns-query,https://sm2.doh.pub/dns-query,https://1.12.12.12/dns-query,https://120.53.53.53/dns-query,https://[2a02:6b8::feed:ff]/dns-query,https://[2a02:6b8::feed:bad]/dns-query,https://[2400:3200::1]/dns-query,https://[2402:4e00::]/dns-query
+doh-server = https://cloudflare-dns.com/dns-query,https://1.1.1.1/dns-query,https://1.1.1.2/dns-query,https://1.1.1.3/dns-query,https://[2606:4700:4700::1111]/dns-query,https://[2606:4700:4700::1001]/dns-query,https://[2606:4700:4700::1112]/dns-query,https://[2606:4700:4700::1113]/dns-query,https://dns.google/dns-query,https://8.8.8.8/dns-query,https://8.8.4.4/dns-query,https://dns.quad9.net/dns-query,https://doh.opendns.com/dns-query,https://doh.familyshield.opendns.com/dns-query,https://dns.adguard-dns.com/dns-query,https://dns-family.adguard-dns.com/dns-query,https://doh.cleanbrowsing.org/doh/family-filter/,https://doh.cleanbrowsing.org/doh/security-filter/,https://dns.nextdns.io/<CONFIG_ID>,https://77.88.8.8/dns-query,https://77.88.8.1/dns-query,https://77.88.8.88/dns-query,https://77.88.8.7/dns-query,https://dns.alidns.com/dns-query,https://sm2.doh.pub/dns-query,https://1.12.12.12/dns-query,https://120.53.53.53/dns-query,https://[2a02:6b8::feed:ff]/dns-query,https://[2a02:6b8::feed:bad]/dns-query,https://[2400:3200::1]/dns-query,https://[2402:4e00::]/dns-query,https://dns.nextdns.io/93ad73
 # DoQ (DNS over QUIC)
-doq-server = quic://1.1.1.1:784,quic://[2606:4700:4700::1111]:784,quic://9.9.9.9:784,quic://[2620:fe::fe]:784,quic://dns.adguard-dns.com:784,quic://dns-family.adguard-dns.com:784,quic://45.90.28.0:784,quic://77.88.8.8:784,quic://[2a02:6b8::feed:ff]:784,quic://[2a02:6b8::feed:bad]:784,quic://[2402:4e00::]:784
+doq-server = quic://1.1.1.1:784,quic://[2606:4700:4700::1111]:784,quic://9.9.9.9:784,quic://[2620:fe::fe]:784,quic://dns.adguard-dns.com:784,quic://dns-family.adguard-dns.com:784,quic://45.90.28.0:784,quic://77.88.8.8:784,quic://[2a02:6b8::feed:ff]:784,quic://[2a02:6b8::feed:bad]:784,quic://[2402:4e00::]:784,quic://93ad73.dns.nextdns.io
 # DoH3 (HTTP/3 over QUIC)
 doh3-server = h3://security.cloudflare-dns.com/dns-query
 hijack-dns = 1.1.1.1:53,1.0.0.1:53,1.1.1.2:53,1.0.0.2:53,1.1.1.3:53,1.0.0.3:53,2606:4700:4700::1111:53,2606:4700:4700::1001:53,2606:4700:4700::1112:53,2606:4700:4700::1002:53,2606:4700:4700::1113:53,2606:4700:4700::1003:53,8.8.8.8:53,8.8.4.4:53,2001:4860:4860::8888:53,2001:4860:4860::8844:53,9.9.9.9:53,149.112.112.112:53,2620:fe::fe:53,2620:fe::9:53,208.67.222.222:53,208.67.220.220:53,208.67.222.123:53,208.67.220.123:53,2620:119:35::123:53,185.228.168.9:53,185.228.169.9:53,2a0d:2a00:1::53,2a0d:2a00:2::53,94.140.14.14:53,94.140.15.15:53,94.140.14.15:53,94.140.15.16:53,2a10:50c0::ad1:ff:53,2a10:50c0::ad2:ff:53,2a10:50c0::bad1:ff:53,2a10:50c0::bad2:ff:53,45.90.28.0:53,45.90.30.0:53,45.90.28.1:53,45.90.30.1:53,77.88.8.8:53,77.88.8.1:53,77.88.8.88:53,77.88.8.7:53,2a02:6b8::feed:ff:53,2a02:6b8::feed:bad:53,2a02:6b8:0:1::feed:ff:53,223.5.5.5:53,223.6.6.6:53,2400:3200::1:53,2400:3200:baba::1:53,119.29.29.29:53,182.254.116.116:53,1.12.12.12:53,120.53.53.53:53,2402:4e00::53,127.0.0.1:53,0.0.0.0:53,*:53
@@ -142,7 +142,7 @@ https://api.subcloud.xyz/sub?target=loon&url=ssr%3A%2F%2FOTEuMjA2LjkzLjE1NzoxNzE
 
 #自定义
 SELECT = select,DIRECT,REJECT,PROXY,☁️ CFWarp-D,WARP+GSCats,Warp+GSC1,Warp+GSC2,Warp+GSC3,U989124992380.edge.onetcdn.com,Taiwan,Hong Kong,Japan,Korea,Vietnam,Singapore,United States,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/loon.png
-PROXY = select,DIRECT,REJECT,Loon_linchao10058,Egern_linchao10058,Surge_linchao10058,https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
+PROXY = select,DIRECT,REJECT,https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub,Loon_linchao10058,Egern_linchao10058,Surge_linchao10058,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
 China = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/cn.png
 Global = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Global.png
 Advertising = select,DIRECT,REJECT,SELECT,PROXY,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/AdWhite.png
@@ -280,6 +280,10 @@ dns-family.adguard-dns.com = server:2a10:50c0::bad2:ff
 # NextDNS
 dns.nextdns.io = server:45.90.28.0
 dns.nextdns.io = server:45.90.30.0
+93ad73.dns.nextdns.io = server:2a07:a8c1::93:ad73
+93ad73.dns.nextdns.io = server:2a07:a8c0::93:ad73
+93ad73.dns.nextdns.io = server:45.90.30.137
+93ad73.dns.nextdns.io = server:45.90.28.137
 # Yandex DNS
 dns.yandex.com = server:77.88.8.8
 dns.yandex.com = server:77.88.8.1
@@ -344,8 +348,6 @@ network-changed script-path=https://raw.githubusercontent.com/Loon0x00/LoonExamp
 https://raw.githubusercontents.com/nzw9314/Loon/master/Script.conf, tag=Loon脚本合集, enabled=true
 
 [Plugin]
-https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/Spotify.sgmodule, enabled=true
-https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/YouTube.sgmodule, enabled=true
 https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/Block-Tencent-SafeBrowsing.sgmodule, tag=Block QQ SafeBrowsing, enabled=true
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Release/Modules/%E4%BA%91%E9%97%AA%E4%BB%98.sgmodule, enabled=true
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Release/Modules/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90.sgmodule, enabled=true
@@ -386,7 +388,6 @@ https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, enabled=true
 https://github.com/DualSubs/Universal/releases/latest/download/DualSubs.Universal.plugin, enabled=true
 https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.loon.plugin, enabled=true
-https://raw.githubusercontent.com/DualSubs/Spotify/main/modules/DualSubs.Spotify.Transcripts.plugin, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Advertising/Advertising_MITM.plugin, enabled=true
 https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/NodeLinkCheck/Loon.plugin, enabled=true
 https://raw.githubusercontent.com/VirgilClyne/Cloudflare/main/modules/Cloudflare.DNS.plugin, enabled=true
@@ -441,11 +442,17 @@ https://raw.githubusercontent.com/deezertidal/private/master/plugallery/fabulous
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/documents.plugin, policy=Global, tag=Documents, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/lightroom.plugin, policy=Global, tag=LightRoom, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/photoshop.plugin, policy=Global, tag=PhotoshopExpress, enabled=true
-https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule, enabled=true
+https://raw.githubusercontent.com/app2smile/rules/master/module/youtube.sgmodule, enabled=true
 https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx, enabled=false
 https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx, enabled=false
+https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/YouTube.sgmodule, enabled=false
+https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule, enabled=true
+https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule, enabled=true
 https://raw.githubusercontent.com/Moli-X/Tool/X/Loon/Plugin/Kelee/YouTube_remove_ads.plugin, enabled=true
-https://raw.githubusercontent.com/app2smile/rules/master/module/youtube.sgmodule, enabled=true
+https://raw.githubusercontent.com/DualSubs/Spotify/main/modules/DualSubs.Spotify.Transcripts.plugin, enabled=true
+https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Spotify%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule, enabled=true
+https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/Spotify.sgmodule, enabled=true
+https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/spotifyVIP.module, enabled=false
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/SpotifyPremium.plugin, policy=Global, tag=Spotify Premium, enabled=true
 https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GithubPrivate/github-private-repo.plugin, policy=Global, tag=GitHub Private Access, enabled=true
 https://raw.githubusercontent.com/Peng-YM/Loon-Gallery/master/loon-gallery.plugin, policy=PROXY, tag=插件仓库Loon Gallery, enabled=true
@@ -472,7 +479,7 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master
 [MITM]
 ca-p12 = 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
 ca-passphrase = 7JL63F55
-hostname = -*.vercel.app,-*.tiktokcdn.com,-*.tiktok.com,-*.tik-tokapi.com,-*.tiktokv.com,-*.y.qq.com,-*.sgpstatp.com,-*.musical.ly,-*.muscdn.com,-*.ipstatp.com,-*.ibyteimg.com,-*.ibytedtos.com,-*.byteoversea.com,-*.snssdk.com,-*.amemv.com
+hostname = *.safebrowsing.urlsec.qq.com,-*.vercel.app,-*.tiktokcdn.com,-*.tiktok.com,-*.tik-tokapi.com,-*.tiktokv.com,-*.y.qq.com,-*.sgpstatp.com,-*.musical.ly,-*.muscdn.com,-*.ipstatp.com,-*.ibyteimg.com,-*.ibytedtos.com,-*.byteoversea.com,-*.snssdk.com,-*.amemv.com
 enable = true
 skip-server-cert-verify = true
 #ca-p12 =
