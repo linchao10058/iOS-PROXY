@@ -576,7 +576,7 @@ policy_groups:
     - https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
     urls_disabled:
     - https://sub.store/download/collection/Loon_linchao10058
-    - https://sub.store/download/collection/Surge_linchao10058
+    - https://sub.store/download/collection/Egern_linchao10058
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
     hidden: false
 - select:
@@ -725,6 +725,11 @@ real_ip_domains:
 - '*.stun.l.google.com'
 - '*.stun.services.mozilla.com'
 - '*.turn.cloudflare.com'
+- '*.steamcontent.com'
+- '*.steampowered.com'
+- '*.epicgames.com'
+- '*.origin.com'
+- '*.ea.com'
 rules:
 - rule_set:
     match: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/rule/substore.list
@@ -1496,4 +1501,3 @@ modules:
 - name: 携程旅行签到
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E6%90%BA%E7%A8%8B%E6%97%85%E8%A1%8C%E7%AD%BE%E5%88%B0.official.sgmodule
   enabled: true
-
