@@ -538,6 +538,7 @@ dns:
   - 127.0.0.1:53
   - 0.0.0.0:53
   - '*:53'
+  public_ip_lookup_url: https://ipinfo.io/ip
 proxies:
 - http:
     name: U989124992380.edge.onetcdn.com
