@@ -156,27 +156,24 @@ Singapore = fallback,🇸🇬新加坡,url = http://cp.cloudflare.com/generate_2
 United States = fallback,🇺🇸美国,url = http://cp.cloudflare.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/us.png
 # 白名单模式 PROXY，黑名单模式 DIRECT
 [Rule]
-DOMAIN-SUFFIX,vercel.app,PROXY
-DOMAIN,soulapp.cn,PROXY
-DOMAIN-SUFFIX,soulapp.me,PROXY
-DOMAIN-SUFFIX,zingmp3.vn,PROXY
-DOMAIN-SUFFIX,zaloapp.com,PROXY
-DOMAIN-SUFFIX,zalo.me,PROXY
-DOMAIN-SUFFIX,vercel.app,PROXY
-DOMAIN-SUFFIX,zadn.vn,PROXY
-#本地规则
-# Local RULE
+DOMAIN,*.soulapp.cn,PROXY
+DOMAIN-SUFFIX,*.soulapp.me,PROXY
+DOMAIN-SUFFIX,*.zingmp3.vn,PROXY
+DOMAIN-SUFFIX,*.zadn.vn,PROXY
+DOMAIN-SUFFIX,*.zaloapp.com,PROXY
+DOMAIN-SUFFIX,*.zalo.me,PROXY
+DOMAIN-SUFFIX,*.vercel.app,PROXY
+# Local RULE 本地规则
 # Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR
 # Strategy:DIRECT,Proxy,REJECT
 # Options:force-remote-dns(Default:false),no-resolve
 #DOMAIN,google.com,PROXY
-DOMAIN,rsshub.app,节点选择
+DOMAIN-SUFFIX,*.rsshub.app,PROXY
 DOMAIN-KEYWORD,announce,DIRECT
 DOMAIN-KEYWORD,torrent,DIRECT
 DOMAIN-KEYWORD,tracker,DIRECT
 DOMAIN-SUFFIX,smtp,DIRECT
-URL-REGEX,"(Subject|HELO|SMTP)",DIRECT
-IP-CIDR,1.1.1.1/24,DIRECT,no-resolve
+IP-CIDR,1.1.1.1/24,PROXY,no-resolve
 # GeoIP China
 GEOIP,CN,DIRECT
 FINAL,PROXY
