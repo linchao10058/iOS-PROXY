@@ -179,24 +179,25 @@ GEOIP,CN,DIRECT
 FINAL,PROXY
 
 [Remote Rule]
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All.list, policy=China, tag=Apple_All.list, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Microsoft/Microsoft.list, policy=Global, tag=Microsoft, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list, policy=Global, tag=Google, enabled=true
 # Remote Rule
 # 订阅规则URL,策略
 # PROXY
 #https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Rule/ExampleRule.list,policy=PROXY,enabled=false
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All.list, policy=China, tag=Apple_All.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Microsoft/Microsoft.list, policy=Global, tag=Microsoft, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list, policy=Global, tag=Google, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/OpenAI/OpenAI.list, policy=Other, tag=OpenAI, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/Anthropic/Anthropic.list, policy=Global, tag=Anthropic, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Cloudflare/Cloudflare.list, policy=Global, tag=Cloudflare, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Game/Roblox/Roblox.list, policy=Global, tag=Roblox.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Game/Game.list, policy=Global, tag=Game.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/GlobalMedia/GlobalMedia_All.list, policy=Global, tag=GlobalMedia_All.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list, policy=China, tag=Lan.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DNS/DNS.list, policy=PROXY, tag=DNS.list, enabled=true
-https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/HTTPDNS.Block.list, policy=Advertising, tag=HTTPDNS.Block.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/BlockHttpDNS/BlockHttpDNS.list, policy=Advertising, tag=BlockHttpDNS.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Privacy/Privacy_All.list, policy=Advertising, tag=Privacy_All.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All.list, policy=Advertising, tag=Advertising_All.list, enabled=true
-https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/rule/substore.list, policy=PROXY, tag=Sub-Store 「vercel.app」: 1. 确认安装Sub Store模块。  2. 将模块生效顺序放到最底部。  3. 开启MITM脚本, enabled=true
+https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/rule/substore.list, policy=PROXY, tag=Sub-Store 「sub-store.vercel.app」: 1. 确认安装Sub Store模块。2. 将模块生效顺序放到最底部。3. 开启MITM脚本, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_All.list, policy=Global, tag=Global_All.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMaxNoIP/ChinaMaxNoIP_All.list, policy=China, tag=ChinaMaxNoIP_All.list, enabled=true
 
