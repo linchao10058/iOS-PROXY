@@ -2,13 +2,7 @@
 # AUTHOR: linchao10058
 # VERSION: 2.8
 # REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Zalo.list
-# UPDATED: 2025-10-29 13:30 PDT
-
-# NAME: Zalo
-# AUTHOR: linchao10058
-# VERSION: 2.8
-# REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Zalo.list
-# UPDATED: 2025-10-29 13:30 PDT
+# UPDATED: 2025-11-15 13:30 PDT
 
 # 核心主域
 DOMAIN-SUFFIX,zalo.me,Proxy,force-remote-dns
@@ -17,7 +11,6 @@ DOMAIN-SUFFIX,zalo.cloud,Proxy,force-remote-dns
 DOMAIN-SUFFIX,zalo.ai,Proxy,force-remote-dns
 DOMAIN-SUFFIX,zalo.vn,Proxy,force-remote-dns
 DOMAIN-SUFFIX,zalo.video,Proxy,force-remote-dns
-
 # 功能核心
 DOMAIN-SUFFIX,accounts.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,shop.zalo.me,Proxy,force-remote-dns
@@ -25,6 +18,7 @@ DOMAIN-SUFFIX,oa.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,pay.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,zalopay.vn,Proxy,force-remote-dns
 DOMAIN-SUFFIX,zalopay.com,Proxy,force-remote-dns
+DOMAIN-SUFFIX,ai.zalo.cloud,Proxy,force-remote-dns
 DOMAIN-SUFFIX,video.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,ai.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,feed.zalo.me,Proxy,force-remote-dns
@@ -33,11 +27,9 @@ DOMAIN-SUFFIX,games.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,calendar.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,zingmp3.vn,Proxy,force-remote-dns
 DOMAIN-SUFFIX,mp3.zing.vn,Proxy,force-remote-dns
-
 # CDN / 静态资源
 DOMAIN-SUFFIX,zadn.vn,Proxy,force-remote-dns
 DOMAIN-SUFFIX,zdn.vn,Proxy,force-remote-dns
 DOMAIN-SUFFIX,zapps.me,Proxy,force-remote-dns
-
 # 最终兜底
-DOMAIN-KEYWORD,zalo,Proxy,force-remote-dns
+DOMAIN-KEYWORD,zalo,zingmp3,Proxy,force-remote-dns
