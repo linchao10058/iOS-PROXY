@@ -4,7 +4,11 @@
 # REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Zalo.list
 # UPDATED: 2025-10-29 13:30 PDT
 
-[Rule]
+# NAME: Zalo
+# AUTHOR: linchao10058
+# VERSION: 2.8
+# REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Zalo.list
+# UPDATED: 2025-10-29 13:30 PDT
 
 # 核心主域
 DOMAIN-SUFFIX,zalo.me,Proxy,force-remote-dns
