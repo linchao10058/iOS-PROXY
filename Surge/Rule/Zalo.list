@@ -19,14 +19,14 @@ DOMAIN-SUFFIX,accounts.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,shop.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,oa.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,pay.zalo.me,Proxy,force-remote-dns
+DOMAIN-SUFFIX,zalopay.vn,Proxy,force-remote-dns
+DOMAIN-SUFFIX,zalopay.com,Proxy,force-remote-dns
 DOMAIN-SUFFIX,video.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,ai.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,feed.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,game.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,games.zalo.me,Proxy,force-remote-dns
 DOMAIN-SUFFIX,calendar.zalo.me,Proxy,force-remote-dns
-
-# 音乐
 DOMAIN-SUFFIX,zingmp3.vn,Proxy,force-remote-dns
 DOMAIN-SUFFIX,mp3.zing.vn,Proxy,force-remote-dns
 
@@ -34,10 +34,6 @@ DOMAIN-SUFFIX,mp3.zing.vn,Proxy,force-remote-dns
 DOMAIN-SUFFIX,zadn.vn,Proxy,force-remote-dns
 DOMAIN-SUFFIX,zdn.vn,Proxy,force-remote-dns
 DOMAIN-SUFFIX,zapps.me,Proxy,force-remote-dns
-
-# 支付
-DOMAIN-SUFFIX,zalopay.vn,Proxy,force-remote-dns
-DOMAIN-SUFFIX,zalopay.com,Proxy,force-remote-dns
 
 # 最终兜底
 DOMAIN-KEYWORD,zalo,Proxy,force-remote-dns
