@@ -1,3 +1,4 @@
+# ByteDance 国内全量规则（不含海外 TikTok/Resso 等）
 # TikTok 全排除（严格隔离）
 # DOMAIN-SUFFIX,tiktok.com
 # DOMAIN-SUFFIX,ttlivecdn.com
@@ -43,24 +44,49 @@ DOMAIN-SUFFIX,volcengine.com
 DOMAIN-SUFFIX,volcengineapi.com
 DOMAIN,open.volcengineapi.com
 
-# 飞书 / Lark
+# 飞书（国内版）
 DOMAIN-SUFFIX,feishu.cn
 DOMAIN-SUFFIX,feishu.net
 DOMAIN-SUFFIX,feishu.com
-DOMAIN-SUFFIX,larksuite.com
 
-# CapCut 剪映
+# 剪映（国内版）
+DOMAIN-SUFFIX,capcut.cn
 DOMAIN-SUFFIX,capcut.com
 DOMAIN-SUFFIX,capcut.net
 
-# 豆包 AI
+# 豆包 AI（国内）
 DOMAIN-SUFFIX,doubao.com
 DOMAIN,api.doubao.com
 DOMAIN,sso.doubao.com
 DOMAIN,static.doubao.com
-DOMAIN-SUFFIX,ciciai.com
 
-# 其他字节系产品
+# 番茄小说
+DOMAIN-SUFFIX,fanqienovel.com
+DOMAIN-SUFFIX,fanqie.com
+
+# 懂车帝
+DOMAIN-SUFFIX,dongchedi.com
+
+# 皮皮虾
+DOMAIN-SUFFIX,pipix.com
+DOMAIN-SUFFIX,pipixia.cn
+
+# 汽水音乐
+DOMAIN-SUFFIX,qishui.cn
+DOMAIN-SUFFIX,qishui.com
+
+# PICO VR（国内）
+DOMAIN-SUFFIX,picovr.com
+DOMAIN-SUFFIX,pico-interactive.com
+
+# AI 应用（国内）
+DOMAIN-SUFFIX,anydoor.cn
+DOMAIN-SUFFIX,anydoor.ai
+DOMAIN-SUFFIX,jimeng.cn
+DOMAIN-SUFFIX,picpic.cn
+DOMAIN-SUFFIX,gauthmath.com
+
+# 其他字节系产品（国内）
 DOMAIN-SUFFIX,wukong.com
 DOMAIN-SUFFIX,tuchong.com
 DOMAIN-SUFFIX,faceu.com
@@ -69,6 +95,8 @@ DOMAIN-SUFFIX,neihanshequ.com
 DOMAIN-SUFFIX,feiliao.com
 DOMAIN-SUFFIX,gogokid.com
 DOMAIN-SUFFIX,piapiapia.com
+DOMAIN-SUFFIX,haoxuexi.com
+DOMAIN-SUFFIX,duoshan.com
 
 # 字节系 CDN / 静态资源
 DOMAIN-SUFFIX,pstatp.com
@@ -79,9 +107,6 @@ DOMAIN-SUFFIX,ibytedtos.com
 DOMAIN-SUFFIX,bytecdn.com
 DOMAIN-SUFFIX,bytecdn.net
 DOMAIN-SUFFIX,bytefcdn.com
-DOMAIN-SUFFIX,byteoversea.com
-DOMAIN-SUFFIX,byteoversea.net
-DOMAIN-SUFFIX,bytefcdn-oversea.com
 DOMAIN-SUFFIX,byteimg.org
 DOMAIN-SUFFIX,byted.tech
 DOMAIN-SUFFIX,bytedsvr.com
@@ -98,16 +123,33 @@ DOMAIN-KEYWORD,toutiao
 DOMAIN-KEYWORD,ixigua
 DOMAIN-KEYWORD,huoshan
 DOMAIN-KEYWORD,feishu
-DOMAIN-KEYWORD,lark
 DOMAIN-KEYWORD,capcut
 DOMAIN-KEYWORD,bytecdn
 DOMAIN-KEYWORD,byteimg
 DOMAIN-KEYWORD,volcengine
-DOMAIN-KEYWORD,cici
 
-# IP 兜底（解决直连 IPv6 不命中）
+# ASN（国内）
+IP-ASN,134548   # Beijing ByteDance Technology Co., Ltd.
+IP-ASN,24138   # Beijing ByteDance Technology Co., Ltd.
+
+# IPv4 段（国内常见）
+IP-CIDR,36.112.0.0/16
+IP-CIDR,39.96.0.0/16
+IP-CIDR,47.94.0.0/16
+IP-CIDR,49.7.0.0/16
+IP-CIDR,101.124.0.0/16
+IP-CIDR,111.225.0.0/16
+IP-CIDR,114.132.0.0/16
+IP-CIDR,118.89.0.0/16
+IP-CIDR,120.92.0.0/16
+IP-CIDR,182.92.0.0/16
+IP-CIDR,203.90.0.0/16
+
+# IPv6 段（国内）
 IP-CIDR6,2409:8c54::/32
 IP-CIDR6,2409:8c54:1821::/48
 IP-CIDR6,2409:8c54:4830::/48
 IP-CIDR6,2409:8c54:810::/48
-# DOMAIN-SUFFIX,example.byte.new
+IP-CIDR6,2409:8c54:1000::/36
+IP-CIDR6,2409:8c54:2000::/36
+
