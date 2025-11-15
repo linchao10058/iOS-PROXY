@@ -16,7 +16,7 @@ DOMAIN-SUFFIX,bytedance.group
 DOMAIN-SUFFIX,bytedance.xyz
 DOMAIN,api.bytedance.com
 
-# Douyin 抖音系（国内）
+# Douyin 抖音系
 DOMAIN-SUFFIX,douyin.com
 DOMAIN-SUFFIX,douyincdn.com
 DOMAIN-SUFFIX,douyinpic.com
@@ -53,13 +53,11 @@ DOMAIN-SUFFIX,larksuite.com
 DOMAIN-SUFFIX,capcut.com
 DOMAIN-SUFFIX,capcut.net
 
-# 豆包（字节 AI）
+# 豆包 AI
 DOMAIN-SUFFIX,doubao.com
 DOMAIN,api.doubao.com
 DOMAIN,sso.doubao.com
 DOMAIN,static.doubao.com
-
-# 豆包海外
 DOMAIN-SUFFIX,ciciai.com
 
 # 其他字节系产品
@@ -89,7 +87,7 @@ DOMAIN-SUFFIX,byted.tech
 DOMAIN-SUFFIX,bytedsvr.com
 DOMAIN-SUFFIX,cdn.bytedance.com
 
-# 关键字兜底（捕获所有未来域）
+# 关键字兜底
 DOMAIN-KEYWORD,bytedance
 DOMAIN-KEYWORD,zijie
 DOMAIN-KEYWORD,amemv
@@ -107,5 +105,9 @@ DOMAIN-KEYWORD,byteimg
 DOMAIN-KEYWORD,volcengine
 DOMAIN-KEYWORD,cici
 
-# 自定义补充（抓包发现后追加）
+# IP 兜底（解决直连 IPv6 不命中）
+IP-CIDR6,2409:8c54::/32
+IP-CIDR6,2409:8c54:1821::/48
+IP-CIDR6,2409:8c54:4830::/48
+IP-CIDR6,2409:8c54:810::/48
 # DOMAIN-SUFFIX,example.byte.new
