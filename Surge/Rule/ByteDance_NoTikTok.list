@@ -1,0 +1,111 @@
+# TikTok 全排除（严格隔离）
+# DOMAIN-SUFFIX,tiktok.com
+# DOMAIN-SUFFIX,ttlivecdn.com
+# DOMAIN-SUFFIX,tiktokcdn.com
+# DOMAIN-SUFFIX,ttcdn.com
+# DOMAIN-KEYWORD,tiktok
+# DOMAIN-KEYWORD,musical.ly
+# DOMAIN-KEYWORD,ttcdn
+
+# ByteDance 核心域
+DOMAIN-SUFFIX,bytedance.com
+DOMAIN-SUFFIX,bytedance.net
+DOMAIN-SUFFIX,bytedance.cn
+DOMAIN-SUFFIX,bytedance.org
+DOMAIN-SUFFIX,bytedance.group
+DOMAIN-SUFFIX,bytedance.xyz
+DOMAIN,api.bytedance.com
+
+# Douyin 抖音系（国内）
+DOMAIN-SUFFIX,douyin.com
+DOMAIN-SUFFIX,douyincdn.com
+DOMAIN-SUFFIX,douyinpic.com
+DOMAIN-SUFFIX,amemv.com
+DOMAIN-SUFFIX,snssdk.com
+DOMAIN-SUFFIX,byteimg.com
+DOMAIN-SUFFIX,zijieapi.com
+DOMAIN,api.douyin.com
+DOMAIN,api.amemv.com
+
+# 今日头条
+DOMAIN-SUFFIX,toutiao.com
+DOMAIN-SUFFIX,toutiaocdn.com
+DOMAIN-SUFFIX,toutiaohao.com
+DOMAIN-SUFFIX,toutiaowap.com
+DOMAIN-SUFFIX,toutiaocloud.com
+
+# 西瓜视频
+DOMAIN-SUFFIX,ixigua.com
+
+# 火山 / 火山引擎
+DOMAIN-SUFFIX,huoshan.com
+DOMAIN-SUFFIX,volcengine.com
+DOMAIN-SUFFIX,volcengineapi.com
+DOMAIN,open.volcengineapi.com
+
+# 飞书 / Lark
+DOMAIN-SUFFIX,feishu.cn
+DOMAIN-SUFFIX,feishu.net
+DOMAIN-SUFFIX,feishu.com
+DOMAIN-SUFFIX,larksuite.com
+
+# CapCut 剪映
+DOMAIN-SUFFIX,capcut.com
+DOMAIN-SUFFIX,capcut.net
+
+# 豆包（字节 AI）
+DOMAIN-SUFFIX,doubao.com
+DOMAIN,api.doubao.com
+DOMAIN,sso.doubao.com
+DOMAIN,static.doubao.com
+
+# 豆包海外
+DOMAIN-SUFFIX,ciciai.com
+
+# 其他字节系产品
+DOMAIN-SUFFIX,wukong.com
+DOMAIN-SUFFIX,tuchong.com
+DOMAIN-SUFFIX,faceu.com
+DOMAIN-SUFFIX,huaxiong.com
+DOMAIN-SUFFIX,neihanshequ.com
+DOMAIN-SUFFIX,feiliao.com
+DOMAIN-SUFFIX,gogokid.com
+DOMAIN-SUFFIX,piapiapia.com
+
+# 字节系 CDN / 静态资源
+DOMAIN-SUFFIX,pstatp.com
+DOMAIN-SUFFIX,pglstatp.com
+DOMAIN-SUFFIX,toutiaoimg.com
+DOMAIN-SUFFIX,ibyteimg.com
+DOMAIN-SUFFIX,ibytedtos.com
+DOMAIN-SUFFIX,bytecdn.com
+DOMAIN-SUFFIX,bytecdn.net
+DOMAIN-SUFFIX,bytefcdn.com
+DOMAIN-SUFFIX,byteoversea.com
+DOMAIN-SUFFIX,byteoversea.net
+DOMAIN-SUFFIX,bytefcdn-oversea.com
+DOMAIN-SUFFIX,byteimg.org
+DOMAIN-SUFFIX,byted.tech
+DOMAIN-SUFFIX,bytedsvr.com
+DOMAIN-SUFFIX,cdn.bytedance.com
+
+# 关键字兜底（捕获所有未来域）
+DOMAIN-KEYWORD,bytedance
+DOMAIN-KEYWORD,zijie
+DOMAIN-KEYWORD,amemv
+DOMAIN-KEYWORD,snssdk
+DOMAIN-KEYWORD,douyin
+DOMAIN-KEYWORD,doubao
+DOMAIN-KEYWORD,toutiao
+DOMAIN-KEYWORD,ixigua
+DOMAIN-KEYWORD,huoshan
+DOMAIN-KEYWORD,feishu
+DOMAIN-KEYWORD,lark
+DOMAIN-KEYWORD,capcut
+DOMAIN-KEYWORD,bytecdn
+DOMAIN-KEYWORD,byteimg
+DOMAIN-KEYWORD,volcengine
+DOMAIN-KEYWORD,cici
+
+# 自定义补充（抓包发现后追加）
+# DOMAIN-SUFFIX,example.byte.new
