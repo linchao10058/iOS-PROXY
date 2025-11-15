@@ -1,16 +1,16 @@
-# ByteDance 国内全量规则（不含海外；精确优先）
+# 📦 ByteDance 国内全量分流规则（不含海外）
 # 放在任何 GeoIP/Direct 之前，避免被上层规则吞掉
 
-# —— Bytedance 集团 ——
+# ByteDance 集团主域名
 DOMAIN-SUFFIX,bytedance.com
-DOMAIN-SUFFIX,bytedance.net
 DOMAIN-SUFFIX,bytedance.cn
+DOMAIN-SUFFIX,bytedance.net
 DOMAIN-SUFFIX,bytedance.org
 DOMAIN-SUFFIX,bytedance.group
 DOMAIN-SUFFIX,bytedance.xyz
 DOMAIN,api.bytedance.com
 
-# —— Douyin 抖音系（含直播、签名、点播）——
+# Douyin 抖音系
 DOMAIN-SUFFIX,douyin.com
 DOMAIN-SUFFIX,douyincdn.com
 DOMAIN-SUFFIX,douyinpic.com
@@ -22,78 +22,90 @@ DOMAIN-SUFFIX,byteimg.com
 DOMAIN,api.douyin.com
 DOMAIN,api.amemv.com
 
-# —— 今日头条系 ——
+# 今日头条系
 DOMAIN-SUFFIX,toutiao.com
 DOMAIN-SUFFIX,toutiaocdn.com
 DOMAIN-SUFFIX,toutiaohao.com
 DOMAIN-SUFFIX,toutiaowap.com
 DOMAIN-SUFFIX,toutiaocloud.com
 DOMAIN-SUFFIX,toutiaovod.com
+DOMAIN-SUFFIX,toutiaoimg.com
+DOMAIN-SUFFIX,pstatp.com
+DOMAIN-SUFFIX,pglstatp.com
 
-# —— 西瓜视频 ——
+# 西瓜视频
 DOMAIN-SUFFIX,ixigua.com
+DOMAIN-SUFFIX,ixiguavideo.com
+DOMAIN-SUFFIX,ixiguavideo.net
 
-# —— 火山 / 火山引擎 ——
+# 火山 / 火山引擎
 DOMAIN-SUFFIX,huoshan.com
+DOMAIN-SUFFIX,huoshanstatic.com
 DOMAIN-SUFFIX,volcengine.com
 DOMAIN-SUFFIX,volcengineapi.com
+DOMAIN-SUFFIX,volcecdn.com
 DOMAIN,open.volcengineapi.com
 
-# —— 飞书（国内）——
+# 飞书
 DOMAIN-SUFFIX,feishu.cn
 DOMAIN-SUFFIX,feishu.net
 DOMAIN-SUFFIX,feishu.com
+DOMAIN-SUFFIX,feishucdn.com
 
-# —— 剪映（国内/公有前端）——
+# 剪映
 DOMAIN-SUFFIX,capcut.cn
 DOMAIN-SUFFIX,capcut.com
 DOMAIN-SUFFIX,capcut.net
+DOMAIN-SUFFIX,capcut.net.cn
 
-# —— 豆包 AI（国内）——
+# 豆包 AI
 DOMAIN-SUFFIX,doubao.com
 DOMAIN,api.doubao.com
 DOMAIN,sso.doubao.com
 DOMAIN,static.doubao.com
 
-# —— 番茄小说 ——
+# 番茄小说 / 番茄电影
 DOMAIN-SUFFIX,fanqienovel.com
 DOMAIN-SUFFIX,fanqie.com
+DOMAIN-SUFFIX,fanqiedianying.com
 
-# —— 懂车帝 ——
+# 懂车帝
 DOMAIN-SUFFIX,dongchedi.com
 
-# —— 皮皮虾 ——
+# 皮皮虾
 DOMAIN-SUFFIX,pipix.com
 DOMAIN-SUFFIX,pipixia.cn
 
-# —— 汽水音乐 ——
+# 汽水音乐
 DOMAIN-SUFFIX,qishui.cn
 DOMAIN-SUFFIX,qishui.com
 
-# —— PICO VR（国内）——
+# PICO VR
 DOMAIN-SUFFIX,picovr.com
 DOMAIN-SUFFIX,pico-interactive.com
 
-# —— AI 应用（国内）——
+# AI 应用
 DOMAIN-SUFFIX,anydoor.cn
 DOMAIN-SUFFIX,anydoor.ai
 DOMAIN-SUFFIX,jimeng.cn
 DOMAIN-SUFFIX,picpic.cn
 DOMAIN-SUFFIX,gauthmath.com
 
-# —— 其他字节系产品（国内）——
+# 其他字节系产品
 DOMAIN-SUFFIX,wukong.com
 DOMAIN-SUFFIX,tuchong.com
 DOMAIN-SUFFIX,faceu.com
+DOMAIN-SUFFIX,faceulike.com
 DOMAIN-SUFFIX,huaxiong.com
 DOMAIN-SUFFIX,neihanshequ.com
+DOMAIN-SUFFIX,neihan8.com
 DOMAIN-SUFFIX,feiliao.com
 DOMAIN-SUFFIX,gogokid.com
 DOMAIN-SUFFIX,piapiapia.com
 DOMAIN-SUFFIX,haoxuexi.com
 DOMAIN-SUFFIX,duoshan.com
 
-# —— 字节系 TOS/CDN/直播源/文档与前端 ——
+# TOS/CDN/直播源/文档前端
 DOMAIN-SUFFIX,ibytedtos.com
 DOMAIN-SUFFIX,bytecdn.com
 DOMAIN-SUFFIX,bytecdn.net
@@ -102,25 +114,26 @@ DOMAIN-SUFFIX,byteimg.org
 DOMAIN-SUFFIX,byted.tech
 DOMAIN-SUFFIX,bytedsvr.com
 DOMAIN-SUFFIX,cdn.bytedance.com
-DOMAIN-SUFFIX,pstatp.com
-DOMAIN-SUFFIX,pglstatp.com
-DOMAIN-SUFFIX,toutiaoimg.com
 DOMAIN-SUFFIX,ibyteimg.com
 DOMAIN-SUFFIX,bytegecko.com
 DOMAIN-SUFFIX,bytetos.com
 DOMAIN-SUFFIX,bytednsdoc.com
 DOMAIN-SUFFIX,bytensos.com
+DOMAIN-SUFFIX,bytedns.net
+DOMAIN-SUFFIX,bytednsapi.com
+DOMAIN-SUFFIX,bytednsapi.net
+DOMAIN-SUFFIX,bytedns.tech
 
-# —— 合作/承载前端（国内常见；非字节所有，但用于承载字节内容）——
+# 合作承载前端
 DOMAIN-SUFFIX,cdnhwc1.com
 DOMAIN-SUFFIX,queniuso.com
 DOMAIN-SUFFIX,wasu.tv
 
-# —— ASN（国内）——
-IP-ASN,134548   # Beijing ByteDance Technology Co., Ltd.
-IP-ASN,24138    # Beijing ByteDance Technology Co., Ltd.
+# ASN（国内）
+IP-ASN,134548
+IP-ASN,24138
 
-# —— IPv4（国内部署；仅精确、避免过度匹配）——
+# IPv4（国内部署）
 IP-CIDR,36.112.0.0/16
 IP-CIDR,39.96.0.0/16
 IP-CIDR,47.94.0.0/16
@@ -133,7 +146,7 @@ IP-CIDR,120.92.0.0/16
 IP-CIDR,182.92.0.0/16
 IP-CIDR,203.90.0.0/16
 
-# —— IPv6（国内）——
+# IPv6（国内部署）
 IP-CIDR6,2409:8c54::/32
 IP-CIDR6,2409:8c54:1821::/48
 IP-CIDR6,2409:8c54:4830::/48
@@ -141,7 +154,7 @@ IP-CIDR6,2409:8c54:0810::/48
 IP-CIDR6,2409:8c54:1000::/36
 IP-CIDR6,2409:8c54:2000::/36
 
-# —— 关键字兜底（最后；避免误匹配）——
+# 关键字兜底
 DOMAIN-KEYWORD,bytedance
 DOMAIN-KEYWORD,zijie
 DOMAIN-KEYWORD,amemv
@@ -150,15 +163,19 @@ DOMAIN-KEYWORD,douyin
 DOMAIN-KEYWORD,doubao
 DOMAIN-KEYWORD,toutiao
 DOMAIN-KEYWORD,ixigua
+DOMAIN-KEYWORD,ixiguavideo
 DOMAIN-KEYWORD,huoshan
 DOMAIN-KEYWORD,feishu
+DOMAIN-KEYWORD,feishucdn
 DOMAIN-KEYWORD,capcut
 DOMAIN-KEYWORD,bytecdn
 DOMAIN-KEYWORD,byteimg
 DOMAIN-KEYWORD,volcengine
+DOMAIN-KEYWORD,volcecdn
 DOMAIN-KEYWORD,bytegecko
 DOMAIN-KEYWORD,bytetos
 DOMAIN-KEYWORD,bytednsdoc
+DOMAIN-KEYWORD,bytedns
 DOMAIN-KEYWORD,cdnhwc1
 DOMAIN-KEYWORD,queniuso
 DOMAIN-KEYWORD,wasu
