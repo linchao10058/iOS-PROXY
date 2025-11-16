@@ -1,5 +1,6 @@
-# 📦 ByteDance 国内全量分流规则（不含海外）
+# 📦 ByteDance_NoGlobal 国内全量分流规则（不含海外 / ByteDance_NoGlobal）
 # 放在任何 GeoIP/Direct 之前，避免被上层规则吞掉
+# 版本：2025-11-16
 
 # —— ByteDance 集团主域名 ——
 DOMAIN-SUFFIX,bytedance.com
@@ -9,6 +10,7 @@ DOMAIN-SUFFIX,bytedance.org
 DOMAIN-SUFFIX,bytedance.group
 DOMAIN-SUFFIX,bytedance.xyz
 DOMAIN,api.bytedance.com
+DOMAIN,cdn.bytedance.com
 
 # —— Douyin 抖音系 ——
 DOMAIN-SUFFIX,douyin.com
@@ -19,8 +21,14 @@ DOMAIN-SUFFIX,amemv.com
 DOMAIN-SUFFIX,snssdk.com
 DOMAIN-SUFFIX,zijieapi.com
 DOMAIN-SUFFIX,byteimg.com
+DOMAIN-SUFFIX,bytegoofy.com
+DOMAIN-SUFFIX,bytegoofy.cn
+DOMAIN-SUFFIX,bytegecko.com
+DOMAIN-SUFFIX,bytehwm.com
 DOMAIN,api.douyin.com
 DOMAIN,api.amemv.com
+DOMAIN,open.douyin.com
+DOMAIN-SUFFIX,douyinstatic.com
 
 # —— 今日头条系 ——
 DOMAIN-SUFFIX,toutiao.com
@@ -32,6 +40,7 @@ DOMAIN-SUFFIX,toutiaovod.com
 DOMAIN-SUFFIX,toutiaoimg.com
 DOMAIN-SUFFIX,pstatp.com
 DOMAIN-SUFFIX,pglstatp.com
+DOMAIN-SUFFIX,tracking.toutiao.com
 
 # —— 西瓜视频 ——
 DOMAIN-SUFFIX,ixigua.com
@@ -116,40 +125,92 @@ DOMAIN-SUFFIX,byted.tech
 DOMAIN-SUFFIX,bytedsvr.com
 DOMAIN-SUFFIX,cdn.bytedance.com
 DOMAIN-SUFFIX,ibyteimg.com
-DOMAIN-SUFFIX,bytegecko.com
 DOMAIN-SUFFIX,bytetos.com
 DOMAIN-SUFFIX,bytednsdoc.com
-DOMAIN-SUFFIX,bytensos.com
 DOMAIN-SUFFIX,bytedns.net
 DOMAIN-SUFFIX,bytednsapi.com
 DOMAIN-SUFFIX,bytednsapi.net
 DOMAIN-SUFFIX,bytedns.tech
 DOMAIN-SUFFIX,bytefae.com
 DOMAIN-SUFFIX,bytemastatic.com
+DOMAIN-SUFFIX,bytemastatic.cn
 
-# —— 字节系实验/性能域名 ——
+# —— 广告/支付/增长/短链 ——
+DOMAIN-SUFFIX,byteadverts.com
+DOMAIN-SUFFIX,doupay.com
+DOMAIN-SUFFIX,bdurl.net
+DOMAIN-SUFFIX,juliangyinqing.com
+DOMAIN-SUFFIX,ad.bytedance.com
+DOMAIN-SUFFIX,log.snssdk.com
+DOMAIN-SUFFIX,mon.snssdk.com
+DOMAIN-SUFFIX,lf-ad-growth.byteadverts.com
+DOMAIN,dig.bdurl.net
+
+# —— 监控 / APM / 实验 / 性能域名 ——
+DOMAIN-SUFFIX,ibytedapm.com
 DOMAIN,scalpel-perf.zijieapi.com
 DOMAIN,abtestvm.bytedance.com
 DOMAIN,abtest3-misc-lq.zijieapi.com
+DOMAIN,mon.zijieapi.com
+DOMAIN,lf3-short.ibytedapm.com
+DOMAIN,lf3-short.bytegoofy.com
 
-# —— 广告/追踪域名（可选分组）——
-DOMAIN-SUFFIX,ad.bytedance.com
-DOMAIN-SUFFIX,log.snssdk.com
-DOMAIN-SUFFIX,tracking.toutiao.com
-DOMAIN-SUFFIX,mon.snssdk.com
-DOMAIN-SUFFIX,abtest.bytedance.com
+# —— 电商 / 页面 / 静态相关 ——
+DOMAIN-SUFFIX,ecombdpage.com
+DOMAIN-SUFFIX,ecombdstatic.com
+DOMAIN-SUFFIX,xingtu.cn
+DOMAIN-SUFFIX,ugsdk.cn
+DOMAIN,render.ecombdpage.com
+
+# —— 合作/承载前端（字节依赖层） ——
+DOMAIN-SUFFIX,cdnhwc1.com
+DOMAIN-SUFFIX,cdnhwc2.com
+DOMAIN-SUFFIX,queniuso.com
+DOMAIN-SUFFIX,wasu.tv
+DOMAIN-SUFFIX,qtlcdn.com
+DOMAIN,ioshost.qtlcdn.com
+DOMAIN-SUFFIX,cdnbuild.net
+DOMAIN-SUFFIX,bsgslb.com
+DOMAIN,zttapk.v.bsgslb.com
+DOMAIN,l7-online-self-max-v6.s.dsa.cdnbuild.net
+DOMAIN-SUFFIX,hcdndyn.cdn.hwcdn.net
 
 # —— 第三方分析 SDK ——
 DOMAIN-SUFFIX,adjust.io
 
-# —— 合作/承载前端 ——
-DOMAIN-SUFFIX,cdnhwc1.com
-DOMAIN-SUFFIX,queniuso.com
-DOMAIN-SUFFIX,wasu.tv
-DOMAIN-SUFFIX,autonavi.com
-DOMAIN,dispatcher.is.autonavi.com
-DOMAIN-SUFFIX,qtlcdn.com
+# —— 精确观测域名(抓包样本+补充） ——
+DOMAIN,api.xsj.wasu.tv
+DOMAIN,lf3-cm.ecombdstatic.com
+DOMAIN,frontier-aweme-hl-ipainner.amemv.com
+DOMAIN,api5-core-hl.amemv.com
+DOMAIN,api5-normal-aweme-hl.doubao.com
+DOMAIN,saveu5-normal-hl.zijieapi.com
+DOMAIN,mssdk3-normal-lf.zijieapi.com
+DOMAIN,p11.douyinpic.com
+DOMAIN,lf-dy-sourcecdn-tos.bytegecko.com
+DOMAIN,lf26-font-sign.bytehwm.com
+DOMAIN,p9-dy.byteimg.com
+DOMAIN,lf-normal-gr-sourcecdn.bytegecko.com
+DOMAIN,p9-magic.byteimg.com
+DOMAIN,n98-lf9-dy-ncdn-tos-sub.bytegecko.com
+DOMAIN,log-hl.snssdk.com
+DOMAIN,p95-sz-sign.douyinpic.com
+DOMAIN,i-hl.snssdk.com
+DOMAIN,p3.douyinpic.com
+DOMAIN,p6.douyinpic.com
+DOMAIN,search5-search-hl.amemv.com
+DOMAIN,creator.amemv.com
+DOMAIN,douplus-fe.amemv.com
+DOMAIN,lf26-main-dy-qos-expr.bytegecko.com
+DOMAIN,api.doupay.com
+DOMAIN,zlink.ugsdk.cn
+DOMAIN,open.douyin.com
+DOMAIN,render.ecombdpage.com
+DOMAIN,lf3-short.bytegoofy.com
+DOMAIN,lf3-short.ibytedapm.com
 DOMAIN,ioshost.qtlcdn.com
+DOMAIN,l7-online-self-max-v6.s.dsa.cdnbuild.net
+DOMAIN,abtestvm.bytedance.com
 
 # —— ASN（国内）——
 IP-ASN,134548
@@ -157,20 +218,32 @@ IP-ASN,24138
 # 海外候选 ASN（可选）
 # IP-ASN,396986
 
-# —— IPv4（国内部署）——
+# —— IPv4（国内部署，兜底保留）——
 IP-CIDR,36.112.0.0/16
 IP-CIDR,39.96.0.0/16
 IP-CIDR,47.94.0.0/16
 IP-CIDR,49.7.0.0/16
 IP-CIDR,101.124.0.0/16
 IP-CIDR,111.225.0.0/16
+IP-CIDR,113.96.0.0/16
+IP-CIDR,113.105.0.0/16
 IP-CIDR,114.132.0.0/16
 IP-CIDR,118.89.0.0/16
+IP-CIDR,119.147.0.0/16
 IP-CIDR,120.92.0.0/16
+IP-CIDR,121.11.0.0/16
+IP-CIDR,121.12.0.0/16
+IP-CIDR,121.14.0.0/16
+IP-CIDR,125.88.0.0/16
+IP-CIDR,125.94.0.0/16
 IP-CIDR,182.92.0.0/16
+IP-CIDR,183.3.0.0/16
+IP-CIDR,183.36.0.0/16
+IP-CIDR,183.60.0.0/16
+IP-CIDR,183.61.0.0/16
 IP-CIDR,203.90.0.0/16
 
-# —— IPv6（国内部署）——
+# —— IPv6（国内部署，兜底保留）——
 IP-CIDR6,2409:8c54::/32
 IP-CIDR6,2409:8c54:1821::/48
 IP-CIDR6,2409:8c54:4830::/48
@@ -178,7 +251,7 @@ IP-CIDR6,2409:8c54:0810::/48
 IP-CIDR6,2409:8c54:1000::/36
 IP-CIDR6,2409:8c54:2000::/36
 
-# —— 关键字兜底 ——
+# —— 关键字兜底（保留并扩充）——
 DOMAIN-KEYWORD,bytedance
 DOMAIN-KEYWORD,zijie
 DOMAIN-KEYWORD,amemv
@@ -201,9 +274,19 @@ DOMAIN-KEYWORD,bytetos
 DOMAIN-KEYWORD,bytednsdoc
 DOMAIN-KEYWORD,bytedns
 DOMAIN-KEYWORD,cdnhwc1
+DOMAIN-KEYWORD,cdnhwc2
 DOMAIN-KEYWORD,queniuso
 DOMAIN-KEYWORD,wasu
 DOMAIN-KEYWORD,abtest
 DOMAIN-KEYWORD,infras
 DOMAIN-KEYWORD,static
 DOMAIN-KEYWORD,sign
+DOMAIN-KEYWORD,zijieapi
+DOMAIN-KEYWORD,bytegoofy
+DOMAIN-KEYWORD,ibytedapm
+DOMAIN-KEYWORD,byteadverts
+DOMAIN-KEYWORD,bsgslb
+DOMAIN-KEYWORD,qtlcdn
+DOMAIN-KEYWORD,ecombd
+DOMAIN-KEYWORD,qishui
+DOMAIN-KEYWORD,xingtu
