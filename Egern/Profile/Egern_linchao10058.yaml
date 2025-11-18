@@ -233,6 +233,8 @@ dns:
   - 119.29.29.29
   - 182.254.116.116
   - '2402:4e00::'
+  - 17.253.14.245
+  - '2620:149:AF::'
   upstreams:
     SYSTEM:
     - system
@@ -330,6 +332,10 @@ dns:
     - https://[2a02:6b8::feed:bad]/dns-query
     - tls://[2a02:6b8::feed:ff]:853
     - tls://[2a02:6b8::feed:bad]:853
+    - https://doh.dns.apple.com/dns-query
+    - tls://doh.dns.apple.com:853
+    - quic://doh.dns.apple.com:784
+
   forward:
   - wildcard:
       match: .localhost
@@ -477,6 +483,9 @@ dns:
     - 182.254.116.116
     dnspod.tencent.com:
     - 119.28.28.28
+    doh.dns.apple.com:
+    - 17.253.14.245
+    - '2620:149:AF::'
   block_ips:
   - 1.1.1.1:53
   - 1.0.0.1:53
