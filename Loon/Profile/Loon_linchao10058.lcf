@@ -183,24 +183,59 @@ FINAL,PROXY
 # Remote Rule
 # 订阅规则URL,策略
 # PROXY
-#https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Rule/ExampleRule.list,policy=PROXY,enabled=false
+# RULE-SET 区域
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All.list, policy=China, tag=Apple_All.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list, policy=Global, tag=Google, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Microsoft/Microsoft.list, policy=Global, tag=Microsoft, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list, policy=Global, tag=Google, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/OpenAI/OpenAI.list, policy=Other, tag=OpenAI, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/Anthropic/Anthropic.list, policy=Global, tag=Anthropic, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Cloudflare/Cloudflare.list, policy=Global, tag=Cloudflare, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Game/Roblox/Roblox.list, policy=Global, tag=Roblox.list, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Game/Game.list, policy=Global, tag=Game.list, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/GlobalMedia/GlobalMedia_All.list, policy=Global, tag=GlobalMedia_All.list, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list, policy=China, tag=Lan.list, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DNS/DNS.list, policy=PROXY, tag=DNS.list, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/BlockHttpDNS/BlockHttpDNS.list, policy=Advertising, tag=BlockHttpDNS.list, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Privacy/Privacy_All.list, policy=Advertising, tag=Privacy_All.list, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All.list, policy=Advertising, tag=Advertising_All.list, enabled=true
-https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/rule/substore.list, policy=PROXY, tag=Sub-Store 「sub-store.vercel.app」: 1. 确认安装Sub Store模块。2. 将模块生效顺序放到最底部。3. 开启MITM脚本, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_All.list, policy=Global, tag=Global_All.list, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMaxNoIP/ChinaMaxNoIP_All.list, policy=China, tag=ChinaMaxNoIP_All.list, enabled=true
+https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Cloudflare.list, policy=Global, tag=Cloudflare, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Amazon/Amazon.list, policy=Global, tag=Amazon, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list, policy=Global, tag=OpenAI, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Anthropic/Anthropic.list, policy=Global, tag=Anthropic, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Facebook/Facebook.list, policy=Global, tag=Facebook, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Instagram/Instagram.list, policy=Global, tag=Instagram, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Threads/Threads.list, policy=Global, tag=Threads, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Whatsapp/Whatsapp.list, policy=Global, tag=Whatsapp, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list, policy=Global, tag=Twitter, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/YouTube/YouTube.list, policy=Global, tag=YouTube, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list, policy=Global, tag=Spotify, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/TikTok/TikTok.list, policy=Global, tag=TikTok, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list, policy=Global, tag=Netflix, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list, policy=Global, tag=Telegram, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/WeChat/WeChat.list, policy=China, tag=WeChat, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Discord/Discord.list, policy=Global, tag=Discord, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Reddit/Reddit.list, policy=Global, tag=Reddit, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Snap/Snap.list, policy=Global, tag=Snap, enabled=true
+https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Zalo.list, policy=Global, tag=Zalo, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Line/Line.list, policy=Global, tag=Line, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/KakaoTalk/KakaoTalk.list, policy=Global, tag=KakaoTalk, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/LinkedIn/LinkedIn.list, policy=Global, tag=LinkedIn, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleVoice/GoogleVoice.list, policy=Global, tag=GoogleVoice, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list, policy=Global, tag=GitHub, enabled=true
+https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/HuggingFace.list, policy=Global, tag=HuggingFace, enabled=true
+https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/xAI.list, policy=Global, tag=xAI, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list, policy=Global, tag=Gemini, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Copilot/Copilot.list, policy=Global, tag=Copilot, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Teams/Teams.list, policy=Global, tag=Teams, enabled=true
+https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Meta_AI.list, policy=Global, tag=Meta_AI, enabled=true
+https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Perplexity.list, policy=Global, tag=Perplexity, enabled=true
+https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Mistral.AI.list, policy=Global, tag=Mistral.AI, enabled=true
+https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Character.AI.list, policy=Global, tag=Character.AI, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Adobe/Adobe.list, policy=Global, tag=Adobe, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Pinterest/Pinterest.list, policy=Global, tag=Pinterest, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Game/Roblox/Roblox.list, policy=Global, tag=Roblox, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/GlobalMedia/GlobalMedia_All.list, policy=Global, tag=GlobalMedia_All, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Game/Game.list, policy=Global, tag=Game, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_All.list, policy=Global, tag=Global_All, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMax/ChinaMax_All.list, policy=China, tag=ChinaMax_All, enabled=true
+# Sub-Store 规则
+https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/rule/substore.list, policy=Proxy, tag=Sub-Store 「sub-store.vercel.app」: 1. 确认安装Sub Store模块。2. 将模块生效顺序放到最底部。3. 开启MITM脚本, enabled=true
+# 广告/隐私/反HTTPDNS
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All.list, policy=Advertising, tag=Advertising_All, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Privacy/Privacy_All.list, policy=Advertising, tag=Privacy_All, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/HTTPDNS.Block.list, policy=Advertising, tag=HTTPDNS.Block, enabled=true
+# DNS 与局域网
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DNS/DNS.list, policy=Proxy, tag=DNS, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list, policy=China, tag=Lan, enabled=true
 
 [Host]
 # Cloudflare
