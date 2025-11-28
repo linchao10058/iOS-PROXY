@@ -236,7 +236,7 @@ dns:
   - 17.253.14.245
   - '2620:149:AF::'
   upstreams:
-    SYSTEM:
+    SYSTEMDNS:
     - system
     ChinaDNS:
     - https://dns.alidns.com/dns-query
@@ -339,20 +339,20 @@ dns:
   forward:
   - wildcard:
       match: .localhost
-      value: SYSTEM
+      value: SYSTEMDNS
   - wildcard:
       match: '*.local'
-      value: SYSTEM
+      value: SYSTEMDNS
   - wildcard:
       match: '*.lan'
-      value: SYSTEM
+      value: SYSTEMDNS
   - wildcard:
       match: '*.home.arpa'
-      value: SYSTEM
+      value: SYSTEMDNS
       disabled: false
   - wildcard:
       match: '*.crashlytics'
-      value: SYSTEM, GlobalDNS, ChinaDNS
+      value: SYSTEMDNS, GlobalDNS, ChinaDNS
   - wildcard:
       match: '*.cn'
       value: ChinaDNS
