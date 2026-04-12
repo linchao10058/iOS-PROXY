@@ -5,117 +5,49 @@
 ipv6: true
 allow_external_connections: false
 vif_only: true
-bypass_tunnel_proxy:
-- 127.0.0.1
-- 192.168.0.0/16
-- 10.0.0.0/8
-- 172.16.0.0/12
-- 100.64.0.0/10
-- 17.0.0.0/8
-- .localhost
-- '*.local'
-- '*.lan'
-- '*.home.arpa'
-- '*.crashlytics.com'
-- '*.10086.cn'
-- '*.chinamobile.com'
-- '*.chinamobileltd.com'
-- '*.cnmobile.net'
-- '*.monternet.com'
-- '*.cmcc.com'
-- '*.cnmobile.com'
-- '*.189.cn'
-- '*.chinatelecom.com'
-- '*.chinatelecom.com.cn'
-- '*.chinatelecom.cn'
-- '*.chinatelecomglobal.com'
-- '*.e-surfing.com'
-- '*.10010.cn'
-- '*.10010.com'
-- '*.chinaunicom.com'
-- '*.chinaunicom.cn'
-- '*.wo.com.cn'
-- '*.wo.cn'
-- '*.unicom.com'
-- '*.chinaunicomglobal.com'
-- '*.icbc.com'
-- '*.icbc.com.cn'
-- '*.icbc.cn'
-- '*.abchina.com'
-- '*.abchina.com.cn'
-- '*.abchina.cn'
-- '*.ccb.com'
-- '*.ccb.com.cn'
-- '*.ccb.cn'
-- '*.boc.cn'
-- '*.boc.com'
-- '*.bankofchina.com'
-- '*.bankcomm.com'
-- '*.bocom.com'
-- '*.bankcomm.cn'
-- '*.psbc.com'
-- '*.psbc.com.cn'
 hijack_dns:
 - 1.1.1.1:53
 - 1.0.0.1:53
-- 1.1.1.2:53
-- 1.0.0.2:53
-- 1.1.1.3:53
-- 1.0.0.3:53
 - 2606:4700:4700::1111:53
 - 2606:4700:4700::1001:53
+- 1.1.1.2:53
+- 1.0.0.2:53
 - 2606:4700:4700::1112:53
 - 2606:4700:4700::1002:53
-- 2606:4700:4700::1113:53
-- 2606:4700:4700::1003:53
 - 8.8.8.8:53
 - 8.8.4.4:53
 - 2001:4860:4860::8888:53
 - 2001:4860:4860::8844:53
+- 76.76.2.0:53
+- 76.76.10.0:53
+- 2606:1a40:::53
+- 2606:1a40:1:::53
 - 9.9.9.9:53
 - 149.112.112.112:53
 - 2620:fe::fe:53
 - 2620:fe::9:53
+- 45.90.28.137:53
+- 45.90.30.137:53
+- 2a07:a8c0::93:ad73:53
+- 2a07:a8c1::93:ad73:53
 - 208.67.222.222:53
 - 208.67.220.220:53
-- 208.67.222.123:53
-- 208.67.220.123:53
-- 2620:119:35::123:53
-- 185.228.168.9:53
-- 185.228.169.9:53
-- 2a0d:2a00:1::53
-- 2a0d:2a00:2::53
+- 2620:119:35::35:53
+- 2620:119:53::53:53
 - 94.140.14.14:53
 - 94.140.15.15:53
-- 94.140.14.15:53
-- 94.140.15.16:53
 - 2a10:50c0::ad1:ff:53
 - 2a10:50c0::ad2:ff:53
-- 2a10:50c0::bad1:ff:53
-- 2a10:50c0::bad2:ff:53
-- 45.90.28.0:53
-- 45.90.30.0:53
-- 45.90.28.1:53
-- 45.90.30.1:53
-- 77.88.8.8:53
-- 77.88.8.1:53
-- 77.88.8.88:53
-- 77.88.8.7:53
-- 2a02:6b8::feed:ff:53
-- 2a02:6b8::feed:bad:53
-- 2a02:6b8:0:1::feed:ff:53
 - 223.5.5.5:53
 - 223.6.6.6:53
 - 2400:3200::1:53
 - 2400:3200:baba::1:53
 - 119.29.29.29:53
 - 182.254.116.116:53
-- 1.12.12.12:53
-- 120.53.53.53:53
-- 2402:4e00::53
-- 127.0.0.1:53
-- 0.0.0.0:53
-- '*:53'
+- 2402:4e00:::53
+- 17.253.14.245:53
+- 2620:149:AF:::53
+- '  *:53'
 geoip_db_url: https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
 asn_db_url: https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/download/GeoLite2-ASN.mmdb
 proxy_latency_test_url: https://www.google.com/generate_204
@@ -125,13 +57,7 @@ vif_included_routes:
 - '*.vercel.app'
 - '*.safebrowsing.urlsec.qq.com'
 vif_excluded_routes:
-- 127.0.0.0/8
-- 192.168.0.0/16
-- 10.0.0.0/8
-- 172.16.0.0/12
-- 169.254.0.0/16
-- 100.64.0.0/10
-- .localhost
+- localhost
 - '*.local'
 - '*.lan'
 - '*.home.arpa'
@@ -176,184 +102,104 @@ vif_excluded_routes:
 - '*.psbc.com.cn'
 dns:
   bootstrap:
-  - system
   - 1.1.1.1
   - 1.0.0.1
-  - 1.1.1.2
-  - 1.0.0.2
-  - 1.1.1.3
-  - 1.0.0.3
   - 2606:4700:4700::1111
   - 2606:4700:4700::1001
+  - 1.1.1.2
+  - 1.0.0.2
   - 2606:4700:4700::1112
   - 2606:4700:4700::1002
-  - 2606:4700:4700::1113
-  - 2606:4700:4700::1003
   - 8.8.8.8
   - 8.8.4.4
   - 2001:4860:4860::8888
   - 2001:4860:4860::8844
+  - 76.76.2.0
+  - 76.76.10.0
+  - '2606:1a40::0:'
+  - '2606:1a40:1::0:'
   - 9.9.9.9
   - 149.112.112.112
   - 2620:fe::fe
   - 2620:fe::9
+  - 45.90.28.137
+  - 45.90.30.137
+  - 2a07:a8c0::93:ad73
+  - 2a07:a8c1::93:ad73
   - 208.67.222.222
   - 208.67.220.220
-  - 208.67.222.123
-  - 208.67.220.123
-  - 2620:119:35::123
-  - 2620:119:53::123
-  - 185.228.168.9
-  - 185.228.169.9
-  - '2a0d:2a00:1::'
-  - '2a0d:2a00:2::'
+  - '2620:119:35::35:'
+  - '2620:119:53::53:'
   - 94.140.14.14
   - 94.140.15.15
   - 2a10:50c0::ad1:ff
   - 2a10:50c0::ad2:ff
-  - 94.140.14.15
-  - 94.140.15.16
-  - 2a10:50c0::bad1:ff
-  - 2a10:50c0::bad2:ff
-  - 45.90.30.137
-  - 45.90.28.137
-  - 2a07:a8c1::93:ad73
-  - 2a07:a8c0::93:ad73
-  - 45.90.28.0
-  - 45.90.30.0
-  - 77.88.8.8
-  - 77.88.8.1
-  - 2a02:6b8::feed:0ff
   - 223.5.5.5
   - 223.6.6.6
   - 2400:3200::1
   - 2400:3200:baba::1
-  - 1.12.12.12
-  - 120.53.53.53
   - 119.29.29.29
   - 182.254.116.116
   - '2402:4e00::'
   - 17.253.14.245
   - '2620:149:AF::'
+  - system
   upstreams:
-    SYSTEMDNS:
-    - system
     ChinaDNS:
     - https://dns.alidns.com/dns-query
-    - tls://dns.alidns.com:853
-    - https://[2400:3200::1]/dns-query
-    - tls://[2400:3200::1]:853
+    - quic://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
     - https://sm2.doh.pub/dns-query
-    - https://1.12.12.12/dns-query
-    - https://120.53.53.53/dns-query
-    - tls://dot.pub:853
-    - tls://119.29.29.29:853
-    - https://[2402:4e00::]/dns-query
-    - tls://[2402:4e00::]:853
+    - https://doh.dns.apple.com/dns-query
+    - quic://doh.dns.apple.com:784
     GlobalDNS:
     - https://cloudflare-dns.com/dns-query
     - https://1.1.1.1/dns-query
-    - https://1.1.1.2/dns-query
-    - https://1.1.1.3/dns-query
-    - tls://1.1.1.1:853
-    - tls://1.1.1.2:853
-    - tls://1.1.1.3:853
-    - quic://1.1.1.1:784
-    - h3://security.cloudflare-dns.com/dns-query
-    - https://[2606:4700:4700::1111]/dns-query
-    - https://[2606:4700:4700::1001]/dns-query
-    - https://[2606:4700:4700::1112]/dns-query
-    - https://[2606:4700:4700::1113]/dns-query
-    - tls://[2606:4700:4700::1111]:853
-    - tls://[2606:4700:4700::1112]:853
-    - tls://[2606:4700:4700::1113]:853
-    - quic://[2606:4700:4700::1111]:784
+    - https://1.0.0.1/dns-query
     - https://dns.google/dns-query
     - https://8.8.8.8/dns-query
     - https://8.8.4.4/dns-query
-    - tls://8.8.8.8:853
-    - tls://8.8.4.4:853
-    - https://[2001:4860:4860::8888]/dns-query
-    - https://[2001:4860:4860::8844]/dns-query
-    - tls://[2001:4860:4860::8888]:853
-    - tls://[2001:4860:4860::8844]:853
+    - https://freedns.controld.com/p0
     - https://dns.quad9.net/dns-query
-    - tls://9.9.9.9:853
-    - quic://9.9.9.9:784
-    - https://[2620:fe::fe]/dns-query
-    - tls://[2620:fe::fe]:853
-    - quic://[2620:fe::fe]:784
-    - https://doh.opendns.com/dns-query
-    - https://doh.familyshield.opendns.com/dns-query
-    - tls://resolver1.opendns.com:853
-    - tls://resolver2.opendns.com:853
-    - tls://familyshield.opendns.com:853
-    - https://[2620:119:35::123]/dns-query
-    - https://[2620:119:53::123]/dns-query
-    - tls://[2620:119:35::123]:853
-    - tls://[2620:119:53::123]:853
-    - https://dns.adguard-dns.com/dns-query
-    - https://dns-family.adguard-dns.com/dns-query
-    - tls://dns.adguard-dns.com:853
-    - tls://dns-family.adguard-dns.com:853
-    - quic://dns.adguard-dns.com:784
-    - quic://dns-family.adguard-dns.com:784
-    - https://[2a10:50c0::ad1:ff]/dns-query
-    - https://[2a10:50c0::bad1:ff]/dns-query
-    - tls://[2a10:50c0::ad1:ff]:853
-    - tls://[2a10:50c0::bad1:ff]:853
-    - quic://[2a10:50c0::ad1:ff]:784
-    - quic://[2a10:50c0::bad1:ff]:784
-    - https://doh.cleanbrowsing.org/doh/family-filter/
-    - https://doh.cleanbrowsing.org/doh/security-filter/
-    - tls://family-filter-dns.cleanbrowsing.org:853
-    - tls://security-filter-dns.cleanbrowsing.org:853
-    - https://[2a0d:2a00:1::]/doh/family-filter/
-    - https://[2a0d:2a00:2::]/doh/security-filter/
-    - tls://[2a0d:2a00:1::]:853
-    - tls://[2a0d:2a00:2::]:853
-    - https://dns.nextdns.io/<CONFIG_ID>
+    - https://9.9.9.9/dns-query
     - https://dns.nextdns.io/93ad73
-    - quic://93ad73.dns.nextdns.io:784
-    - tls://93ad73.dns.nextdns.io:853
-    - tls://45.90.28.0:853
-    - quic://45.90.28.0:784
-    - tls://45.90.28.0:853
-    - https://77.88.8.8/dns-query
-    - https://77.88.8.1/dns-query
-    - https://77.88.8.88/dns-query
-    - https://77.88.8.7/dns-query
-    - tls://77.88.8.8:853
-    - tls://77.88.8.1:853
-    - tls://77.88.8.88:853
-    - tls://77.88.8.7:853
-    - quic://77.88.8.8:784
-    - https://[2a02:6b8::feed:ff]/dns-query
-    - https://[2a02:6b8::feed:bad]/dns-query
-    - tls://[2a02:6b8::feed:ff]:853
-    - tls://[2a02:6b8::feed:bad]:853
+    - https://doh.opendns.com/dns-query
+    - https://dns.adguard-dns.com/dns-query
     - https://doh.dns.apple.com/dns-query
-    - tls://doh.dns.apple.com:853
+    - quic://1.1.1.1:784
+    - quic://1.0.0.1:784
+    - quic://cloudflare-dns.com:784
+    - quic://p0.freedns.controld.com:784
+    - quic://dns.quad9.net:784
+    - quic://93ad73.dns.nextdns.io:784
+    - quic://dns.adguard-dns.com:784
     - quic://doh.dns.apple.com:784
-
+    - h3://security.cloudflare-dns.com/dns-query
+    Bootstrap:
+    - system
+    - SYSTEM
   forward:
-  - wildcard:
-      match: .localhost
-      value: SYSTEMDNS
-  - wildcard:
-      match: '*.local'
-      value: SYSTEMDNS
-  - wildcard:
-      match: '*.lan'
-      value: SYSTEMDNS
-  - wildcard:
+  - domain_wildcard:
       match: '*.home.arpa'
-      value: SYSTEMDNS
+      value: Bootstrap
       disabled: false
-  - wildcard:
+  - domain_wildcard:
+      match: localhost
+      value: Bootstrap
+      disabled: false
+  - domain_wildcard:
+      match: '*.local'
+      value: Bootstrap
+      disabled: false
+  - domain_wildcard:
+      match: '*.lan'
+      value: Bootstrap
+      disabled: false
+  - domain_wildcard:
       match: '*.crashlytics'
-      value: SYSTEMDNS, GlobalDNS, ChinaDNS
-  - wildcard:
+      value: Bootstrap, GlobalDNS, ChinaDNS
+      disabled: false
+  - domain_wildcard:
       match: '*.cn'
       value: ChinaDNS
   - proxy_rule_set:
@@ -362,23 +208,20 @@ dns:
   - proxy_rule_set:
       match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_All.list
       value: GlobalDNS
-  - wildcard:
+  - domain_wildcard:
       match: '*'
       value: GlobalDNS
+      disabled: false
   hosts:
     cloudflare-dns.com:
     - 1.1.1.1
     - 1.0.0.1
     - 1.1.1.2
     - 1.0.0.2
-    - 1.1.1.3
-    - 1.0.0.3
     - 2606:4700:4700::1111
     - 2606:4700:4700::1001
     - 2606:4700:4700::1112
     - 2606:4700:4700::1002
-    - 2606:4700:4700::1113
-    - 2606:4700:4700::1003
     one.one.one.one:
     - 1.1.1.1
     - 1.0.0.1
@@ -387,16 +230,9 @@ dns:
     - 1.0.0.2
     - 2606:4700:4700::1112
     - 2606:4700:4700::1002
-    family.cloudflare-dns.com:
-    - 1.1.1.3
-    - 1.0.0.3
-    - 2606:4700:4700::1113
-    - 2606:4700:4700::1003
     dns-cloudflare-safe:
     - 1.1.1.2
     - 1.0.0.2
-    - 1.1.1.3
-    - 1.0.0.3
     1dot1dot1dot1.cloudflare-dns.com:
     - 1.1.1.1
     - 1.0.0.1
@@ -411,6 +247,16 @@ dns:
     google-public-dns-a.google.com:
     - 8.8.8.8
     - 8.8.4.4
+    p0.freedns.controld.com:
+    - 76.76.2.0
+    - 76.76.10.0
+    - '2606:1a40::'
+    - '2606:1a40:1::'
+    freedns.controld.com:
+    - 76.76.2.0
+    - 76.76.10.0
+    - '2606:1a40::'
+    - '2606:1a40:1::'
     dns.quad9.net:
     - 9.9.9.9
     - 149.112.112.112
@@ -418,42 +264,6 @@ dns:
     - 2620:fe::9
     dns9.quad9.net:
     - 149.112.112.112
-    resolver1.opendns.com:
-    - 208.67.222.222
-    - 208.67.220.220
-    resolver2.opendns.com:
-    - 208.67.222.222
-    - 208.67.220.220
-    doh.opendns.com:
-    - 208.67.222.222
-    - 208.67.220.220
-    - 208.67.222.123
-    - 208.67.220.123
-    familyshield.opendns.com:
-    - 208.67.222.123
-    - 208.67.220.123
-    doh.cleanbrowsing.org:
-    - 185.228.168.9
-    - 185.228.169.9
-    family-filter-dns.cleanbrowsing.org:
-    - 185.228.168.9
-    - '2a0d:2a00:1::'
-    security-filter-dns.cleanbrowsing.org:
-    - 185.228.169.9
-    - '2a0d:2a00:2::'
-    cleanbrowsing.org:
-    - 185.228.168.9
-    - 185.228.169.9
-    dns.adguard-dns.com:
-    - 94.140.14.14
-    - 94.140.15.15
-    - 2a10:50c0::ad1:ff
-    - 2a10:50c0::ad2:ff
-    dns-family.adguard-dns.com:
-    - 94.140.14.15
-    - 94.140.15.16
-    - 2a10:50c0::bad1:ff
-    - 2a10:50c0::bad2:ff
     dns.nextdns.io:
     - 45.90.28.0
     - 45.90.30.0
@@ -462,10 +272,21 @@ dns:
     - 45.90.28.137
     - 2a07:a8c1::93:ad73
     - 2a07:a8c0::93:ad73
-    dns.yandex.com:
-    - 77.88.8.8
-    - 77.88.8.1
-    - 2a02:6b8::feed:0ff
+    doh.opendns.com:
+    - 208.67.222.222
+    - 208.67.220.220
+    - 2620:119:35::35
+    - 2620:119:53::53
+    dns.opendns.com:
+    - 208.67.222.222
+    - 208.67.220.220
+    - 2620:119:35::35
+    - 2620:119:53::53
+    dns.adguard-dns.com:
+    - 94.140.14.14
+    - 94.140.15.15
+    - 2a10:50c0::ad1:ff
+    - 2a10:50c0::ad2:ff
     dns.alidns.com:
     - 223.5.5.5
     - 223.6.6.6
@@ -489,224 +310,91 @@ dns:
   block_ips:
   - 1.1.1.1:53
   - 1.0.0.1:53
-  - 1.1.1.2:53
-  - 1.0.0.2:53
-  - 1.1.1.3:53
-  - 1.0.0.3:53
   - 2606:4700:4700::1111:53
   - 2606:4700:4700::1001:53
+  - 1.1.1.2:53
+  - 1.0.0.2:53
   - 2606:4700:4700::1112:53
   - 2606:4700:4700::1002:53
-  - 2606:4700:4700::1113:53
-  - 2606:4700:4700::1003:53
   - 8.8.8.8:53
   - 8.8.4.4:53
   - 2001:4860:4860::8888:53
   - 2001:4860:4860::8844:53
+  - 76.76.2.0:53
+  - 76.76.10.0:53
+  - 2606:1a40:::53
+  - 2606:1a40:1:::53
   - 9.9.9.9:53
   - 149.112.112.112:53
   - 2620:fe::fe:53
   - 2620:fe::9:53
+  - 45.90.28.137:53
+  - 45.90.30.137:53
+  - 2a07:a8c0::93:ad73:53
+  - 2a07:a8c1::93:ad73:53
   - 208.67.222.222:53
   - 208.67.220.220:53
-  - 208.67.222.123:53
-  - 208.67.220.123:53
-  - 2620:119:35::123:53
-  - 185.228.168.9:53
-  - 185.228.169.9:53
-  - 2a0d:2a00:1::53
-  - 2a0d:2a00:2::53
+  - 2620:119:35::35:53
+  - 2620:119:53::53:53
   - 94.140.14.14:53
   - 94.140.15.15:53
-  - 94.140.14.15:53
-  - 94.140.15.16:53
   - 2a10:50c0::ad1:ff:53
   - 2a10:50c0::ad2:ff:53
-  - 2a10:50c0::bad1:ff:53
-  - 2a10:50c0::bad2:ff:53
-  - 45.90.28.0:53
-  - 45.90.30.0:53
-  - 45.90.28.1:53
-  - 45.90.30.1:53
-  - 77.88.8.8:53
-  - 77.88.8.1:53
-  - 77.88.8.88:53
-  - 77.88.8.7:53
-  - 2a02:6b8::feed:ff:53
-  - 2a02:6b8::feed:bad:53
-  - 2a02:6b8:0:1::feed:ff:53
   - 223.5.5.5:53
   - 223.6.6.6:53
   - 2400:3200::1:53
   - 2400:3200:baba::1:53
   - 119.29.29.29:53
   - 182.254.116.116:53
-  - 1.12.12.12:53
-  - 120.53.53.53:53
-  - 2402:4e00::53
-  - 127.0.0.1:53
-  - 0.0.0.0:53
-  - '*:53'
+  - 2402:4e00:::53
+  - 17.253.14.245:53
+  - 2620:149:AF:::53
+  - '  *:53'
   public_ip_lookup_url: https://ipinfo.io/ip
-proxies:
-- http:
-    name: U989124992380.edge.onetcdn.com
-    server: U989124992380.edge.onetcdn.com
-    port: 37810
-    username: ''
-    password: ''
-    tfo: false
-policy_groups:
-- select:
-    name: SELECT
-    policies:
-    - REJECT
-    - REJECT-DROP
-    - DIRECT
-    - PROXY
-    - Other
-    - U989124992380.edge.onetcdn.com
-    - Hong Kong
-    - TaiWan
-    - Korea
-    - Japan
-    - Vietnam
-    - Singapore
-    - United States
-    flatten: false
-    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Bypass.png
-    hidden: false
-- external:
-    name: PROXY
-    type: select
-    urls:
-    - https://sub.store/download/collection/Loon_linchao10058
-    - https://sub.store/download/collection/Surge_linchao10058
-    - https://sub.store/download/collection/Egern_linchao10058
-    - https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
-    urls_disabled:
-    - https://sub.store/download/collection/Loon_linchao10058
-    - https://sub.store/download/collection/Egern_linchao10058
-    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
-    hidden: false
-- select:
-    name: China
-    policies:
-    - REJECT
-    - REJECT-DROP
-    - DIRECT
-    - SELECT
-    - PROXY
-    - Other
-    flatten: false
-    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/cn.png
-    hidden: false
-- select:
-    name: Global
-    policies:
-    - REJECT
-    - REJECT-DROP
-    - DIRECT
-    - SELECT
-    - PROXY
-    - Other
-    flatten: false
-    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Global.png
-    hidden: false
-- select:
-    name: Advertising
-    policies:
-    - REJECT
-    - REJECT-DROP
-    - DIRECT
-    - SELECT
-    - PROXY
-    - Other
-    flatten: false
-    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/AdWhite.png
-    hidden: false
-- select:
-    name: Other
-    policies:
-    - REJECT
-    - REJECT-DROP
-    - DIRECT
-    - SELECT
-    - PROXY
-    - U989124992380.edge.onetcdn.com
-    - Hong Kong
-    - TaiWan
-    - Korea
-    - Japan
-    - Vietnam
-    - Singapore
-    - United States
-    flatten: false
-    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Area.png
-    hidden: false
-- auto_test:
-    name: Hong Kong
-    policies:
-    - PROXY
-    flatten: true
-    filter: (?i)(?:🇭🇰|HK|Hong Kong|香港)
-    tolerance: 50
-    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/hk.png
-    hidden: false
-- auto_test:
-    name: TaiWan
-    policies:
-    - PROXY
-    flatten: true
-    filter: (?i)(?:🇹🇼|TW|Taiwan|台湾|台灣)
-    tolerance: 50
-    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/tw.png
-    hidden: false
-- auto_test:
-    name: Korea
-    policies:
-    - PROXY
-    flatten: true
-    filter: (?i)(?:🇰🇷|KR|Korea|韓國|韩国)
-    tolerance: 50
-    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/kr.png
-    hidden: false
-- auto_test:
-    name: Japan
-    policies:
-    - PROXY
-    flatten: true
-    filter: (?i)(?:🇯🇵|JP|Japan|日本)
-    tolerance: 50
-    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/jp.png
-    hidden: false
-- auto_test:
-    name: Singapore
-    policies:
-    - PROXY
-    flatten: true
-    filter: (?i)(?:🇸🇬|SG|Singapore|新加坡)
-    tolerance: 50
-    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/sg.png
-    hidden: false
-- auto_test:
-    name: Vietnam
-    policies:
-    - PROXY
-    flatten: true
-    filter: (?i)(?:🇻🇳|VN|Vietnam|越南)
-    tolerance: 50
-    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/vn.png
-    hidden: false
-- auto_test:
-    name: United States
-    policies:
-    - PROXY
-    flatten: true
-    filter: (?i)(?:🇺🇸|US|USA|United States|America|美国|美國)
-    tolerance: 50
-    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/us.png
-    hidden: false
+bypass_tunnel_proxy:
+- localhost
+- '*.local'
+- '*.lan'
+- '*.home.arpa'
+- '*.crashlytics.com'
+- '*.10086.cn'
+- '*.chinamobile.com'
+- '*.chinamobileltd.com'
+- '*.cnmobile.net'
+- '*.monternet.com'
+- '*.cmcc.com'
+- '*.cnmobile.com'
+- '*.189.cn'
+- '*.chinatelecom.com'
+- '*.chinatelecom.com.cn'
+- '*.chinatelecom.cn'
+- '*.chinatelecomglobal.com'
+- '*.e-surfing.com'
+- '*.10010.cn'
+- '*.10010.com'
+- '*.chinaunicom.com'
+- '*.chinaunicom.cn'
+- '*.wo.com.cn'
+- '*.wo.cn'
+- '*.unicom.com'
+- '*.chinaunicomglobal.com'
+- '*.icbc.com'
+- '*.icbc.com.cn'
+- '*.icbc.cn'
+- '*.abchina.com'
+- '*.abchina.com.cn'
+- '*.abchina.cn'
+- '*.ccb.com'
+- '*.ccb.com.cn'
+- '*.ccb.cn'
+- '*.boc.cn'
+- '*.boc.com'
+- '*.bankofchina.com'
+- '*.bankcomm.com'
+- '*.bocom.com'
+- '*.bankcomm.cn'
+- '*.psbc.com'
+- '*.psbc.com.cn'
 real_ip_domains:
 - '*.srv.nintendo.net'
 - '*.nintendo.net'
@@ -740,11 +428,166 @@ real_ip_domains:
 - '*.epicgames.com'
 - '*.origin.com'
 - '*.ea.com'
+proxies:
+- http:
+    name: U989124992380.edge.onetcdn.com
+    server: U989124992380.edge.onetcdn.com
+    port: 37810
+    username: ''
+    password: ''
+    tfo: false
+policy_groups:
+- select:
+    name: Select
+    policies:
+    - REJECT
+    - REJECT-DROP
+    - DIRECT
+    - Proxy
+    - Other
+    - U989124992380.edge.onetcdn.com
+    - Hong Kong
+    - TaiWan
+    - Korea
+    - Japan
+    - Vietnam
+    - Singapore
+    - United States
+    flatten: false
+    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/Egern.png
+    hidden: false
+- external:
+    name: Proxy
+    type: select
+    urls:
+    - https://sub.store/download/collection/Surge_linchao10058
+    - https://sub.store/download/collection/Loon_linchao10058
+    - https://sub.store/download/collection/Egern_linchao10058
+    - https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
+    urls_disabled:
+    - https://sub.store/download/collection/Surge_linchao10058
+    - https://sub.store/download/collection/Loon_linchao10058
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
+    hidden: false
+- select:
+    name: China
+    policies:
+    - REJECT
+    - REJECT-DROP
+    - DIRECT
+    - Select
+    - Proxy
+    - Other
+    flatten: false
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/cn.png
+    hidden: false
+- select:
+    name: Global
+    policies:
+    - REJECT
+    - REJECT-DROP
+    - DIRECT
+    - Select
+    - Proxy
+    - Other
+    flatten: false
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Global.png
+    hidden: false
+- select:
+    name: Advertising
+    policies:
+    - REJECT
+    - REJECT-DROP
+    - DIRECT
+    - Select
+    - Proxy
+    - Other
+    flatten: false
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/AdWhite.png
+    hidden: false
+- select:
+    name: Other
+    policies:
+    - REJECT
+    - REJECT-DROP
+    - DIRECT
+    - Select
+    - Proxy
+    - U989124992380.edge.onetcdn.com
+    - Hong Kong
+    - TaiWan
+    - Korea
+    - Japan
+    - Vietnam
+    - Singapore
+    - United States
+    flatten: false
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Area.png
+    hidden: false
+- auto_test:
+    name: Hong Kong
+    policies:
+    - Proxy
+    flatten: true
+    filter: (?i)(?:🇭🇰|HK|Hong Kong|香港)
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/hk.png
+    hidden: false
+- auto_test:
+    name: TaiWan
+    policies:
+    - Proxy
+    flatten: true
+    filter: (?i)(?:🇹🇼|TW|Taiwan|台湾|台灣)
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/tw.png
+    hidden: false
+- auto_test:
+    name: Korea
+    policies:
+    - Proxy
+    flatten: true
+    filter: (?i)(?:🇰🇷|KR|Korea|韓國|韩国)
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/kr.png
+    hidden: false
+- auto_test:
+    name: Japan
+    policies:
+    - Proxy
+    flatten: true
+    filter: (?i)(?:🇯🇵|JP|Japan|日本)
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/jp.png
+    hidden: false
+- auto_test:
+    name: Singapore
+    policies:
+    - Proxy
+    flatten: true
+    filter: (?i)(?:🇸🇬|SG|Singapore|新加坡)
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/sg.png
+    hidden: false
+- auto_test:
+    name: Vietnam
+    policies:
+    - Proxy
+    flatten: true
+    filter: (?i)(?:🇻🇳|VN|Vietnam|越南)
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/vn.png
+    hidden: false
+- auto_test:
+    name: United States
+    policies:
+    - Proxy
+    flatten: true
+    filter: (?i)(?:🇺🇸|US|USA|United States|America|美国|美國)
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/us.png
+    hidden: false
 rules:
-- rule_set:
-    match: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/rule/substore.list
-    policy: PROXY
-    disabled: false
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All.list
     policy: China
@@ -754,47 +597,47 @@ rules:
     policy: Global
     disabled: false
 - rule_set:
-    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Microsoft.list
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Microsoft/Microsoft.list
     policy: Global
     disabled: false
 - rule_set:
     match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Cloudflare.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
-    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Amazon.list
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Amazon/Amazon.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Anthropic/Anthropic.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Facebook/Facebook.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Instagram/Instagram.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Threads/Threads.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Whatsapp/Whatsapp.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
-    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/YouTube.list
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/YouTube/YouTube.list
     policy: Global
     disabled: false
 - rule_set:
@@ -804,11 +647,11 @@ rules:
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/TikTok/TikTok.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list
     policy: Global
@@ -816,19 +659,19 @@ rules:
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/WeChat/WeChat.list
     policy: China
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Discord/Discord.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Reddit/Reddit.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Snap/Snap.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Zalo.list
     policy: Global
@@ -836,78 +679,77 @@ rules:
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Line/Line.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/KakaoTalk/KakaoTalk.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/LinkedIn/LinkedIn.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleVoice/GoogleVoice.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/HuggingFace.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
-    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Grok.list
+    match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/xAI.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Copilot/Copilot.list
     policy: Global
-    disabled: false
+    disabled: true
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Teams/Teams.list
+    policy: Global
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Meta_AI.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Perplexity.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Mistral.AI.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Rule/Character.AI.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Adobe/Adobe.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Pinterest/Pinterest.list
     policy: Global
-    disabled: false
+    disabled: true
 - rule_set:
-    name: Adrules.top
-    match: https://adrules.top/adrules.list
-    policy: Advertising
-    disabled: false
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Game/Roblox/Roblox.list
+    policy: Global
+    disabled: true
 - rule_set:
-    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All.list
-    policy: Advertising
-    disabled: false
-- rule_set:
-    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Game/Game.list
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/GlobalMedia/GlobalMedia_All.list
     policy: Global
     disabled: false
 - rule_set:
-    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Game/Roblox/Roblox.list
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Game/Game.list
     policy: Global
     disabled: false
 - rule_set:
@@ -915,25 +757,17 @@ rules:
     policy: Global
     disabled: false
 - rule_set:
-    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Tencent/Tencent.list
-    policy: China
-    disabled: false
-- rule_set:
-    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Alibaba/Alibaba_All.list
-    policy: China
-    disabled: false
-- rule_set:
-    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ByteDance/ByteDance.list
-    policy: China
-    disabled: false
-- rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMax/ChinaMax_All.list
     policy: China
     disabled: false
 - rule_set:
-    name: 'Sub-Store 「vercel.app」: 1. 确认安装Sub Store模块。  2. 将模块生效顺序放到最底部。  3. 开启MITM脚本,重写这三个开关。  4. 代理规则添加「DOMAIN-SUFFIX」→「vercel.app」走代理节点。'
+    name: 'Sub-Store 「sub-store.vercel.app」: 1. 确认安装Sub Store模块。2. 将模块生效顺序放到最底部。3. 开启MITM脚本,重写这三个开关。4. 代理规则添加「DOMAIN-SUFFIX」→「vercel.app」走代理节点。'
     match: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/rule/substore.list
-    policy: PROXY
+    policy: Proxy
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All.list
+    policy: Advertising
     disabled: false
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Privacy/Privacy_All.list
@@ -945,7 +779,7 @@ rules:
     disabled: false
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DNS/DNS.list
-    policy: PROXY
+    policy: Proxy
     disabled: false
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list
@@ -957,7 +791,7 @@ rules:
     no_resolve: false
     disabled: false
 - default:
-    policy: PROXY
+    policy: Proxy
 scriptings:
 - http_request:
     name: sub-info
@@ -974,13 +808,11 @@ scriptings:
     binary_body: false
     disabled: true
 mitm:
-  enabled: true
   ca_p12: egern.p12
   ca_passphrase: YOUR_SECURE_PASSWORD_HERE
   hostnames:
     includes:
     - '*.vercel.app'
-    - '*.safebrowsing.urlsec.qq.com'
     - '*.byteoversea.com'
     - '*.ibytedtos.com'
     - '*.ibyteimg.com'
@@ -994,8 +826,9 @@ mitm:
     - '*.tik-tokapi.com'
     - '*.tiktokv.com'
     - '*.tiktok.com'
+    - '*.safebrowsing.urlsec.qq.com'
     excludes:
-    - .localhost
+    - localhost
     - '*.local'
     - '*.lan'
     - '*.home.arpa'
@@ -1038,122 +871,127 @@ mitm:
     - '*.bankcomm.cn'
     - '*.psbc.com'
     - '*.psbc.com.cn'
+  hostnames_disabled:
+    includes:
+    - '*.byteoversea.com'
+    - '*.ibytedtos.com'
+    - '*.ibyteimg.com'
+    - '*.ipstatp.com'
+    - '*.amemv.com'
+    - '*.muscdn.com'
+    - '*.musical.ly'
+    - '*.snssdk.com'
+    - '*.sgpstatp.com'
+    - '*.tiktokcdn.com'
+    - '*.tik-tokapi.com'
+    - '*.tiktokv.com'
+    - '*.tiktok.com'
 http_captures:
   includes:
-    # Privacy & DNS
-    - '*.quad9.net'
-    - '*.opendns.com'
-    - '*.cleanbrowsing.org'
-    - '*.yandex.net'
-    - '*.google.com'
-    - '*.cloudflare.com'
-    - '*.nextdns.io'
-    - '*.adguard.com'
-    - '*.adguard-dns.com'
-    # China Operators
-    - '*.chinamobile.com'
-    - '*.10086.cn'
-    - '*.monternet.com'
-    - '*.chinaunicom.cn'
-    - '*.wo.com.cn'
-    - '*.chinatelecom.cn'
-    - '*.189.cn'
-    - '*.cbn.cn'
-    # Video
-    - '*.youtube.com'
-    - '*.netflix.com'
-    - '*.bilibili.com'
-    - '*.tiktok.com'
-    - '*.douyin.com'
-    - iesdouyin.com
-    - '*.iqiyi.com'
-    - '*.youku.com'
-    - '*.v.qq.com'
-    - '*.disneyplus.com'
-    - '*.primevideo.com'
-    - '*.hbomax.com'
-    # Music
-    - '*.spotify.com'
-    - '*.music.youtube.com'
-    - '*.music.apple.com'
-    - '*.amazonmusic.com'
-    - '*.tidal.com'
-    - '*.deezer.com'
-    - '*.qobuz.com'
-    - '*.pandora.com'
-    - '*.napster.com'
-    # Social
-    - '*.facebook.com'
-    - '*.instagram.com'
-    - '*.whatsapp.com'
-    - '*.twitter.com'
-    - '*.x.com'
-    - '*.snapchat.com'
-    - '*.reddit.com'
-    - '*.discord.com'
-    - '*.discordapp.com'
-    - '*.telegram.org'
-    - '*.line.me'
-    - '*.kakao.com'
-    - '*.zalo.me'
-    - '*.zaloapp.com'
-    - '*.tumblr.com'
-    - '*.pinterest.com'
-    - '*.threads.net'
-    - '*.blueskyweb.xyz'
-    - '*.linkedin.com'
-    - '*.weixin.qq.com'
-    - '*.wechat.com'
-    # E-commerce & Payment
-    - '*.amazon.com'
-    - '*.jd.com'
-    - '*.tmall.com'
-    - '*.taobao.com'
-    - '*.pinduoduo.com'
-    - '*.shopee.com'
-    - '*.lazada.com'
-    - '*.shopify.com'
-    - '*.meituan.com'
-    - '*.alipay.com'
-    - '*.paypal.com'
-    - '*.stripe.com'
-    # Gaming
-    - '*.roblox.com'
-    - '*.nintendo.net'
-    - '*.steampowered.com'
-    - '*.steamcommunity.com'
-    - '*.epicgames.com'
-    - '*.playstation.com'
-    - '*.xbox.com'
-    - '*.riotgames.com'
-    - '*.blizzard.com'
-    # Productivity & Tools
-    - '*.adobe.com'
-    - '*.zoho.com'
-    - '*.slack.com'
-    - '*.zoom.us'
-    - 'webex.com'
-    - '*.notion.so'
-    - '*.dropbox.com'
-    - '*.evernote.com'
-    - '*.onenote.com'
-    - '*.microsoft.com'
-    - '*.apple.com'
-    - '*.icloud.com'
-    - '*.google.com'
-    - '*.github.com'
-    # AI & Tech
-    - '*.openai.com'
-    - '*.anthropic.com'
-    - '*.perplexity.ai'
-    - '*.character.ai'
-    - '*.mistral.ai'
-    - '*.x.ai'
-    - '*.gemini.google.com'
-    - '*.meta.com'
-    - 'poe.com'
-   # Sub Store
-    - '*.vercel.app'
+  - '*.quad9.net'
+  - '*.opendns.com'
+  - '*.cleanbrowsing.org'
+  - '*.yandex.net'
+  - '*.google.com'
+  - '*.cloudflare.com'
+  - '*.nextdns.io'
+  - '*.adguard.com'
+  - '*.adguard-dns.com'
+  - '*.chinamobile.com'
+  - '*.10086.cn'
+  - '*.monternet.com'
+  - '*.chinaunicom.cn'
+  - '*.wo.com.cn'
+  - '*.chinatelecom.cn'
+  - '*.189.cn'
+  - '*.cbn.cn'
+  - '*.youtube.com'
+  - '*.netflix.com'
+  - '*.bilibili.com'
+  - '*.tiktok.com'
+  - '*.douyin.com'
+  - iesdouyin.com
+  - '*.iqiyi.com'
+  - '*.youku.com'
+  - '*.v.qq.com'
+  - '*.disneyplus.com'
+  - '*.primevideo.com'
+  - '*.hbomax.com'
+  - '*.spotify.com'
+  - '*.music.youtube.com'
+  - '*.music.apple.com'
+  - '*.amazonmusic.com'
+  - '*.tidal.com'
+  - '*.deezer.com'
+  - '*.qobuz.com'
+  - '*.pandora.com'
+  - '*.napster.com'
+  - '*.facebook.com'
+  - '*.instagram.com'
+  - '*.whatsapp.com'
+  - '*.twitter.com'
+  - '*.x.com'
+  - '*.snapchat.com'
+  - '*.reddit.com'
+  - '*.discord.com'
+  - '*.discordapp.com'
+  - '*.telegram.org'
+  - '*.line.me'
+  - '*.kakao.com'
+  - '*.zalo.me'
+  - '*.zaloapp.com'
+  - '*.tumblr.com'
+  - '*.pinterest.com'
+  - '*.threads.net'
+  - '*.blueskyweb.xyz'
+  - '*.linkedin.com'
+  - '*.weixin.qq.com'
+  - '*.wechat.com'
+  - '*.amazon.com'
+  - '*.jd.com'
+  - '*.tmall.com'
+  - '*.taobao.com'
+  - '*.pinduoduo.com'
+  - '*.shopee.com'
+  - '*.lazada.com'
+  - '*.shopify.com'
+  - '*.meituan.com'
+  - '*.alipay.com'
+  - '*.paypal.com'
+  - '*.stripe.com'
+  - '*.roblox.com'
+  - '*.nintendo.net'
+  - '*.steampowered.com'
+  - '*.steamcommunity.com'
+  - '*.epicgames.com'
+  - '*.playstation.com'
+  - '*.xbox.com'
+  - '*.riotgames.com'
+  - '*.blizzard.com'
+  - '*.adobe.com'
+  - '*.zoho.com'
+  - '*.slack.com'
+  - '*.zoom.us'
+  - '*.webex.com'
+  - '*.notion.so'
+  - '*.dropbox.com'
+  - '*.evernote.com'
+  - '*.onenote.com'
+  - '*.microsoft.com'
+  - '*.apple.com'
+  - '*.icloud.com'
+  - '*.google.com'
+  - '*.github.com'
+  - '*.openai.com'
+  - '*.anthropic.com'
+  - '*.perplexity.ai'
+  - '*.character.ai'
+  - '*.mistral.ai'
+  - '*.x.ai'
+  - '*.gemini.google.com'
+  - '*.meta.com'
+  - '*.poe.com'
+  - '*.vercel.app'
 modules:
 - name: BoxJs
   url: https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.surge.sgmodule
@@ -1164,30 +1002,49 @@ modules:
 - name: Sub-Store
   url: https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/config/Surge.sgmodule
   enabled: true
+- url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/Panel/Group-Panel/Moore/Group-Panel.sgmodule
+  enabled: true
 - name: IP-Check
   url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/Panel/IP-Check/Moore/IP-Check.sgmodule
   enabled: true
 - name: Network Info Panel
   url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/Panel/Network-Info/Moore/Network-Info.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/Panel/Sub-info/Moore/Sub-info.sgmodule
-  enabled: true
-- url: https://raw.githubusercontent.com/Squarelan/Proxy-Configuration/main/Surge/Flowsub.sgmodule
-  enabled: true
 - name: 网络信息 𝕏
   url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Net-lsp-x/Moore/net-lsp-x.sgmodule
   enabled: true
 - name: 网络接口信息
   url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Interface-Info/Moore/interface-info-normal.sgmodule
+  compat_arguments:
+    STYLE: compact
+    UPDATE-INTERVAL: '1'
+  enabled: true
+- url: https://raw.githubusercontent.com/Likhixang/Egerny/refs/heads/main/sgmodule/IPPure.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/NodeLinkCheck/Surge.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/Squarelan/Proxy-Configuration/main/Surge/Flowsub.sgmodule
+  compat_arguments:
+    A名称: Egern_linchao10058
+    A地址: https://sub.store/download/collection/Egern_linchao10058
+    A重置: '30'
+    B名称: https://sub.store/download/collection/Loon_linchao10058
+    B地址: Loon_linchao10058
+    B重置: '30'
+    C名称: Surge_linchao10058
+    C地址: https://sub.store/download/collection/Surge_linchao10058
+    C重置: '30'
+    D名称: 套路云.com_xn--9kq85xcu6b.com_02
+    D地址: https://2.luolicon.ru/oosaka/ed991e6abc212e58da6a486e77cf55f2
+    D重置: '4'
+    E名称: crosswall.org_keluosi.top_01
+    E地址: http://162.19.79.201/s/4773f916fe3c57253658ff015c991b99
+    E重置: '18'
+  enabled: true
+- url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/Panel/MultiPanel/MultiPanel.sgmodule
   enabled: true
 - name: NetSpeed
   url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/Panel/Net_Speed/Net_Speed.sgmodule
-  enabled: true
-- name: 流媒体解锁检测
-  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/Panel/Stream-All/Moore/Stream-All.sgmodule
-  enabled: true
-- name: 节假日信息
-  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Timecard/Moore/Timecard.sgmodule
   enabled: true
 - name: Server Info
   url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/serverinfo.sgmodule
@@ -1195,13 +1052,23 @@ modules:
 - name: Flush DNS
   url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Flush-DNS/Moore/Flush-DNS.sgmodule
   enabled: true
+- url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Surge-Pro/Moore/SurgePro.sgmodule
+  enabled: true
+- name: 流媒体解锁检测
+  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/Panel/Stream-All/Moore/Stream-All.sgmodule
+  enabled: true
 - name: '☁️ Cloudflare: 1️⃣ 1.1.1.1 with WARP'
   url: https://raw.githubusercontent.com/VirgilClyne/Cloudflare/main/modules/Cloudflare.1.1.1.1.sgmodule
+  enabled: true
+- name: 节假日信息
+  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Timecard/Moore/Timecard.sgmodule
   enabled: true
 - url: https://raw.githubusercontent.com/Keywos/rule/main/script/st/surgetool.sgmodule
   enabled: true
 - name: Advertising
   url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/Advertising/Advertising.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Advertising/Advertising_MITM.sgmodule
   enabled: true
 - name: Advertising_Mock
   url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/Advertising/Advertising_Mock.sgmodule
@@ -1211,6 +1078,8 @@ modules:
   enabled: true
 - name: AllInOne_Mock
   url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne_Mock.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/GlobalMedia/GlobalMedia_MITM.sgmodule
   enabled: true
 - name: 广告联盟
   url: https://raw.githubusercontent.com/app2smile/rules/master/module/adsense.sgmodule
@@ -1226,20 +1095,11 @@ modules:
 - name: General
   url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/General/General.sgmodule
   enabled: true
-- name: Profile Module
-  url: https://raw.githubusercontent.com/HotKids/Rules/master/Surge/Module/Profile.sgmodule
+- name: Block Tencent SafeBrowsing
+  url: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/Block-Tencent-SafeBrowsing.sgmodule
   enabled: true
 - name: Https抓包
   url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/https.module
-  enabled: true
-- name: Mieqq 绕过代理
-  url: https://raw.githubusercontent.com/mieqq/mieqq/master/skip-proxy-lists.sgmodule
-  enabled: true
-- name: Sukka 本地DNS映射
-  url: https://ruleset.skk.moe/Modules/sukka_local_dns_mapping.sgmodule
-  enabled: true
-- name: BlockHTTPDNS
-  url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/BlockHTTPDNS/BlockHTTPDNS.sgmodule
   enabled: true
 - name: Redirect
   url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/Redirect/Redirect.sgmodule
@@ -1247,20 +1107,8 @@ modules:
 - name: SafeRedirect
   url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/SafeRedirect/SafeRedirect.sgmodule
   enabled: true
-- name: Block Tencent SafeBrowsing
-  url: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/Block-Tencent-SafeBrowsing.sgmodule
-  enabled: true
 - name: Google重定向
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Google%E9%87%8D%E5%AE%9A%E5%90%91.sgmodule
-  enabled: true
-- name: Ali-DoH
-  url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Spec/DoH/Moore/Ali-DoH.sgmodule
-  enabled: true
-- name: DNSPod-DoH
-  url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Spec/DoH/Moore/DNSPod-DoH.sgmodule
-  enabled: true
-- name: Ali-DNS over QUIC
-  url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Spec/DNS-QUIC/Moore/Ali-DoQ.sgmodule
   enabled: true
 - name: '☁️ Cloudflare: 🇩 DNS'
   url: https://github.com/Auraflare/DNS/releases/latest/download/Cloudflare.DNS.sgmodule
@@ -1322,35 +1170,19 @@ modules:
 - name: '📺 BiliBili: 🌐 Global'
   url: https://github.com/BiliUniverse/Global/releases/latest/download/BiliBili.Global.sgmodule
   enabled: true
-- name: 通用解锁Premiere
-  url: https://raw.githubusercontent.com/githubdulong/Script/refs/heads/master/Surge/Revenuecat.sgmodule
+- url: https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule
   enabled: true
-- name: YouTube去广告(>=iOS15)
-  url: https://raw.githubusercontent.com/app2smile/rules/master/module/youtube.sgmodule
-  enabled: true
-- name: Youtube (Music) Enhance (egerndaddy)
-  url: https://raw.githubusercontent.com/egerndaddy/Tool/refs/heads/X/Egern/Module/YouTube.yaml
-  enabled: true
-- url: https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule
-  enabled: true
+- url: https://raw.githubusercontent.com/app2smile/rules/refs/heads/master/module/youtube.sgmodule
+  enabled: false
 - name: Spotify(>=iOS15)
   url: https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.module
   enabled: true
 - name: Spotify(iOS15)
   url: https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/spotifyVIP.module
-  enabled: true
+  enabled: false
 - name: Spotify (app2smile)
   url: https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.module
-  enabled: true
-- name: YouTube Enhance and AdBlock
-  url: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/YouTube.sgmodule
-  enabled: true
-- name: Spotify Enhance and AdBlock
-  url: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/refs/heads/main/Surge/Module/Spotify.sgmodule
-  enabled: true
-- name: TikTok解锁区域限制,下载去水印,自定义参数
-  url: https://raw.githubusercontent.com/githubdulong/Script/refs/heads/master/Surge/TikTok_Surge.sgmodule
-  enabled: true
+  enabled: false
 - name: Reddit去广告
   url: https://raw.githubusercontent.com/githubdulong/Script/refs/heads/master/Surge/Reddit.sgmodule
   enabled: true
@@ -1411,17 +1243,11 @@ modules:
 - name: 爱奇艺视频去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E7%88%B1%E5%A5%87%E8%89%BA%E8%A7%86%E9%A2%91%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
-- name: 爱奇艺会员签到
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E7%88%B1%E5%A5%87%E8%89%BA%E4%BC%9A%E5%91%98%E7%AD%BE%E5%88%B0.official.sgmodule
-  enabled: true
 - name: 腾讯视频去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
 - name: 优酷视频去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E4%BC%98%E9%85%B7%E8%A7%86%E9%A2%91%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
-  enabled: true
-- name: 芒果TV去广告
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E8%8A%92%E6%9E%9CTV%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
 - name: Bilibili (app2smile)
   url: https://raw.githubusercontent.com/app2smile/rules/master/module/bilibili.sgmodule
@@ -1459,12 +1285,6 @@ modules:
 - name: 微博去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BE%AE%E5%8D%9A%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
-- name: 微博国际版去广告
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BE%AE%E5%8D%9A%E5%9B%BD%E9%99%85%E7%89%88%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
-  enabled: true
-- name: 云闪付去广告
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E4%BA%91%E9%97%AA%E4%BB%98%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
-  enabled: true
 - name: 中国移动云盘去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8%E4%BA%91%E7%9B%98%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
@@ -1492,12 +1312,6 @@ modules:
 - name: 百度输入法去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E7%99%BE%E5%BA%A6%E8%BE%93%E5%85%A5%E6%B3%95%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
-- name: 百度贴吧签到
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E7%99%BE%E5%BA%A6%E8%B4%B4%E5%90%A7%E7%AD%BE%E5%88%B0.official.sgmodule
-  enabled: true
-- name: 贴吧去广告 (Official)
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E8%B4%B4%E5%90%A7%E5%8E%BB%E5%B9%BF%E5%91%8A.official.sgmodule
-  enabled: true
 - name: 京东比价
   url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/refs/heads/Surge/modules/JD_Price/Moore/JD_Price.sgmodule
   enabled: true
@@ -1515,7 +1329,4 @@ modules:
   enabled: true
 - name: 滴滴出行去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E6%BB%B4%E6%BB%B4%E5%87%BA%E8%A1%8C%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
-  enabled: true
-- name: 携程旅行签到
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E6%90%BA%E7%A8%8B%E6%97%85%E8%A1%8C%E7%AD%BE%E5%88%B0.official.sgmodule
-  enabled: true
+
