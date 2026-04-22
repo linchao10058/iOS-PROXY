@@ -429,6 +429,69 @@ real_ip_domains:
 - '*.origin.com'
 - '*.ea.com'
 proxies:
+- wireguard:
+    name: ☁️ CFWarp-D
+    server: 162.159.192.217
+    port: 3476
+    private_key: SHVqHEGI7k2+OQ/oWMmWY2EQObbRQjRBdDPimh0h1WY=
+    peer_public_key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+    local_ipv4: 172.16.0.2
+    dns_servers:
+    - 1.1.1.1
+    mtu: 1420
+    keepalive: 30
+- wireguard:
+    name: WARP+GSCats
+    server: 162.159.193.6
+    port: 2408
+    private_key: eKycj9KyGKX4Gyj9ntOXIwc3stSSN8LmQ8U7Tvq7sW8=
+    peer_public_key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+    local_ipv4: 172.16.0.2
+    local_ipv6: 2606:4700:110:81bc:1fc5:5bf3:78d:754f
+    dns_servers:
+    - 2606:4700:4700::1111
+    - 162.159.36.1
+    mtu: 1400
+    keepalive: 45
+- wireguard:
+    name: Warp+GSC1
+    server: 162.159.195.9
+    port: 2408
+    private_key: oFl4IF42oioy2rU9Dc2af5vi6X6+zbFDnY/CUckU23g=
+    peer_public_key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+    local_ipv4: 172.16.0.2
+    local_ipv6: 2606:4700:110:8f71:49f:13f4:55d6:a577
+    dns_servers:
+    - 2606:4700:4700::1111
+    - 162.159.36.1
+    mtu: 1380
+    keepalive: 45
+- wireguard:
+    name: Warp+GSC2
+    server: 162.159.193.6
+    port: 2408
+    private_key: eKycj9KyGKX4Gyj9ntOXIwc3stSSN8LmQ8U7Tvq7sW8=
+    peer_public_key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+    local_ipv4: 172.16.0.2
+    local_ipv6: 2606:4700:110:81bc:1fc5:5bf3:78d:754f
+    dns_servers:
+    - 2606:4700:4700::1111
+    - 162.159.36.1
+    mtu: 1400
+    keepalive: 45
+- wireguard:
+    name: Warp+GSC3
+    server: 162.159.195.8
+    port: 2408
+    private_key: oFl4IF42oioy2rU9Dc2af5vi6X6+zbFDnY/CUckU23g=
+    peer_public_key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+    local_ipv4: 172.16.0.2
+    local_ipv6: 2606:4700:110:8f71:49f:13f4:55d6:a577
+    dns_servers:
+    - 2606:4700:4700::1111
+    - 162.159.36.1
+    mtu: 1400
+    keepalive: 45
 - http:
     name: U989124992380.edge.onetcdn.com
     server: U989124992380.edge.onetcdn.com
