@@ -100,6 +100,12 @@ vif_excluded_routes:
 - '*.bankcomm.cn'
 - '*.psbc.com'
 - '*.psbc.com.cn'
+- 127.0.0.1/32
+- 192.168.0.0/16
+- 10.0.0.0/8
+- 172.16.0.0/12
+- 100.64.0.0/10
+- 17.0.0.0/8
 dns:
   bootstrap:
   - 1.1.1.1
@@ -395,6 +401,12 @@ bypass_tunnel_proxy:
 - '*.bankcomm.cn'
 - '*.psbc.com'
 - '*.psbc.com.cn'
+- 127.0.0.1/32
+- 192.168.0.0/16
+- 10.0.0.0/8
+- 172.16.0.0/12
+- 100.64.0.0/10
+- 17.0.0.0/8
 real_ip_domains:
 - '*.srv.nintendo.net'
 - '*.nintendo.net'
@@ -503,12 +515,8 @@ policy_groups:
 - select:
     name: Select
     policies:
-    - REJECT
-    - REJECT-DROP
     - DIRECT
-    - Proxy
-    - Other
-    - U989124992380.edge.onetcdn.com
+    - REJECT
     - Hong Kong
     - TaiWan
     - Korea
@@ -516,8 +524,10 @@ policy_groups:
     - Vietnam
     - Singapore
     - United States
+    - Proxy
+    - Other
     flatten: false
-    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/Egern.png
+    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/Egern.png
     hidden: false
 - external:
     name: Proxy
@@ -526,7 +536,6 @@ policy_groups:
     - https://sub.store/download/collection/Surge_linchao10058
     - https://sub.store/download/collection/Loon_linchao10058
     - https://sub.store/download/collection/Egern_linchao10058
-    - https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
     urls_disabled:
     - https://sub.store/download/collection/Surge_linchao10058
     - https://sub.store/download/collection/Loon_linchao10058
@@ -535,9 +544,8 @@ policy_groups:
 - select:
     name: China
     policies:
-    - REJECT
-    - REJECT-DROP
     - DIRECT
+    - REJECT
     - Select
     - Proxy
     - Other
@@ -547,9 +555,8 @@ policy_groups:
 - select:
     name: Global
     policies:
-    - REJECT
-    - REJECT-DROP
     - DIRECT
+    - REJECT
     - Select
     - Proxy
     - Other
@@ -559,9 +566,10 @@ policy_groups:
 - select:
     name: Advertising
     policies:
+    - DIRECT
     - REJECT
     - REJECT-DROP
-    - DIRECT
+    - REJECT-NO-DROP
     - Select
     - Proxy
     - Other
@@ -571,11 +579,15 @@ policy_groups:
 - select:
     name: Other
     policies:
-    - REJECT
-    - REJECT-DROP
     - DIRECT
+    - REJECT
     - Select
     - Proxy
+    - WARP+GSCats
+    - ☁️ CFWarp-D
+    - Warp+GSC1
+    - Warp+GSC2
+    - Warp+GSC3
     - U989124992380.edge.onetcdn.com
     - Hong Kong
     - TaiWan
@@ -857,19 +869,37 @@ rules:
     policy: Proxy
 scriptings:
 - http_request:
+    name: 机场订阅流量监控
+    match: ''
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Sub_Widget.JS
+    body_required: false
+    binary_body: false
+- http_request:
+    name: 网络诊断雷达
+    match: ''
+    script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/Network-Pro.js
+    body_required: false
+    binary_body: false
+- http_request:
+    name: IP 纯净度
+    match: ''
+    script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/refs/heads/main/Ip.js
+    body_required: false
+    binary_body: false
+- http_request:
     name: sub-info
     match: ''
     script_url: https://raw.githubusercontent.com/xream/scripts/main/surge/modules/sub-store-scripts/sub-info/node.js
     body_required: false
     binary_body: false
-    disabled: true
+    disabled: false
 - http_request:
     name: NodeLinkCheck
     match: ''
     script_url: https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/NodeLinkCheck/Sub-Store/Operator.js
     body_required: false
     binary_body: false
-    disabled: true
+    disabled: false
 mitm:
   ca_p12: egern.p12
   ca_passphrase: YOUR_SECURE_PASSWORD_HERE
@@ -951,6 +981,8 @@ mitm:
     - '*.tiktok.com'
 http_captures:
   includes:
+  - '*.controld.com'
+  - '*.freedns.controld.com'
   - '*.quad9.net'
   - '*.opendns.com'
   - '*.cleanbrowsing.org'
@@ -1043,7 +1075,6 @@ http_captures:
   - '*.microsoft.com'
   - '*.apple.com'
   - '*.icloud.com'
-  - '*.google.com'
   - '*.github.com'
   - '*.openai.com'
   - '*.anthropic.com'
@@ -1321,8 +1352,7 @@ modules:
 - name: QQ音乐去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/QQ%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
-- name: 网易云音乐去广告
-  url: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Release/Modules/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90.sgmodule
+- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.official.sgmodule
   enabled: true
 - name: 汽水音乐去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E6%B1%BD%E6%B0%B4%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
@@ -1392,4 +1422,5 @@ modules:
   enabled: true
 - name: 滴滴出行去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E6%BB%B4%E6%BB%B4%E5%87%BA%E8%A1%8C%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
 
