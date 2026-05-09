@@ -1,5 +1,5 @@
 #Name: Loon_linchao10058
-#Update Date: 2026.04.13.31.02:40:09
+#Update Date: 2026.05.09.10:35:09
 #Author: linchao10058
 
 [General]
@@ -90,29 +90,11 @@ Warp+GSC1 = WireGuard,interface-ip=162.159.36.1,interface-ipv6=2606:4700:4700::1
 #trojan2 = trojan,example.com,443,"password",skip-cert-verify:true,tls-name:example.com
 
 [Remote Proxy]
-rigengjiedian.one_01 = https://rigengjiedian.one/api/system/subscribe,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-kitty.su_linchao10058@outlook.com = https://2.luolicon.ru/oosaka/ed991e6abc212e58da6a486e77cf55f2,udp=true,block-quic=false,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-kitty.su_1697181470@qq.com = https://2.luolicon.ru/oosaka/442902701540dfaca1728bad3d048a92,udp=true,block-quic=false,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-kitty.su_1175048062@qq.com = https://conf1.hokkaido-toyoni.com/oosaka/04be1bb4337c37c0aad30c73bfa9617e,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-kitty.su_190000502@qq.com = https://2.luolicon.ru/oosaka/e1d57cdfbc2c976d3364bb56b3a17abf,udp=true,block-quic=default,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-kitty.su_ppaachaosheng@gmail.com = https://conf1.hokkaido-toyoni.com/oosaka/03240d6d3363bd2728f4b5529c464aac,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-kitty.su_cyi59438@gmail.com = https://2.luolicon.ru/oosaka/feeb684094a1c0c36d4e234d92029057,udp=true,block-quic=default,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-kitty.su_Mrzhao10086@gmail.com = https://2.luolicon.ru/oosaka/cdbb5e45f11b47d7ea46c6194de0b6e3,udp=true,block-quic=default,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-kitty.su_shuyuanxin0423@gmail.com = https://2.luolicon.ru/oosaka/e9409413930c5fd7c669fa095bed5247,udp=true,block-quic=default,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-crosswall.org_keluosi.top_05 = https://www.crosswall.org/s/7bac98524e2203a60f0bcf652516e846,udp=true,block-quic=default,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-crosswall.org_keluosi.top_04 = http://162.19.79.201:81/s/217a4da7cc06f2c4ac9ad11dcf36eb0c,udp=true,block-quic=default,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-crosswall.org_keluosi.top_03 = http://162.19.79.201/s/589a7ae5714699fab493df8ea98006ae,udp=true,block-quic=default,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-crosswall.org_keluosi.top_02 = http://162.19.79.201/s/1c1b51592e2028ec0bcbc18a20b495a8,udp=true,block-quic=default,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-crosswall.org_keluosi.top_01 = http://162.19.79.201/s/4773f916fe3c57253658ff015c991b99,udp=true,block-quic=default,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-shanhai.me_05 = https://sub01.sh-cloudflare.sbs:8443/api/v1/client/subscribe?token=9d02c9c6f7c50bf5b0970cc06ef53f62,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-shanhai.me_04 = https://sub01.sh-cloudflare.sbs:8443/api/v1/client/subscribe?token=00587c41e19b088075ac79abcbbc1c65,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-shanhai.me_03 = https://sub01.sh-cloudflare.sbs:8443/api/v1/client/subscribe?token=067edec14b21f36478049bc0e10591d7#,udp=true,block-quic=default,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-shanhai.me_02 = https://sub01.sh-cloudflare.sbs:8443/api/v1/client/subscribe?token=65cab1a186bd86fe79831cd1c44b99a1,udp=true,block-quic=default,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-shanhai.me_01 = https://sub01.sh-cloudflare.sbs:8443/api/v1/client/subscribe?token=cbf644ef46fcfc280584ac06cce928c9,udp=true,block-quic=default,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-ripaojiedian_01 = https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub,udp=true,block-quic=true,fast-open=false,vmess-aead=true,skip-cert-verify=default,enabled=true,flexible-sni=true
+Surge_linchao10058 = https://sub.store/download/collection/Surge_linchao10058,udp=true,block-quic=true,fast-open=false,vmess-aead=true,skip-cert-verify=default,enabled=false,flexible-sni=true,img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/task/surge.png
 Loon_linchao10058 = https://sub.store/download/collection/Loon_linchao10058,udp=false,block-quic=true,fast-open=false,vmess-aead=true,skip-cert-verify=default,enabled=true,flexible-sni=true,img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/task/loon.png
 Egern_linchao10058 = https://sub.store/download/collection/Egern_linchao10058,udp=true,block-quic=false,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
-Surge_linchao10058 = https://sub.store/download/collection/Surge_linchao10058,udp=true,block-quic=true,fast-open=false,vmess-aead=true,skip-cert-verify=default,enabled=false,flexible-sni=true,img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/task/surge.png
+ripaojiedian_01 = https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub,udp=true,block-quic=true,fast-open=false,vmess-aead=true,skip-cert-verify=default,enabled=true,flexible-sni=true
+rigengjiedian.one_01 = https://rigengjiedian.one/api/system/subscribe,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false,flexible-sni=false
 http://sub.avotc.eu.org/?token=auto = http://sub.avotc.eu.org/?token=auto,udp=true,fast-open=false,vmess-aead=true,enabled=true
 https://sub.789.st/sub?target=clash&url=https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml&sort=true&_=1702371386942 = https://sub.789.st/sub?target=clash&url=https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml&sort=true&_=1702371386942,udp=false,fast-open=false,vmess-aead=true,enabled=true,img-url=https://raw.githubusercontent.com/cjgcxjuh/fjtds/main/E89301C5-982E-4219-84B4-386AC36B06B5.png
 https://api.xjichang.buzz/api/v1/client/subscribe?token=3b3e2c230fb4aaf03161458f521eab14 = https://api.xjichang.buzz/api/v1/client/subscribe?token=3b3e2c230fb4aaf03161458f521eab14,udp=true,fast-open=false,vmess-aead=true,enabled=true
@@ -162,11 +144,11 @@ https://api.subcloud.xyz/sub?target=loon&url=ssr%3A%2F%2FOTEuMjA2LjkzLjE1NzoxNzE
 #Final = select,PROXY,DIRECT
 #自定义
 
-Select = select,DIRECT,REJECT,Proxy,☁️ CFWarp-D,WARP+GSCats,Warp+GSC1,Warp+GSC2,Warp+GSC3,U989124992380.edge.onetcdn.com,Taiwan,Hong Kong,Japan,Korea,Vietnam,Singapore,United States,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-Proxy = select,DIRECT,REJECT,☁️ CFWarp-D,WARP+GSCats,Warp+GSC1,Warp+GSC2,Warp+GSC3,U989124992380.edge.onetcdn.com,ripaojiedian_01,Loon_linchao10058,Egern_linchao10058,Surge_linchao10058,kitty.su_linchao10058@outlook.com,kitty.su_1697181470@qq.com,kitty.su_cyi59438@gmail.com,kitty.su_Mrzhao10086@gmail.com,kitty.su_shuyuanxin0423@gmail.com,crosswall.org_keluosi.top_01,crosswall.org_keluosi.top_02,crosswall.org_keluosi.top_03,crosswall.org_keluosi.top_04,crosswall.org_keluosi.top_05,shanhai.me_01,shanhai.me_02,shanhai.me_03,kitty.su_190000502@qq.com,kitty.su_1175048062@qq.com,kitty.su_ppaachaosheng@gmail.com,shanhai.me_04,shanhai.me_05,rigengjiedian.one_01,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
-China = select,DIRECT,REJECT,Select,Proxy,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/cn.png
-Global = select,DIRECT,REJECT,Select,Proxy,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Global.png
-Advertising = select,DIRECT,REJECT,Select,Proxy,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/AdWhite.png
+Select = select,DIRECT,REJECT,Taiwan,Hong Kong,Japan,Korea,Vietnam,Singapore,United States,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+Proxy = select,DIRECT,REJECT,☁️ CFWarp-D,WARP+GSCats,Warp+GSC1,Warp+GSC2,Warp+GSC3,U989124992380.edge.onetcdn.com,Loon_linchao10058,Egern_linchao10058,Surge_linchao10058,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
+China = select,DIRECT,REJECT,Select,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/cn.png
+Global = select,DIRECT,REJECT,REJECT-DROP,REJECT-NO-DROP,Select,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Global.png
+Advertising = select,DIRECT,REJECT,REJECT-DROP,REJECT-NO-DROP,REJECT-IMG,REJECT-IMG-NO-DROP,REJECT-VIDEO,REJECT-VIDEO-NO-DROP,REJECT-DICT,REJECT-DICT-NO-DROP,REJECT-ARRAY,REJECT-ARRAY-NO-DROP,Select,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/AdWhite.png
 Other = select,DIRECT,REJECT,Select,Proxy,Advertising,China,Global,Hong Kong,Taiwan,Japan,Korea,Vietnam,Singapore,United States,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Area.png
 Taiwan = fallback,🇹🇼台湾,url = http://cp.cloudflare.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/tw.png
 Hong Kong = fallback,🇭🇰香港,url = http://cp.cloudflare.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/hk.png
@@ -357,7 +339,7 @@ https://raw.githubusercontent.com/app2smile/rules/master/plugin/bilibili.plugin,
 https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BD%A9%E4%BA%91%E5%A4%A9%E6%B0%94%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule, tag=彩云天气去广告, enabled=true
 https://kelee.one/Tool/Loon/Lpx/XunLei_remove_ads.lpx, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/main/aliyun.plugin, enabled=true
-https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Release/Modules/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90.sgmodule, enabled=true
+https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.official.sgmodule, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/KuwoVip.plugin, policy=酷狗酷我KuGou KuWo, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/bdwk.plugin, policy=China, tag=百度文库, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/master/plugallery/smwd.plugin, policy=China, tag=石墨文档, enabled=true
@@ -431,3 +413,4 @@ enable = true
 skip-server-cert-verify = true
 #ca-p12 =
 #ca-passphrase =
+
