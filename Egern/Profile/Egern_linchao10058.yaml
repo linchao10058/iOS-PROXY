@@ -153,7 +153,7 @@ dns:
   upstreams:
     ChinaDNS:
     - https://dns.alidns.com/dns-query
-    - quic://dns.alidns.com/dns-query
+    - https://223.5.5.5/dns-query
     - https://doh.pub/dns-query
     - https://sm2.doh.pub/dns-query
     - https://doh.dns.apple.com/dns-query
