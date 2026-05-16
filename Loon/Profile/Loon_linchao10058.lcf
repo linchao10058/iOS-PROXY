@@ -1,5 +1,5 @@
 #Name: Loon_linchao10058
-#Update Date: 2026.05.09.10:35:09
+#Update Date: 2026.05.16.15:52:09
 #Author: linchao10058
 
 [General]
@@ -7,7 +7,7 @@ mitm-on-wifi-access = false
 real-ip = *.srv.nintendo.net,*.nintendo.net,*.n.nintendo.net,*.eshop.nintendo.net,*.accounts.nintendo.com,*.playstation.net,*.playstation.com,*.psnprofiles.com,*.pscdn.io,*.stun.playstation.net,*.xboxlive.com,*.xbox.com,*.xboxservices.com,*.microsoft.com,*.msftconnecttest.com,*.msftncsi.com,dl.delivery.mp.microsoft.com,*.battlenet.com.cn,*.battlenet.com,*.battle.net,*.blzstatic.cn,*.blzstatic.com,*.blizzard.com,*.blz-contentstack.com,*.bnet.cn,*.bnetshop.com.cn,*.stun.l.google.com,*.stun.services.mozilla.com,*.turn.cloudflare.com,*.steamcontent.com,*.steampowered.com,*.epicgames.com,*.origin.com,*.ea.com
 sni-sniffing = true
 # DoH (DNS over HTTPS)
-doh-server = https://cloudflare-dns.com/dns-query,https://1.1.1.1/dns-query,https://1.0.0.1/dns-query,https://dns.google/dns-query,https://8.8.8.8/dns-query,https://8.8.4.4/dns-query,https://dns.quad9.net/dns-query,https://9.9.9.9/dns-query,https://dns.adguard-dns.com/dns-query,https://doh.opendns.com/dns-query,https://freedns.controld.com/p0,https://dns.nextdns.io/93ad73,https://doh.dns.apple.com/dns-query,https://dns.alidns.com/dns-query, https://223.5.5.5/dns-query, https://doh.pub/dns-query,https://sm2.doh.pub/dns-query
+doh-server = https://cloudflare-dns.com/dns-query,https://1.1.1.1/dns-query,https://1.0.0.1/dns-query,https://dns.google/dns-query,https://8.8.8.8/dns-query,https://8.8.4.4/dns-query,https://dns.quad9.net/dns-query,https://9.9.9.9/dns-query,https://dns.adguard-dns.com/dns-query,https://doh.opendns.com/dns-query,https://freedns.controld.com/p0,https://dns.nextdns.io/93ad73,https://doh.dns.apple.com/dns-query,https://dns.alidns.com/dns-query,https://doh.pub/dns-query,https://sm2.doh.pub/dns-query,https://223.5.5.5/dns-query
 # DoQ (DNS over QUIC)
 doq-server = quic://1.1.1.1:784,quic://1.0.0.1:784,quic://cloudflare-dns.com:784,quic://dns.adguard-dns.com:784,quic://p0.freedns.controld.com:784,quic://93ad73.dns.nextdns.io:784,quic://dns.quad9.net:784,quic://doh.dns.apple.com:784
 # DoH3 (DNS over HTTP/3)
@@ -18,7 +18,7 @@ disable-stun = true
 ipv6-vif = auto
 ip-mode = dual
 skip-proxy = 127.0.0.1/32,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,17.0.0.0/8,localhost,*.local,*.lan,*.home.arpa,*.crashlytics.com,*.10086.cn,*.chinamobile.com,*.chinamobileltd.com,*.cnmobile.net,*.monternet.com,*.cmcc.com,*.cnmobile.com,*.189.cn,*.chinatelecom.com,*.chinatelecom.com.cn,*.chinatelecom.cn,*.chinatelecomglobal.com,*.e-surfing.com,*.10010.cn,*.10010.com,*.chinaunicom.com,*.chinaunicom.cn,*.wo.com.cn,*.wo.cn,*.unicom.com,*.chinaunicomglobal.com,*.icbc.com,*.icbc.com.cn,*.icbc.cn,*.abchina.com,*.abchina.com.cn,*.abchina.cn,*.ccb.com,*.ccb.com.cn,*.ccb.cn,*.boc.cn,*.boc.com,*.bankofchina.com,*.bankcomm.com,*.bocom.com,*.bankcomm.cn,*.psbc.com,*.psbc.com.cn
-bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
+bypass-tun = 127.0.0.0/8,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,169.254.0.0/16,100.64.0.0/10,224.0.0.0/4,240.0.0.0/4,172.17.0.0/16,172.18.0.0/16,172.19.0.0/16,fc00::/7,fe80::/10,::1/128
 # [DNS] => DNS 服务器
 dns-server = 1.1.1.1,1.0.0.1,2606:4700:4700::1111,2606:4700:4700::1001,1.1.1.2,1.0.0.2,2606:4700:4700::1112,2606:4700:4700::1002,8.8.8.8,8.8.4.4,2001:4860:4860::8888,2001:4860:4860::8844,76.76.2.0,76.76.10.0,2606:1a40::,2606:1a40:1::,9.9.9.9,149.112.112.112,2620:fe::fe,2620:fe::9,45.90.28.137,45.90.30.137,2a07:a8c0::93:ad73,2a07:a8c1::93:ad73,208.67.222.222,208.67.220.220,2620:119:35::35,2620:119:53::53,94.140.14.14,94.140.15.15,2a10:50c0::ad1:ff,2a10:50c0::ad2:ff,223.5.5.5,223.6.6.6,2400:3200::1,2400:3200:baba::1,119.29.29.29,182.254.116.116,2402:4e00::,17.253.14.245,2620:149:AF::
 allow-udp-proxy = false
@@ -144,8 +144,8 @@ https://api.subcloud.xyz/sub?target=loon&url=ssr%3A%2F%2FOTEuMjA2LjkzLjE1NzoxNzE
 #Final = select,PROXY,DIRECT
 #自定义
 
-Select = select,DIRECT,REJECT,Taiwan,Hong Kong,Japan,Korea,Vietnam,Singapore,United States,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-Proxy = select,DIRECT,REJECT,☁️ CFWarp-D,WARP+GSCats,Warp+GSC1,Warp+GSC2,Warp+GSC3,U989124992380.edge.onetcdn.com,Loon_linchao10058,Egern_linchao10058,Surge_linchao10058,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
+Select = select,DIRECT,REJECT,Taiwan,Hong Kong,Japan,Korea,Vietnam,Singapore,United States,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
+Proxy = select,DIRECT,REJECT,☁️ CFWarp-D,WARP+GSCats,Warp+GSC1,Warp+GSC2,Warp+GSC3,U989124992380.edge.onetcdn.com,Loon_linchao10058,Egern_linchao10058,Surge_linchao10058,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 China = select,DIRECT,REJECT,Select,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/cn.png
 Global = select,DIRECT,REJECT,REJECT-DROP,REJECT-NO-DROP,Select,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Global.png
 Advertising = select,DIRECT,REJECT,REJECT-DROP,REJECT-NO-DROP,REJECT-IMG,REJECT-IMG-NO-DROP,REJECT-VIDEO,REJECT-VIDEO-NO-DROP,REJECT-DICT,REJECT-DICT-NO-DROP,REJECT-ARRAY,REJECT-ARRAY-NO-DROP,Select,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/AdWhite.png
@@ -413,4 +413,3 @@ enable = true
 skip-server-cert-verify = true
 #ca-p12 =
 #ca-passphrase =
-
