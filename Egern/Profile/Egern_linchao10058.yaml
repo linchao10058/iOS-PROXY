@@ -1,5 +1,5 @@
 #Name: Egern_linchao10058
-#Update Date: 2026.05.09.10:28:35
+#Update Date: 2026.05.16.15:52:35
 #Author: linchao10058
 
 ipv6: true
@@ -54,58 +54,66 @@ proxy_latency_test_url: https://www.google.com/generate_204
 direct_latency_test_url: http://www.cloudflare.com/cdn-cgi/trace
 compat_route: true
 vif_included_routes:
-- '*.vercel.app'
-- '*.safebrowsing.urlsec.qq.com'
+- 1.1.1.1/32
+- 1.0.0.1/32
+- 1.1.1.2/32
+- 1.0.0.2/32
+- 8.8.8.8/32
+- 8.8.4.4/32
+- 9.9.9.9/32
+- 149.112.112.112/32
+- 208.67.222.222/32
+- 208.67.220.220/32
+- 94.140.14.14/32
+- 94.140.15.15/32
+- 185.228.168.9/32
+- 185.228.169.9/32
+- 45.90.28.137/32
+- 45.90.30.137/32
+- 77.88.8.8/32
+- 223.5.5.5/32
+- 223.6.6.6/32
+- 119.29.29.29/32
+- 182.254.116.116/32
+- 17.253.14.245/32
+- 45.90.28.0/24
+- 45.90.30.0/24
+- 76.76.2.0/24
+- 2606:4700:4700::1111/128
+- 2606:4700:4700::1001/128
+- 2606:4700:4700::1112/128
+- 2606:4700:4700::1002/128
+- 2001:4860:4860::8888/128
+- 2001:4860:4860::8844/128
+- 2606:1a40::/128
+- 2606:1a40:1::/128
+- 2620:fe::fe/128
+- 2620:fe::9/128
+- 2a07:a8c0::93:ad73/128
+- 2a07:a8c1::93:ad73/128
+- 2620:119:35::35/128
+- 2620:119:53::53/128
+- 2a10:50c0::ad1:ff/128
+- 2a10:50c0::ad2:ff/128
+- 2400:3200::1/128
+- 2400:3200:baba::1/128
+- 2402:4e00::/128
+- 2620:149:af::/128
 vif_excluded_routes:
-- localhost
-- '*.local'
-- '*.lan'
-- '*.home.arpa'
-- '*.crashlytics.com'
-- '*.10086.cn'
-- '*.chinamobile.com'
-- '*.chinamobileltd.com'
-- '*.cnmobile.net'
-- '*.monternet.com'
-- '*.cmcc.com'
-- '*.cnmobile.com'
-- '*.189.cn'
-- '*.chinatelecom.com'
-- '*.chinatelecom.com.cn'
-- '*.chinatelecom.cn'
-- '*.chinatelecomglobal.com'
-- '*.e-surfing.com'
-- '*.10010.cn'
-- '*.10010.com'
-- '*.chinaunicom.com'
-- '*.chinaunicom.cn'
-- '*.wo.com.cn'
-- '*.wo.cn'
-- '*.unicom.com'
-- '*.chinaunicomglobal.com'
-- '*.icbc.com'
-- '*.icbc.com.cn'
-- '*.icbc.cn'
-- '*.abchina.com'
-- '*.abchina.com.cn'
-- '*.abchina.cn'
-- '*.ccb.com'
-- '*.ccb.com.cn'
-- '*.ccb.cn'
-- '*.boc.cn'
-- '*.boc.com'
-- '*.bankofchina.com'
-- '*.bankcomm.com'
-- '*.bocom.com'
-- '*.bankcomm.cn'
-- '*.psbc.com'
-- '*.psbc.com.cn'
-- 127.0.0.1/32
+- 127.0.0.0/8
 - 192.168.0.0/16
 - 10.0.0.0/8
 - 172.16.0.0/12
+- 169.254.0.0/16
 - 100.64.0.0/10
-- 17.0.0.0/8
+- 224.0.0.0/4
+- 240.0.0.0/4
+- 172.17.0.0/16
+- 172.18.0.0/16
+- 172.19.0.0/16
+- fc00::/7
+- fe80::/10
+- ::1/128
 dns:
   bootstrap:
   - 1.1.1.1
@@ -527,7 +535,7 @@ policy_groups:
     - Proxy
     - Other
     flatten: false
-    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/Egern.png
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
     hidden: false
 - external:
     name: Proxy
@@ -539,7 +547,7 @@ policy_groups:
     urls_disabled:
     - https://sub.store/download/collection/Surge_linchao10058
     - https://sub.store/download/collection/Loon_linchao10058
-    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
+    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/Egern.png
     hidden: false
 - select:
     name: China
@@ -1422,5 +1430,4 @@ modules:
   enabled: true
 - name: 滴滴出行去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E6%BB%B4%E6%BB%B4%E5%87%BA%E8%A1%8C%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
-  enabled: true
 
