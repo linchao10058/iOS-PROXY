@@ -47,7 +47,7 @@ hijack_dns:
 - 2402:4e00:::53
 - 17.253.14.245:53
 - 2620:149:AF:::53
-- '  *:53'
+- '*:53'
 geoip_db_url: https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
 asn_db_url: https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/download/GeoLite2-ASN.mmdb
 proxy_latency_test_url: https://www.google.com/generate_204
@@ -189,29 +189,29 @@ dns:
     - quic://dns.adguard-dns.com:784
     - quic://doh.dns.apple.com:784
     - h3://security.cloudflare-dns.com/dns-query
-    Bootstrap:
+    SYSTEM:
     - system
     - SYSTEM
   forward:
   - domain_wildcard:
       match: '*.home.arpa'
-      value: Bootstrap
+      value: SYSTEM
       disabled: false
   - domain_wildcard:
       match: localhost
-      value: Bootstrap
+      value: SYSTEM
       disabled: false
   - domain_wildcard:
       match: '*.local'
-      value: Bootstrap
+      value: SYSTEM
       disabled: false
   - domain_wildcard:
       match: '*.lan'
-      value: Bootstrap
+      value: SYSTEM
       disabled: false
   - domain_wildcard:
       match: '*.crashlytics'
-      value: Bootstrap, GlobalDNS, ChinaDNS
+      value: SYSTEM, GlobalDNS, ChinaDNS
       disabled: false
   - domain_wildcard:
       match: '*.cn'
