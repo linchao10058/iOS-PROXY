@@ -363,7 +363,7 @@ dns:
   - 2402:4e00:::53
   - 17.253.14.245:53
   - 2620:149:AF:::53
-  - '  *:53'
+  - '*:53'
   public_ip_lookup_url: https://ipinfo.io/ip
 bypass_tunnel_proxy:
 - localhost
