@@ -1003,21 +1003,6 @@ mitm:
     - '*.bankcomm.cn'
     - '*.psbc.com'
     - '*.psbc.com.cn'
-  hostnames_disabled:
-    includes:
-    - '*.byteoversea.com'
-    - '*.ibytedtos.com'
-    - '*.ibyteimg.com'
-    - '*.ipstatp.com'
-    - '*.amemv.com'
-    - '*.muscdn.com'
-    - '*.musical.ly'
-    - '*.snssdk.com'
-    - '*.sgpstatp.com'
-    - '*.tiktokcdn.com'
-    - '*.tik-tokapi.com'
-    - '*.tiktokv.com'
-    - '*.tiktok.com'
 http_captures:
   includes:
   - '*.controld.com'
