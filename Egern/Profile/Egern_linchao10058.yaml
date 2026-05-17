@@ -670,6 +670,8 @@ policy_groups:
     tolerance: 50
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/us.png
     hidden: false
+default_subscription_group: Proxy
+default_proxy_group: Select
 rules:
 - rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All.list
