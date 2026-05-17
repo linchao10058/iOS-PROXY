@@ -4,7 +4,7 @@
 
 ipv6: true
 allow_external_connections: false
-vif_only: true
+vif_only: false
 compat_route: true
 hijack_dns:
 - 1.1.1.1:53
