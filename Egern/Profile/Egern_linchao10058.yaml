@@ -5,6 +5,7 @@
 ipv6: true
 allow_external_connections: false
 vif_only: true
+compat_route: true
 hijack_dns:
 - 1.1.1.1:53
 - 1.0.0.1:53
@@ -52,7 +53,6 @@ geoip_db_url: https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
 asn_db_url: https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/download/GeoLite2-ASN.mmdb
 proxy_latency_test_url: https://www.google.com/generate_204
 direct_latency_test_url: http://www.cloudflare.com/cdn-cgi/trace
-compat_route: true
 vif_included_routes:
 - 1.1.1.1/32
 - 1.0.0.1/32
