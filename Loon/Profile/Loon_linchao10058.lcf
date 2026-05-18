@@ -144,12 +144,12 @@ https://api.subcloud.xyz/sub?target=loon&url=ssr%3A%2F%2FOTEuMjA2LjkzLjE1NzoxNzE
 #Final = select,PROXY,DIRECT
 #自定义
 
-Select = select,DIRECT,REJECT,Taiwan,Hong Kong,Japan,Korea,Vietnam,Singapore,United States,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
+Select = select,DIRECT,REJECT,Proxy,Other,Taiwan,Hong Kong,Japan,Korea,Vietnam,Singapore,United States,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
 Proxy = select,DIRECT,REJECT,☁️ CFWarp-D,WARP+GSCats,Warp+GSC1,Warp+GSC2,Warp+GSC3,U989124992380.edge.onetcdn.com,Loon_linchao10058,Egern_linchao10058,Surge_linchao10058,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 China = select,DIRECT,REJECT,Select,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/cn.png
-Global = select,DIRECT,REJECT,REJECT-DROP,REJECT-NO-DROP,Select,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Global.png
+Global = select,DIRECT,REJECT,Select,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Global.png
 Advertising = select,DIRECT,REJECT,REJECT-DROP,REJECT-NO-DROP,REJECT-IMG,REJECT-IMG-NO-DROP,REJECT-VIDEO,REJECT-VIDEO-NO-DROP,REJECT-DICT,REJECT-DICT-NO-DROP,REJECT-ARRAY,REJECT-ARRAY-NO-DROP,Select,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/AdWhite.png
-Other = select,DIRECT,REJECT,Select,Proxy,Advertising,China,Global,Hong Kong,Taiwan,Japan,Korea,Vietnam,Singapore,United States,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Area.png
+Other = select,DIRECT,REJECT,Select,Proxy,Hong Kong,Taiwan,Japan,Korea,Vietnam,Singapore,United States,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Area.png
 Taiwan = fallback,🇹🇼台湾,url = http://cp.cloudflare.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/tw.png
 Hong Kong = fallback,🇭🇰香港,url = http://cp.cloudflare.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/hk.png
 Japan = fallback,🇯🇵日本,url = http://cp.cloudflare.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/jp.png
