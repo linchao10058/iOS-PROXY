@@ -1299,6 +1299,8 @@ modules:
 - name: '📺 BiliBili: 🌐 Global'
   url: https://github.com/BiliUniverse/Global/releases/latest/download/BiliBili.Global.sgmodule
   enabled: true
+- url: https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Lite.sgmodule
+  enabled: true
 - url: https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule
   enabled: true
 - url: https://raw.githubusercontent.com/app2smile/rules/refs/heads/master/module/youtube.sgmodule
