@@ -18,12 +18,18 @@ DOMAIN-SUFFIX,cloudflarestorage.com
 DOMAIN-SUFFIX,cloudflare-r2.com
 DOMAIN-SUFFIX,cloudflarezero-trust.com
 DOMAIN-SUFFIX,cloudflareclient.com
-DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com
 
 DOMAIN-SUFFIX,workers.dev
 DOMAIN-SUFFIX,pages.dev
 DOMAIN-SUFFIX,trycloudflare.com
 DOMAIN-SUFFIX,videodelivery.net
+
+DOMAIN-SUFFIX,cfargotunnel.com
+DOMAIN-SUFFIX,argotunnel.com
+
+DOMAIN-SUFFIX,cf-ipfs.com
+DOMAIN-SUFFIX,cf-ns.com
+DOMAIN-SUFFIX,cf-ns.net
 
 DOMAIN-SUFFIX,dash.cloudflare.com
 DOMAIN-SUFFIX,api.cloudflare.com
@@ -35,6 +41,7 @@ DOMAIN-SUFFIX,turnstile.cloudflare.com
 DOMAIN-SUFFIX,speed.cloudflare.com
 
 DOMAIN-SUFFIX,one.one.one.one
+DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com
 DOMAIN-SUFFIX,dns.cloudflare.com
 
 IP-CIDR,103.21.244.0/22,no-resolve
