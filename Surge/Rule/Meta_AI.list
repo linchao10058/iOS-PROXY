@@ -1,31 +1,29 @@
 # NAME: Meta_AI
 # AUTHOR: linchao10058
 # VERSION: 1.0.0
-# REPO: https://raw.githubusercontent.com/linchao10058/iOS-PROXY/main/Surge/Rule/Meta_AI.list
-# UPDATED: 2025-06-07 10:00 PDT
-# DOMAIN: www.meta.com, about.meta.com, www.meta.ai, api.meta.ai
-# DOMAIN-SUFFIX: meta.com, meta.ai, fbcdn.net
-# DOMAIN-KEYWORD: None
-# TOTAL: 12
+# UPDATED: 2026-05-18
 
-# Meta.com 相关域名
-DOMAIN-SUFFIX,meta.com,Meta-Proxy,extended-matching=true
-DOMAIN-SUFFIX,www.meta.com,Meta-Proxy,extended-matching=true
-DOMAIN-SUFFIX,about.meta.com,Meta-Proxy,extended-matching=true
-DOMAIN-SUFFIX,fbcdn.net,Meta-Proxy,extended-matching=true
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,www.meta.ai
+DOMAIN-SUFFIX,api.meta.ai
 
-# Meta.ai 相关域名
-DOMAIN-SUFFIX,meta.ai,Meta-AI-Proxy,extended-matching=true
-DOMAIN-SUFFIX,www.meta.ai,Meta-AI-Proxy,extended-matching=true
-DOMAIN-SUFFIX,api.meta.ai,Meta-AI-Proxy,extended-matching=true
+DOMAIN-SUFFIX,meta.com
+DOMAIN-SUFFIX,www.meta.com
+DOMAIN-SUFFIX,about.meta.com
 
-# Meta 的 IP 范围（基于 AS32934 和公开数据）
-IP-CIDR,31.13.64.0/18,Meta-Proxy
-IP-CIDR,157.240.0.0/16,Meta-Proxy
-IP-CIDR,185.60.216.0/22,Meta-Proxy
+DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,fbsbx.com
+DOMAIN-SUFFIX,facebook.com
+DOMAIN-SUFFIX,instagram.com
+DOMAIN-SUFFIX,whatsapp.com
 
-# 地理位置规则（针对美国服务器）
-GEOIP,US,Meta-Proxy
+DOMAIN-KEYWORD,meta
 
-# QUIC 流量处理（Meta.ai 可能使用 QUIC）
-PROTOCOL,QUIC,Meta-AI-Proxy
+IP-CIDR,31.13.64.0/18,no-resolve
+IP-CIDR,157.240.0.0/16,no-resolve
+IP-CIDR,185.60.216.0/22,no-resolve
+IP-CIDR,66.220.144.0/20,no-resolve
+IP-CIDR,69.63.176.0/20,no-resolve
+IP-CIDR,129.134.0.0/16,no-resolve
+
+IP-CIDR6,2a03:2880::/32,no-resolve
