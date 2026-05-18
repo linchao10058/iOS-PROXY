@@ -952,6 +952,7 @@ mitm:
     - '*.safebrowsing.urlsec.qq.com'
     - 'youtubei.googleapis.com'
     - '*.youtubei.googleapis.com'
+    - '*.googlevideo.com'
     - '*.googleapis.com'
     - '*.googleusercontent.com'
     - 'api.spotify.com'
