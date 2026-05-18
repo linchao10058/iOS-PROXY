@@ -1,6 +1,6 @@
 # NAME: Cloudflare
 # AUTHOR: linchao10058
-# VERSION: 3.0.0
+# VERSION: 5.0.0
 # UPDATED: 2026-05-19
 
 DOMAIN-SUFFIX,cloudflare.com
@@ -17,7 +17,6 @@ DOMAIN-SUFFIX,cloudflareimages.com
 DOMAIN-SUFFIX,cloudflarestorage.com
 DOMAIN-SUFFIX,cloudflare-r2.com
 DOMAIN-SUFFIX,cloudflarezero-trust.com
-DOMAIN-SUFFIX,cloudflareclient.com
 
 DOMAIN-SUFFIX,workers.dev
 DOMAIN-SUFFIX,pages.dev
@@ -26,23 +25,23 @@ DOMAIN-SUFFIX,videodelivery.net
 
 DOMAIN-SUFFIX,cfargotunnel.com
 DOMAIN-SUFFIX,argotunnel.com
+DOMAIN-SUFFIX,cloudflared.com
 
 DOMAIN-SUFFIX,cf-ipfs.com
 DOMAIN-SUFFIX,cf-ns.com
 DOMAIN-SUFFIX,cf-ns.net
 
-DOMAIN-SUFFIX,dash.cloudflare.com
-DOMAIN-SUFFIX,api.cloudflare.com
-DOMAIN-SUFFIX,support.cloudflare.com
-DOMAIN-SUFFIX,community.cloudflare.com
-DOMAIN-SUFFIX,blog.cloudflare.com
-DOMAIN-SUFFIX,radar.cloudflare.com
-DOMAIN-SUFFIX,turnstile.cloudflare.com
-DOMAIN-SUFFIX,speed.cloudflare.com
-
 DOMAIN-SUFFIX,one.one.one.one
 DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com
 DOMAIN-SUFFIX,dns.cloudflare.com
+DOMAIN-SUFFIX,cloudflare-dns.com
+
+DOMAIN-KEYWORD,cloudflare
+DOMAIN-KEYWORD,cfargotunnel
+DOMAIN-KEYWORD,cf-ipfs
+DOMAIN-KEYWORD,workers
+DOMAIN-KEYWORD,pages
+DOMAIN-KEYWORD,warp
 
 IP-CIDR,103.21.244.0/22,no-resolve
 IP-CIDR,103.22.200.0/22,no-resolve
@@ -61,9 +60,9 @@ IP-CIDR,197.234.240.0/22,no-resolve
 IP-CIDR,198.41.128.0/17,no-resolve
 
 IP-CIDR6,2400:cb00::/32,no-resolve
+IP-CIDR6,2405:8100::/32,no-resolve
+IP-CIDR6,2405:b500::/32,no-resolve
 IP-CIDR6,2606:4700::/32,no-resolve
 IP-CIDR6,2803:f800::/32,no-resolve
-IP-CIDR6,2405:b500::/32,no-resolve
-IP-CIDR6,2405:8100::/32,no-resolve
 IP-CIDR6,2a06:98c0::/29,no-resolve
 IP-CIDR6,2c0f:f248::/32,no-resolve
