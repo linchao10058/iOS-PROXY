@@ -5,7 +5,7 @@
 ipv6: true
 allow_external_connections: false
 vif_only: false
-compat_route: true
+compat_route: false
 hijack_dns:
 - 1.1.1.1:53
 - 1.0.0.1:53
@@ -949,6 +949,7 @@ mitm:
   hostnames:
     includes:
     - '*.vercel.app'
+    - '*.safebrowsing.urlsec.qq.com'
     - '*.byteoversea.com'
     - '*.ibytedtos.com'
     - '*.ibyteimg.com'
@@ -962,7 +963,9 @@ mitm:
     - '*.tik-tokapi.com'
     - '*.tiktokv.com'
     - '*.tiktok.com'
-    - '*.safebrowsing.urlsec.qq.com'
+    - '*.googlevideo.com'
+    - youtubei.googleapis.com
+    - '*.googleapis.com'
     excludes:
     - localhost
     - '*.local'
