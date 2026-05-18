@@ -558,6 +558,8 @@ policy_groups:
     policies:
     - DIRECT
     - REJECT
+    - Proxy
+    - Other
     - Hong Kong
     - TaiWan
     - Korea
@@ -565,8 +567,6 @@ policy_groups:
     - Vietnam
     - Singapore
     - United States
-    - Proxy
-    - Other
     flatten: false
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Proxy.png
     hidden: false
