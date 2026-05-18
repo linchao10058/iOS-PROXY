@@ -1,346 +1,99 @@
-# 📦 ByteDance_NoGlobal 国内全量分流规则（不含海外 / ByteDance_NoGlobal）
-# 放在任何 GeoIP/Direct 之前，避免被上层规则吞掉
-# 版本：2025-11-16
+# NAME: ByteDance_NoGlobal
+# AUTHOR: linchao10058
+# VERSION: 2.0
+# UPDATED: 2026-05-18
 
-# —— ByteDance 集团主域名 ——
+# CORE PLATFORM
 DOMAIN-SUFFIX,bytedance.com
 DOMAIN-SUFFIX,bytedance.cn
-DOMAIN-SUFFIX,bytedance.net
-DOMAIN-SUFFIX,bytedance.org
-DOMAIN-SUFFIX,bytedance.group
-DOMAIN-SUFFIX,bytedance.xyz
-DOMAIN,api.bytedance.com
-DOMAIN,cdn.bytedance.com
+DOMAIN-SUFFIX,snssdk.com
+DOMAIN-SUFFIX,zijieapi.com
+DOMAIN-SUFFIX,bytegecko.com
+DOMAIN-SUFFIX,byteimg.com
+DOMAIN-SUFFIX,bytegoofy.com
+DOMAIN-SUFFIX,bytehwm.com
+DOMAIN-SUFFIX,ibytedtos.com
+DOMAIN-SUFFIX,bytetos.com
+DOMAIN-SUFFIX,bytedns.net
 
-# —— Douyin 抖音系 ——
+# DOUYIN / TIKTOK CHINA
 DOMAIN-SUFFIX,douyin.com
 DOMAIN-SUFFIX,douyincdn.com
 DOMAIN-SUFFIX,douyinpic.com
 DOMAIN-SUFFIX,douyinvod.com
 DOMAIN-SUFFIX,amemv.com
-DOMAIN-SUFFIX,snssdk.com
-DOMAIN-SUFFIX,zijieapi.com
-DOMAIN-SUFFIX,byteimg.com
-DOMAIN-SUFFIX,bytegoofy.com
-DOMAIN-SUFFIX,bytegoofy.cn
-DOMAIN-SUFFIX,bytegecko.com
-DOMAIN-SUFFIX,bytehwm.com
-DOMAIN,api.douyin.com
-DOMAIN,api.amemv.com
-DOMAIN,open.douyin.com
 DOMAIN-SUFFIX,douyinstatic.com
 
-# —— 今日头条系 ——
+# TOUTIAO ECOSYSTEM
 DOMAIN-SUFFIX,toutiao.com
 DOMAIN-SUFFIX,toutiaocdn.com
-DOMAIN-SUFFIX,toutiaohao.com
-DOMAIN-SUFFIX,toutiaowap.com
-DOMAIN-SUFFIX,toutiaocloud.com
-DOMAIN-SUFFIX,toutiaovod.com
-DOMAIN-SUFFIX,toutiaoimg.com
+DOMAIN-SUFFIX,toutiaocache.com
 DOMAIN-SUFFIX,pstatp.com
 DOMAIN-SUFFIX,pglstatp.com
-DOMAIN-SUFFIX,tracking.toutiao.com
-
-# —— 西瓜视频 ——
+DOMAIN-SUFFIX,toutiaoimg.com
 DOMAIN-SUFFIX,ixigua.com
 DOMAIN-SUFFIX,ixiguavideo.com
-DOMAIN-SUFFIX,ixiguavideo.net
-DOMAIN-SUFFIX,bdxiguaimg.com
 
-# —— 火山 / 火山引擎 ——
+# VOLCENGINE / INFRA
+DOMAIN-SUFFIX,volcengine.com
+DOMAIN-SUFFIX,volcecdn.com
 DOMAIN-SUFFIX,huoshan.com
 DOMAIN-SUFFIX,huoshanstatic.com
-DOMAIN-SUFFIX,volcengine.com
-DOMAIN-SUFFIX,volcengineapi.com
-DOMAIN-SUFFIX,volcecdn.com
-DOMAIN,open.volcengineapi.com
 
-# —— 飞书 ——
+# FEISHU / CAPCUT / CONSUMER
 DOMAIN-SUFFIX,feishu.cn
-DOMAIN-SUFFIX,feishu.net
 DOMAIN-SUFFIX,feishu.com
-DOMAIN-SUFFIX,feishucdn.com
-
-# —— 剪映 ——
-DOMAIN-SUFFIX,capcut.cn
 DOMAIN-SUFFIX,capcut.com
-DOMAIN-SUFFIX,capcut.net
-DOMAIN-SUFFIX,capcut.net.cn
-
-# —— 豆包 AI ——
-DOMAIN-SUFFIX,doubao.com
-DOMAIN,api.doubao.com
-DOMAIN,sso.doubao.com
-DOMAIN,static.doubao.com
-
-# —— 番茄小说 / 番茄电影 ——
-DOMAIN-SUFFIX,fanqienovel.com
-DOMAIN-SUFFIX,fanqie.com
-DOMAIN-SUFFIX,fanqiedianying.com
-
-# —— 懂车帝 ——
-DOMAIN-SUFFIX,dongchedi.com
-
-# —— 皮皮虾 ——
-DOMAIN-SUFFIX,pipix.com
-DOMAIN-SUFFIX,pipixia.cn
-
-# —— 汽水音乐 ——
-DOMAIN-SUFFIX,qishui.cn
-DOMAIN-SUFFIX,qishui.com
-
-# —— PICO VR ——
-DOMAIN-SUFFIX,picovr.com
-DOMAIN-SUFFIX,pico-interactive.com
-
-# —— AI 应用 ——
-DOMAIN-SUFFIX,anydoor.cn
-DOMAIN-SUFFIX,anydoor.ai
-DOMAIN-SUFFIX,jimeng.cn
+DOMAIN-SUFFIX,capcut.cn
 DOMAIN-SUFFIX,picpic.cn
-DOMAIN-SUFFIX,gauthmath.com
 
-# —— 其他字节系产品 ——
-DOMAIN-SUFFIX,wukong.com
-DOMAIN-SUFFIX,tuchong.com
-DOMAIN-SUFFIX,faceu.com
-DOMAIN-SUFFIX,faceulike.com
-DOMAIN-SUFFIX,huaxiong.com
-DOMAIN-SUFFIX,neihanshequ.com
-DOMAIN-SUFFIX,neihan8.com
-DOMAIN-SUFFIX,feiliao.com
-DOMAIN-SUFFIX,gogokid.com
-DOMAIN-SUFFIX,piapiapia.com
-DOMAIN-SUFFIX,haoxuexi.com
-DOMAIN-SUFFIX,duoshan.com
+# DOUBAO AI
+DOMAIN-SUFFIX,doubao.com
 
-# —— TOS/CDN/直播源/文档前端 ——
-DOMAIN-SUFFIX,ibytedtos.com
+# ECOSYSTEM MEDIA / CDN
 DOMAIN-SUFFIX,bytecdn.com
 DOMAIN-SUFFIX,bytecdn.net
+DOMAIN-SUFFIX,byteimg.net
 DOMAIN-SUFFIX,bytefcdn.com
-DOMAIN-SUFFIX,byteimg.org
-DOMAIN-SUFFIX,byted.tech
-DOMAIN-SUFFIX,bytedsvr.com
-DOMAIN-SUFFIX,cdn.bytedance.com
-DOMAIN-SUFFIX,ibyteimg.com
-DOMAIN-SUFFIX,bytetos.com
-DOMAIN-SUFFIX,bytednsdoc.com
-DOMAIN-SUFFIX,bytedns.net
-DOMAIN-SUFFIX,bytednsapi.com
-DOMAIN-SUFFIX,bytednsapi.net
-DOMAIN-SUFFIX,bytedns.tech
-DOMAIN-SUFFIX,bytefae.com
-DOMAIN-SUFFIX,bytemastatic.com
-DOMAIN-SUFFIX,bytemastatic.cn
 
-# —— 广告/支付/增长/短链 ——
+# AD / LOG / TRACKING
 DOMAIN-SUFFIX,byteadverts.com
-DOMAIN-SUFFIX,doupay.com
-DOMAIN-SUFFIX,bdurl.net
-DOMAIN-SUFFIX,juliangyinqing.com
 DOMAIN-SUFFIX,ad.bytedance.com
 DOMAIN-SUFFIX,log.snssdk.com
 DOMAIN-SUFFIX,mon.snssdk.com
-DOMAIN-SUFFIX,lf-ad-growth.byteadverts.com
-DOMAIN,dig.bdurl.net
 
-# —— 监控 / APM / 实验 / 性能域名 ——
-DOMAIN-SUFFIX,ibytedapm.com
-DOMAIN,scalpel-perf.zijieapi.com
-DOMAIN,abtestvm.bytedance.com
-DOMAIN,abtest3-misc-lq.zijieapi.com
-DOMAIN,mon.zijieapi.com
-DOMAIN,lf3-short.ibytedapm.com
-DOMAIN,lf3-short.bytegoofy.com
-
-# —— 电商 / 页面 / 静态相关 ——
-DOMAIN-SUFFIX,ecombdpage.com
-DOMAIN-SUFFIX,ecombdstatic.com
-DOMAIN-SUFFIX,xingtu.cn
-DOMAIN-SUFFIX,ugsdk.cn
-DOMAIN,render.ecombdpage.com
-
-# —— 合作/承载前端（字节依赖层） ——
-DOMAIN-SUFFIX,cdnhwc1.com
-DOMAIN-SUFFIX,cdnhwc2.com
-DOMAIN-SUFFIX,queniuso.com
-DOMAIN-SUFFIX,wasu.tv
-DOMAIN-SUFFIX,qtlcdn.com
-DOMAIN,ioshost.qtlcdn.com
-DOMAIN-SUFFIX,cdnbuild.net
-DOMAIN-SUFFIX,bsgslb.com
-DOMAIN,zttapk.v.bsgslb.com
-DOMAIN,l7-online-self-max-v6.s.dsa.cdnbuild.net
-DOMAIN-SUFFIX,hcdndyn.cdn.hwcdn.net
-
-# —— 第三方分析 SDK ——
-DOMAIN-SUFFIX,adjust.io
-
-# —— 精确观测域名(抓包样本+补充） ——
-DOMAIN,api.xsj.wasu.tv
-DOMAIN,lf3-cm.ecombdstatic.com
-DOMAIN,frontier-aweme-hl-ipainner.amemv.com
-DOMAIN,api5-core-hl.amemv.com
-DOMAIN,api5-normal-aweme-hl.doubao.com
-DOMAIN,saveu5-normal-hl.zijieapi.com
-DOMAIN,mssdk3-normal-lf.zijieapi.com
-DOMAIN,p11.douyinpic.com
-DOMAIN,lf-dy-sourcecdn-tos.bytegecko.com
-DOMAIN,lf26-font-sign.bytehwm.com
-DOMAIN,p9-dy.byteimg.com
-DOMAIN,lf-normal-gr-sourcecdn.bytegecko.com
-DOMAIN,p9-magic.byteimg.com
-DOMAIN,n98-lf9-dy-ncdn-tos-sub.bytegecko.com
-DOMAIN,log-hl.snssdk.com
-DOMAIN,p95-sz-sign.douyinpic.com
-DOMAIN,i-hl.snssdk.com
-DOMAIN,p3.douyinpic.com
-DOMAIN,p6.douyinpic.com
-DOMAIN,search5-search-hl.amemv.com
-DOMAIN,creator.amemv.com
-DOMAIN,douplus-fe.amemv.com
-DOMAIN,lf26-main-dy-qos-expr.bytegecko.com
-DOMAIN,api.doupay.com
-DOMAIN,zlink.ugsdk.cn
-DOMAIN,open.douyin.com
-DOMAIN,render.ecombdpage.com
-DOMAIN,lf3-short.bytegoofy.com
-DOMAIN,lf3-short.ibytedapm.com
-DOMAIN,ioshost.qtlcdn.com
-DOMAIN,l7-online-self-max-v6.s.dsa.cdnbuild.net
-DOMAIN,abtestvm.bytedance.com
-
-# —— ASN（国内）——
-IP-ASN,134548
-IP-ASN,24138
-# 海外候选 ASN（可选）
-# IP-ASN,396986
-
-# —— 域名规则层（精准匹配，优先） ——
-# 前面所有 DOMAIN-SUFFIX 和 DOMAIN 已经完整保留
-# —— 精确 IP 层（抓包到的 /32，兜底直连） ——
-IP-CIDR,59.37.80.3/32
-IP-CIDR,121.14.28.105/32
-IP-CIDR,113.108.7.104/32
-IP-CIDR,106.38.222.28/32
-IP-CIDR,121.12.126.107/32
-IP-CIDR,113.96.129.32/32
-IP-CIDR,183.61.228.75/32
-IP-CIDR,183.61.239.178/32
-IP-CIDR,183.36.42.103/32
-IP-CIDR,113.96.132.225/32
-IP-CIDR,119.147.112.242/32
-IP-CIDR,59.42.248.103/32
-IP-CIDR,119.147.227.48/32
-IP-CIDR,14.215.55.18/32
-IP-CIDR,113.105.138.52/32
-IP-CIDR,121.11.2.222/32
-IP-CIDR,113.96.136.41/32
-IP-CIDR,113.96.108.12/32
-IP-CIDR,121.14.153.75/32
-IP-CIDR,183.3.204.197/32
-IP-CIDR,183.36.23.148/32
-IP-CIDR,124.167.222.57/32
-IP-CIDR,183.60.150.200/32
-IP-CIDR,183.60.150.199/32
-IP-CIDR,14.29.49.41/32
-IP-CIDR,125.88.255.62/32
-IP-CIDR,14.215.55.63/32
-IP-CIDR,106.38.222.225/32
-IP-CIDR,183.61.14.230/32
-IP-CIDR,59.36.213.115/32
-IP-CIDR,183.3.202.28/32
-IP-CIDR,119.147.112.240/32
-IP-CIDR,121.14.28.104/32
-IP-CIDR,183.36.23.157/32
-IP-CIDR,58.215.158.12/32
-IP-CIDR,14.29.100.24/32
-IP-CIDR,119.147.227.48/32
-IP-CIDR,125.89.169.119/32
-IP-CIDR,103.203.143.170/32
-
-# —— 宽段兜底层（运营商常见网段，最后防线） ——
-IP-CIDR,14.29.0.0/16
-IP-CIDR,14.215.0.0/16
-IP-CIDR,36.112.0.0/16
-IP-CIDR,39.96.0.0/16
-IP-CIDR,47.94.0.0/16
-IP-CIDR,49.7.0.0/16
-IP-CIDR,59.36.0.0/16
-IP-CIDR,59.37.0.0/16
-IP-CIDR,59.42.0.0/16
-IP-CIDR,101.124.0.0/16
-IP-CIDR,106.38.0.0/16
-IP-CIDR,111.225.0.0/16
-IP-CIDR,113.96.0.0/15
-IP-CIDR,113.105.0.0/16
-IP-CIDR,113.108.0.0/16
-IP-CIDR,114.132.0.0/16
-IP-CIDR,118.89.0.0/16
-IP-CIDR,119.147.0.0/16
-IP-CIDR,120.92.0.0/16
-IP-CIDR,121.11.0.0/16
-IP-CIDR,121.12.0.0/16
-IP-CIDR,121.14.0.0/16
-IP-CIDR,124.167.0.0/16
-IP-CIDR,125.88.0.0/16
-IP-CIDR,125.94.0.0/16
-IP-CIDR,182.92.0.0/16
-IP-CIDR,183.3.0.0/16
-IP-CIDR,183.36.0.0/16
-IP-CIDR,183.60.0.0/16
-IP-CIDR,183.61.0.0/16
-IP-CIDR,203.90.0.0/16
-IP-CIDR,58.215.0.0/16
-IP-CIDR,125.89.0.0/16
-IP-CIDR,103.203.0.0/16
-
-# —— IPv6（国内部署，兜底保留） ——
-IP-CIDR6,2409:8c54::/32
-IP-CIDR6,2409:8c54:1821::/48
-IP-CIDR6,2409:8c54:4830::/48
-IP-CIDR6,2409:8c54:0810::/48
-IP-CIDR6,2409:8c54:1000::/36
-IP-CIDR6,2409:8c54:2000::/36
-
-# —— 关键字兜底（保留并扩充） ——
-DOMAIN-KEYWORD,bytedance
-DOMAIN-KEYWORD,zijie
-DOMAIN-KEYWORD,amemv
-DOMAIN-KEYWORD,snssdk
+# CORE KEYWORD (MINIMAL SAFE SET)
 DOMAIN-KEYWORD,douyin
-DOMAIN-KEYWORD,doubao
 DOMAIN-KEYWORD,toutiao
 DOMAIN-KEYWORD,ixigua
-DOMAIN-KEYWORD,ixiguavideo
-DOMAIN-KEYWORD,huoshan
-DOMAIN-KEYWORD,feishu
-DOMAIN-KEYWORD,feishucdn
-DOMAIN-KEYWORD,capcut
-DOMAIN-KEYWORD,bytecdn
-DOMAIN-KEYWORD,byteimg
-DOMAIN-KEYWORD,volcengine
-DOMAIN-KEYWORD,volcecdn
+DOMAIN-KEYWORD,bytedance
+DOMAIN-KEYWORD,snssdk
+DOMAIN-KEYWORD,zijie
 DOMAIN-KEYWORD,bytegecko
-DOMAIN-KEYWORD,bytetos
-DOMAIN-KEYWORD,bytednsdoc
-DOMAIN-KEYWORD,bytedns
-DOMAIN-KEYWORD,cdnhwc1
-DOMAIN-KEYWORD,cdnhwc2
-DOMAIN-KEYWORD,queniuso
-DOMAIN-KEYWORD,wasu
-DOMAIN-KEYWORD,abtest
-DOMAIN-KEYWORD,infras
-DOMAIN-KEYWORD,static
-DOMAIN-KEYWORD,sign
-DOMAIN-KEYWORD,zijieapi
-DOMAIN-KEYWORD,bytegoofy
-DOMAIN-KEYWORD,ibytedapm
-DOMAIN-KEYWORD,byteadverts
-DOMAIN-KEYWORD,bsgslb
-DOMAIN-KEYWORD,qtlcdn
-DOMAIN-KEYWORD,ecombd
-DOMAIN-KEYWORD,qishui
-DOMAIN-KEYWORD,xingtu
+DOMAIN-KEYWORD,volcengine
+
+# IP CORE (ONLY REALISTIC BACKBONE)
+IP-CIDR,14.29.0.0/16,no-resolve
+IP-CIDR,36.112.0.0/16,no-resolve
+IP-CIDR,39.96.0.0/16,no-resolve
+IP-CIDR,47.94.0.0/16,no-resolve
+IP-CIDR,59.36.0.0/16,no-resolve
+IP-CIDR,59.37.0.0/16,no-resolve
+IP-CIDR,101.124.0.0/16,no-resolve
+IP-CIDR,106.38.0.0/16,no-resolve
+IP-CIDR,113.96.0.0/15,no-resolve
+IP-CIDR,118.89.0.0/16,no-resolve
+IP-CIDR,119.147.0.0/16,no-resolve
+IP-CIDR,120.92.0.0/16,no-resolve
+IP-CIDR,121.11.0.0/16,no-resolve
+IP-CIDR,121.12.0.0/16,no-resolve
+IP-CIDR,121.14.0.0/16,no-resolve
+IP-CIDR,124.167.0.0/16,no-resolve
+IP-CIDR,125.88.0.0/16,no-resolve
+IP-CIDR,183.3.0.0/16,no-resolve
+IP-CIDR,183.36.0.0/16,no-resolve
+IP-CIDR,183.60.0.0/16,no-resolve
+IP-CIDR,183.61.0.0/16,no-resolve
+
+# IPV6 (MINIMAL)
+IP-CIDR6,2409:8c54::/32,no-resolve
