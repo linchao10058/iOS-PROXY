@@ -378,6 +378,7 @@ https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main
 https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/accu.module, policy=Global, tag=AccuWeather, enabled=true
 https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/photoshop.module, enabled=true
 https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/refs/heads/main/modules/lightroom.module, policy=Global, tag=LightRoom, enabled=true
+https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Lite.sgmodule, enabled=true
 https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule, enabled=true
 https://raw.githubusercontent.com/app2smile/rules/refs/heads/master/module/youtube.sgmodule, enabled=true
 https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Spotify%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule, enabled=true
