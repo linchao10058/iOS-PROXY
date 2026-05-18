@@ -1,181 +1,79 @@
-// NAME: Microsoft
-// AUTHOR: linchao10058
-// REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Microsoft.list
-// VERSION: v2.2.0
-// UPDATED: 2025-03-28 18:30 PDT
-// DESCRIPTION: Ultimate rule covering all Microsoft global services including Windows, Microsoft 365, Azure, Xbox, Bing, Copilot, LinkedIn, and dynamic updates.
-
-// --- Microsoft 核心服务 ---
 DOMAIN-SUFFIX,microsoft.com
 DOMAIN-SUFFIX,microsoftonline.com
 DOMAIN-SUFFIX,office.com
+DOMAIN-SUFFIX,office.net
+DOMAIN-SUFFIX,office365.com
 DOMAIN-SUFFIX,windows.com
+DOMAIN-SUFFIX,windows.net
 DOMAIN-SUFFIX,live.com
 DOMAIN-SUFFIX,hotmail.com
 DOMAIN-SUFFIX,outlook.com
 DOMAIN-SUFFIX,onedrive.com
 DOMAIN-SUFFIX,sharepoint.com
 DOMAIN-SUFFIX,skype.com
-DOMAIN-SUFFIX,xbox.com
-DOMAIN-SUFFIX,linkedin.com
-DOMAIN-SUFFIX,aka.ms
 DOMAIN-SUFFIX,msn.com
+DOMAIN-SUFFIX,aka.ms
 
-// --- Azure 云服务 ---
 DOMAIN-SUFFIX,azure.com
 DOMAIN-SUFFIX,azure.net
 DOMAIN-SUFFIX,azureedge.net
 DOMAIN-SUFFIX,azurefd.net
-DOMAIN-SUFFIX,azure-api.net
-DOMAIN-SUFFIX,management.azure.com
-DOMAIN-SUFFIX,portal.azure.com
 DOMAIN-SUFFIX,trafficmanager.net
-DOMAIN-SUFFIX,azurewebsites.net
 DOMAIN-SUFFIX,cloudapp.net
-DOMAIN-SUFFIX,azurecontainer.io
-DOMAIN-SUFFIX,azure-mobile.net
-DOMAIN-SUFFIX,azuredatabricks.net
-DOMAIN-SUFFIX,azurecosmosdb.com
-DOMAIN-SUFFIX,azureiotcentral.com
-DOMAIN-SUFFIX,azureiotsolutions.com
-DOMAIN-SUFFIX,azconfig.io
-DOMAIN-SUFFIX,arc.azure.com
+DOMAIN-SUFFIX,azurewebsites.net
 
-// --- CDN & 第三方依赖 ---
-DOMAIN-SUFFIX,msedge.net
-DOMAIN-SUFFIX,msocdn.com
-DOMAIN-SUFFIX,msftcdn.net
-DOMAIN-SUFFIX,msftstatic.com
-DOMAIN-SUFFIX,msecnd.net
-DOMAIN-SUFFIX,spoprod-a.akamaihd.net
-DOMAIN-SUFFIX,aadcdn.microsoftonline-p.com
-DOMAIN-SUFFIX,akamaized.net
-DOMAIN-SUFFIX,aspnetcdn.com
-DOMAIN-SUFFIX,vo.msecnd.net
-
-// --- Microsoft 365 ---
-DOMAIN-SUFFIX,microsoft365.com
-DOMAIN-SUFFIX,admin.microsoft.com
-DOMAIN-SUFFIX,config.office.net
-DOMAIN-SUFFIX,cdn.office.net
-DOMAIN-SUFFIX,forms.microsoft.com
-DOMAIN-SUFFIX,flow.microsoft.com
-DOMAIN-SUFFIX,powerapps.com
-DOMAIN-SUFFIX,powerbi.com
-DOMAIN-SUFFIX,onenote.com
-DOMAIN-SUFFIX,onenote.net
-DOMAIN-SUFFIX,sway.com
-DOMAIN-SUFFIX,viva.cloud.microsoft
-DOMAIN-SUFFIX,copilot.cloud.microsoft
-
-// --- 开发者 & AI ---
-DOMAIN-SUFFIX,dev.azure.com
-DOMAIN-SUFFIX,visualstudio.com
-DOMAIN-SUFFIX,mcr.microsoft.com
-DOMAIN-SUFFIX,nuget.org
-DOMAIN-SUFFIX,powershellgallery.com
-DOMAIN-SUFFIX,ai.microsoft.com
-DOMAIN-SUFFIX,cognitive.microsoft.com
-DOMAIN-SUFFIX,translate.microsoft.com
-DOMAIN-SUFFIX,graph.microsoft.com
-DOMAIN-SUFFIX,botframework.com
-DOMAIN-SUFFIX,docker.ms
-DOMAIN-SUFFIX,msgraph.cloud.microsoft
-
-// --- Windows & 设备 ---
-DOMAIN-SUFFIX,windowsupdate.com
-DOMAIN-SUFFIX,update.microsoft.com
-DOMAIN-SUFFIX,download.microsoft.com
-DOMAIN-SUFFIX,go.microsoft.com
-DOMAIN-SUFFIX,surface.com
-DOMAIN-SUFFIX,hololens.com
-DOMAIN-SUFFIX,microsoftedge.com
-DOMAIN-SUFFIX,msedgewebview.com
-
-// --- Xbox & 游戏 ---
+DOMAIN-SUFFIX,xbox.com
 DOMAIN-SUFFIX,xboxlive.com
-DOMAIN-SUFFIX,gamepass.com
-DOMAIN-SUFFIX,xboxservices.com
 DOMAIN-SUFFIX,minecraft.net
 DOMAIN-SUFFIX,mojang.com
-DOMAIN-SUFFIX,bethesda.net
-DOMAIN-SUFFIX,xboxgamestudios.com
-DOMAIN-SUFFIX,mstea.ms
 
-// --- 认证 & 安全 ---
-DOMAIN-SUFFIX,login.live.com
-DOMAIN-SUFFIX,login.microsoftonline.com
-DOMAIN-SUFFIX,msftauth.net
-DOMAIN-SUFFIX,msauth.net
-DOMAIN-SUFFIX,msftidentity.com
-DOMAIN-SUFFIX,msftconnecttest.com
-DOMAIN-SUFFIX,passport.net
-DOMAIN-SUFFIX,entra.microsoft.com
-DOMAIN-SUFFIX,msftauthimages.net
+DOMAIN-SUFFIX,linkedin.com
+DOMAIN-SUFFIX,github.com
 
-// --- 企业服务 ---
-DOMAIN-SUFFIX,dynamics.com
-DOMAIN-SUFFIX,advertising.microsoft.com
-DOMAIN-SUFFIX,defender.microsoft.com
-DOMAIN-SUFFIX,security.microsoft.com
-DOMAIN-SUFFIX,partner.microsoft.com
-DOMAIN-SUFFIX,microsofthup.com
-DOMAIN-SUFFIX,msfteducation.com
-
-// --- Bing & 搜索 ---
 DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,bing.net
 DOMAIN-SUFFIX,bingapis.com
-DOMAIN-SUFFIX,bingtranslator.com
 
-// --- 区域特定域名 ---
-DOMAIN-SUFFIX,microsoft.cn
-DOMAIN-SUFFIX,azure.cn
-DOMAIN-SUFFIX,office.cn
-DOMAIN-SUFFIX,outlook.cn
-DOMAIN-SUFFIX,live.cn
-DOMAIN-SUFFIX,msn.com.cn
-DOMAIN-SUFFIX,microsoft.co.uk
-DOMAIN-SUFFIX,microsoft.de
-DOMAIN-SUFFIX,microsoft.fr
-DOMAIN-SUFFIX,microsoft.jp
-DOMAIN-SUFFIX,microsoft.us
-DOMAIN-SUFFIX,microsoft.ru
-DOMAIN-SUFFIX,microsoft.in
-DOMAIN-SUFFIX,msftauth.cn
+DOMAIN-SUFFIX,powerbi.com
+DOMAIN-SUFFIX,powerapps.com
+DOMAIN-SUFFIX,dynamics.com
+DOMAIN-SUFFIX,powershellgallery.com
+DOMAIN-SUFFIX,visualstudio.com
+DOMAIN-SUFFIX,nuget.org
 
-// --- 通配符（动态扩展） ---
-DOMAIN-SUFFIX,*.microsoft.com         // 核心服务动态扩展
-DOMAIN-SUFFIX,*.azure.com            // Azure 服务动态扩展
-DOMAIN-SUFFIX,*.cloud.microsoft      // 云服务动态扩展
-DOMAIN-SUFFIX,*.services.azure.com   // Azure 核心服务子域
-DOMAIN-SUFFIX,*.msedge.net           // Edge CDN
-DOMAIN-SUFFIX,*.msecnd.net           // Microsoft CDN
-DOMAIN-SUFFIX,*.msftauth.net         // 认证服务
-DOMAIN-SUFFIX,*.msftcdn.net          // CDN 扩展
-DOMAIN-SUFFIX,*.microsoftonline.com  // 在线服务
-DOMAIN-SUFFIX,*.microsoft365.com     // Microsoft 365 扩展
-DOMAIN-SUFFIX,*.office.com           // Office 扩展
-DOMAIN-SUFFIX,*.xbox.com             // Xbox 扩展
-DOMAIN-SUFFIX,*.live.com             // Live 服务扩展
-DOMAIN-SUFFIX,*.linkedin.com         // LinkedIn 扩展
-DOMAIN-SUFFIX,*.visualstudio.com     // Visual Studio 扩展
-DOMAIN-SUFFIX,*.powerapps.com        // Power Apps 扩展
-DOMAIN-SUFFIX,*.powerbi.com          // Power BI 扩展
-DOMAIN-SUFFIX,*.azurewebsites.net    // Azure Websites 扩展
-DOMAIN-SUFFIX,*.trafficmanager.net   // Traffic Manager 扩展
-DOMAIN-SUFFIX,*.cloudapp.net         // Cloud App 扩展
+DOMAIN-SUFFIX,msedge.net
+DOMAIN-SUFFIX,msocdn.com
+DOMAIN-SUFFIX,msftcdn.net
+DOMAIN-SUFFIX,msecnd.net
+DOMAIN-SUFFIX,akamaized.net
 
-// --- 进程 & 用户代理 ---
-PROCESS-NAME,OneDrive
-PROCESS-NAME,OneDriveUpdater
-USER-AGENT,Microsoft*
-USER-AGENT,OneDrive*
-USER-AGENT,OneDriveiOSApp*
+DOMAIN-KEYWORD,microsoft
+DOMAIN-KEYWORD,azure
+DOMAIN-KEYWORD,office
+DOMAIN-KEYWORD,xbox
+DOMAIN-KEYWORD,msn
+DOMAIN-KEYWORD,live
+DOMAIN-KEYWORD,outlook
+DOMAIN-KEYWORD,onedrive
+DOMAIN-KEYWORD,sharepoint
+DOMAIN-KEYWORD,bing
+DOMAIN-KEYWORD,github
 
-// --- 备注 ---
-// 1. 整合Microsoft规则，覆盖所有 Microsoft 服务。
-// 2. 保留广泛通配符，支持未来动态更新。
-// 3. 添加边缘服务和区域域名，确保全球适用性。
-// 4. 引入进程和用户代理规则，提升特定应用支持。
-// 5. 精简冗余，优化性能和准确性。
+IP-CIDR,13.64.0.0/11,no-resolve
+IP-CIDR,13.104.0.0/14,no-resolve
+IP-CIDR,20.0.0.0/8,no-resolve
+IP-CIDR,23.96.0.0/14,no-resolve
+IP-CIDR,40.64.0.0/10,no-resolve
+IP-CIDR,51.104.0.0/15,no-resolve
+IP-CIDR,52.96.0.0/12,no-resolve
+IP-CIDR,52.224.0.0/11,no-resolve
+IP-CIDR,64.4.0.0/18,no-resolve
+IP-CIDR,104.40.0.0/13,no-resolve
+IP-CIDR,131.253.0.0/16,no-resolve
+IP-CIDR,137.116.0.0/15,no-resolve
+IP-CIDR,168.61.0.0/16,no-resolve
+IP-CIDR,191.232.0.0/13,no-resolve
+IP-CIDR,204.79.0.0/16,no-resolve
+
+IP-CIDR6,2603:1000::/32,no-resolve
+IP-CIDR6,2620:1ec::/32,no-resolve
