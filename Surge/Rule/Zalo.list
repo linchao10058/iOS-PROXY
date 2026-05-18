@@ -1,44 +1,37 @@
-# NAME: Amazon
+# NAME: Zalo
 # AUTHOR: linchao10058
-# VERSION: 1.0.0
-# UPDATED: 2026-05-19
+# VERSION: 6.0
+# UPDATED: 2026-05-18
 
-DOMAIN-SUFFIX,amazon.com
-DOMAIN-SUFFIX,amazon.cn
-DOMAIN-SUFFIX,amazonaws.com
-DOMAIN-SUFFIX,amazonaws.com.cn
+DOMAIN-SUFFIX,zalo.me
+DOMAIN-SUFFIX,zaloapp.com
+DOMAIN-SUFFIX,zalo.vn
+DOMAIN-SUFFIX,zalo.cloud
+DOMAIN-SUFFIX,zalo.ai
+DOMAIN-SUFFIX,zalo.video
 
-DOMAIN-SUFFIX,primevideo.com
-DOMAIN-SUFFIX,amazonmusic.com
-DOMAIN-SUFFIX,primegaming.com
+DOMAIN-SUFFIX,zalopay.vn
+DOMAIN-SUFFIX,zalopay.com
 
-DOMAIN-SUFFIX,kindle.com
-DOMAIN-SUFFIX,audible.com
-DOMAIN-SUFFIX,ring.com
-DOMAIN-SUFFIX,wholefoodsmarket.com
+DOMAIN-SUFFIX,zapps.me
+DOMAIN-SUFFIX,zapps.vn
 
-DOMAIN-SUFFIX,twitch.tv
-DOMAIN-SUFFIX,imdb.com
-DOMAIN-SUFFIX,goodreads.com
+DOMAIN-SUFFIX,zadn.vn
+DOMAIN-SUFFIX,zdn.vn
+DOMAIN-SUFFIX,zmdcdn.me
 
-DOMAIN-SUFFIX,amazonpay.com
+DOMAIN-SUFFIX,zadns.me
+DOMAIN-SUFFIX,zadns.vn
 
-DOMAIN-SUFFIX,s3.amazonaws.com
-DOMAIN-SUFFIX,ec2.amazonaws.com
-DOMAIN-SUFFIX,lambda.amazonaws.com
-DOMAIN-SUFFIX,dynamodb.amazonaws.com
-DOMAIN-SUFFIX,rds.amazonaws.com
+DOMAIN-SUFFIX,zing.vn
+DOMAIN-SUFFIX,zingmp3.vn
 
-DOMAIN-SUFFIX,cloudfront.net
+DOMAIN-KEYWORD,zalo
+DOMAIN-KEYWORD,zalopay
+DOMAIN-KEYWORD,zadn
+DOMAIN-KEYWORD,zingmp3
 
-DOMAIN-KEYWORD,amazon
-DOMAIN-KEYWORD,aws
+USER-AGENT,Zalo*
 
-IP-CIDR,13.32.0.0/15,no-resolve
-IP-CIDR,13.224.0.0/14,no-resolve
-IP-CIDR,13.35.0.0/16,no-resolve
-IP-CIDR,18.64.0.0/10,no-resolve
-IP-CIDR,52.0.0.0/8,no-resolve
-IP-CIDR,54.0.0.0/8,no-resolve
-IP-CIDR,99.84.0.0/16,no-resolve
-IP-CIDR,108.128.0.0/13,no-resolve
+IP-CIDR,120.138.69.0/24,no-resolve
+IP-CIDR,120.138.74.0/24,no-resolve
