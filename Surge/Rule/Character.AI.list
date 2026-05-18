@@ -1,76 +1,21 @@
-// NAME: Character.AI
-// AUTHOR: linchao10058
-// REPO: https://raw.githubusercontent.com/linchao10058/Surge/main/Rule/Character.AI.list
-// VERSION: v3.1.1
-// UPDATED: 2025-03-28 18:30 PDT
-// DESCRIPTION: Character.AI 全服务分流规则，支持通配和动态更新，适用于代理或直连策略
+# NAME: Character.AI
+# AUTHOR: linchao10058
+# VERSION: 4.0
+# UPDATED: 2026-05-18
 
-# ───────────────────────────────────────────────────────────────────────────────
-# 一、核心域（最小冗余 & 全覆盖）
-# 说明：优先用 DOMAIN-SUFFIX 覆盖所有子域；避免逐个子域罗列的维护成本。
-# 注意：Character.AI 同时使用 c.ai 短域名，故一并纳入。
-# ───────────────────────────────────────────────────────────────────────────────
-DOMAIN-SUFFIX,character.ai,PROXY
-DOMAIN-SUFFIX,characterai.io,PROXY
-DOMAIN-SUFFIX,c.ai,PROXY
+DOMAIN-SUFFIX,character.ai
+DOMAIN-SUFFIX,c.ai
+DOMAIN-SUFFIX,characterai.io
 
-# （可选）显式关键入口（一般由上面的 SUFFIX 已覆盖，仅在你需要更高权重时启用）
-# DOMAIN,events.character.ai,PROXY
-# DOMAIN,status.character.ai,PROXY
-# DOMAIN,beta.character.ai,PROXY
+DOMAIN-SUFFIX,characteraiusercontent.com
 
-# ───────────────────────────────────────────────────────────────────────────────
-# 二、图标与 PWA 静态资源（路径级精确匹配）
-# 说明：Surge 的 DOMAIN 规则不匹配路径，图标需用 URL-REGEX。
-# 覆盖 apple-touch-icon / favicon 等常见路径，降低误代理概率。
-# ───────────────────────────────────────────────────────────────────────────────
-URL-REGEX,^https?:\/\/(?:beta\.|events\.)?character(?:\.ai|ai\.io)\/apple-touch-icon(?:-precomposed)?\.png$,PROXY
-URL-REGEX,^https?:\/\/(?:www\.)?c\.ai\/apple-touch-icon(?:-precomposed)?\.png$,PROXY
-URL-REGEX,^https?:\/\/(?:beta\.|events\.)?character(?:\.ai|ai\.io)\/favicon\.ico$,PROXY
-URL-REGEX,^https?:\/\/(?:www\.)?c\.ai\/favicon\.ico$,PROXY
+DOMAIN-KEYWORD,characterai
+DOMAIN-KEYWORD,c.ai
 
-# ───────────────────────────────────────────────────────────────────────────────
-# 三、第三方依赖（最小化，按需启用）
-# 说明：不要全量代理 cloudflare.com / amazonaws.com，避免拖入无关流量。
-# 建议仅在抓包确认后精确添加。以下为常见且相对安全的最小集，默认注释。
-# ───────────────────────────────────────────────────────────────────────────────
-# DOMAIN,static.cloudflareinsights.com,PROXY      # CF RUM/Analytics（如有）
-# DOMAIN-SUFFIX,cloudfront.net,PROXY              # 如静态资源托管在 CloudFront（按需启用）
-# DOMAIN,firebaseinstallations.googleapis.com,PROXY # 移动端安装上报（若 App 使用 Firebase）
-# DOMAIN,firebase-settings.crashlytics.com,PROXY  # Crashlytics 配置（按需）
+USER-AGENT,*CharacterAI*
+USER-AGENT,*Character.AI*
 
-# ───────────────────────────────────────────────────────────────────────────────
-# 四、社区与周边（可选启用，不影响主服务）
-# ───────────────────────────────────────────────────────────────────────────────
-# DOMAIN,discord.com,PROXY
-# DOMAIN-SUFFIX,discord.gg,PROXY
-# DOMAIN-SUFFIX,reddit.com,PROXY
-# DOMAIN-SUFFIX,redd.it,PROXY
+IP-CIDR,104.18.0.0/16,no-resolve
+IP-CIDR,172.64.0.0/13,no-resolve
 
-# ───────────────────────────────────────────────────────────────────────────────
-# 五、IP-CIDR 精准补充（仅为防被宽泛规则抢走；谨慎启用）
-# 说明：若你的规则集中存在“Cloudflare 大段匹配”，可能导致 Character.AI 走其他策略。
-# 建议仅添加确认为 Character.AI 常用的段，并标注 no-resolve；避免使用过宽的 104.16.0.0/13。
-# ───────────────────────────────────────────────────────────────────────────────
-# IP-CIDR,104.19.251.0/24,PROXY,no-resolve   # 示例：如经抓包与反查确认
-# （如需 IPv6，请基于抓包添加 IP-CIDR6，务必避免 2606:4700::/32 这类全段）
-
-# ───────────────────────────────────────────────────────────────────────────────
-# 六、Surge 专属 HOST 强制匹配（默认不启用，作为应急项）
-# 说明：当你的环境中存在“IP 优先”或特殊规则导致域名未命中时再启用。
-# ───────────────────────────────────────────────────────────────────────────────
-# HOST,character.ai,PROXY
-# HOST,characterai.io,PROXY
-# HOST,c.ai,PROXY
-# HOST,events.character.ai,PROXY
-# HOST,status.character.ai,PROXY
-# HOST,beta.character.ai,PROXY
-
-# ───────────────────────────────────────────────────────────────────────────────
-# 七、放置顺序与运维建议
-# 1) 将本段置于通用 CDN/Cloudflare 规则之前，以保证命中优先级。
-# 2) 第三方依赖务必基于抓包最小化添加，避免经济性受损。
-# 3) IP-CIDR 与 HOST 模块默认保持注释；仅在冲突或抢占时启用。
-# 4) 验证方式：在 Surge 中开启调试日志，访问 https://c.ai/ 与 https://character.ai/
-#    观察请求命中策略是否为 PROXY，关注 API、WebSocket、静态资源三类。
-# ───────────────────────────────────────────────────────────────────────────────
+IP-CIDR6,2606:4700::/32,no-resolve
