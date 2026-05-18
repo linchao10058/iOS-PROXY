@@ -1,19 +1,38 @@
+# NAME: Microsoft
+# AUTHOR: linchao10058
+# VERSION: 3.0
+# UPDATED: 2026-05-19
+
+# ===== Core Microsoft Domains =====
 DOMAIN-SUFFIX,microsoft.com
 DOMAIN-SUFFIX,microsoftonline.com
-DOMAIN-SUFFIX,office.com
-DOMAIN-SUFFIX,office.net
-DOMAIN-SUFFIX,office365.com
 DOMAIN-SUFFIX,windows.com
 DOMAIN-SUFFIX,windows.net
 DOMAIN-SUFFIX,live.com
 DOMAIN-SUFFIX,hotmail.com
 DOMAIN-SUFFIX,outlook.com
+DOMAIN-SUFFIX,office.com
+DOMAIN-SUFFIX,office.net
+DOMAIN-SUFFIX,office365.com
 DOMAIN-SUFFIX,onedrive.com
 DOMAIN-SUFFIX,sharepoint.com
 DOMAIN-SUFFIX,skype.com
 DOMAIN-SUFFIX,msn.com
 DOMAIN-SUFFIX,aka.ms
 
+# ===== Microsoft Graph / API =====
+DOMAIN-SUFFIX,graph.microsoft.com
+DOMAIN-SUFFIX,graph.windows.net
+
+# ===== Microsoft Apps =====
+DOMAIN-SUFFIX,onenote.com
+DOMAIN-SUFFIX,sway.com
+DOMAIN-SUFFIX,loop.microsoft.com
+DOMAIN-SUFFIX,teams.microsoft.com
+DOMAIN-SUFFIX,copilot.microsoft.com
+DOMAIN-SUFFIX,1drv.ms
+
+# ===== Azure =====
 DOMAIN-SUFFIX,azure.com
 DOMAIN-SUFFIX,azure.net
 DOMAIN-SUFFIX,azureedge.net
@@ -22,18 +41,22 @@ DOMAIN-SUFFIX,trafficmanager.net
 DOMAIN-SUFFIX,cloudapp.net
 DOMAIN-SUFFIX,azurewebsites.net
 
+# ===== Xbox / Gaming =====
 DOMAIN-SUFFIX,xbox.com
 DOMAIN-SUFFIX,xboxlive.com
 DOMAIN-SUFFIX,minecraft.net
 DOMAIN-SUFFIX,mojang.com
 
+# ===== LinkedIn / GitHub =====
 DOMAIN-SUFFIX,linkedin.com
 DOMAIN-SUFFIX,github.com
 
+# ===== Bing =====
 DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,bing.net
 DOMAIN-SUFFIX,bingapis.com
 
+# ===== Developer / Power Platform =====
 DOMAIN-SUFFIX,powerbi.com
 DOMAIN-SUFFIX,powerapps.com
 DOMAIN-SUFFIX,dynamics.com
@@ -41,12 +64,14 @@ DOMAIN-SUFFIX,powershellgallery.com
 DOMAIN-SUFFIX,visualstudio.com
 DOMAIN-SUFFIX,nuget.org
 
+# ===== CDN =====
 DOMAIN-SUFFIX,msedge.net
 DOMAIN-SUFFIX,msocdn.com
 DOMAIN-SUFFIX,msftcdn.net
 DOMAIN-SUFFIX,msecnd.net
 DOMAIN-SUFFIX,akamaized.net
 
+# ===== Keywords =====
 DOMAIN-KEYWORD,microsoft
 DOMAIN-KEYWORD,azure
 DOMAIN-KEYWORD,office
@@ -59,6 +84,7 @@ DOMAIN-KEYWORD,sharepoint
 DOMAIN-KEYWORD,bing
 DOMAIN-KEYWORD,github
 
+# ===== IP Ranges =====
 IP-CIDR,13.64.0.0/11,no-resolve
 IP-CIDR,13.104.0.0/14,no-resolve
 IP-CIDR,20.0.0.0/8,no-resolve
