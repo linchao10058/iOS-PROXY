@@ -13,6 +13,7 @@ DOMAIN-SUFFIX,zalo.video
 DOMAIN-SUFFIX,zalovideo.vn
 DOMAIN-SUFFIX,zalochat.vn
 DOMAIN-SUFFIX,zaloapi.me
+DOMAIN-SUFFIX,zaloweb.me
 DOMAIN-SUFFIX,nhatkyzalo.vn
 DOMAIN-SUFFIX,zalo.careers
 DOMAIN-SUFFIX,zalo.solutions
@@ -39,24 +40,31 @@ DOMAIN-SUFFIX,zingnews.vn
 DOMAIN-SUFFIX,zingcdn.me
 
 # VNG 集团 / 云业务（Zalo 上层主体） 
+DOMAIN-SUFFIX,vng.com
 DOMAIN-SUFFIX,vng.com.vn
 DOMAIN-SUFFIX,vngcloud.vn
 DOMAIN-SUFFIX,zcast.vn
 
 # 关键字兜底（未来子域 / 新业务） 
 DOMAIN-KEYWORD,zalo
-DOMAIN-KEYWORD,zalopay
 DOMAIN-KEYWORD,zapps
 DOMAIN-KEYWORD,zadn
 DOMAIN-KEYWORD,zdn
 DOMAIN-KEYWORD,zing
 DOMAIN-KEYWORD,vng
+DOMAIN-KEYWORD,vngcloud
 
 # User-Agent 
 USER-AGENT,Zalo*
+USER-AGENT,ZaloPay*
+USER-AGENT,ZaloApp*
+USER-AGENT,ZaloChat*
+USER-AGENT,ZaloVideo*
+USER-AGENT,ZaloApi*
 
-# ASN
-IP-ASN,38244,no-resolve
+# ASN ( VNG Corporation )
+IP-ASN,38244,no-resolve 
+IP-ASN,135905,no-resolve 
 
 # VNG 主网段
 IP-CIDR,49.213.64.0/18,no-resolve
