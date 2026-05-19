@@ -1,37 +1,76 @@
 # NAME: Zalo
 # AUTHOR: linchao10058
-# VERSION: 6.0
-# UPDATED: 2026-05-18
+# VERSION: 8.0
+# UPDATED: 2026-05-19
 
+# Zalo 主业务域名 
 DOMAIN-SUFFIX,zalo.me
 DOMAIN-SUFFIX,zaloapp.com
 DOMAIN-SUFFIX,zalo.vn
 DOMAIN-SUFFIX,zalo.cloud
 DOMAIN-SUFFIX,zalo.ai
 DOMAIN-SUFFIX,zalo.video
+DOMAIN-SUFFIX,zalovideo.vn
+DOMAIN-SUFFIX,zalochat.vn
+DOMAIN-SUFFIX,zaloapi.me
+DOMAIN-SUFFIX,nhatkyzalo.vn
+DOMAIN-SUFFIX,zalo.careers
+DOMAIN-SUFFIX,zalo.solutions
 
+# ZaloPay 
 DOMAIN-SUFFIX,zalopay.vn
 DOMAIN-SUFFIX,zalopay.com
 
+# Zapps 平台 
 DOMAIN-SUFFIX,zapps.me
 DOMAIN-SUFFIX,zapps.vn
 
+# Zadn / Zdns / 静态资源 / CDN 
 DOMAIN-SUFFIX,zadn.vn
 DOMAIN-SUFFIX,zdn.vn
 DOMAIN-SUFFIX,zmdcdn.me
-
 DOMAIN-SUFFIX,zadns.me
 DOMAIN-SUFFIX,zadns.vn
 
+# Zing / ZingMP3 / ZingNews / ZingCDN（VNG 媒体生态）
 DOMAIN-SUFFIX,zing.vn
 DOMAIN-SUFFIX,zingmp3.vn
+DOMAIN-SUFFIX,zingnews.vn
+DOMAIN-SUFFIX,zingcdn.me
 
+# VNG 集团 / 云业务（Zalo 上层主体） 
+DOMAIN-SUFFIX,vng.com.vn
+DOMAIN-SUFFIX,vngcloud.vn
+DOMAIN-SUFFIX,zcast.vn
+
+# 关键字兜底（未来子域 / 新业务） 
 DOMAIN-KEYWORD,zalo
 DOMAIN-KEYWORD,zalopay
+DOMAIN-KEYWORD,zapps
 DOMAIN-KEYWORD,zadn
-DOMAIN-KEYWORD,zingmp3
+DOMAIN-KEYWORD,zdn
+DOMAIN-KEYWORD,zing
+DOMAIN-KEYWORD,vng
 
+# User-Agent 
 USER-AGENT,Zalo*
 
+# VNG 主网段
+IP-CIDR,49.213.64.0/18,no-resolve
+IP-CIDR,120.138.64.0/20,no-resolve
 IP-CIDR,120.138.69.0/24,no-resolve
 IP-CIDR,120.138.74.0/24,no-resolve
+
+# 其他高相关业务网段（越南本地 ISP / VNG 业务承载）
+IP-CIDR,61.28.224.0/19,no-resolve
+IP-CIDR,118.102.0.0/21,no-resolve
+IP-CIDR,122.201.8.0/21,no-resolve
+IP-CIDR,45.127.252.0/22,no-resolve
+IP-CIDR,58.84.0.0/22,no-resolve
+IP-CIDR,103.196.236.0/22,no-resolve
+IP-CIDR,103.245.248.0/22,no-resolve
+
+# IPv6：VNG / Zalo 相关前缀 
+IP-CIDR6,2402:4e0::/32,no-resolve
+IP-CIDR6,2001:df0:13::/48,no-resolve
+IP-CIDR6,2001:df0:1a::/48,no-resolve
