@@ -1,0 +1,33 @@
+[Rule]
+
+# 1. 局域网 & 私有地址
+RULE-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/lan.txt,DIRECT
+RULE-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/private.txt,DIRECT
+
+# 2. 中国大陆常见直连域名
+RULE-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/direct.txt,DIRECT
+
+# 3. Apple / iCloud 在中国可直连的域名
+RULE-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt,DIRECT
+RULE-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/icloud.txt,DIRECT
+
+# 4. 广告 / 恶意域名
+RULE-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt,REJECT
+
+# 5. GFW 域名（被墙/需代理）
+RULE-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt,PROXY,extended-matching
+
+# 6. 常见需要代理的域名（非 GFW 但建议代理）
+RULE-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/proxy.txt,PROXY,extended-matching
+
+# 7. 中国大陆 IP 段（IPv4）
+RULE-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/cncidr.txt,DIRECT,no-resolve
+
+# 8. 非中国大陆顶级域名（tld-not-cn）
+RULE-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/tld-not-cn.txt,PROXY,no-resolve
+
+# 9. GEOIP 兜底：中国 IP 全部直连
+GEOIP,CN,DIRECT,no-resolve
+
+# 10. 最终兜底
+FINAL,PROXY
