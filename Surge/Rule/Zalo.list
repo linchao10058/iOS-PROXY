@@ -55,6 +55,9 @@ DOMAIN-KEYWORD,vng
 # User-Agent 
 USER-AGENT,Zalo*
 
+# ASN
+IP-ASN,38244,no-resolve
+
 # VNG 主网段
 IP-CIDR,49.213.64.0/18,no-resolve
 IP-CIDR,120.138.64.0/20,no-resolve
