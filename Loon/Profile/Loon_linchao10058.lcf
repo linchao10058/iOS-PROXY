@@ -138,8 +138,8 @@ https://api.subcloud.xyz/sub?target=loon&url=ssr%3A%2F%2FOTEuMjA2LjkzLjE1NzoxNzE
 #SSID = ssid, default = PROXY, cellular = DIRECT, "DivineEngine" = PROXY
 #负载均衡，可选三种算法：random：随机选择策略组可用节点，round-robin：轮询策略组可用节点，pcc：在random基础上，针对相同host使用同一节点，此处url用来测试节点可用性，每隔interval进行一次测速，max-timeout参数用于筛选测试时间超过max-timeout的节点为不可用节点
 #LoadBalance = load-balance,node1,node2,remoteNodes, url = http://bing.com, interval = 600,algorithm = pcc, max-timeout=3000
-# 广告模式
-#Advertising = select,REJECT,DIRECT
+#隐私安全防护模式
+#Security = select,REJECT,DIRECT
 # 白名单模式 PROXY，黑名单模式 DIRECT
 #Final = select,PROXY,DIRECT
 #自定义
@@ -148,7 +148,7 @@ Select = select,DIRECT,REJECT,Proxy,Other,Taiwan,Hong Kong,Japan,Korea,Vietnam,S
 Proxy = select,DIRECT,REJECT,☁️ CFWarp-D,WARP+GSCats,Warp+GSC1,Warp+GSC2,Warp+GSC3,U989124992380.edge.onetcdn.com,Loon_linchao10058,Egern_linchao10058,Surge_linchao10058,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 China = select,DIRECT,REJECT,Select,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/cn.png
 Global = select,DIRECT,REJECT,Select,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Global.png
-Advertising = select,DIRECT,REJECT,REJECT-DROP,REJECT-NO-DROP,REJECT-IMG,REJECT-IMG-NO-DROP,REJECT-VIDEO,REJECT-VIDEO-NO-DROP,REJECT-DICT,REJECT-DICT-NO-DROP,REJECT-ARRAY,REJECT-ARRAY-NO-DROP,Select,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/AdWhite.png
+Security = select,DIRECT,REJECT,REJECT-DROP,REJECT-NO-DROP,REJECT-IMG,REJECT-IMG-NO-DROP,REJECT-VIDEO,REJECT-VIDEO-NO-DROP,REJECT-DICT,REJECT-DICT-NO-DROP,REJECT-ARRAY,REJECT-ARRAY-NO-DROP,Select,Proxy,Other,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/AdWhite.png
 Other = select,DIRECT,REJECT,Select,Proxy,Hong Kong,Taiwan,Japan,Korea,Vietnam,Singapore,United States,url = http://cp.cloudflare.com/generate_204,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Area.png
 Taiwan = fallback,🇹🇼台湾,url = http://cp.cloudflare.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/tw.png
 Hong Kong = fallback,🇭🇰香港,url = http://cp.cloudflare.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/hk.png
@@ -190,11 +190,11 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/GlobalMedia/GlobalMedia_All.list, policy=Global, tag=GlobalMedia_All.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list, policy=China, tag=Lan.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DNS/DNS.list, policy=Proxy, tag=DNS.list, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/BlockHttpDNS/BlockHttpDNS.list, policy=Advertising, tag=BlockHttpDNS.list, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Privacy/Privacy_All.list, policy=Advertising, tag=Privacy_All.list, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/AdGuardSDNSFilter/AdGuardSDNSFilter_All.list, policy=Advertising, tag=AdGuardSDNSFilter_All.list, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Hijacking/Hijacking.list, policy=Advertising, tag=Hijacking.list, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All.list, policy=Advertising, tag=Advertising_All.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/BlockHttpDNS/BlockHttpDNS.list, policy=Security, tag=BlockHttpDNS.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Privacy/Privacy_All.list, policy=Security, tag=Privacy_All.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/AdGuardSDNSFilter/AdGuardSDNSFilter_All.list, policy=Security, tag=AdGuardSDNSFilter_All.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Hijacking/Hijacking.list, policy=Security, tag=Hijacking.list, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All.list, policy=Security, tag=Advertising_All.list, enabled=true
 https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/rule/substore.list, policy=Proxy, tag=Sub-Store 「sub-store.vercel.app」: 1. 确认安装Sub Store模块。2. 将模块生效顺序放到最底部。3. 开启MITM脚本, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_All.list, policy=Global, tag=Global_All.list, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/ChinaMax/ChinaMax_All.list, policy=China, tag=ChinaMax_All.list, enabled=true
@@ -334,10 +334,10 @@ https://kelee.one/Tool/Loon/Lpx/TXDocs_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/RedPaper_remove_ads.lpx, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/main/BaiduCloud.plugin, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/main/gddt.plugin, policy=China, enabled=true
-https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/Loon/Plugin/QMusicAd.plugin, policy=Advertising, enabled=true
-https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/Loon/Plugin/BaiduAdBlock.plugin, policy=Advertising, tag=百度系广告屏蔽, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/baidu.png, enabled=true
-https://raw.githubusercontent.com/deezertidal/private/master/plugallery/weiboad.plugin, policy=Advertising, tag=微博去广告, enabled=true
-https://raw.githubusercontent.com/app2smile/rules/master/plugin/bilibili.plugin, policy=Advertising, enabled=true
+https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/Loon/Plugin/QMusicAd.plugin, policy=Security, enabled=true
+https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/Loon/Plugin/BaiduAdBlock.plugin, policy=Security, tag=百度系广告屏蔽, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/baidu.png, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/weiboad.plugin, policy=Security, tag=微博去广告, enabled=true
+https://raw.githubusercontent.com/app2smile/rules/master/plugin/bilibili.plugin, policy=Security, enabled=true
 https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%BD%A9%E4%BA%91%E5%A4%A9%E6%B0%94%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule, tag=彩云天气去广告, enabled=true
 https://kelee.one/Tool/Loon/Lpx/XunLei_remove_ads.lpx, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/main/aliyun.plugin, enabled=true
@@ -391,11 +391,11 @@ https://raw.githubusercontent.com/sooyaaabo/Egern/refs/heads/main/Module/BlockAd
 https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/GlobalMedia/GlobalMedia_MITM.sgmodule, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Advertising/Advertising_MITM.sgmodule, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/Advertising/Advertising.sgmodule, policy=Advertising, tag=AdvertisingScript, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/Advertising/Advertising_Mock.sgmodule, policy=Advertising, tag=Advertising, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/Advertising/Advertising.sgmodule, policy=Security, tag=AdvertisingScript, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/Advertising/Advertising_Mock.sgmodule, policy=Security, tag=Advertising, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/AllInOne/AllInOne.sgmodule, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/AllInOne/AllInOne_Mock.sgmodule, policy=Advertising, tag=AllInOne, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/AllInOne/AllInOne_Mock.sgmodule, policy=Security, tag=AllInOne, enabled=true
 https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/NodeLinkCheck/Surge.sgmodule, policy=Proxy, tag=NodeLinkCheck, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/main/MediaChecker.plugin, enabled=true
 https://raw.githubusercontent.com/deezertidal/private/main/GeoLocation.plugin, enabled=true
